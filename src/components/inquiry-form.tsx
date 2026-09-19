@@ -2,7 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 
-const CONTACT_EMAIL = "happyguide95@naver.com";
+const SMS_NUMBER = "01074957410";
 
 export function InquiryForm() {
   const [category, setCategory] = useState<"유치원" | "초·중등">("초·중등");
@@ -16,20 +16,20 @@ export function InquiryForm() {
     const phone = String(data.get("phone") ?? "");
     const message = String(data.get("message") ?? "");
 
-    const subject = `[홈페이지 문의] ${category} - ${school}`;
     const body = [
-      `구분: ${category}`,
-      `학교(원)명 · 지역: ${school}`,
-      `담당 선생님 성함: ${teacher}`,
+      `[홈페이지 문의] ${category}`,
+      `학교(원)명·지역: ${school}`,
+      `담당 선생님: ${teacher}`,
       `연락처: ${phone}`,
-      "",
-      "문의 내용:",
-      message || "(작성하지 않음)",
-    ].join("\n");
+      message ? `문의 내용: ${message}` : "",
+    ]
+      .filter(Boolean)
+      .join("\n");
 
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
-      subject,
-    )}&body=${encodeURIComponent(body)}`;
+    // iOS와 안드로이드는 sms: 링크의 본문 구분자가 서로 달라(iOS: &, 안드로이드: ?) 기기별로 나눠줍니다.
+    const isIOS = /iPhone|iPad|iPod/.test(window.navigator.userAgent);
+    const separator = isIOS ? "&" : "?";
+    window.location.href = `sms:${SMS_NUMBER}${separator}body=${encodeURIComponent(body)}`;
   };
 
   return (
@@ -119,11 +119,12 @@ export function InquiryForm() {
         type="submit"
         className="inline-flex min-h-14 items-center justify-center rounded-full bg-[var(--color-primary)] px-8 text-lg font-bold text-white transition-colors hover:bg-[var(--color-primary-hover)]"
       >
-        작성한 내용으로 이메일 보내기
+        작성한 내용으로 문자 보내기
       </button>
       <p className="text-sm text-[var(--color-text-muted)]">
-        버튼을 누르면 이메일 앱이 열리고, 위 내용이 자동으로 채워져요.
-        확인 후 보내기만 누르시면 됩니다.
+        버튼을 누르면 휴대폰 문자 앱이 열리고, 위 내용이 자동으로
+        채워져요. 확인 후 보내기만 누르시면 됩니다. (PC로 보고 계시면
+        문자 전송이 안 될 수 있어요 — 그럴 땐 전화로 문의해 주세요.)
       </p>
     </form>
   );
