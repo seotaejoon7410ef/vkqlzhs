@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { Phone } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Container } from "./container";
 
 // 헤더에는 선생님이 가장 자주 찾을 항목만 노출 (전체 섹션은 페이지 스크롤/푸터에서 접근)
@@ -20,18 +20,35 @@ const PHONE_TEL = "tel:0312368410";
 
 export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  // 맨 위(히어로) 위에서는 투명하게 겹쳐 보이다가, 스크롤하면 흰 배경으로 바뀝니다.
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 64);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const solid = scrolled || menuOpen;
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[var(--color-border)] bg-[var(--color-surface)]/95 backdrop-blur">
-      <Container className="flex h-24 items-center justify-between gap-6">
+    <header
+      className={`fixed top-0 z-50 w-full transition-colors duration-300 ${
+        solid
+          ? "border-b border-[var(--color-border)] bg-[var(--color-surface)]/95 backdrop-blur"
+          : "border-b border-transparent bg-transparent"
+      }`}
+    >
+      <Container className="flex h-20 items-center justify-between gap-6">
         <a href="#top" className="flex shrink-0 items-center rounded-md">
           <Image
-            src="/logo-lockup.png"
+            src={solid ? "/logo-lockup.png" : "/logo-lockup-white.png"}
             alt="행복한길잡이 장애이해교육센터 로고"
             width={224}
             height={92}
             priority
-            className="h-16 w-auto sm:h-[4.5rem]"
+            className="h-14 w-auto sm:h-16"
           />
         </a>
 
@@ -42,7 +59,11 @@ export function SiteHeader() {
               <li key={item.href}>
                 <a
                   href={item.href}
-                  className="inline-flex min-h-11 items-center font-[family-name:var(--font-noto-serif-kr)] text-[15px] font-medium tracking-wide text-[var(--color-text)] transition-colors hover:text-[var(--color-primary)]"
+                  className={`inline-flex min-h-11 items-center text-[15px] font-medium tracking-wide transition-colors ${
+                    solid
+                      ? "text-[var(--color-text)] hover:text-[var(--color-primary)]"
+                      : "text-white/90 hover:text-white"
+                  }`}
                 >
                   {item.label}
                 </a>
@@ -51,18 +72,37 @@ export function SiteHeader() {
           </ul>
         </nav>
 
-        <a
-          href={PHONE_TEL}
-          className="hidden shrink-0 min-h-11 items-center gap-2 rounded-full bg-[var(--color-primary)] px-5 text-sm font-bold text-white transition-colors hover:bg-[var(--color-primary-hover)] lg:inline-flex"
-        >
-          <Phone aria-hidden="true" size={18} />
-          {PHONE_NUMBER}
-        </a>
+        {/* 데스크톱 CTA: 맨 위(투명)에서는 버튼 2개, 스크롤 후에는 전화 버튼 1개 */}
+        <div className="hidden shrink-0 items-center gap-3 lg:flex">
+          {!solid && (
+            <a
+              href={PHONE_TEL}
+              className="inline-flex min-h-11 items-center rounded-full border-2 border-white/80 px-5 text-sm font-bold text-white transition-colors hover:bg-white/10"
+            >
+              전화 문의
+            </a>
+          )}
+          <a
+            href={solid ? PHONE_TEL : "#contact"}
+            className="inline-flex min-h-11 items-center gap-2 rounded-full bg-[var(--color-accent)] px-5 text-sm font-bold text-[var(--color-secondary)] transition-colors hover:brightness-95"
+          >
+            {solid ? (
+              <>
+                <Phone aria-hidden="true" size={18} />
+                {PHONE_NUMBER}
+              </>
+            ) : (
+              "문의하기"
+            )}
+          </a>
+        </div>
 
         {/* 모바일 메뉴 버튼 */}
         <button
           type="button"
-          className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-md border border-[var(--color-border)] lg:hidden"
+          className={`inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-md border lg:hidden ${
+            solid ? "border-[var(--color-border)] text-[var(--color-text)]" : "border-white/60 text-white"
+          }`}
           aria-expanded={menuOpen}
           aria-controls="mobile-menu"
           onClick={() => setMenuOpen((open) => !open)}
@@ -102,7 +142,7 @@ export function SiteHeader() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setMenuOpen(false)}
-                className="flex min-h-12 items-center rounded-md px-4 font-[family-name:var(--font-noto-serif-kr)] text-base font-semibold text-[var(--color-text)]"
+                className="flex min-h-12 items-center rounded-md px-4 text-base font-medium text-[var(--color-text)]"
               >
                 {item.label}
               </a>

@@ -117,13 +117,39 @@ summary::-webkit-details-marker {
    꺼져 있으면 클래스가 절대 안 붙으므로 <noscript>에서 강제로 보이게 처리 */
 .reveal {
   opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(48px);
+  transition: opacity 1.3s cubic-bezier(0.19, 1, 0.22, 1), transform 1.3s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .reveal-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* 히어로 문구: 스크롤과 상관없이 페이지가 열리자마자 줄마다 순서대로
+   천천히 올라오며 나타나는 애니메이션 */
+@keyframes hero-line-in {
+  from {
+    opacity: 0;
+    transform: translateY(56px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-anim {
+  opacity: 0;
+  animation: hero-line-in 1.4s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-anim {
+    opacity: 1;
+    animation: none;
+    transform: none;
+  }
 }
 
 /* 카드에 은은한 호버 리프트 효과 */

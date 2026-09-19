@@ -1,98 +1,86 @@
 import Image from "next/image";
 import { Container } from "./container";
 
+const FOOTER_NAV = [
+  { href: "#about", label: "회사소개" },
+  { href: "#why-needed", label: "의무교육 안내" },
+  { href: "#programs", label: "체험 프로그램" },
+  { href: "#areas", label: "출강 지역" },
+  { href: "#faq", label: "FAQ" },
+  { href: "#contact", label: "문의하기" },
+];
+
 export function SiteFooter() {
   return (
-    <footer className="on-dark border-t border-[var(--color-border)] bg-[var(--color-secondary)] pb-16 text-white sm:pb-0">
-      <Container className="grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-3">
+    <footer className="on-dark bg-[var(--color-secondary)] pb-16 text-white sm:pb-0">
+      <Container className="flex flex-col gap-10 py-14 lg:flex-row lg:items-start lg:justify-between">
         <div>
           <Image
             src="/logo-lockup.png"
             alt="행복한길잡이 장애이해교육센터 로고"
             width={224}
             height={92}
-            className="h-auto w-48"
+            className="h-auto w-44"
           />
-          <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/80">
-            유치원, 초등학교, 중학교를 직접 찾아가서 장애 인식 개선
-            체험교육을 진행합니다.
-          </p>
-        </div>
-
-        <nav aria-label="바로가기">
-          <h2 className="text-sm font-bold text-white/90">바로가기</h2>
-          <ul className="mt-4 space-y-3 text-sm">
-            <li>
-              <a className="hover:underline" href="#about">
-                회사소개
-              </a>
-            </li>
-            <li>
-              <a className="hover:underline" href="#why-needed">
-                의무교육 안내
-              </a>
-            </li>
-            <li>
-              <a className="hover:underline" href="#programs">
-                체험 프로그램
-              </a>
-            </li>
-            <li>
-              <a className="hover:underline" href="#process">
-                진행 방식
-              </a>
-            </li>
-            <li>
-              <a className="hover:underline" href="#areas">
-                출강 지역
-              </a>
-            </li>
-            <li>
-              <a className="hover:underline" href="#class-flow">
-                수업 진행
-              </a>
-            </li>
-            <li>
-              <a className="hover:underline" href="#apply">
-                신청 절차
-              </a>
-            </li>
-            <li>
-              <a className="hover:underline" href="#faq">
-                자주 묻는 질문
-              </a>
-            </li>
-            <li>
-              <a className="hover:underline" href="#contact">
-                문의하기
-              </a>
-            </li>
-          </ul>
-        </nav>
-
-        <div>
-          <h2 className="text-sm font-bold text-white/90">연락처</h2>
-          <ul className="mt-4 space-y-3 text-sm text-white/80">
-            <li>대표 서태준</li>
-            <li>
-              전화{" "}
+          <div className="mt-5 space-y-2 text-base text-white/70">
+            <p>대표 | 서태준</p>
+            <p>
+              대표번호 |{" "}
               <a className="hover:underline" href="tel:0312368410">
                 031-236-8410
               </a>
-            </li>
-            <li>
-              이메일{" "}
+            </p>
+            <p>
+              이메일 |{" "}
               <a className="hover:underline" href="mailto:happyguide95@naver.com">
                 happyguide95@naver.com
               </a>
-            </li>
-          </ul>
+            </p>
+          </div>
+          <p className="mt-6 text-sm text-white/50">© 행복한길잡이 장애이해교육센터.</p>
+        </div>
+
+        <div className="flex flex-col gap-6 lg:items-end">
+          <nav aria-label="바로가기">
+            <ul className="flex flex-wrap gap-x-6 gap-y-2 text-base font-bold lg:justify-end">
+              {FOOTER_NAV.map((item) => (
+                <li key={item.href}>
+                  <a className="hover:underline" href={item.href}>
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <div className="flex items-center gap-3">
+            <a
+              href="https://blog.naver.com/happyguide95"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 p-2.5 transition-colors hover:bg-white/20"
+            >
+              <Image src="/blog-icon.png" alt="" width={28} height={28} className="h-full w-full object-contain" />
+              <span className="sr-only">네이버 블로그</span>
+            </a>
+            <a
+              href="https://open.kakao.com/o/seZ3yqOi"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-full bg-white/10 p-1.5 transition-colors hover:bg-white/20"
+            >
+              <Image src="/kakao-icon.png" alt="" width={32} height={32} className="h-full w-full rounded-full object-cover" />
+              <span className="sr-only">카카오톡 문의</span>
+            </a>
+            <a
+              href="#contact"
+              className="inline-flex min-h-11 items-center rounded-full bg-[var(--color-accent)] px-6 text-sm font-bold text-[var(--color-secondary)] transition-colors hover:brightness-95"
+            >
+              문의하기
+            </a>
+          </div>
         </div>
       </Container>
-
-      <div className="border-t border-white/15 py-5 text-center text-xs text-white/60">
-        © 행복한길잡이 장애이해교육센터.
-      </div>
     </footer>
   );
 }

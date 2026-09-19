@@ -101,17 +101,30 @@ export default function Home() {
         />
 
         <Container className="relative py-20 sm:py-28">
-          <Reveal className="mx-auto max-w-2xl text-center">
+          <div className="mx-auto max-w-2xl text-center">
             <h1 className="text-4xl font-black leading-[1.2] sm:text-5xl">
-              <span className="text-[var(--color-accent)]">연 1회 의무교육</span>,
+              <span
+                className="hero-anim inline-block text-[var(--color-accent)]"
+                style={{ animationDelay: "0ms" }}
+              >
+                연 1회 의무교육,
+              </span>
               <br />
-              저희가 교실로 찾아갑니다
+              <span className="hero-anim inline-block" style={{ animationDelay: "280ms" }}>
+                저희가 교실로 찾아갑니다
+              </span>
             </h1>
-            <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-white/80">
+            <p
+              className="hero-anim mx-auto mt-6 max-w-xl text-lg leading-relaxed text-white/80"
+              style={{ animationDelay: "620ms" }}
+            >
               유치원·초등·중학교로 찾아가는 장애인식개선 체험교육. 문의
               한 번으로 일정과 견적까지 안내해 드려요.
             </p>
-            <div className="mt-9 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+            <div
+              className="hero-anim mt-9 flex flex-col items-center gap-4 sm:flex-row sm:justify-center"
+              style={{ animationDelay: "950ms" }}
+            >
               <a
                 href="tel:0312368410"
                 className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[var(--color-accent)] px-7 text-base font-bold text-[var(--color-secondary)] transition-colors hover:brightness-95"
@@ -126,7 +139,7 @@ export default function Home() {
                 문의 양식 작성하기
               </a>
             </div>
-          </Reveal>
+          </div>
         </Container>
       </section>
 
@@ -147,7 +160,7 @@ export default function Home() {
 
           <div className="mt-10 grid gap-6 sm:grid-cols-3">
             {ABOUT_VALUES.map((value, index) => (
-              <Reveal key={value.title} delay={index * 80}>
+              <Reveal key={value.title} delay={index * 140}>
                 <div className="hover-lift h-full rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-alt)] p-7 text-center">
                   <h3 className="text-xl font-bold text-[var(--color-primary-hover)]">
                     {value.title}
@@ -236,7 +249,7 @@ export default function Home() {
               </li>
             </ul>
           </Reveal>
-          <Reveal delay={120}>
+          <Reveal delay={180}>
             <div
               aria-hidden="true"
               className="flex h-64 flex-col items-center justify-center gap-2 rounded-3xl border border-dashed border-[var(--color-border)] bg-[var(--color-surface-alt)] text-[var(--color-text-muted)] sm:h-72"
@@ -350,7 +363,7 @@ export default function Home() {
           {/* 4단계 타임라인 */}
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {CLASS_FLOW_STEPS.map((step, index) => (
-              <Reveal key={step.title} delay={index * 80}>
+              <Reveal key={step.title} delay={index * 140}>
                 <div className="hover-lift flex h-full flex-col rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-7">
                   <span
                     aria-hidden="true"
@@ -386,7 +399,7 @@ export default function Home() {
                 </p>
               </div>
             </Reveal>
-            <Reveal delay={80}>
+            <Reveal delay={150}>
               <div className="h-full rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-alt)] p-7">
                 <h3 className="text-lg font-bold text-[var(--color-text)]">
                   수업 후 만족도 조사
@@ -407,7 +420,7 @@ export default function Home() {
             </div>
             <div className="mt-4 grid gap-4 sm:grid-cols-3">
               {["도착·설치", "체험 로테이션", "정리·마무리"].map((label, index) => (
-                <Reveal key={label} delay={index * 80}>
+                <Reveal key={label} delay={index * 140}>
                   <div className="flex aspect-[4/3] flex-col items-center justify-center gap-2 rounded-2xl border border-dashed border-[var(--color-border)] bg-[var(--color-surface-alt)] text-[var(--color-text-muted)]">
                     <Camera aria-hidden="true" size={26} />
                     <p className="text-sm">{label} 사진 (준비 중)</p>
@@ -431,7 +444,7 @@ export default function Home() {
           <ol className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {APPLY_STEPS.map((item, index) => (
               <li key={item.title}>
-                <Reveal delay={index * 80}>
+                <Reveal delay={index * 140}>
                   <div className="hover-lift flex h-full flex-col gap-3 rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-7">
                     <span
                       aria-hidden="true"
@@ -470,7 +483,7 @@ export default function Home() {
 
           <div className="mt-10 space-y-3">
             {FAQS.map((item, index) => (
-              <Reveal key={item.q} delay={Math.min(index * 60, 240)}>
+              <Reveal key={item.q} delay={Math.min(index * 100, 400)}>
                 <details className="group rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] px-6 py-2 open:pb-5">
                   <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-3 text-lg font-bold text-[var(--color-text)]">
                     {item.q}
@@ -508,7 +521,7 @@ export default function Home() {
               </div>
             </Reveal>
 
-            <Reveal delay={120}>
+            <Reveal delay={200}>
               <p className="text-sm font-bold text-[var(--color-accent)]">문의하기</p>
               <h2 id="contact-heading" className="mt-3 text-3xl font-black sm:text-4xl">
                 지금 바로 문의해 주세요

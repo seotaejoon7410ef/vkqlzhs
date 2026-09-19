@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Noto_Sans_KR, Noto_Serif_KR } from "next/font/google";
+import { Noto_Sans_KR } from "next/font/google";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { FloatingQuickMenu } from "@/components/floating-quick-menu";
@@ -11,14 +11,6 @@ const notoSansKr = Noto_Sans_KR({
   // 800(extrabold)을 빼먹으면 브라우저가 700을 가짜로 두껍게 합성해서
   // 특히 한글에서 뭉개져 보입니다. 실제 800 굵기 폰트 파일을 로드합니다.
   weight: ["400", "500", "700", "800", "900"],
-  display: "swap",
-});
-
-// 상단 메뉴바에 세련된 느낌을 주기 위한 세리프 포인트 폰트 (본문은 계속 산세리프 사용)
-const notoSerifKr = Noto_Serif_KR({
-  variable: "--font-noto-serif-kr",
-  subsets: ["latin"],
-  weight: ["500", "600"],
   display: "swap",
 });
 
@@ -35,7 +27,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="ko"
-      className={`${notoSansKr.variable} ${notoSerifKr.variable} h-full antialiased`}
+      className={`${notoSansKr.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
         {/* 자바스크립트가 꺼져 있으면 Reveal 애니메이션 클래스가 절대 안 붙으므로,

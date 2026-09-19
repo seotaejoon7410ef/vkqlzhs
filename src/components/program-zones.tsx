@@ -72,7 +72,7 @@ export function ProgramZones() {
 
         <div className="mt-8 grid gap-6 sm:grid-cols-2">
           {ZONES.map((zone, index) => (
-            <Reveal key={zone.title} delay={index * 80}>
+            <Reveal key={zone.title} delay={index * 140}>
               <div className="hover-lift flex min-h-64 flex-col justify-between rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface)] p-8">
                 <div className="flex items-center justify-between">
                   <span
