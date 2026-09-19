@@ -6,14 +6,19 @@ import {
   FileCheck,
   Mail,
   MapPin,
+  Megaphone,
+  PackageCheck,
   PartyPopper,
   Phone,
-  School,
+  RefreshCcw,
+  // School, -- "함께한 학교" 섹션을 다시 쓸 때 주석 해제
+  Truck,
   Users,
 } from "lucide-react";
 import { Container } from "@/components/container";
 import { ProgramZones } from "@/components/program-zones";
 import { InquiryForm } from "@/components/inquiry-form";
+import { DraftBadge } from "@/components/draft-badge";
 
 const ABOUT_VALUES = [
   {
@@ -32,8 +37,15 @@ const ABOUT_VALUES = [
 
 const MAIN_AREAS = ["서울", "경기", "인천", "충남", "충북"];
 
-// 실제 협력 학교(원) 목록으로 교체해주세요. 지어낸 이름이 아니라 빈 자리만 만들어둡니다.
-const PARTNER_SCHOOLS_PLACEHOLDER_COUNT = 8;
+// "함께한 학교" 섹션 복원 시 다시 사용 (아래 JSX 주석과 세트)
+// const PARTNER_SCHOOLS_PLACEHOLDER_COUNT = 8;
+
+const CLASS_FLOW_STEPS = [
+  { icon: Truck, title: "도착·설치", desc: "강사가 학교에 도착해 체험 도구를 설치합니다." },
+  { icon: Megaphone, title: "안내", desc: "학생들에게 오늘 체험할 내용을 간단히 안내합니다." },
+  { icon: RefreshCcw, title: "학급별 존 체험 로테이션", desc: "학급별로 순서를 정해 4개 존을 돌아가며 체험합니다." },
+  { icon: PackageCheck, title: "정리·마무리", desc: "체험 도구를 정리하고 오늘 배운 내용을 간단히 되짚어봅니다." },
+];
 
 const APPLY_STEPS = [
   { icon: Phone, title: "문의", desc: "전화, 이메일, 문의 양식으로 학교와 희망 날짜를 남겨주세요." },
@@ -264,7 +276,10 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* 5-1. 함께한 학교 (실제 자료 필요 — 지금은 자리만) */}
+      {/* 5-1. 함께한 학교 — 잠시 숨김 (아래 "수업은 이렇게 진행돼요" 섹션으로 교체).
+          나중에 다시 쓸 때: 위 import의 School 주석 해제, PARTNER_SCHOOLS_PLACEHOLDER_COUNT 주석 해제,
+          아래 블록의 주석을 풀면 됩니다.
+
       <section
         id="schools"
         aria-labelledby="schools-heading"
@@ -300,6 +315,93 @@ export default function Home() {
               </li>
             ))}
           </ul>
+        </Container>
+      </section>
+      */}
+
+      {/* 5-1. 수업은 이렇게 진행돼요 */}
+      <section
+        id="class-flow"
+        aria-labelledby="class-flow-heading"
+        className="scroll-mt-24 py-16 sm:py-20"
+      >
+        <Container>
+          <p className="text-sm font-bold text-[var(--color-primary-hover)]">수업 진행</p>
+          <h2 id="class-flow-heading" className="mt-3 text-3xl font-black text-[var(--color-text)]">
+            수업은 이렇게 진행돼요
+          </h2>
+          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-[var(--color-text-muted)]">
+            학교(원)를 찾아가 진행하는 하루 수업이 어떤 흐름으로
+            이루어지는지 안내해 드려요.
+          </p>
+
+          {/* 4단계 타임라인 */}
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {CLASS_FLOW_STEPS.map((step, index) => (
+              <div
+                key={step.title}
+                className="flex flex-col rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-7"
+              >
+                <span
+                  aria-hidden="true"
+                  className="flex h-11 w-11 items-center justify-center rounded-full bg-[var(--color-primary)] text-base font-extrabold text-white"
+                >
+                  {index + 1}
+                </span>
+                <div className="mt-4 flex items-center gap-2">
+                  <step.icon aria-hidden="true" size={20} className="text-[var(--color-primary-hover)]" />
+                  <p className="font-bold text-[var(--color-text)]">{step.title}</p>
+                </div>
+                <div className="mt-2">
+                  <DraftBadge />
+                </div>
+                <p className="mt-3 text-sm leading-relaxed text-[var(--color-text-muted)]">
+                  {step.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* 선생님이 준비하실 것 */}
+          <div className="mt-8 grid gap-6 sm:grid-cols-2">
+            <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-alt)] p-7">
+              <h3 className="text-lg font-bold text-[var(--color-text)]">
+                선생님이 준비하실 것
+              </h3>
+              <p className="mt-3 leading-relaxed text-[var(--color-text-muted)]">
+                공간(강당 또는 교실)과 참여할 학급 수만 알려주시면 돼요.
+                체험 장비와 강사는 저희가 모두 준비해서 찾아갑니다.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-alt)] p-7">
+              <h3 className="text-lg font-bold text-[var(--color-text)]">
+                수업 후 만족도 조사
+              </h3>
+              <p className="mt-3 leading-relaxed text-[var(--color-text-muted)]">
+                수업이 끝나면 간단한 만족도 조사로 선생님과 학생들의 의견을
+                듣고, 다음 교육에 반영합니다.
+              </p>
+            </div>
+          </div>
+
+          {/* 수업 사진 자리 */}
+          <div className="mt-8">
+            <div className="flex items-center gap-2">
+              <p className="text-sm font-bold text-[var(--color-text)]">수업 사진</p>
+              <DraftBadge />
+            </div>
+            <div className="mt-4 grid gap-4 sm:grid-cols-3">
+              {["도착·설치", "체험 로테이션", "정리·마무리"].map((label) => (
+                <div
+                  key={label}
+                  className="flex aspect-[4/3] flex-col items-center justify-center gap-2 rounded-2xl border border-dashed border-[var(--color-border)] bg-[var(--color-surface-alt)] text-[var(--color-text-muted)]"
+                >
+                  <Camera aria-hidden="true" size={26} />
+                  <p className="text-sm">{label} 사진 (준비 중)</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </Container>
       </section>
 
@@ -377,14 +479,13 @@ export default function Home() {
         <Container>
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <div className="flex justify-center lg:justify-start">
-              <div className="flex h-64 w-64 items-center justify-center rounded-3xl bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-secondary-hover)] sm:h-72 sm:w-72">
+              <div className="relative h-80 w-64 overflow-hidden rounded-3xl sm:h-96 sm:w-72">
                 <Image
-                  src="/logo-mark.png"
-                  alt=""
-                  aria-hidden="true"
-                  width={140}
-                  height={140}
-                  className="h-32 w-32 sm:h-36 sm:w-36"
+                  src="/contact-photo.jpg"
+                  alt="체육관에서 진행한 장애 인식 개선 체험교육 현장 — 휠체어 체험 구역과 대형 미로형 체험 부스가 설치되어 있다"
+                  fill
+                  sizes="(min-width: 640px) 288px, 256px"
+                  className="object-cover object-[center_65%]"
                 />
               </div>
             </div>

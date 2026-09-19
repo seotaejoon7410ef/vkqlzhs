@@ -53,8 +53,8 @@ export function SiteFooter() {
               </a>
             </li>
             <li>
-              <a className="hover:underline" href="#schools">
-                함께한 학교
+              <a className="hover:underline" href="#class-flow">
+                수업 진행
               </a>
             </li>
             <li>
@@ -100,8 +100,7 @@ export function SiteFooter() {
       </Container>
 
       <div className="border-t border-white/15 py-5 text-center text-xs text-white/60">
-        © {new Date().getFullYear()} 행복한길잡이 장애이해교육센터. 대표
-        서태준
+        © {new Date().getFullYear()} 행복한길잡이 장애이해교육센터.
       </div>
     </footer>
   );
