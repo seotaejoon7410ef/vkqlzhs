@@ -5,8 +5,7 @@ const PHONE_NUMBER = "031-236-8410";
 const PHONE_TEL = "tel:0312368410";
 
 const KAKAO_URL = "https://open.kakao.com/o/seZ3yqOi";
-// TODO: 실제 네이버 블로그 주소로 교체해주세요 (예: https://blog.naver.com/아이디)
-const BLOG_URL = "";
+const BLOG_URL = "https://blog.naver.com/happyguide95";
 
 function QuickMenuButton({
   href,
@@ -26,7 +25,7 @@ function QuickMenuButton({
       <span
         aria-disabled="true"
         title={`${label} 링크 준비 중`}
-        className={`flex h-14 w-14 items-center justify-center overflow-hidden rounded-2xl ${bgClass ?? ""} opacity-50`}
+        className={`flex h-12 w-12 items-center justify-center overflow-hidden rounded-2xl sm:h-14 sm:w-14 ${bgClass ?? ""} opacity-50`}
       >
         {children}
         <span className="sr-only">{label} (링크 준비 중)</span>
@@ -39,7 +38,7 @@ function QuickMenuButton({
       href={href}
       target={href.startsWith("http") ? "_blank" : undefined}
       rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-      className={`flex h-14 w-14 items-center justify-center overflow-hidden rounded-2xl shadow-lg transition-transform hover:scale-105 ${bgClass ?? ""}`}
+      className={`flex h-12 w-12 items-center justify-center overflow-hidden rounded-2xl shadow-lg transition-transform hover:scale-105 sm:h-14 sm:w-14 ${bgClass ?? ""}`}
     >
       {children}
       <span className="sr-only">{label}</span>
@@ -50,14 +49,15 @@ function QuickMenuButton({
 export function FloatingQuickMenu() {
   return (
     <>
-      {/* 데스크톱/태블릿: 화면 오른쪽 세로 퀵메뉴 */}
-      <div className="fixed right-6 top-1/2 z-40 hidden -translate-y-1/2 flex-col gap-3 sm:flex">
+      {/* 화면 오른쪽 세로 퀵메뉴 (모바일 포함 항상 표시) */}
+      <div className="fixed right-3 top-1/2 z-40 flex -translate-y-1/2 flex-col gap-2 sm:right-6 sm:gap-3">
         <QuickMenuButton
           href={PHONE_TEL}
           label={`전화 문의 ${PHONE_NUMBER}`}
           bgClass="bg-[var(--color-primary)]"
         >
-          <Phone aria-hidden="true" size={30} className="text-white" />
+          <Phone aria-hidden="true" size={26} className="text-white sm:hidden" />
+          <Phone aria-hidden="true" size={30} className="hidden text-white sm:block" />
         </QuickMenuButton>
 
         <QuickMenuButton href={KAKAO_URL} label="카카오톡 문의">
@@ -66,7 +66,7 @@ export function FloatingQuickMenu() {
             alt=""
             width={56}
             height={56}
-            className="h-14 w-14 object-cover"
+            className="h-12 w-12 object-cover sm:h-14 sm:w-14"
           />
         </QuickMenuButton>
 
@@ -76,7 +76,7 @@ export function FloatingQuickMenu() {
             alt=""
             width={44}
             height={44}
-            className="h-11 w-11 object-contain"
+            className="h-9 w-9 object-contain sm:h-11 sm:w-11"
           />
         </QuickMenuButton>
       </div>
