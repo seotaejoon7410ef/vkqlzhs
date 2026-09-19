@@ -59,7 +59,7 @@ export function SiteHeader() {
               <li key={item.href}>
                 <a
                   href={item.href}
-                  className={`inline-flex min-h-11 items-center text-[15px] font-medium tracking-wide transition-colors ${
+                  className={`inline-flex min-h-11 items-center text-lg font-medium tracking-wide transition-colors ${
                     solid
                       ? "text-[var(--color-text)] hover:text-[var(--color-primary)]"
                       : "text-white/90 hover:text-white"
@@ -142,7 +142,7 @@ export function SiteHeader() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setMenuOpen(false)}
-                className="flex min-h-12 items-center rounded-md px-4 text-base font-medium text-[var(--color-text)]"
+                className="flex min-h-12 items-center rounded-md px-4 text-lg font-medium text-[var(--color-text)]"
               >
                 {item.label}
               </a>

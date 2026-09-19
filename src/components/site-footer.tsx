@@ -22,7 +22,7 @@ export function SiteFooter() {
             height={92}
             className="h-auto w-44"
           />
-          <div className="mt-5 space-y-2 text-base text-white/70">
+          <div className="mt-5 space-y-2 text-lg text-white/70">
             <p>대표 | 서태준</p>
             <p>
               대표번호 |{" "}
@@ -37,12 +37,12 @@ export function SiteFooter() {
               </a>
             </p>
           </div>
-          <p className="mt-6 text-sm text-white/50">© 행복한길잡이 장애이해교육센터.</p>
+          <p className="mt-6 text-base text-white/50">© 행복한길잡이 장애이해교육센터.</p>
         </div>
 
         <div className="flex flex-col gap-6 lg:items-end">
           <nav aria-label="바로가기">
-            <ul className="flex flex-wrap gap-x-6 gap-y-2 text-base font-bold lg:justify-end">
+            <ul className="flex flex-wrap gap-x-6 gap-y-2 text-lg font-bold lg:justify-end">
               {FOOTER_NAV.map((item) => (
                 <li key={item.href}>
                   <a className="hover:underline" href={item.href}>
@@ -74,7 +74,7 @@ export function SiteFooter() {
             </a>
             <a
               href="#contact"
-              className="inline-flex min-h-11 items-center rounded-full bg-[var(--color-accent)] px-6 text-sm font-bold text-[var(--color-secondary)] transition-colors hover:brightness-95"
+              className="inline-flex min-h-11 items-center rounded-full bg-[var(--color-accent)] px-6 text-base font-bold text-[var(--color-secondary)] transition-colors hover:brightness-95"
             >
               문의하기
             </a>
