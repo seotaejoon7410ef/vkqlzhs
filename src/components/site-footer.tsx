@@ -27,7 +27,7 @@ export function SiteFooter() {
           <ul className="mt-4 space-y-3 text-sm">
             <li>
               <a className="hover:underline" href="#about">
-                소개
+                회사소개
               </a>
             </li>
             <li>

@@ -7,7 +7,7 @@ import { Container } from "./container";
 
 // 헤더에는 선생님이 가장 자주 찾을 항목만 노출 (전체 섹션은 페이지 스크롤/푸터에서 접근)
 const NAV_ITEMS = [
-  { href: "#about", label: "소개" },
+  { href: "#about", label: "회사소개" },
   { href: "#why-needed", label: "왜 필요한가" },
   { href: "#programs", label: "체험 프로그램" },
   { href: "#areas", label: "출강 지역" },
@@ -23,10 +23,10 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-[var(--color-border)] bg-[var(--color-surface)]/95 backdrop-blur">
-      <Container className="flex h-20 items-center justify-between gap-4">
+      <Container className="flex h-24 items-center justify-between gap-6">
         <a
           href="#top"
-          className="flex shrink-0 items-center gap-2.5 rounded-md text-lg font-extrabold tracking-tight text-[var(--color-secondary)]"
+          className="flex shrink-0 items-center gap-3 rounded-md text-lg font-bold tracking-wide text-[var(--color-secondary)]"
         >
           <Image
             src="/logo-mark.png"
@@ -38,7 +38,7 @@ export function SiteHeader() {
           />
           <span>
             행복한길잡이
-            <span className="block text-xs font-medium text-[var(--color-text-muted)]">
+            <span className="mt-0.5 block text-xs font-normal tracking-normal text-[var(--color-text-muted)]">
               유치원·초등·중학교 찾아가는 장애이해교육
             </span>
           </span>
@@ -46,12 +46,12 @@ export function SiteHeader() {
 
         {/* 데스크톱 내비게이션 (페이지 안 섹션으로 바로 이동) */}
         <nav aria-label="주요 메뉴" className="hidden lg:block">
-          <ul className="flex items-center gap-1">
+          <ul className="flex items-center gap-7">
             {NAV_ITEMS.map((item) => (
               <li key={item.href}>
                 <a
                   href={item.href}
-                  className="inline-flex min-h-11 items-center rounded-md px-3 text-[15px] font-semibold text-[var(--color-text)] hover:bg-[var(--color-surface-alt)]"
+                  className="inline-flex min-h-11 items-center text-[15px] font-medium tracking-wide text-[var(--color-text)] transition-colors hover:text-[var(--color-primary)]"
                 >
                   {item.label}
                 </a>
