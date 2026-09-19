@@ -131,14 +131,15 @@ export default function Home() {
               <GraduationCap aria-hidden="true" size={18} />
               초등학교로 찾아가는 장애 인식 개선 체험교육
             </p>
-            <h1 className="mt-6 text-4xl font-extrabold leading-tight text-[var(--color-text)] sm:text-5xl">
-              몸으로 배우는 배리어프리 교실,
+            <h1 className="mt-6 text-5xl font-black leading-[1.15] tracking-tight text-[var(--color-text)] sm:text-6xl">
+              장애를 몸으로 이해하는 시간
               <br />
               <span className="text-[var(--color-primary)]">행복한길잡이</span>
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-[var(--color-text-muted)]">
-              행복한길잡이가 학교로 직접 찾아갑니다. 아이들은 체험을 통해
-              장애를 자연스럽게 이해하고, 서로를 존중하는 법을 배웁니다.
+            <p className="mt-6 max-w-md text-xl font-medium leading-relaxed text-[var(--color-text-muted)]">
+              행복한길잡이가 학교로 직접 찾아갑니다.
+              <br />
+              아이들은 체험으로 장애를 이해하고, 서로를 존중하는 법을 배웁니다.
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <a

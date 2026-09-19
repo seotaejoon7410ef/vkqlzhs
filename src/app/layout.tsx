@@ -10,7 +10,9 @@ import "./globals.css";
 const notoSansKr = Noto_Sans_KR({
   variable: "--font-noto-sans-kr",
   subsets: ["latin"],
-  weight: ["400", "500", "700", "900"],
+  // 800(extrabold)을 빼먹으면 브라우저가 700을 가짜로 두껍게 합성해서
+  // 특히 한글에서 뭉개져 보입니다. 실제 800 굵기 폰트 파일을 로드합니다.
+  weight: ["400", "500", "700", "800", "900"],
   display: "swap",
 });
 
