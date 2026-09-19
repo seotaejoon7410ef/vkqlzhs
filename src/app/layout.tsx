@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Noto_Sans_KR } from "next/font/google";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
-import { SkipLink } from "@/components/skip-link";
 import { FloatingQuickMenu } from "@/components/floating-quick-menu";
 import "./globals.css";
 
@@ -28,7 +27,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="ko" className={`${notoSansKr.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col">
-        <SkipLink />
         <SiteHeader />
         <main id="main-content" className="flex-1">
           {children}

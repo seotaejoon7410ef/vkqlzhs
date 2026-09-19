@@ -108,24 +108,6 @@ textarea:focus-visible,
   outline-color: #ffffff;
 }
 
-/* 스킵 링크: 평소 화면 밖으로 숨기고, 키보드 포커스 시에만 노출 */
-.skip-link {
-  position: absolute;
-  left: 1rem;
-  top: -3rem;
-  z-index: 100;
-  background: var(--color-secondary);
-  color: #ffffff;
-  padding: 0.75rem 1.25rem;
-  border-radius: 0.5rem;
-  font-weight: 700;
-  transition: top 0.15s ease;
-}
-
-.skip-link:focus {
-  top: 1rem;
-}
-
 /* FAQ 아코디언: 기본 브라우저 화살표 대신 커스텀 ChevronDown 아이콘만 표시 */
 summary::-webkit-details-marker {
   display: none;
