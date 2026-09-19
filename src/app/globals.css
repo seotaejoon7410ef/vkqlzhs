@@ -113,6 +113,29 @@ summary::-webkit-details-marker {
   display: none;
 }
 
+/* 스크롤 시 부드럽게 나타나는 효과 (Reveal 컴포넌트). 자바스크립트가
+   꺼져 있으면 클래스가 절대 안 붙으므로 <noscript>에서 강제로 보이게 처리 */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 카드에 은은한 호버 리프트 효과 */
+.hover-lift {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px -16px rgb(80 48 184 / 0.25);
+}
+
 /* 모션 최소화 선호 시 애니메이션·트랜지션 억제 (전정기관 장애 등 접근성 고려) */
 @media (prefers-reduced-motion: reduce) {
   html {

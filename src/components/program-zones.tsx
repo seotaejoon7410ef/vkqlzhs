@@ -7,6 +7,7 @@ import {
   Presentation,
 } from "lucide-react";
 import { DraftBadge } from "./draft-badge";
+import { Reveal } from "./reveal";
 
 const ZONES = [
   {
@@ -70,46 +71,45 @@ export function ProgramZones() {
         </p>
 
         <div className="mt-8 grid gap-6 sm:grid-cols-2">
-          {ZONES.map((zone) => (
-            <div
-              key={zone.title}
-              className="flex min-h-64 flex-col justify-between rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface)] p-8"
-            >
-              <div className="flex items-center justify-between">
+          {ZONES.map((zone, index) => (
+            <Reveal key={zone.title} delay={index * 80}>
+              <div className="hover-lift flex min-h-64 flex-col justify-between rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface)] p-8">
+                <div className="flex items-center justify-between">
+                  <span
+                    aria-hidden="true"
+                    className="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--color-primary-tint)] text-[var(--color-primary-hover)]"
+                  >
+                    <zone.icon size={24} />
+                  </span>
+                  <div className="flex flex-wrap justify-end gap-2">
+                    {zone.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-full bg-[var(--color-surface-alt)] px-3 py-1 text-xs font-bold text-[var(--color-text-muted)]"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="mt-6">
+                  <h4 className="text-2xl font-black text-[var(--color-text)]">
+                    {zone.title}
+                  </h4>
+                  <p className="mt-3 leading-relaxed text-[var(--color-text-muted)]">
+                    {zone.desc}
+                  </p>
+                </div>
+
                 <span
                   aria-hidden="true"
-                  className="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--color-primary-tint)] text-[var(--color-primary-hover)]"
+                  className="mt-6 flex h-10 w-10 items-center justify-center self-end rounded-full bg-[var(--color-primary)] text-white"
                 >
-                  <zone.icon size={24} />
+                  <ChevronRight size={20} />
                 </span>
-                <div className="flex flex-wrap justify-end gap-2">
-                  {zone.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full bg-[var(--color-surface-alt)] px-3 py-1 text-xs font-bold text-[var(--color-text-muted)]"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
               </div>
-
-              <div className="mt-6">
-                <h4 className="text-2xl font-black text-[var(--color-text)]">
-                  {zone.title}
-                </h4>
-                <p className="mt-3 leading-relaxed text-[var(--color-text-muted)]">
-                  {zone.desc}
-                </p>
-              </div>
-
-              <span
-                aria-hidden="true"
-                className="mt-6 flex h-10 w-10 items-center justify-center self-end rounded-full bg-[var(--color-primary)] text-white"
-              >
-                <ChevronRight size={20} />
-              </span>
-            </div>
+            </Reveal>
           ))}
         </div>
         <p className="mt-4 text-xs text-[var(--color-text-muted)]">

@@ -38,6 +38,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${notoSansKr.variable} ${notoSerifKr.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
+        {/* 자바스크립트가 꺼져 있으면 Reveal 애니메이션 클래스가 절대 안 붙으므로,
+            콘텐츠가 숨겨진 채로 남지 않도록 강제로 보이게 처리 */}
+        <noscript>
+          <style>{".reveal{opacity:1 !important;transform:none !important;}"}</style>
+        </noscript>
         <SiteHeader />
         <main id="main-content" className="flex-1">
           {children}
