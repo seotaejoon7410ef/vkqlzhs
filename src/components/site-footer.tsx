@@ -17,8 +17,8 @@ export function SiteFooter() {
           <p className="mt-3 text-lg font-extrabold">행복한길잡이</p>
           <p className="mt-1 text-sm text-white/70">장애이해교육센터</p>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/80">
-            전국 초등학교를 직접 찾아가서 장애 인식 개선 체험교육을
-            진행합니다.
+            유치원, 초등학교, 중학교를 직접 찾아가서 장애 인식 개선
+            체험교육을 진행합니다.
           </p>
         </div>
 
@@ -26,8 +26,8 @@ export function SiteFooter() {
           <h2 className="text-sm font-bold text-white/90">바로가기</h2>
           <ul className="mt-4 space-y-3 text-sm">
             <li>
-              <a className="hover:underline" href="#about">
-                소개
+              <a className="hover:underline" href="#why-needed">
+                왜 필요한가
               </a>
             </li>
             <li>
@@ -36,8 +36,23 @@ export function SiteFooter() {
               </a>
             </li>
             <li>
-              <a className="hover:underline" href="#gallery">
-                체험 사진
+              <a className="hover:underline" href="#process">
+                진행 방식
+              </a>
+            </li>
+            <li>
+              <a className="hover:underline" href="#areas">
+                출강 지역
+              </a>
+            </li>
+            <li>
+              <a className="hover:underline" href="#schools">
+                함께한 학교
+              </a>
+            </li>
+            <li>
+              <a className="hover:underline" href="#apply">
+                신청 절차
               </a>
             </li>
             <li>

@@ -5,12 +5,12 @@ import { Phone } from "lucide-react";
 import { useState } from "react";
 import { Container } from "./container";
 
+// 헤더에는 선생님이 가장 자주 찾을 항목만 노출 (전체 섹션은 페이지 스크롤/푸터에서 접근)
 const NAV_ITEMS = [
-  { href: "#about", label: "소개" },
+  { href: "#why-needed", label: "왜 필요한가" },
   { href: "#programs", label: "체험 프로그램" },
-  { href: "#gallery", label: "체험 사진" },
-  { href: "#why", label: "선택 이유" },
-  { href: "#faq", label: "자주 묻는 질문" },
+  { href: "#areas", label: "출강 지역" },
+  { href: "#faq", label: "FAQ" },
   { href: "#contact", label: "문의하기" },
 ];
 
@@ -38,7 +38,7 @@ export function SiteHeader() {
           <span>
             행복한길잡이
             <span className="block text-xs font-medium text-[var(--color-text-muted)]">
-              장애이해교육센터
+              유치원·초등·중학교 찾아가는 장애이해교육
             </span>
           </span>
         </a>
