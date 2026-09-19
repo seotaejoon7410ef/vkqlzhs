@@ -48,7 +48,7 @@ const CLASS_FLOW_STEPS = [
 ];
 
 const APPLY_STEPS = [
-  { icon: Phone, title: "문의", desc: "전화, 이메일, 문의 양식으로 학교와 희망 날짜를 남겨주세요." },
+  { icon: Phone, title: "문의", desc: "전화, 문자, 이메일로 학교와 희망 날짜를 남겨주세요." },
   { icon: CalendarCheck, title: "일정·견적 안내", desc: "담당자가 연락드려 일정을 잡고 견적을 안내합니다." },
   { icon: Users, title: "수업 진행", desc: "정해진 날짜에 학교(원)로 찾아가 체험교육을 진행합니다." },
   { icon: PartyPopper, title: "만족도 조사", desc: "교육 후 의견을 들어 다음 교육을 더 좋게 만듭니다." },
@@ -188,7 +188,7 @@ export default function Home() {
       <section
         id="programs"
         aria-labelledby="programs-heading"
-        className="scroll-mt-24 bg-[var(--color-surface-alt)] py-16 sm:py-20"
+        className="scroll-mt-24 py-16 sm:py-20"
       >
         <Container>
           <p className="text-sm font-bold text-[var(--color-primary-hover)]">체험 프로그램</p>
@@ -244,7 +244,7 @@ export default function Home() {
       <section
         id="areas"
         aria-labelledby="areas-heading"
-        className="scroll-mt-24 bg-[var(--color-surface-alt)] py-16 sm:py-20"
+        className="scroll-mt-24 py-16 sm:py-20"
       >
         <Container>
           <div className="flex items-center gap-3">
@@ -441,7 +441,7 @@ export default function Home() {
       <section
         id="faq"
         aria-labelledby="faq-heading"
-        className="scroll-mt-24 bg-[var(--color-surface-alt)] py-16 sm:py-20"
+        className="scroll-mt-24 py-16 sm:py-20"
       >
         <Container className="max-w-3xl">
           <p className="text-sm font-bold text-[var(--color-primary-hover)]">자주 묻는 질문</p>
@@ -479,12 +479,12 @@ export default function Home() {
         <Container>
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <div className="flex justify-center lg:justify-start">
-              <div className="relative h-80 w-64 overflow-hidden rounded-3xl sm:h-96 sm:w-72">
+              <div className="relative h-96 w-80 overflow-hidden rounded-3xl sm:h-[30rem] sm:w-96 lg:h-[34rem] lg:w-[26rem]">
                 <Image
                   src="/contact-photo.jpg"
                   alt="체육관에서 진행한 장애 인식 개선 체험교육 현장 — 휠체어 체험 구역과 대형 미로형 체험 부스가 설치되어 있다"
                   fill
-                  sizes="(min-width: 640px) 288px, 256px"
+                  sizes="(min-width: 1024px) 416px, (min-width: 640px) 384px, 320px"
                   className="object-cover object-[center_65%]"
                 />
               </div>
