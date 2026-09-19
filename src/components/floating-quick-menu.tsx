@@ -4,8 +4,7 @@ import { Phone } from "lucide-react";
 const PHONE_NUMBER = "031-236-8410";
 const PHONE_TEL = "tel:0312368410";
 
-// TODO: 실제 카카오톡 채널 주소로 교체해주세요 (예: https://pf.kakao.com/_아이디)
-const KAKAO_URL = "";
+const KAKAO_URL = "https://open.kakao.com/o/seZ3yqOi";
 // TODO: 실제 네이버 블로그 주소로 교체해주세요 (예: https://blog.naver.com/아이디)
 const BLOG_URL = "";
 
