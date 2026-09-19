@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -21,14 +22,16 @@ export function SiteHeader() {
       <Container className="flex h-20 items-center justify-between">
         <Link
           href="/"
-          className="flex items-center gap-2 rounded-md text-lg font-extrabold tracking-tight text-[var(--color-secondary)]"
+          className="flex items-center gap-2.5 rounded-md text-lg font-extrabold tracking-tight text-[var(--color-secondary)]"
         >
-          <span
-            aria-hidden="true"
-            className="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--color-primary)] text-base font-bold text-white"
-          >
-            행
-          </span>
+          <Image
+            src="/logo-mark.png"
+            alt="행복한길잡이 로고: 나침반을 감싼 두 손"
+            width={44}
+            height={44}
+            priority
+            className="h-11 w-11"
+          />
           <span>
             행복한길잡이
             <span className="block text-xs font-medium text-[var(--color-text-muted)]">

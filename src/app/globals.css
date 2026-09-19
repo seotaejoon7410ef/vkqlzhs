@@ -3,29 +3,34 @@
 /* ------------------------------------------------------------------
    행복한길잡이 디자인 토큰
    컨셉: 배리어프리 · 따뜻함 · 신뢰감 (유치하지 않게)
-   - 배경은 순백 대신 따뜻한 아이보리 톤으로 경직된 느낌을 줄임
-   - 주조색(amber)은 채도를 낮춘 톤으로 성숙한 인상을 유지
-   - 보조색(teal)은 안정감·신뢰를 전달
+   - primary/secondary는 실제 로고에서 추출한 보라색 계열(신뢰·존엄의 색.
+     국제적으로 장애 인식 캠페인에도 쓰이는 톤)
+   - accent는 로고 나침반 바늘의 주황색 — "길잡이"가 방향을 안내하는 의미를
+     살려 포인트로만 사용 (본문 텍스트에는 사용하지 않음: 흰 배경 대비 부족)
+   - 배경은 순백 대신 은은한 웜톤으로 경직된 느낌을 줄임
    - 모든 텍스트/배경 조합은 WCAG AA(4.5:1) 이상을 기준으로 선정
 ------------------------------------------------------------------- */
 :root {
-  --color-bg: #fdf8f2;
+  --color-bg: #fdfbf8;
   --color-surface: #ffffff;
-  --color-surface-alt: #f7ede1;
+  --color-surface-alt: #f4f1fb;
 
-  --color-text: #241f1a;
-  --color-text-muted: #5c5248;
+  --color-text: #1e1a29;
+  --color-text-muted: #5b5468;
 
-  --color-primary: #92400e;
-  --color-primary-hover: #78350f;
-  --color-primary-tint: #fbe6cd;
+  --color-primary: #5030b8;
+  --color-primary-hover: #3a2191;
+  --color-primary-tint: #ece6fb;
 
-  --color-secondary: #0f3d3e;
-  --color-secondary-hover: #0b2e2f;
-  --color-secondary-tint: #dbe9e7;
+  --color-secondary: #201048;
+  --color-secondary-hover: #170b33;
+  --color-secondary-tint: #e3ddf2;
 
-  --color-border: #e6dccb;
-  --color-focus: #0b3ea8;
+  --color-accent: #ffb030;
+  --color-accent-strong: #92580a;
+
+  --color-border: #e6e0f2;
+  --color-focus: #3a2191;
 
   --font-sans: var(--font-noto-sans-kr), "Pretendard", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
 }
@@ -42,6 +47,8 @@
   --color-secondary: var(--color-secondary);
   --color-secondary-hover: var(--color-secondary-hover);
   --color-secondary-tint: var(--color-secondary-tint);
+  --color-accent: var(--color-accent);
+  --color-accent-strong: var(--color-accent-strong);
   --color-border: var(--color-border);
   --font-sans: var(--font-sans);
 }
@@ -79,6 +86,13 @@ textarea:focus-visible,
   outline: 3px solid var(--color-focus);
   outline-offset: 3px;
   border-radius: 2px;
+}
+
+/* 어두운(진보라) 배경 섹션 위에서는 포커스 링이 배경에 묻히지 않도록 흰색으로 전환 */
+.on-dark a:focus-visible,
+.on-dark button:focus-visible,
+.on-dark [tabindex]:focus-visible {
+  outline-color: #ffffff;
 }
 
 /* 스킵 링크: 평소 화면 밖으로 숨기고, 키보드 포커스 시에만 노출 */

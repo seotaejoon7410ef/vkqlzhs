@@ -128,7 +128,7 @@ export default function ProgramsPage() {
         className="scroll-mt-24 py-16 sm:py-20"
       >
         <Container>
-          <div className="rounded-3xl bg-[var(--color-secondary)] px-8 py-14 text-white sm:px-14">
+          <div className="on-dark rounded-3xl bg-[var(--color-secondary)] px-8 py-14 text-white sm:px-14">
             <h2 id="apply-heading" className="text-3xl font-extrabold">
               교육 신청·문의
             </h2>

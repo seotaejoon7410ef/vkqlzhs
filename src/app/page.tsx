@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/container";
 
@@ -73,10 +74,14 @@ export default function Home() {
             aria-hidden="true"
             className="flex h-64 items-center justify-center rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface)] sm:h-80 lg:h-96"
           >
-            <div className="flex flex-col items-center gap-3 text-[var(--color-text-muted)]">
-              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-[var(--color-primary-tint)] text-3xl font-black text-[var(--color-primary-hover)]">
-                행
-              </div>
+            <div className="flex flex-col items-center gap-4 text-[var(--color-text-muted)]">
+              <Image
+                src="/logo-mark.png"
+                alt=""
+                width={128}
+                height={128}
+                className="h-28 w-28 sm:h-32 sm:w-32"
+              />
               <p className="text-sm">대표 이미지 영역 (추후 실제 사진으로 교체)</p>
             </div>
           </div>
@@ -115,7 +120,7 @@ export default function Home() {
 
       <section
         aria-labelledby="quicklinks-heading"
-        className="bg-[var(--color-secondary)] py-16 text-white sm:py-24"
+        className="on-dark bg-[var(--color-secondary)] py-16 text-white sm:py-24"
       >
         <Container>
           <h2 id="quicklinks-heading" className="text-3xl font-extrabold">
@@ -136,7 +141,10 @@ export default function Home() {
                 </div>
                 <span className="mt-6 inline-flex items-center gap-1 text-sm font-bold text-white">
                   자세히 보기
-                  <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">
+                  <span
+                    aria-hidden="true"
+                    className="text-[var(--color-accent)] transition-transform group-hover:translate-x-1"
+                  >
                     →
                   </span>
                 </span>

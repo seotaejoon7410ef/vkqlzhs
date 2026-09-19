@@ -1,12 +1,21 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Container } from "./container";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-[var(--color-border)] bg-[var(--color-secondary)] text-white">
+    <footer className="on-dark border-t border-[var(--color-border)] bg-[var(--color-secondary)] text-white">
       <Container className="grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
         <div>
-          <p className="text-lg font-extrabold">행복한길잡이</p>
+          <Image
+            src="/logo-mark.png"
+            alt=""
+            aria-hidden="true"
+            width={40}
+            height={40}
+            className="h-10 w-10"
+          />
+          <p className="mt-3 text-lg font-extrabold">행복한길잡이</p>
           <p className="mt-1 text-sm text-white/70">장애이해교육센터</p>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/80">
             모두가 차별 없이 이해하고 연결되는 사회를 위해, 장애 인식 개선
