@@ -16,7 +16,7 @@
   --color-surface-alt: #f4f1fb;
 
   --color-text: #1e1a29;
-  --color-text-muted: #5b5468;
+  --color-text-muted: #4a4456;
 
   --color-primary: #5030b8;
   --color-primary-hover: #3a2191;
@@ -33,6 +33,59 @@
   --color-focus: #3a2191;
 
   --font-sans: var(--font-noto-sans-kr), "Pretendard", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+}
+
+/* ------------------------------------------------------------------
+   고대비 모드 (사용자가 상단 접근성 바에서 켬/끔)
+   순백 배경 + 순검정 텍스트 + 검정 테두리로 최대 대비를 만듭니다.
+   포인트 컬러(보라/주황)도 저대비 상황을 피하기 위해 검정으로 통일합니다.
+------------------------------------------------------------------- */
+html[data-contrast="high"] {
+  --color-bg: #ffffff;
+  --color-surface: #ffffff;
+  --color-surface-alt: #ffffff;
+
+  --color-text: #000000;
+  --color-text-muted: #000000;
+
+  --color-primary: #000000;
+  --color-primary-hover: #000000;
+  --color-primary-tint: #ffffff;
+
+  --color-secondary: #000000;
+  --color-secondary-hover: #000000;
+  --color-secondary-tint: #ffffff;
+
+  --color-accent: #000000;
+  --color-accent-strong: #000000;
+
+  --color-border: #000000;
+  --color-focus: #0b3ea8;
+}
+
+html[data-contrast="high"] .on-dark {
+  background: #000000 !important;
+  color: #ffffff !important;
+}
+
+html[data-contrast="high"] * {
+  text-decoration-color: currentColor;
+}
+
+html[data-contrast="high"] a {
+  text-decoration: underline;
+}
+
+/* ------------------------------------------------------------------
+   글자 크기 조절 (상단 접근성 바). rem 기반 Tailwind 크기 전체가
+   html의 font-size에 비례해서 함께 커집니다.
+------------------------------------------------------------------- */
+html[data-font-scale="large"] {
+  font-size: 118%;
+}
+
+html[data-font-scale="xlarge"] {
+  font-size: 137%;
 }
 
 @theme inline {
@@ -61,8 +114,8 @@ body {
   background: var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-sans);
-  font-size: 16px;
-  line-height: 1.7;
+  font-size: 18px;
+  line-height: 1.75;
 }
 
 /* 본문 텍스트 기본 가독성: 문단 줄간격, 최대 줄길이는 컴포넌트에서 max-w로 제어 */
@@ -86,6 +139,12 @@ textarea:focus-visible,
   outline: 3px solid var(--color-focus);
   outline-offset: 3px;
   border-radius: 2px;
+}
+
+html[data-contrast="high"] a:focus-visible,
+html[data-contrast="high"] button:focus-visible,
+html[data-contrast="high"] [tabindex]:focus-visible {
+  outline-width: 4px;
 }
 
 /* 어두운(진보라) 배경 섹션 위에서는 포커스 링이 배경에 묻히지 않도록 흰색으로 전환 */
@@ -126,7 +185,7 @@ textarea:focus-visible,
   }
 }
 
-/* 시스템 고대비 모드 사용자를 위한 보강 */
+/* 시스템 고대비 모드 사용자를 위한 보강 (OS/브라우저 설정 기준) */
 @media (prefers-contrast: more) {
   :root {
     --color-text: #000000;

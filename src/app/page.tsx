@@ -1,72 +1,114 @@
 import Image from "next/image";
-import Link from "next/link";
+import {
+  Accessibility,
+  Clock,
+  Eye,
+  GraduationCap,
+  HeartHandshake,
+  Mail,
+  Phone,
+  Presentation,
+  School,
+  ShieldCheck,
+  Sparkles,
+} from "lucide-react";
 import { Container } from "@/components/container";
-
-const QUICK_LINKS = [
-  {
-    href: "/about",
-    title: "센터 소개",
-    desc: "행복한길잡이가 걸어온 길과 지향하는 가치를 소개합니다.",
-  },
-  {
-    href: "/programs",
-    title: "교육 프로그램",
-    desc: "학교·기업·기관을 위한 장애 인식 개선 교육 과정을 안내합니다.",
-  },
-  {
-    href: "/news",
-    title: "소식·자료실",
-    desc: "센터의 최근 소식과 교육 자료를 확인할 수 있습니다.",
-  },
-];
 
 const VALUES = [
   {
     title: "이해",
-    desc: "장애를 특별한 것이 아니라 다양성의 한 모습으로 이해하는 교육을 합니다.",
+    desc: "장애를 어렵게 설명하지 않아요. 아이들 눈높이에 맞춰 쉽게 이야기해요.",
   },
   {
     title: "존중",
-    desc: "모든 참여자가 서로를 존중하며 편안하게 배울 수 있는 환경을 만듭니다.",
+    desc: "누구나 편하게 참여하고, 서로 존중하는 분위기를 만들어요.",
   },
   {
     title: "동행",
-    desc: "일회성 교육이 아닌, 변화가 이어지도록 지속적으로 함께 걷습니다.",
+    desc: "한 번의 교육으로 끝나지 않도록, 선생님과 계속 소통해요.",
+  },
+];
+
+const ZONES = [
+  {
+    icon: Eye,
+    title: "시각장애존",
+    desc: "안대를 쓰고 걸어봐요. 눈이 안 보이면 어떤 기분인지 몸으로 느껴요.",
+  },
+  {
+    icon: Accessibility,
+    title: "지체장애존",
+    desc: "휠체어를 직접 타 봐요. 계단과 턱이 왜 힘든지 알게 돼요.",
+  },
+  {
+    icon: HeartHandshake,
+    title: "감각협력존",
+    desc: "친구와 손발을 맞춰요. 함께 힘을 모으는 즐거움을 배워요.",
+  },
+  {
+    icon: Presentation,
+    title: "전시형존",
+    desc: "그림과 자료를 보며 궁금한 점을 쉽게 풀어요.",
+  },
+];
+
+const WHY_US = [
+  {
+    icon: School,
+    title: "학교로 직접 찾아가요",
+    desc: "선생님은 신청만 해주세요. 준비물과 강사가 모두 학교로 갑니다.",
+  },
+  {
+    icon: Sparkles,
+    title: "체험 중심 수업",
+    desc: "설명만 듣지 않고, 직접 해보면서 배워요. 그래서 오래 기억해요.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "안전하게 진행해요",
+    desc: "모든 체험은 안전 수칙을 지키며, 강사가 계속 함께합니다.",
+  },
+  {
+    icon: Clock,
+    title: "시간표를 맞춰드려요",
+    desc: "1교시부터 온종일 과정까지, 학교 일정에 맞게 조정해요.",
   },
 ];
 
 export default function Home() {
   return (
     <>
-      <section className="bg-[var(--color-surface-alt)]">
-        <Container className="grid gap-10 py-16 sm:py-24 lg:grid-cols-2 lg:items-center">
+      {/* 히어로 */}
+      <section id="top" className="scroll-mt-24 bg-[var(--color-surface-alt)]">
+        <Container className="grid gap-10 py-16 sm:py-20 lg:grid-cols-2 lg:items-center">
           <div>
-            <p className="inline-flex items-center rounded-full bg-[var(--color-primary-tint)] px-4 py-1.5 text-sm font-bold text-[var(--color-primary-hover)]">
-              배리어프리 장애이해교육센터
+            <p className="inline-flex items-center gap-2 rounded-full bg-[var(--color-primary-tint)] px-4 py-1.5 text-sm font-bold text-[var(--color-primary-hover)]">
+              <GraduationCap aria-hidden="true" size={18} />
+              초등학교로 찾아가는 장애 인식 개선 체험교육
             </p>
             <h1 className="mt-6 text-4xl font-extrabold leading-tight text-[var(--color-text)] sm:text-5xl">
-              모두를 위한 길을 함께
+              몸으로 배우는 배리어프리 교실,
               <br />
-              만들어가는 <span className="text-[var(--color-primary)]">행복한길잡이</span>
+              <span className="text-[var(--color-primary)]">행복한길잡이</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-[var(--color-text-muted)]">
-              행복한길잡이는 학교, 기업, 공공기관과 함께 장애에 대한 이해를
-              넓히는 교육을 설계합니다. 누구나 존중받고, 누구나 참여할 수
-              있는 사회를 향한 첫걸음을 안내합니다.
+              행복한길잡이가 학교로 직접 찾아갑니다. 아이들은 체험을 통해
+              장애를 자연스럽게 이해하고, 서로를 존중하는 법을 배웁니다.
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-              <Link
-                href="/programs#apply"
-                className="inline-flex min-h-12 items-center justify-center rounded-full bg-[var(--color-primary)] px-7 text-base font-bold text-white transition-colors hover:bg-[var(--color-primary-hover)]"
+              <a
+                href="tel:0312368410"
+                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[var(--color-primary)] px-7 text-base font-bold text-white transition-colors hover:bg-[var(--color-primary-hover)]"
               >
-                교육 신청 문의하기
-              </Link>
-              <Link
-                href="/about"
+                <Phone aria-hidden="true" size={20} />
+                전화로 문의하기
+              </a>
+              <a
+                href="#contact"
                 className="inline-flex min-h-12 items-center justify-center rounded-full border-2 border-[var(--color-secondary)] px-7 text-base font-bold text-[var(--color-secondary)] transition-colors hover:bg-[var(--color-secondary-tint)]"
               >
-                센터 소개 보기
-              </Link>
+                교육 신청 안내 보기
+              </a>
             </div>
           </div>
 
@@ -74,30 +116,28 @@ export default function Home() {
             aria-hidden="true"
             className="flex h-64 items-center justify-center rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface)] sm:h-80 lg:h-96"
           >
-            <div className="flex flex-col items-center gap-4 text-[var(--color-text-muted)]">
-              <Image
-                src="/logo-mark.png"
-                alt=""
-                width={128}
-                height={128}
-                className="h-28 w-28 sm:h-32 sm:w-32"
-              />
-              <p className="text-sm">대표 이미지 영역 (추후 실제 사진으로 교체)</p>
-            </div>
+            <Image
+              src="/logo-mark.png"
+              alt=""
+              width={140}
+              height={140}
+              className="h-32 w-32 sm:h-36 sm:w-36"
+            />
           </div>
         </Container>
       </section>
 
-      <section aria-labelledby="values-heading" className="py-16 sm:py-24">
+      {/* 소개 */}
+      <section id="about" aria-labelledby="about-heading" className="scroll-mt-24 py-16 sm:py-20">
         <Container>
-          <h2
-            id="values-heading"
-            className="text-center text-3xl font-extrabold text-[var(--color-text)]"
-          >
-            행복한길잡이가 지키는 가치
+          <p className="text-sm font-bold text-[var(--color-primary-hover)]">소개</p>
+          <h2 id="about-heading" className="mt-3 text-3xl font-extrabold text-[var(--color-text)]">
+            행복한길잡이는 이런 마음으로 찾아갑니다
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-center text-[var(--color-text-muted)]">
-            교육 하나하나에 아래 세 가지 원칙을 담아 진행합니다.
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[var(--color-text-muted)]">
+            대표 서태준이 직접 만든 행복한길잡이는, 장애를 멀게 느끼는 아이들에게
+            가까이 다가가고 싶어서 시작했습니다. 어려운 말 대신 체험으로, 교실
+            안에서 배리어프리를 만납니다.
           </p>
 
           <div className="mt-12 grid gap-6 sm:grid-cols-3">
@@ -118,38 +158,109 @@ export default function Home() {
         </Container>
       </section>
 
+      {/* 체험 프로그램 4존 */}
       <section
-        aria-labelledby="quicklinks-heading"
-        className="on-dark bg-[var(--color-secondary)] py-16 text-white sm:py-24"
+        id="programs"
+        aria-labelledby="programs-heading"
+        className="scroll-mt-24 bg-[var(--color-surface-alt)] py-16 sm:py-20"
       >
         <Container>
-          <h2 id="quicklinks-heading" className="text-3xl font-extrabold">
-            무엇이 궁금하신가요?
+          <p className="text-sm font-bold text-[var(--color-primary-hover)]">체험 프로그램</p>
+          <h2 id="programs-heading" className="mt-3 text-3xl font-extrabold text-[var(--color-text)]">
+            체험 프로그램 4존
           </h2>
-          <div className="mt-10 grid gap-6 sm:grid-cols-3">
-            {QUICK_LINKS.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="group flex flex-col justify-between rounded-2xl border border-white/20 bg-white/5 p-7 transition-colors hover:bg-white/10"
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[var(--color-text-muted)]">
+            아이들은 4개의 체험존을 돌며 몸으로 배웁니다. 학교 사정에 맞춰
+            존 구성과 시간을 조정할 수 있습니다.
+          </p>
+
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {ZONES.map((zone) => (
+              <div
+                key={zone.title}
+                className="flex flex-col rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-7"
               >
-                <div>
-                  <h3 className="text-xl font-bold">{link.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-white/80">
-                    {link.desc}
-                  </p>
-                </div>
-                <span className="mt-6 inline-flex items-center gap-1 text-sm font-bold text-white">
-                  자세히 보기
-                  <span
-                    aria-hidden="true"
-                    className="text-[var(--color-accent)] transition-transform group-hover:translate-x-1"
-                  >
-                    →
-                  </span>
+                <span
+                  aria-hidden="true"
+                  className="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--color-primary-tint)] text-[var(--color-primary-hover)]"
+                >
+                  <zone.icon size={24} />
                 </span>
-              </Link>
+                <h3 className="mt-5 text-lg font-bold text-[var(--color-text)]">
+                  {zone.title}
+                </h3>
+                <p className="mt-3 leading-relaxed text-[var(--color-text-muted)]">
+                  {zone.desc}
+                </p>
+              </div>
             ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* 왜 행복한길잡이일까요 */}
+      <section
+        id="why"
+        aria-labelledby="why-heading"
+        className="on-dark scroll-mt-24 bg-[var(--color-secondary)] py-16 text-white sm:py-20"
+      >
+        <Container>
+          <h2 id="why-heading" className="text-3xl font-extrabold">
+            왜 행복한길잡이일까요
+          </h2>
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {WHY_US.map((item) => (
+              <div
+                key={item.title}
+                className="rounded-2xl border border-white/20 bg-white/5 p-7"
+              >
+                <span aria-hidden="true" className="text-[var(--color-accent)]">
+                  <item.icon size={26} />
+                </span>
+                <h3 className="mt-4 text-lg font-bold">{item.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-white/80">
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* 문의하기 */}
+      <section id="contact" aria-labelledby="contact-heading" className="scroll-mt-24 py-16 sm:py-20">
+        <Container>
+          <div className="rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface-alt)] px-6 py-12 sm:px-10 sm:py-16">
+            <p className="text-sm font-bold text-[var(--color-primary-hover)]">문의하기</p>
+            <h2
+              id="contact-heading"
+              className="mt-3 text-3xl font-extrabold text-[var(--color-text)]"
+            >
+              지금 바로 문의해 주세요
+            </h2>
+            <p className="mt-4 max-w-xl text-lg leading-relaxed text-[var(--color-text-muted)]">
+              학교 이름과 희망 날짜만 알려주시면, 대표 서태준이 직접
+              전화드립니다.
+            </p>
+
+            <div className="mt-8 grid gap-4 sm:grid-cols-2 sm:max-w-xl">
+              <a
+                href="tel:0312368410"
+                className="flex min-h-16 items-center gap-3 rounded-2xl bg-[var(--color-primary)] px-6 text-lg font-bold text-white transition-colors hover:bg-[var(--color-primary-hover)]"
+              >
+                <Phone aria-hidden="true" size={24} />
+                031-236-8410
+              </a>
+              <a
+                href="mailto:happyguide95@naver.com"
+                className="flex min-h-16 items-center gap-3 rounded-2xl border-2 border-[var(--color-secondary)] px-6 text-lg font-bold text-[var(--color-secondary)] transition-colors hover:bg-[var(--color-secondary-tint)]"
+              >
+                <Mail aria-hidden="true" size={22} />
+                happyguide95@naver.com
+              </a>
+            </div>
+
+            <p className="mt-6 text-[var(--color-text-muted)]">대표 서태준</p>
           </div>
         </Container>
       </section>

@@ -1,11 +1,10 @@
 import Image from "next/image";
-import Link from "next/link";
 import { Container } from "./container";
 
 export function SiteFooter() {
   return (
-    <footer className="on-dark border-t border-[var(--color-border)] bg-[var(--color-secondary)] text-white">
-      <Container className="grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
+    <footer className="on-dark border-t border-[var(--color-border)] bg-[var(--color-secondary)] pb-16 text-white sm:pb-0">
+      <Container className="grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-3">
         <div>
           <Image
             src="/logo-mark.png"
@@ -18,8 +17,8 @@ export function SiteFooter() {
           <p className="mt-3 text-lg font-extrabold">행복한길잡이</p>
           <p className="mt-1 text-sm text-white/70">장애이해교육센터</p>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/80">
-            모두가 차별 없이 이해하고 연결되는 사회를 위해, 장애 인식 개선
-            교육으로 함께 걷는 길잡이가 되겠습니다.
+            전국 초등학교를 직접 찾아가서 장애 인식 개선 체험교육을
+            진행합니다.
           </p>
         </div>
 
@@ -27,19 +26,19 @@ export function SiteFooter() {
           <h2 className="text-sm font-bold text-white/90">바로가기</h2>
           <ul className="mt-4 space-y-3 text-sm">
             <li>
-              <Link className="hover:underline" href="/about">
-                센터 소개
-              </Link>
+              <a className="hover:underline" href="#about">
+                소개
+              </a>
             </li>
             <li>
-              <Link className="hover:underline" href="/programs">
-                교육 프로그램
-              </Link>
+              <a className="hover:underline" href="#programs">
+                체험 프로그램
+              </a>
             </li>
             <li>
-              <Link className="hover:underline" href="/news">
-                소식·자료실
-              </Link>
+              <a className="hover:underline" href="#contact">
+                문의하기
+              </a>
             </li>
           </ul>
         </nav>
@@ -47,35 +46,30 @@ export function SiteFooter() {
         <div>
           <h2 className="text-sm font-bold text-white/90">연락처</h2>
           <ul className="mt-4 space-y-3 text-sm text-white/80">
+            <li>대표 서태준</li>
             <li>
-              대표전화{" "}
-              <a className="hover:underline" href="tel:0212345678">
-                02-1234-5678
+              전화{" "}
+              <a className="hover:underline" href="tel:0312368410">
+                031-236-8410
               </a>
             </li>
             <li>
               이메일{" "}
-              <a className="hover:underline" href="mailto:info@happyguide.example.org">
-                info@happyguide.example.org
+              <a className="hover:underline" href="mailto:happyguide95@naver.com">
+                happyguide95@naver.com
               </a>
             </li>
-            <li>주소 (예시) 서울특별시 어딘가구 배리어프리로 10</li>
           </ul>
-        </div>
-
-        <div>
-          <h2 className="text-sm font-bold text-white/90">접근성 안내</h2>
-          <p className="mt-4 text-sm leading-relaxed text-white/80">
-            본 웹사이트는 대한민국 웹 접근성 지침(WCAG 2.1 AA)을 준수하기
-            위해 노력하고 있습니다. 이용에 불편이 있으시면 위 연락처로
-            알려주세요.
+          <p className="mt-6 text-sm leading-relaxed text-white/80">
+            이 웹사이트는 웹 접근성 지침(WCAG 2.1 AA)을 지키려고 노력합니다.
+            불편한 점이 있으면 위 연락처로 알려주세요.
           </p>
         </div>
       </Container>
 
       <div className="border-t border-white/15 py-5 text-center text-xs text-white/60">
-        © {new Date().getFullYear()} 행복한길잡이 장애이해교육센터. All
-        rights reserved.
+        © {new Date().getFullYear()} 행복한길잡이 장애이해교육센터. 대표
+        서태준
       </div>
     </footer>
   );
