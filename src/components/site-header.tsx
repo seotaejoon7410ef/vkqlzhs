@@ -24,24 +24,15 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-[var(--color-border)] bg-[var(--color-surface)]/95 backdrop-blur">
       <Container className="flex h-24 items-center justify-between gap-6">
-        <a
-          href="#top"
-          className="flex shrink-0 items-center gap-3 rounded-md text-lg font-bold tracking-wide text-[var(--color-secondary)]"
-        >
+        <a href="#top" className="flex shrink-0 items-center rounded-md">
           <Image
-            src="/logo-mark.png"
-            alt="행복한길잡이 로고: 나침반을 감싼 두 손"
-            width={44}
-            height={44}
+            src="/logo-lockup.png"
+            alt="행복한길잡이 장애이해교육센터 로고"
+            width={224}
+            height={92}
             priority
-            className="h-11 w-11"
+            className="h-16 w-auto sm:h-[4.5rem]"
           />
-          <span>
-            행복한길잡이
-            <span className="mt-0.5 block text-xs font-normal tracking-normal text-[var(--color-text-muted)]">
-              유치원·초등·중학교 찾아가는 장애이해교육
-            </span>
-          </span>
         </a>
 
         {/* 데스크톱 내비게이션 (페이지 안 섹션으로 바로 이동) */}
@@ -51,7 +42,7 @@ export function SiteHeader() {
               <li key={item.href}>
                 <a
                   href={item.href}
-                  className="inline-flex min-h-11 items-center text-[15px] font-medium tracking-wide text-[var(--color-text)] transition-colors hover:text-[var(--color-primary)]"
+                  className="inline-flex min-h-11 items-center font-[family-name:var(--font-noto-serif-kr)] text-[15px] font-medium tracking-wide text-[var(--color-text)] transition-colors hover:text-[var(--color-primary)]"
                 >
                   {item.label}
                 </a>
@@ -111,7 +102,7 @@ export function SiteHeader() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setMenuOpen(false)}
-                className="flex min-h-12 items-center rounded-md px-4 text-base font-semibold text-[var(--color-text)]"
+                className="flex min-h-12 items-center rounded-md px-4 font-[family-name:var(--font-noto-serif-kr)] text-base font-semibold text-[var(--color-text)]"
               >
                 {item.label}
               </a>

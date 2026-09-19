@@ -100,17 +100,17 @@ export default function Home() {
         />
 
         <Container className="relative py-20 sm:py-28">
-          <div className="max-w-2xl">
+          <div className="mx-auto max-w-2xl text-center">
             <h1 className="text-4xl font-black leading-[1.2] sm:text-5xl">
               <span className="text-[var(--color-accent)]">연 1회 의무교육</span>,
               <br />
               저희가 교실로 찾아갑니다
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/80">
+            <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-white/80">
               유치원·초등·중학교로 찾아가는 장애인식개선 체험교육. 문의
               한 번으로 일정과 견적까지 안내해 드려요.
             </p>
-            <div className="mt-9 flex flex-col gap-4 sm:flex-row">
+            <div className="mt-9 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <a
                 href="tel:0312368410"
                 className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[var(--color-accent)] px-7 text-base font-bold text-[var(--color-secondary)] transition-colors hover:brightness-95"
@@ -132,21 +132,23 @@ export default function Home() {
       {/* 회사 소개 */}
       <section id="about" aria-labelledby="about-heading" className="scroll-mt-24 py-16 sm:py-20">
         <Container>
-          <p className="text-sm font-bold text-[var(--color-primary-hover)]">회사 소개</p>
-          <h2 id="about-heading" className="mt-3 text-3xl font-black text-[var(--color-text)]">
-            행복한길잡이를 소개합니다
-          </h2>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[var(--color-text-muted)]">
-            행복한길잡이는 유치원·초등학교·중학교를 직접 찾아가 장애
-            인식 개선 체험교육을 진행하는 교육 전문 업체입니다. 아이들
-            눈높이에 맞는 체험 프로그램을 직접 기획하고 운영합니다.
-          </p>
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="text-sm font-bold text-[var(--color-primary-hover)]">회사 소개</p>
+            <h2 id="about-heading" className="mt-3 text-3xl font-black text-[var(--color-text)]">
+              행복한길잡이를 소개합니다
+            </h2>
+            <p className="mt-6 text-lg leading-relaxed text-[var(--color-text-muted)]">
+              행복한길잡이는 유치원·초등학교·중학교를 직접 찾아가 장애
+              인식 개선 체험교육을 진행하는 교육 전문 업체입니다. 아이들
+              눈높이에 맞는 체험 프로그램을 직접 기획하고 운영합니다.
+            </p>
+          </div>
 
           <div className="mt-10 grid gap-6 sm:grid-cols-3">
             {ABOUT_VALUES.map((value) => (
               <div
                 key={value.title}
-                className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-alt)] p-7"
+                className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-alt)] p-7 text-center"
               >
                 <h3 className="text-xl font-bold text-[var(--color-primary-hover)]">
                   {value.title}
@@ -163,24 +165,26 @@ export default function Home() {
       {/* 2. 왜 필요한가 */}
       <section id="why-needed" aria-labelledby="why-heading" className="scroll-mt-24 py-16 sm:py-20">
         <Container>
-          <div className="flex items-center gap-3">
-            <span
-              aria-hidden="true"
-              className="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--color-primary-tint)] text-[var(--color-primary-hover)]"
-            >
-              <FileCheck size={24} />
-            </span>
-            <p className="text-sm font-bold text-[var(--color-primary-hover)]">의무교육 안내</p>
+          <div className="mx-auto max-w-2xl text-center">
+            <div className="flex items-center justify-center gap-3">
+              <span
+                aria-hidden="true"
+                className="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--color-primary-tint)] text-[var(--color-primary-hover)]"
+              >
+                <FileCheck size={24} />
+              </span>
+              <p className="text-sm font-bold text-[var(--color-primary-hover)]">의무교육 안내</p>
+            </div>
+            <h2 id="why-heading" className="mt-4 text-3xl font-black text-[var(--color-text)]">
+              장애 인식개선교육, 매년 실시해야 하는 의무교육입니다
+            </h2>
+            <p className="mt-6 text-lg leading-relaxed text-[var(--color-text-muted)]">
+              「장애인복지법」 제25조 제2항에 따라 유치원, 초·중·고 각급
+              학교의 장은 매년 소속 학생을 대상으로 장애인 인식개선교육을
+              실시해야 합니다. 행복한길잡이는 이 의무교육을 체험 중심으로
+              쉽게 진행해드립니다.
+            </p>
           </div>
-          <h2 id="why-heading" className="mt-4 text-3xl font-black text-[var(--color-text)]">
-            장애 인식개선교육, 매년 실시해야 하는 의무교육입니다
-          </h2>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[var(--color-text-muted)]">
-            「장애인복지법」 제25조 제2항에 따라 유치원, 초·중·고 각급
-            학교의 장은 매년 소속 학생을 대상으로 장애인 인식개선교육을
-            실시해야 합니다. 행복한길잡이는 이 의무교육을 체험 중심으로
-            쉽게 진행해드립니다.
-          </p>
         </Container>
       </section>
 
@@ -191,10 +195,12 @@ export default function Home() {
         className="scroll-mt-24 py-16 sm:py-20"
       >
         <Container>
-          <p className="text-sm font-bold text-[var(--color-primary-hover)]">체험 프로그램</p>
-          <h2 id="programs-heading" className="mt-3 text-3xl font-black text-[var(--color-text)]">
-            눈높이에 맞춘 체험 프로그램
-          </h2>
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="text-sm font-bold text-[var(--color-primary-hover)]">체험 프로그램</p>
+            <h2 id="programs-heading" className="mt-3 text-3xl font-black text-[var(--color-text)]">
+              눈높이에 맞춘 체험 프로그램
+            </h2>
+          </div>
           <div className="mt-10">
             <ProgramZones />
           </div>
@@ -247,32 +253,34 @@ export default function Home() {
         className="scroll-mt-24 py-16 sm:py-20"
       >
         <Container>
-          <div className="flex items-center gap-3">
-            <span
-              aria-hidden="true"
-              className="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--color-primary-tint)] text-[var(--color-primary-hover)]"
-            >
-              <MapPin size={24} />
-            </span>
-            <p className="text-sm font-bold text-[var(--color-primary-hover)]">출강 지역</p>
-          </div>
-          <h2 id="areas-heading" className="mt-4 text-3xl font-black text-[var(--color-text)]">
-            이 지역으로 자주 찾아가요
-          </h2>
-          <div className="mt-6 flex flex-wrap gap-3">
-            {MAIN_AREAS.map((area) => (
+          <div className="mx-auto max-w-2xl text-center">
+            <div className="flex items-center justify-center gap-3">
               <span
-                key={area}
-                className="rounded-full border-2 border-[var(--color-primary)] px-5 py-2 text-base font-bold text-[var(--color-primary-hover)]"
+                aria-hidden="true"
+                className="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--color-primary-tint)] text-[var(--color-primary-hover)]"
               >
-                {area}
+                <MapPin size={24} />
               </span>
-            ))}
+              <p className="text-sm font-bold text-[var(--color-primary-hover)]">출강 지역</p>
+            </div>
+            <h2 id="areas-heading" className="mt-4 text-3xl font-black text-[var(--color-text)]">
+              이 지역으로 자주 찾아가요
+            </h2>
+            <div className="mt-6 flex flex-wrap justify-center gap-3">
+              {MAIN_AREAS.map((area) => (
+                <span
+                  key={area}
+                  className="rounded-full border-2 border-[var(--color-primary)] px-5 py-2 text-base font-bold text-[var(--color-primary-hover)]"
+                >
+                  {area}
+                </span>
+              ))}
+            </div>
+            <p className="mt-6 text-lg leading-relaxed text-[var(--color-text-muted)]">
+              위 지역이 아니어도 괜찮아요. 그 외 지역도 협의 후 얼마든지
+              찾아갈 수 있으니, 부담 갖지 마시고 편하게 문의해 주세요!
+            </p>
           </div>
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-[var(--color-text-muted)]">
-            위 지역이 아니어도 괜찮아요. 그 외 지역도 협의 후 얼마든지
-            찾아갈 수 있으니, 부담 갖지 마시고 편하게 문의해 주세요!
-          </p>
         </Container>
       </section>
 
@@ -326,14 +334,16 @@ export default function Home() {
         className="scroll-mt-24 py-16 sm:py-20"
       >
         <Container>
-          <p className="text-sm font-bold text-[var(--color-primary-hover)]">수업 진행</p>
-          <h2 id="class-flow-heading" className="mt-3 text-3xl font-black text-[var(--color-text)]">
-            수업은 이렇게 진행돼요
-          </h2>
-          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-[var(--color-text-muted)]">
-            학교(원)를 찾아가 진행하는 하루 수업이 어떤 흐름으로
-            이루어지는지 안내해 드려요.
-          </p>
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="text-sm font-bold text-[var(--color-primary-hover)]">수업 진행</p>
+            <h2 id="class-flow-heading" className="mt-3 text-3xl font-black text-[var(--color-text)]">
+              수업은 이렇게 진행돼요
+            </h2>
+            <p className="mt-4 text-lg leading-relaxed text-[var(--color-text-muted)]">
+              학교(원)를 찾아가 진행하는 하루 수업이 어떤 흐름으로
+              이루어지는지 안내해 드려요.
+            </p>
+          </div>
 
           {/* 4단계 타임라인 */}
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -408,10 +418,12 @@ export default function Home() {
       {/* 6. 신청 절차 4단계 */}
       <section id="apply" aria-labelledby="apply-heading" className="scroll-mt-24 py-16 sm:py-20">
         <Container>
-          <p className="text-sm font-bold text-[var(--color-primary-hover)]">신청 절차</p>
-          <h2 id="apply-heading" className="mt-3 text-3xl font-black text-[var(--color-text)]">
-            신청부터 수업까지 4단계
-          </h2>
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="text-sm font-bold text-[var(--color-primary-hover)]">신청 절차</p>
+            <h2 id="apply-heading" className="mt-3 text-3xl font-black text-[var(--color-text)]">
+              신청부터 수업까지 4단계
+            </h2>
+          </div>
           <ol className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {APPLY_STEPS.map((item, index) => (
               <li
@@ -444,10 +456,12 @@ export default function Home() {
         className="scroll-mt-24 py-16 sm:py-20"
       >
         <Container className="max-w-3xl">
-          <p className="text-sm font-bold text-[var(--color-primary-hover)]">자주 묻는 질문</p>
-          <h2 id="faq-heading" className="mt-3 text-3xl font-black text-[var(--color-text)]">
-            선생님들이 많이 물어보세요
-          </h2>
+          <div className="text-center">
+            <p className="text-sm font-bold text-[var(--color-primary-hover)]">자주 묻는 질문</p>
+            <h2 id="faq-heading" className="mt-3 text-3xl font-black text-[var(--color-text)]">
+              선생님들이 많이 물어보세요
+            </h2>
+          </div>
 
           <div className="mt-10 space-y-3">
             {FAQS.map((item) => (

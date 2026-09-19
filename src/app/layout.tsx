@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Noto_Sans_KR } from "next/font/google";
+import { Noto_Sans_KR, Noto_Serif_KR } from "next/font/google";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { FloatingQuickMenu } from "@/components/floating-quick-menu";
@@ -14,6 +14,14 @@ const notoSansKr = Noto_Sans_KR({
   display: "swap",
 });
 
+// 상단 메뉴바에 세련된 느낌을 주기 위한 세리프 포인트 폰트 (본문은 계속 산세리프 사용)
+const notoSerifKr = Noto_Serif_KR({
+  variable: "--font-noto-serif-kr",
+  subsets: ["latin"],
+  weight: ["500", "600"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: {
     default: "행복한길잡이 | 유치원·초중학교 찾아가는 장애 인식 개선 체험교육",
@@ -25,7 +33,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="ko" className={`${notoSansKr.variable} h-full antialiased`}>
+    <html
+      lang="ko"
+      className={`${notoSansKr.variable} ${notoSerifKr.variable} h-full antialiased`}
+    >
       <body className="flex min-h-full flex-col">
         <SiteHeader />
         <main id="main-content" className="flex-1">

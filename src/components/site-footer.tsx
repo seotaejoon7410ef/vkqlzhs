@@ -6,18 +6,13 @@ export function SiteFooter() {
     <footer className="on-dark border-t border-[var(--color-border)] bg-[var(--color-secondary)] pb-16 text-white sm:pb-0">
       <Container className="grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-3">
         <div>
-          <div className="flex items-center gap-2.5">
-            <Image
-              src="/logo-mark.png"
-              alt=""
-              aria-hidden="true"
-              width={36}
-              height={36}
-              className="h-9 w-9"
-            />
-            <p className="text-lg font-extrabold">행복한길잡이</p>
-          </div>
-          <p className="mt-2 text-sm text-white/70">장애이해교육센터</p>
+          <Image
+            src="/logo-lockup.png"
+            alt="행복한길잡이 장애이해교육센터 로고"
+            width={224}
+            height={92}
+            className="h-auto w-48"
+          />
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/80">
             유치원, 초등학교, 중학교를 직접 찾아가서 장애 인식 개선
             체험교육을 진행합니다.
@@ -92,15 +87,11 @@ export function SiteFooter() {
               </a>
             </li>
           </ul>
-          <p className="mt-6 text-sm leading-relaxed text-white/80">
-            이 웹사이트는 웹 접근성 지침(WCAG 2.1 AA)을 지키려고 노력합니다.
-            불편한 점이 있으면 위 연락처로 알려주세요.
-          </p>
         </div>
       </Container>
 
       <div className="border-t border-white/15 py-5 text-center text-xs text-white/60">
-        © {new Date().getFullYear()} 행복한길잡이 장애이해교육센터.
+        © 행복한길잡이 장애이해교육센터.
       </div>
     </footer>
   );
