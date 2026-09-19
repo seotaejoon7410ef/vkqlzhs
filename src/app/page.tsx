@@ -110,20 +110,20 @@ export default function Home() {
                 연 1회 의무교육,
               </span>
               <br />
-              <span className="hero-anim inline-block" style={{ animationDelay: "280ms" }}>
+              <span className="hero-anim inline-block" style={{ animationDelay: "100ms" }}>
                 저희가 교실로 찾아갑니다
               </span>
             </h1>
             <p
               className="hero-anim mx-auto mt-6 max-w-xl text-lg leading-relaxed text-white/80"
-              style={{ animationDelay: "620ms" }}
+              style={{ animationDelay: "200ms" }}
             >
               유치원·초등·중학교로 찾아가는 장애인식개선 체험교육. 문의
               한 번으로 일정과 견적까지 안내해 드려요.
             </p>
             <div
               className="hero-anim mt-9 flex flex-col items-center gap-4 sm:flex-row sm:justify-center"
-              style={{ animationDelay: "950ms" }}
+              style={{ animationDelay: "300ms" }}
             >
               <a
                 href="tel:0312368410"
@@ -146,30 +146,35 @@ export default function Home() {
       {/* 회사 소개 */}
       <section id="about" aria-labelledby="about-heading" className="scroll-mt-24 py-16 sm:py-20">
         <Container>
-          <Reveal className="mx-auto max-w-2xl text-center">
-            <p className="text-sm font-bold text-[var(--color-primary-hover)]">회사 소개</p>
-            <h2 id="about-heading" className="mt-3 text-3xl font-black text-[var(--color-text)]">
-              행복한길잡이를 소개합니다
-            </h2>
-            <p className="mt-6 text-lg leading-relaxed text-[var(--color-text-muted)]">
-              행복한길잡이는 유치원·초등학교·중학교를 직접 찾아가 장애
-              인식 개선 체험교육을 진행하는 교육 전문 업체입니다. 아이들
-              눈높이에 맞는 체험 프로그램을 직접 기획하고 운영합니다.
-            </p>
-          </Reveal>
+          <div className="mx-auto max-w-2xl text-center">
+            <Reveal>
+              <p className="text-sm font-bold text-[var(--color-primary-hover)]">회사 소개</p>
+              <h2 id="about-heading" className="mt-3 text-3xl font-black text-[var(--color-text)]">
+                행복한길잡이를 소개합니다
+              </h2>
+            </Reveal>
+            <Reveal delay={100}>
+              <p className="mt-6 text-lg leading-relaxed text-[var(--color-text-muted)]">
+                행복한길잡이는 유치원·초등학교·중학교를 직접 찾아가 장애
+                인식 개선 체험교육을 진행하는 교육 전문 업체입니다. 아이들
+                눈높이에 맞는 체험 프로그램을 직접 기획하고 운영합니다.
+              </p>
+            </Reveal>
+          </div>
 
           <div className="mt-10 grid gap-6 sm:grid-cols-3">
-            {ABOUT_VALUES.map((value, index) => (
-              <Reveal key={value.title} delay={index * 140}>
-                <div className="hover-lift h-full rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-alt)] p-7 text-center">
-                  <h3 className="text-xl font-bold text-[var(--color-primary-hover)]">
-                    {value.title}
-                  </h3>
-                  <p className="mt-3 leading-relaxed text-[var(--color-text-muted)]">
-                    {value.desc}
-                  </p>
-                </div>
-              </Reveal>
+            {ABOUT_VALUES.map((value) => (
+              <div
+                key={value.title}
+                className="hover-lift h-full rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-alt)] p-7 text-center"
+              >
+                <h3 className="text-xl font-bold text-[var(--color-primary-hover)]">
+                  {value.title}
+                </h3>
+                <p className="mt-3 leading-relaxed text-[var(--color-text-muted)]">
+                  {value.desc}
+                </p>
+              </div>
             ))}
           </div>
         </Container>
@@ -178,26 +183,30 @@ export default function Home() {
       {/* 2. 왜 필요한가 */}
       <section id="why-needed" aria-labelledby="why-heading" className="scroll-mt-24 py-16 sm:py-20">
         <Container>
-          <Reveal className="mx-auto max-w-2xl text-center">
-            <div className="flex items-center justify-center gap-3">
-              <span
-                aria-hidden="true"
-                className="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--color-primary-tint)] text-[var(--color-primary-hover)]"
-              >
-                <FileCheck size={24} />
-              </span>
-              <p className="text-sm font-bold text-[var(--color-primary-hover)]">의무교육 안내</p>
-            </div>
-            <h2 id="why-heading" className="mt-4 text-3xl font-black text-[var(--color-text)]">
-              장애 인식개선교육, 매년 실시해야 하는 의무교육입니다
-            </h2>
-            <p className="mt-6 text-lg leading-relaxed text-[var(--color-text-muted)]">
-              「장애인복지법」 제25조 제2항에 따라 유치원, 초·중·고 각급
-              학교의 장은 매년 소속 학생을 대상으로 장애인 인식개선교육을
-              실시해야 합니다. 행복한길잡이는 이 의무교육을 체험 중심으로
-              쉽게 진행해드립니다.
-            </p>
-          </Reveal>
+          <div className="mx-auto max-w-2xl text-center">
+            <Reveal>
+              <div className="flex items-center justify-center gap-3">
+                <span
+                  aria-hidden="true"
+                  className="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--color-primary-tint)] text-[var(--color-primary-hover)]"
+                >
+                  <FileCheck size={24} />
+                </span>
+                <p className="text-sm font-bold text-[var(--color-primary-hover)]">의무교육 안내</p>
+              </div>
+              <h2 id="why-heading" className="mt-4 text-3xl font-black text-[var(--color-text)]">
+                장애 인식개선교육, 매년 실시해야 하는 의무교육입니다
+              </h2>
+            </Reveal>
+            <Reveal delay={100}>
+              <p className="mt-6 text-lg leading-relaxed text-[var(--color-text-muted)]">
+                「장애인복지법」 제25조 제2항에 따라 유치원, 초·중·고 각급
+                학교의 장은 매년 소속 학생을 대상으로 장애인 인식개선교육을
+                실시해야 합니다. 행복한길잡이는 이 의무교육을 체험 중심으로
+                쉽게 진행해드립니다.
+              </p>
+            </Reveal>
+          </div>
         </Container>
       </section>
 
@@ -223,33 +232,37 @@ export default function Home() {
       {/* 4. 진행 방식 */}
       <section id="process" aria-labelledby="process-heading" className="scroll-mt-24 py-16 sm:py-20">
         <Container className="grid gap-10 lg:grid-cols-2 lg:items-center">
-          <Reveal>
-            <p className="text-sm font-bold text-[var(--color-primary-hover)]">진행 방식</p>
-            <h2 id="process-heading" className="mt-3 text-3xl font-black text-[var(--color-text)]">
-              학교(원)로 직접 찾아갑니다
-            </h2>
-            <ul className="mt-6 space-y-4 text-lg leading-relaxed text-[var(--color-text)]">
-              <li className="flex items-start gap-3">
-                <span
-                  aria-hidden="true"
-                  className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[var(--color-primary-tint)] text-xs font-extrabold text-[var(--color-primary-hover)]"
-                >
-                  1
-                </span>
-                강사와 체험 도구가 모두 학교(원)로 이동합니다.
-              </li>
-              <li className="flex items-start gap-3">
-                <span
-                  aria-hidden="true"
-                  className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[var(--color-primary-tint)] text-xs font-extrabold text-[var(--color-primary-hover)]"
-                >
-                  2
-                </span>
-                최대 4학급이 동시에 4개 존을 돌며 체험합니다.
-              </li>
-            </ul>
-          </Reveal>
-          <Reveal delay={180}>
+          <div>
+            <Reveal>
+              <p className="text-sm font-bold text-[var(--color-primary-hover)]">진행 방식</p>
+              <h2 id="process-heading" className="mt-3 text-3xl font-black text-[var(--color-text)]">
+                학교(원)로 직접 찾아갑니다
+              </h2>
+            </Reveal>
+            <Reveal delay={100}>
+              <ul className="mt-6 space-y-4 text-lg leading-relaxed text-[var(--color-text)]">
+                <li className="flex items-start gap-3">
+                  <span
+                    aria-hidden="true"
+                    className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[var(--color-primary-tint)] text-xs font-extrabold text-[var(--color-primary-hover)]"
+                  >
+                    1
+                  </span>
+                  강사와 체험 도구가 모두 학교(원)로 이동합니다.
+                </li>
+                <li className="flex items-start gap-3">
+                  <span
+                    aria-hidden="true"
+                    className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[var(--color-primary-tint)] text-xs font-extrabold text-[var(--color-primary-hover)]"
+                  >
+                    2
+                  </span>
+                  최대 4학급이 동시에 4개 존을 돌며 체험합니다.
+                </li>
+              </ul>
+            </Reveal>
+          </div>
+          <Reveal delay={100}>
             <div
               aria-hidden="true"
               className="flex h-64 flex-col items-center justify-center gap-2 rounded-3xl border border-dashed border-[var(--color-border)] bg-[var(--color-surface-alt)] text-[var(--color-text-muted)] sm:h-72"
@@ -268,34 +281,38 @@ export default function Home() {
         className="scroll-mt-24 py-16 sm:py-20"
       >
         <Container>
-          <Reveal className="mx-auto max-w-2xl text-center">
-            <div className="flex items-center justify-center gap-3">
-              <span
-                aria-hidden="true"
-                className="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--color-primary-tint)] text-[var(--color-primary-hover)]"
-              >
-                <MapPin size={24} />
-              </span>
-              <p className="text-sm font-bold text-[var(--color-primary-hover)]">출강 지역</p>
-            </div>
-            <h2 id="areas-heading" className="mt-4 text-3xl font-black text-[var(--color-text)]">
-              이 지역으로 자주 찾아가요
-            </h2>
-            <div className="mt-6 flex flex-wrap justify-center gap-3">
-              {MAIN_AREAS.map((area) => (
+          <div className="mx-auto max-w-2xl text-center">
+            <Reveal>
+              <div className="flex items-center justify-center gap-3">
                 <span
-                  key={area}
-                  className="rounded-full border-2 border-[var(--color-primary)] px-5 py-2 text-base font-bold text-[var(--color-primary-hover)]"
+                  aria-hidden="true"
+                  className="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--color-primary-tint)] text-[var(--color-primary-hover)]"
                 >
-                  {area}
+                  <MapPin size={24} />
                 </span>
-              ))}
-            </div>
-            <p className="mt-6 text-lg leading-relaxed text-[var(--color-text-muted)]">
-              위 지역이 아니어도 괜찮아요. 그 외 지역도 협의 후 얼마든지
-              찾아갈 수 있으니, 부담 갖지 마시고 편하게 문의해 주세요!
-            </p>
-          </Reveal>
+                <p className="text-sm font-bold text-[var(--color-primary-hover)]">출강 지역</p>
+              </div>
+              <h2 id="areas-heading" className="mt-4 text-3xl font-black text-[var(--color-text)]">
+                이 지역으로 자주 찾아가요
+              </h2>
+            </Reveal>
+            <Reveal delay={100}>
+              <div className="mt-6 flex flex-wrap justify-center gap-3">
+                {MAIN_AREAS.map((area) => (
+                  <span
+                    key={area}
+                    className="rounded-full border-2 border-[var(--color-primary)] px-5 py-2 text-base font-bold text-[var(--color-primary-hover)]"
+                  >
+                    {area}
+                  </span>
+                ))}
+              </div>
+              <p className="mt-6 text-lg leading-relaxed text-[var(--color-text-muted)]">
+                위 지역이 아니어도 괜찮아요. 그 외 지역도 협의 후 얼마든지
+                찾아갈 수 있으니, 부담 갖지 마시고 편하게 문의해 주세요!
+              </p>
+            </Reveal>
+          </div>
         </Container>
       </section>
 
@@ -349,67 +366,68 @@ export default function Home() {
         className="scroll-mt-24 py-16 sm:py-20"
       >
         <Container>
-          <Reveal className="mx-auto max-w-2xl text-center">
-            <p className="text-sm font-bold text-[var(--color-primary-hover)]">수업 진행</p>
-            <h2 id="class-flow-heading" className="mt-3 text-3xl font-black text-[var(--color-text)]">
-              수업은 이렇게 진행돼요
-            </h2>
-            <p className="mt-4 text-lg leading-relaxed text-[var(--color-text-muted)]">
-              학교(원)를 찾아가 진행하는 하루 수업이 어떤 흐름으로
-              이루어지는지 안내해 드려요.
-            </p>
-          </Reveal>
+          <div className="mx-auto max-w-2xl text-center">
+            <Reveal>
+              <p className="text-sm font-bold text-[var(--color-primary-hover)]">수업 진행</p>
+              <h2 id="class-flow-heading" className="mt-3 text-3xl font-black text-[var(--color-text)]">
+                수업은 이렇게 진행돼요
+              </h2>
+            </Reveal>
+            <Reveal delay={100}>
+              <p className="mt-4 text-lg leading-relaxed text-[var(--color-text-muted)]">
+                학교(원)를 찾아가 진행하는 하루 수업이 어떤 흐름으로
+                이루어지는지 안내해 드려요.
+              </p>
+            </Reveal>
+          </div>
 
           {/* 4단계 타임라인 */}
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {CLASS_FLOW_STEPS.map((step, index) => (
-              <Reveal key={step.title} delay={index * 140}>
-                <div className="hover-lift flex h-full flex-col rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-7">
-                  <span
-                    aria-hidden="true"
-                    className="flex h-11 w-11 items-center justify-center rounded-full bg-[var(--color-primary)] text-base font-extrabold text-white"
-                  >
-                    {index + 1}
-                  </span>
-                  <div className="mt-4 flex items-center gap-2">
-                    <step.icon aria-hidden="true" size={20} className="text-[var(--color-primary-hover)]" />
-                    <p className="font-bold text-[var(--color-text)]">{step.title}</p>
-                  </div>
-                  <div className="mt-2">
-                    <DraftBadge />
-                  </div>
-                  <p className="mt-3 text-sm leading-relaxed text-[var(--color-text-muted)]">
-                    {step.desc}
-                  </p>
+              <div
+                key={step.title}
+                className="hover-lift flex h-full flex-col rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-7"
+              >
+                <span
+                  aria-hidden="true"
+                  className="flex h-11 w-11 items-center justify-center rounded-full bg-[var(--color-primary)] text-base font-extrabold text-white"
+                >
+                  {index + 1}
+                </span>
+                <div className="mt-4 flex items-center gap-2">
+                  <step.icon aria-hidden="true" size={20} className="text-[var(--color-primary-hover)]" />
+                  <p className="font-bold text-[var(--color-text)]">{step.title}</p>
                 </div>
-              </Reveal>
+                <div className="mt-2">
+                  <DraftBadge />
+                </div>
+                <p className="mt-3 text-sm leading-relaxed text-[var(--color-text-muted)]">
+                  {step.desc}
+                </p>
+              </div>
             ))}
           </div>
 
           {/* 선생님이 준비하실 것 */}
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
-            <Reveal>
-              <div className="h-full rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-alt)] p-7">
-                <h3 className="text-lg font-bold text-[var(--color-text)]">
-                  선생님이 준비하실 것
-                </h3>
-                <p className="mt-3 leading-relaxed text-[var(--color-text-muted)]">
-                  공간(강당 또는 교실)과 참여할 학급 수만 알려주시면 돼요.
-                  체험 장비와 강사는 저희가 모두 준비해서 찾아갑니다.
-                </p>
-              </div>
-            </Reveal>
-            <Reveal delay={150}>
-              <div className="h-full rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-alt)] p-7">
-                <h3 className="text-lg font-bold text-[var(--color-text)]">
-                  수업 후 만족도 조사
-                </h3>
-                <p className="mt-3 leading-relaxed text-[var(--color-text-muted)]">
-                  수업이 끝나면 간단한 만족도 조사로 선생님과 학생들의 의견을
-                  듣고, 다음 교육에 반영합니다.
-                </p>
-              </div>
-            </Reveal>
+            <div className="h-full rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-alt)] p-7">
+              <h3 className="text-lg font-bold text-[var(--color-text)]">
+                선생님이 준비하실 것
+              </h3>
+              <p className="mt-3 leading-relaxed text-[var(--color-text-muted)]">
+                공간(강당 또는 교실)과 참여할 학급 수만 알려주시면 돼요.
+                체험 장비와 강사는 저희가 모두 준비해서 찾아갑니다.
+              </p>
+            </div>
+            <div className="h-full rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-alt)] p-7">
+              <h3 className="text-lg font-bold text-[var(--color-text)]">
+                수업 후 만족도 조사
+              </h3>
+              <p className="mt-3 leading-relaxed text-[var(--color-text-muted)]">
+                수업이 끝나면 간단한 만족도 조사로 선생님과 학생들의 의견을
+                듣고, 다음 교육에 반영합니다.
+              </p>
+            </div>
           </div>
 
           {/* 수업 사진 자리 */}
@@ -419,13 +437,14 @@ export default function Home() {
               <DraftBadge />
             </div>
             <div className="mt-4 grid gap-4 sm:grid-cols-3">
-              {["도착·설치", "체험 로테이션", "정리·마무리"].map((label, index) => (
-                <Reveal key={label} delay={index * 140}>
-                  <div className="flex aspect-[4/3] flex-col items-center justify-center gap-2 rounded-2xl border border-dashed border-[var(--color-border)] bg-[var(--color-surface-alt)] text-[var(--color-text-muted)]">
-                    <Camera aria-hidden="true" size={26} />
-                    <p className="text-sm">{label} 사진 (준비 중)</p>
-                  </div>
-                </Reveal>
+              {["도착·설치", "체험 로테이션", "정리·마무리"].map((label) => (
+                <div
+                  key={label}
+                  className="flex aspect-[4/3] flex-col items-center justify-center gap-2 rounded-2xl border border-dashed border-[var(--color-border)] bg-[var(--color-surface-alt)] text-[var(--color-text-muted)]"
+                >
+                  <Camera aria-hidden="true" size={26} />
+                  <p className="text-sm">{label} 사진 (준비 중)</p>
+                </div>
               ))}
             </div>
           </div>
@@ -444,23 +463,21 @@ export default function Home() {
           <ol className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {APPLY_STEPS.map((item, index) => (
               <li key={item.title}>
-                <Reveal delay={index * 140}>
-                  <div className="hover-lift flex h-full flex-col gap-3 rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-7">
-                    <span
-                      aria-hidden="true"
-                      className="flex h-11 w-11 items-center justify-center rounded-full bg-[var(--color-primary)] text-base font-extrabold text-white"
-                    >
-                      {index + 1}
-                    </span>
-                    <div className="flex items-center gap-2">
-                      <item.icon aria-hidden="true" size={20} className="text-[var(--color-primary-hover)]" />
-                      <p className="font-bold text-[var(--color-text)]">{item.title}</p>
-                    </div>
-                    <p className="text-sm leading-relaxed text-[var(--color-text-muted)]">
-                      {item.desc}
-                    </p>
+                <div className="hover-lift flex h-full flex-col gap-3 rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-7">
+                  <span
+                    aria-hidden="true"
+                    className="flex h-11 w-11 items-center justify-center rounded-full bg-[var(--color-primary)] text-base font-extrabold text-white"
+                  >
+                    {index + 1}
+                  </span>
+                  <div className="flex items-center gap-2">
+                    <item.icon aria-hidden="true" size={20} className="text-[var(--color-primary-hover)]" />
+                    <p className="font-bold text-[var(--color-text)]">{item.title}</p>
                   </div>
-                </Reveal>
+                  <p className="text-sm leading-relaxed text-[var(--color-text-muted)]">
+                    {item.desc}
+                  </p>
+                </div>
               </li>
             ))}
           </ol>
@@ -482,20 +499,21 @@ export default function Home() {
           </Reveal>
 
           <div className="mt-10 space-y-3">
-            {FAQS.map((item, index) => (
-              <Reveal key={item.q} delay={Math.min(index * 100, 400)}>
-                <details className="group rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] px-6 py-2 open:pb-5">
-                  <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-3 text-lg font-bold text-[var(--color-text)]">
-                    {item.q}
-                    <ChevronDown
-                      aria-hidden="true"
-                      size={22}
-                      className="shrink-0 text-[var(--color-primary)] transition-transform group-open:rotate-180"
-                    />
-                  </summary>
-                  <p className="leading-relaxed text-[var(--color-text-muted)]">{item.a}</p>
-                </details>
-              </Reveal>
+            {FAQS.map((item) => (
+              <details
+                key={item.q}
+                className="group rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] px-6 py-2 open:pb-5"
+              >
+                <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-3 text-lg font-bold text-[var(--color-text)]">
+                  {item.q}
+                  <ChevronDown
+                    aria-hidden="true"
+                    size={22}
+                    className="shrink-0 text-[var(--color-primary)] transition-transform group-open:rotate-180"
+                  />
+                </summary>
+                <p className="leading-relaxed text-[var(--color-text-muted)]">{item.a}</p>
+              </details>
             ))}
           </div>
         </Container>
@@ -521,53 +539,59 @@ export default function Home() {
               </div>
             </Reveal>
 
-            <Reveal delay={200}>
-              <p className="text-sm font-bold text-[var(--color-accent)]">문의하기</p>
-              <h2 id="contact-heading" className="mt-3 text-3xl font-black sm:text-4xl">
-                지금 바로 문의해 주세요
-              </h2>
-              <p className="mt-3 text-white/80">
-                행복한길잡이 체험교육 문의 · 학교(원) 일정에 맞춰 상담해드려요
-              </p>
+            <div>
+              <Reveal delay={100}>
+                <p className="text-sm font-bold text-[var(--color-accent)]">문의하기</p>
+                <h2 id="contact-heading" className="mt-3 text-3xl font-black sm:text-4xl">
+                  지금 바로 문의해 주세요
+                </h2>
+              </Reveal>
+              <Reveal delay={200}>
+                <p className="mt-3 text-white/80">
+                  행복한길잡이 체험교육 문의 · 학교(원) 일정에 맞춰 상담해드려요
+                </p>
+              </Reveal>
 
-              <div className="mt-8 grid gap-4 sm:grid-cols-2">
-                <a
-                  href="tel:0312368410"
-                  className="hover-lift rounded-2xl border border-white/20 bg-white/5 px-6 py-7 text-center transition-colors hover:bg-white/10"
-                >
-                  <span
-                    aria-hidden="true"
-                    className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-[var(--color-accent)]"
+              <Reveal delay={300}>
+                <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                  <a
+                    href="tel:0312368410"
+                    className="hover-lift rounded-2xl border border-white/20 bg-white/5 px-6 py-7 text-center transition-colors hover:bg-white/10"
                   >
-                    <Phone size={22} />
-                  </span>
-                  <span className="mt-3 block text-lg font-bold text-white">전화 문의</span>
-                  <span className="mt-1 block text-white/80">031-236-8410</span>
-                </a>
-                <a
-                  href="mailto:happyguide95@naver.com"
-                  className="hover-lift rounded-2xl border border-white/20 bg-white/5 px-6 py-7 text-center transition-colors hover:bg-white/10"
-                >
-                  <span
-                    aria-hidden="true"
-                    className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-[var(--color-accent)]"
+                    <span
+                      aria-hidden="true"
+                      className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-[var(--color-accent)]"
+                    >
+                      <Phone size={22} />
+                    </span>
+                    <span className="mt-3 block text-lg font-bold text-white">전화 문의</span>
+                    <span className="mt-1 block text-white/80">031-236-8410</span>
+                  </a>
+                  <a
+                    href="mailto:happyguide95@naver.com"
+                    className="hover-lift rounded-2xl border border-white/20 bg-white/5 px-6 py-7 text-center transition-colors hover:bg-white/10"
                   >
-                    <Mail size={20} />
-                  </span>
-                  <span className="mt-3 block text-lg font-bold text-white">이메일 문의</span>
-                  <span className="mt-1 block whitespace-nowrap text-base text-white/80">
-                    happyguide95@naver.com
-                  </span>
-                </a>
-              </div>
+                    <span
+                      aria-hidden="true"
+                      className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-[var(--color-accent)]"
+                    >
+                      <Mail size={20} />
+                    </span>
+                    <span className="mt-3 block text-lg font-bold text-white">이메일 문의</span>
+                    <span className="mt-1 block whitespace-nowrap text-base text-white/80">
+                      happyguide95@naver.com
+                    </span>
+                  </a>
+                </div>
 
-              <a
-                href="#inquiry-form"
-                className="mt-8 inline-flex min-h-14 items-center justify-center rounded-full bg-[var(--color-accent)] px-8 text-base font-bold text-[var(--color-secondary)] transition-colors hover:brightness-95"
-              >
-                문의 양식 작성하기
-              </a>
-            </Reveal>
+                <a
+                  href="#inquiry-form"
+                  className="mt-8 inline-flex min-h-14 items-center justify-center rounded-full bg-[var(--color-accent)] px-8 text-base font-bold text-[var(--color-secondary)] transition-colors hover:brightness-95"
+                >
+                  문의 양식 작성하기
+                </a>
+              </Reveal>
+            </div>
           </div>
         </Container>
       </section>
