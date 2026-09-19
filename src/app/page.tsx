@@ -37,7 +37,7 @@ const PARTNER_SCHOOLS_PLACEHOLDER_COUNT = 8;
 
 const APPLY_STEPS = [
   { icon: Phone, title: "문의", desc: "전화, 이메일, 문의 양식으로 학교와 희망 날짜를 남겨주세요." },
-  { icon: CalendarCheck, title: "일정·견적 안내", desc: "대표 서태준이 연락드려 일정을 잡고 견적을 안내합니다." },
+  { icon: CalendarCheck, title: "일정·견적 안내", desc: "담당자가 연락드려 일정을 잡고 견적을 안내합니다." },
   { icon: Users, title: "수업 진행", desc: "정해진 날짜에 학교(원)로 찾아가 체험교육을 진행합니다." },
   { icon: PartyPopper, title: "만족도 조사", desc: "교육 후 의견을 들어 다음 교육을 더 좋게 만듭니다." },
 ];
