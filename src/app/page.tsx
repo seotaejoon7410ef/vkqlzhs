@@ -58,50 +58,59 @@ export default function Home() {
   return (
     <>
       {/* 1. 히어로: 한 문장 소개 + 전화/문의 버튼 */}
-      <section id="top" className="scroll-mt-24 bg-[var(--color-surface-alt)]">
-        <Container className="grid gap-10 py-16 sm:py-20 lg:grid-cols-2 lg:items-center">
-          <div>
+      <section
+        id="top"
+        className="on-dark relative scroll-mt-24 overflow-hidden bg-gradient-to-br from-[var(--color-secondary-hover)] via-[var(--color-secondary)] to-[var(--color-primary)] text-white"
+      >
+        {/* 장식용 로고 워터마크 (실제 사진 대신 깊이감을 주는 용도, 정보 없음) */}
+        <Image
+          src="/logo-mark.png"
+          alt=""
+          aria-hidden="true"
+          width={640}
+          height={640}
+          className="pointer-events-none absolute -right-24 -top-24 h-[26rem] w-[26rem] opacity-10 sm:h-[34rem] sm:w-[34rem]"
+        />
+
+        <Container className="relative py-20 sm:py-28">
+          <div className="max-w-2xl">
             <div className="flex items-center gap-2.5">
               <Image
                 src="/logo-mark.png"
                 alt=""
                 aria-hidden="true"
-                width={40}
-                height={40}
-                className="h-10 w-10"
+                width={36}
+                height={36}
+                className="h-9 w-9"
               />
-              <p className="text-lg font-extrabold text-[var(--color-secondary)]">
+              <p className="text-base font-extrabold tracking-wide text-white/90">
                 행복한길잡이
               </p>
             </div>
-            <h1 className="mt-6 text-3xl font-black leading-snug text-[var(--color-text)] sm:text-4xl">
-              유치원·초등학교·중학교로 찾아가는
+            <h1 className="mt-6 text-4xl font-black leading-[1.2] sm:text-5xl">
+              <span className="text-[var(--color-accent)]">연 1회 의무교육</span>,
               <br />
-              장애 인식 개선 체험교육입니다.
+              저희가 교실로 찾아갑니다
             </h1>
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/80">
+              유치원·초등·중학교로 찾아가는 장애인식개선 체험교육. 문의
+              한 번으로 일정과 견적까지 안내해 드려요.
+            </p>
+            <div className="mt-9 flex flex-col gap-4 sm:flex-row">
               <a
                 href="tel:0312368410"
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[var(--color-primary)] px-7 text-base font-bold text-white transition-colors hover:bg-[var(--color-primary-hover)]"
+                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[var(--color-accent)] px-7 text-base font-bold text-[var(--color-secondary)] transition-colors hover:brightness-95"
               >
                 <Phone aria-hidden="true" size={20} />
                 전화로 문의하기
               </a>
               <a
                 href="#contact"
-                className="inline-flex min-h-12 items-center justify-center rounded-full border-2 border-[var(--color-secondary)] px-7 text-base font-bold text-[var(--color-secondary)] transition-colors hover:bg-[var(--color-secondary-tint)]"
+                className="inline-flex min-h-12 items-center justify-center rounded-full border-2 border-white px-7 text-base font-bold text-white transition-colors hover:bg-white/10"
               >
                 문의 양식 작성하기
               </a>
             </div>
-          </div>
-
-          <div
-            aria-hidden="true"
-            className="flex h-64 flex-col items-center justify-center gap-2 rounded-3xl border border-dashed border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-text-muted)] sm:h-80"
-          >
-            <Camera size={32} />
-            <p className="text-sm">대표 사진 (준비 중)</p>
           </div>
         </Container>
       </section>
@@ -125,7 +134,7 @@ export default function Home() {
             「장애인복지법」 제25조 제2항에 따라 유치원, 초·중·고 각급
             학교의 장은 매년 소속 학생을 대상으로 장애인 인식개선교육을
             실시해야 합니다. 행복한길잡이는 이 의무교육을 체험 중심으로
-            쉽고 재미있게 진행해드립니다.
+            쉽게 진행해드립니다.
           </p>
         </Container>
       </section>

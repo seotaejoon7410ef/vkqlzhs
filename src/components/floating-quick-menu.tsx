@@ -1,4 +1,5 @@
-import { MessageCircle, Newspaper, Phone } from "lucide-react";
+import Image from "next/image";
+import { Phone } from "lucide-react";
 
 const PHONE_NUMBER = "031-236-8410";
 const PHONE_TEL = "tel:0312368410";
@@ -12,14 +13,12 @@ function QuickMenuButton({
   href,
   label,
   bgClass,
-  textClass,
-  icon,
+  children,
 }: {
   href: string;
   label: string;
-  bgClass: string;
-  textClass: string;
-  icon: React.ReactNode;
+  bgClass?: string;
+  children: React.ReactNode;
 }) {
   const pending = href === "";
 
@@ -28,9 +27,9 @@ function QuickMenuButton({
       <span
         aria-disabled="true"
         title={`${label} 링크 준비 중`}
-        className={`flex h-14 w-14 flex-col items-center justify-center rounded-full ${bgClass} ${textClass} opacity-50`}
+        className={`flex h-14 w-14 items-center justify-center overflow-hidden rounded-2xl ${bgClass ?? ""} opacity-50`}
       >
-        {icon}
+        {children}
         <span className="sr-only">{label} (링크 준비 중)</span>
       </span>
     );
@@ -41,9 +40,9 @@ function QuickMenuButton({
       href={href}
       target={href.startsWith("http") ? "_blank" : undefined}
       rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-      className={`flex h-14 w-14 items-center justify-center rounded-full shadow-lg transition-transform hover:scale-105 ${bgClass} ${textClass}`}
+      className={`flex h-14 w-14 items-center justify-center overflow-hidden rounded-2xl shadow-lg transition-transform hover:scale-105 ${bgClass ?? ""}`}
     >
-      {icon}
+      {children}
       <span className="sr-only">{label}</span>
     </a>
   );
@@ -55,26 +54,32 @@ export function FloatingQuickMenu() {
       {/* 데스크톱/태블릿: 화면 오른쪽 세로 퀵메뉴 */}
       <div className="fixed right-6 top-1/2 z-40 hidden -translate-y-1/2 flex-col gap-3 sm:flex">
         <QuickMenuButton
-          href={KAKAO_URL}
-          label="카카오톡 문의"
-          bgClass="bg-[#FEE500]"
-          textClass="text-[#3C1E1E]"
-          icon={<MessageCircle aria-hidden="true" size={24} />}
-        />
-        <QuickMenuButton
           href={PHONE_TEL}
           label={`전화 문의 ${PHONE_NUMBER}`}
           bgClass="bg-[var(--color-primary)]"
-          textClass="text-white"
-          icon={<Phone aria-hidden="true" size={24} />}
-        />
-        <QuickMenuButton
-          href={BLOG_URL}
-          label="네이버 블로그"
-          bgClass="bg-[#03C75A]"
-          textClass="text-white"
-          icon={<Newspaper aria-hidden="true" size={24} />}
-        />
+        >
+          <Phone aria-hidden="true" size={30} className="text-white" />
+        </QuickMenuButton>
+
+        <QuickMenuButton href={KAKAO_URL} label="카카오톡 문의">
+          <Image
+            src="/kakao-icon.png"
+            alt=""
+            width={56}
+            height={56}
+            className="h-14 w-14 object-cover"
+          />
+        </QuickMenuButton>
+
+        <QuickMenuButton href={BLOG_URL} label="네이버 블로그" bgClass="bg-white border border-[var(--color-border)]">
+          <Image
+            src="/blog-icon.png"
+            alt=""
+            width={44}
+            height={44}
+            className="h-11 w-11 object-contain"
+          />
+        </QuickMenuButton>
       </div>
 
       {/* 모바일: 화면 하단 고정 전화 바 (항상 눈에 띄게) */}

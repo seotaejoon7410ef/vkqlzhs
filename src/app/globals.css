@@ -116,6 +116,9 @@ body {
   font-family: var(--font-sans);
   font-size: 18px;
   line-height: 1.75;
+  /* 한글은 단어(어절) 중간에서 줄바꿈되면 읽기 어려우므로, 어절 단위로만 줄바꿈 */
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 /* 본문 텍스트 기본 가독성: 문단 줄간격, 최대 줄길이는 컴포넌트에서 max-w로 제어 */
