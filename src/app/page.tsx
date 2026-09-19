@@ -89,20 +89,7 @@ export default function Home() {
 
         <Container className="relative py-20 sm:py-28">
           <div className="max-w-2xl">
-            <div className="flex items-center gap-2.5">
-              <Image
-                src="/logo-mark.png"
-                alt=""
-                aria-hidden="true"
-                width={36}
-                height={36}
-                className="h-9 w-9"
-              />
-              <p className="text-base font-extrabold tracking-wide text-white/90">
-                행복한길잡이
-              </p>
-            </div>
-            <h1 className="mt-6 text-4xl font-black leading-[1.2] sm:text-5xl">
+            <h1 className="text-4xl font-black leading-[1.2] sm:text-5xl">
               <span className="text-[var(--color-accent)]">연 1회 의무교육</span>,
               <br />
               저희가 교실로 찾아갑니다
@@ -172,7 +159,7 @@ export default function Home() {
             >
               <FileCheck size={24} />
             </span>
-            <p className="text-sm font-bold text-[var(--color-primary-hover)]">왜 필요한가</p>
+            <p className="text-sm font-bold text-[var(--color-primary-hover)]">의무교육 안내</p>
           </div>
           <h2 id="why-heading" className="mt-4 text-3xl font-black text-[var(--color-text)]">
             장애 인식개선교육, 매년 실시해야 하는 의무교육입니다

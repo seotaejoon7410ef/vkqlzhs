@@ -32,7 +32,7 @@ export function SiteFooter() {
             </li>
             <li>
               <a className="hover:underline" href="#why-needed">
-                왜 필요한가
+                의무교육 안내
               </a>
             </li>
             <li>
