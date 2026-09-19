@@ -26,6 +26,11 @@ export function SiteFooter() {
           <h2 className="text-sm font-bold text-white/90">바로가기</h2>
           <ul className="mt-4 space-y-3 text-sm">
             <li>
+              <a className="hover:underline" href="#about">
+                소개
+              </a>
+            </li>
+            <li>
               <a className="hover:underline" href="#why-needed">
                 왜 필요한가
               </a>

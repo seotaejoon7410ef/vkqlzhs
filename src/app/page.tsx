@@ -15,6 +15,21 @@ import { Container } from "@/components/container";
 import { ProgramZones } from "@/components/program-zones";
 import { InquiryForm } from "@/components/inquiry-form";
 
+const ABOUT_VALUES = [
+  {
+    title: "이해",
+    desc: "아이들 눈높이에 맞춰 쉽게 이야기해요.",
+  },
+  {
+    title: "존중",
+    desc: "누구나 편하게 참여하는 분위기를 만들어요.",
+  },
+  {
+    title: "동행",
+    desc: "교육이 끝난 뒤에도 선생님과 계속 소통해요.",
+  },
+];
+
 const MAIN_AREAS = ["서울", "경기", "인천", "충남", "충북"];
 
 // 실제 협력 학교(원) 목록으로 교체해주세요. 지어낸 이름이 아니라 빈 자리만 만들어둡니다.
@@ -111,6 +126,38 @@ export default function Home() {
                 문의 양식 작성하기
               </a>
             </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* 회사 소개 */}
+      <section id="about" aria-labelledby="about-heading" className="scroll-mt-24 py-16 sm:py-20">
+        <Container>
+          <p className="text-sm font-bold text-[var(--color-primary-hover)]">회사 소개</p>
+          <h2 id="about-heading" className="mt-3 text-3xl font-black text-[var(--color-text)]">
+            행복한길잡이를 소개합니다
+          </h2>
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[var(--color-text-muted)]">
+            행복한길잡이는 유치원·초등학교·중학교를 직접 찾아가 장애
+            인식 개선 체험교육을 진행하는 교육 전문 업체입니다. 대표
+            서태준이 아이들 눈높이에 맞는 체험 프로그램을 직접 기획하고
+            운영합니다.
+          </p>
+
+          <div className="mt-10 grid gap-6 sm:grid-cols-3">
+            {ABOUT_VALUES.map((value) => (
+              <div
+                key={value.title}
+                className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-alt)] p-7"
+              >
+                <h3 className="text-xl font-bold text-[var(--color-primary-hover)]">
+                  {value.title}
+                </h3>
+                <p className="mt-3 leading-relaxed text-[var(--color-text-muted)]">
+                  {value.desc}
+                </p>
+              </div>
+            ))}
           </div>
         </Container>
       </section>
@@ -390,7 +437,7 @@ export default function Home() {
                     <Mail size={20} />
                   </span>
                   <span className="mt-3 block text-lg font-bold text-white">이메일 문의</span>
-                  <span className="mt-1 block break-all text-white/80">
+                  <span className="mt-1 block whitespace-nowrap text-base text-white/80">
                     happyguide95@naver.com
                   </span>
                 </a>

@@ -7,6 +7,7 @@ import { Container } from "./container";
 
 // 헤더에는 선생님이 가장 자주 찾을 항목만 노출 (전체 섹션은 페이지 스크롤/푸터에서 접근)
 const NAV_ITEMS = [
+  { href: "#about", label: "소개" },
   { href: "#why-needed", label: "왜 필요한가" },
   { href: "#programs", label: "체험 프로그램" },
   { href: "#areas", label: "출강 지역" },
