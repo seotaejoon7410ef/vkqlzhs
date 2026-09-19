@@ -8,7 +8,9 @@ import { Container } from "./container";
 const NAV_ITEMS = [
   { href: "#about", label: "소개" },
   { href: "#programs", label: "체험 프로그램" },
-  { href: "#why", label: "왜 행복한길잡이일까요" },
+  { href: "#gallery", label: "체험 사진" },
+  { href: "#why", label: "선택 이유" },
+  { href: "#faq", label: "자주 묻는 질문" },
   { href: "#contact", label: "문의하기" },
 ];
 

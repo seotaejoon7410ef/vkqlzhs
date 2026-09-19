@@ -36,6 +36,16 @@ export function SiteFooter() {
               </a>
             </li>
             <li>
+              <a className="hover:underline" href="#gallery">
+                체험 사진
+              </a>
+            </li>
+            <li>
+              <a className="hover:underline" href="#faq">
+                자주 묻는 질문
+              </a>
+            </li>
+            <li>
               <a className="hover:underline" href="#contact">
                 문의하기
               </a>
