@@ -3,7 +3,6 @@ import {
   Backpack,
   CalendarCheck,
   ChevronDown,
-  LayoutGrid,
   Mail,
   MapPin,
   Megaphone,
@@ -22,24 +21,20 @@ import { DraftBadge } from "@/components/draft-badge";
 import { Reveal } from "@/components/reveal";
 import { SHOW_KINDERGARTEN } from "@/config";
 
-const ABOUT_METHODS = [
+const ABOUT_VALUES = [
   {
-    icon: LayoutGrid,
     title: "직접 기획한 4가지 체험존",
     desc: "시각장애존, 지체장애존, 감각협력존, 퀴즈형존. 눈으로 보는 교육이 아니라 몸으로 겪는 체험을 직접 만들었습니다.",
   },
   {
-    icon: Truck,
     title: "교실로 찾아가는 수업",
     desc: "강사와 장비를 모두 준비해 학교로 갑니다. 선생님의 준비 부담을 최소화했습니다.",
   },
   {
-    icon: Users,
     title: "최대 4학급 동시 체험",
     desc: "학급이 존을 돌아가며 체험해서, 한 번의 방문으로 여러 학급이 함께 교육을 마칠 수 있습니다.",
   },
   {
-    icon: PartyPopper,
     title: "수업 후 만족도 조사",
     desc: "수업이 끝나면 선생님의 의견을 받아 프로그램을 계속 다듬어 갑니다.",
   },
@@ -153,27 +148,31 @@ export default function Home() {
       </section>
 
       {/* 회사 소개 */}
-      <section id="about" aria-labelledby="about-heading" className="scroll-mt-24 py-16 sm:py-20">
-        <Container>
+      <section id="about" aria-labelledby="about-heading" className="scroll-mt-24">
+        {/* 우리가 이 교육을 하는 이유 (큰 문장 배너) */}
+        <div className="on-dark bg-gradient-to-br from-[var(--color-secondary-hover)] via-[var(--color-secondary)] to-[var(--color-primary)] py-16 text-white sm:py-24">
+          <Container>
+            <div className="mx-auto max-w-2xl text-center">
+              <Reveal>
+                <p className="text-sm font-bold text-[var(--color-accent)]">
+                  우리가 이 교육을 하는 이유
+                </p>
+                <p className="mx-auto mt-4 max-w-[36em] text-2xl font-black leading-snug sm:text-4xl">
+                  장애는 불쌍하게 볼 일이 아니라, 함께 사는 방법을 배우는
+                  일입니다.
+                </p>
+              </Reveal>
+            </div>
+          </Container>
+        </div>
+
+        <Container className="py-16 sm:py-20">
           <div className="mx-auto max-w-2xl text-center">
             <Reveal>
               <p className="text-sm font-bold text-[var(--color-primary-hover)]">회사 소개</p>
               <h2 id="about-heading" className="mt-3 text-3xl font-black text-[var(--color-text)]">
                 행복한길잡이를 소개합니다
               </h2>
-            </Reveal>
-          </div>
-
-          {/* 우리가 이 교육을 하는 이유 */}
-          <div className="mx-auto mt-14 max-w-2xl text-center">
-            <Reveal>
-              <p className="text-sm font-bold text-[var(--color-primary-hover)]">
-                우리가 이 교육을 하는 이유
-              </p>
-              <p className="mx-auto mt-4 max-w-[36em] text-2xl font-black leading-snug text-[var(--color-text)] sm:text-3xl">
-                장애는 불쌍하게 볼 일이 아니라, 함께 사는 방법을 배우는
-                일입니다.
-              </p>
             </Reveal>
             <Reveal delay={100}>
               <p className="mx-auto mt-6 max-w-[36em] leading-relaxed text-[var(--color-text-muted)]">
@@ -190,34 +189,35 @@ export default function Home() {
             </Reveal>
           </div>
 
-          {/* 행복한길잡이만의 방식 */}
-          <div className="mx-auto mt-14 max-w-2xl text-center">
+          {/* 핵심가치 (행복한길잡이만의 방식) */}
+          <div className="mt-16">
             <Reveal>
-              <p className="text-sm font-bold text-[var(--color-primary-hover)]">
-                행복한길잡이만의 방식
-              </p>
-            </Reveal>
-          </div>
-          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
-            {ABOUT_METHODS.map((item) => (
-              <div
-                key={item.title}
-                className="hover-lift h-full rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-7"
-              >
+              <div className="flex items-center gap-5">
+                <h3 className="shrink-0 text-2xl font-black text-[var(--color-text)]">
+                  핵심가치
+                </h3>
                 <span
                   aria-hidden="true"
-                  className="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--color-primary-tint)] text-[var(--color-primary-hover)]"
-                >
-                  <item.icon size={24} />
-                </span>
-                <h3 className="mt-4 text-lg font-bold text-[var(--color-text)]">
-                  {item.title}
-                </h3>
-                <p className="mt-3 leading-relaxed text-[var(--color-text-muted)]">
-                  {item.desc}
-                </p>
+                  className="h-1 w-full bg-[var(--color-text)]"
+                />
               </div>
-            ))}
+            </Reveal>
+            <div className="mt-10 grid gap-x-12 gap-y-10 sm:grid-cols-2">
+              {ABOUT_VALUES.map((value, index) => (
+                <Reveal key={value.title} delay={100}>
+                  <p className="text-lg font-black text-[var(--color-primary-hover)]">
+                    {index + 1}. {value.title}
+                  </p>
+                  <span
+                    aria-hidden="true"
+                    className="mt-2 block h-0.5 w-16 bg-[var(--color-primary)]"
+                  />
+                  <p className="mt-3 max-w-[36em] leading-relaxed text-[var(--color-text-muted)]">
+                    {value.desc}
+                  </p>
+                </Reveal>
+              ))}
+            </div>
           </div>
         </Container>
       </section>
