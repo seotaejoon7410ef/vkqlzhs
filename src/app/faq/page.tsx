@@ -3,7 +3,6 @@ import { CalendarCheck, ChevronDown, MapPin, RefreshCcw, Truck } from "lucide-re
 import { Container } from "@/components/container";
 import { PageTitle } from "@/components/page-title";
 import { Reveal } from "@/components/reveal";
-import { ReviewMarquee } from "@/components/review-marquee";
 
 export const metadata: Metadata = {
   title: "FAQ",
@@ -56,10 +55,6 @@ export default function FaqPage() {
   return (
     <>
       <PageTitle label="FAQ" title="선생님들이 많이 물어보세요" />
-
-      <div className="bg-[var(--color-surface-alt)] py-10">
-        <ReviewMarquee />
-      </div>
 
       <Container className="max-w-[900px] py-16 sm:py-20">
         {/* 진행 방식 */}
