@@ -52,13 +52,13 @@ export default function Home() {
                 저희가 교실로 찾아갑니다
               </span>
             </h1>
-            <p
+            <div
               className="hero-anim mx-auto mt-6 max-w-[36em] text-lg leading-relaxed text-white/80"
               style={{ animationDelay: "300ms" }}
             >
-              유치원·초등·중학교로 찾아가는 장애인식개선 체험교육. 문의
-              한 번으로 일정과 견적까지 안내해 드려요.
-            </p>
+              <p>유치원·초등·중학교로 찾아가는 장애인식개선 체험교육.</p>
+              <p className="mt-2">문의 한 번으로 일정과 견적까지 안내해 드려요.</p>
+            </div>
             <div
               className="hero-anim mt-9 flex justify-center"
               style={{ animationDelay: "400ms" }}
