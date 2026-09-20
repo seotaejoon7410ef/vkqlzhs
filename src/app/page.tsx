@@ -3,6 +3,7 @@ import {
   Backpack,
   CalendarCheck,
   ChevronDown,
+  LayoutGrid,
   Mail,
   MapPin,
   Megaphone,
@@ -21,18 +22,26 @@ import { DraftBadge } from "@/components/draft-badge";
 import { Reveal } from "@/components/reveal";
 import { SHOW_KINDERGARTEN } from "@/config";
 
-const ABOUT_VALUES = [
+const ABOUT_METHODS = [
   {
-    title: "이해",
-    desc: "아이들 눈높이에 맞춰 쉽게 이야기해요.",
+    icon: LayoutGrid,
+    title: "직접 기획한 4가지 체험존",
+    desc: "시각장애존, 지체장애존, 감각협력존, 퀴즈형존. 눈으로 보는 교육이 아니라 몸으로 겪는 체험을 직접 만들었습니다.",
   },
   {
-    title: "존중",
-    desc: "누구나 편하게 참여하는 분위기를 만들어요.",
+    icon: Truck,
+    title: "교실로 찾아가는 수업",
+    desc: "강사와 장비를 모두 준비해 학교로 갑니다. 선생님의 준비 부담을 최소화했습니다.",
   },
   {
-    title: "동행",
-    desc: "교육이 끝난 뒤에도 선생님과 계속 소통해요.",
+    icon: Users,
+    title: "최대 4학급 동시 체험",
+    desc: "학급이 존을 돌아가며 체험해서, 한 번의 방문으로 여러 학급이 함께 교육을 마칠 수 있습니다.",
+  },
+  {
+    icon: PartyPopper,
+    title: "수업 후 만족도 조사",
+    desc: "수업이 끝나면 선생님의 의견을 받아 프로그램을 계속 다듬어 갑니다.",
   },
 ];
 
@@ -153,26 +162,59 @@ export default function Home() {
                 행복한길잡이를 소개합니다
               </h2>
             </Reveal>
+          </div>
+
+          {/* 우리가 이 교육을 하는 이유 */}
+          <div className="mx-auto mt-14 max-w-2xl text-center">
+            <Reveal>
+              <p className="text-sm font-bold text-[var(--color-primary-hover)]">
+                우리가 이 교육을 하는 이유
+              </p>
+              <p className="mx-auto mt-4 max-w-[36em] text-2xl font-black leading-snug text-[var(--color-text)] sm:text-3xl">
+                장애는 불쌍하게 볼 일이 아니라, 함께 사는 방법을 배우는
+                일입니다.
+              </p>
+            </Reveal>
             <Reveal delay={100}>
-              <p className="mx-auto mt-6 max-w-[36em] text-lg leading-relaxed text-[var(--color-text-muted)]">
-                행복한길잡이는 유치원·초등학교·중학교를 직접 찾아가 장애
-                인식 개선 체험교육을 진행하는 교육 전문 업체입니다. 아이들
-                눈높이에 맞는 체험 프로그램을 직접 기획하고 운영합니다.
+              <p className="mx-auto mt-6 max-w-[36em] leading-relaxed text-[var(--color-text-muted)]">
+                장애를 낯선 일로만 여기면 아이들은 어떻게 대해야 할지
+                몰라 머뭇거리게 됩니다. 행복한길잡이는 아이들이 직접
+                보고, 만지고, 겪어 보면서 불편은 그 사람이 아니라
+                환경에서 생긴다는 것을 스스로 알아가도록 돕습니다.
+              </p>
+              <p className="mx-auto mt-4 max-w-[36em] leading-relaxed text-[var(--color-text-muted)]">
+                의무교육이라서 하는 형식적인 수업이 아니라, 수업이 끝난
+                뒤 교실에서 친구를 대하는 마음과 행동이 조금 더
+                자연스러워지는 것. 그것이 저희의 목표입니다.
               </p>
             </Reveal>
           </div>
 
-          <div className="mt-10 grid gap-6 sm:grid-cols-3">
-            {ABOUT_VALUES.map((value) => (
+          {/* 행복한길잡이만의 방식 */}
+          <div className="mx-auto mt-14 max-w-2xl text-center">
+            <Reveal>
+              <p className="text-sm font-bold text-[var(--color-primary-hover)]">
+                행복한길잡이만의 방식
+              </p>
+            </Reveal>
+          </div>
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+            {ABOUT_METHODS.map((item) => (
               <div
-                key={value.title}
-                className="hover-lift h-full rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-alt)] p-7 text-center"
+                key={item.title}
+                className="hover-lift h-full rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-7"
               >
-                <h3 className="text-xl font-bold text-[var(--color-primary-hover)]">
-                  {value.title}
+                <span
+                  aria-hidden="true"
+                  className="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--color-primary-tint)] text-[var(--color-primary-hover)]"
+                >
+                  <item.icon size={24} />
+                </span>
+                <h3 className="mt-4 text-lg font-bold text-[var(--color-text)]">
+                  {item.title}
                 </h3>
                 <p className="mt-3 leading-relaxed text-[var(--color-text-muted)]">
-                  {value.desc}
+                  {item.desc}
                 </p>
               </div>
             ))}
