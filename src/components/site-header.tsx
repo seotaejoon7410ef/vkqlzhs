@@ -76,8 +76,17 @@ export function SiteHeader() {
           </ul>
         </nav>
 
-        {/* 데스크톱 CTA */}
+        {/* 데스크톱 CTA: 스크롤하면 문의하기 버튼 옆에 전화번호가 펼쳐지며 나타남 */}
         <div className="hidden shrink-0 items-center gap-3 lg:flex">
+          <a
+            href={PHONE_TEL}
+            className={`flex items-center gap-1.5 overflow-hidden whitespace-nowrap text-sm font-bold text-[var(--color-primary-hover)] transition-all duration-300 ${
+              scrolled ? "max-w-[180px] opacity-100" : "max-w-0 opacity-0"
+            }`}
+          >
+            <Phone aria-hidden="true" size={16} className="shrink-0" />
+            {PHONE_NUMBER}
+          </a>
           <Link
             href="/contact"
             className="inline-flex min-h-11 items-center gap-2 rounded-full bg-[var(--color-accent)] px-5 text-sm font-bold text-[var(--color-secondary)] transition-colors hover:brightness-95"
