@@ -2,15 +2,23 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Phone } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Container } from "./container";
 import { NAV_ITEMS } from "@/config";
 
+// 맨 위에 어두운 배너(히어로/PageTitle)가 없는 페이지 — 투명 오버레이로
+// 두면 밝은 배경 위에 흰 글자가 겹쳐 안 보이므로 헤더를 항상 불투명으로 고정
+const NO_DARK_HERO_PATHS = ["/contact"];
+
 const PHONE_NUMBER = "031-236-8410";
 const PHONE_TEL = "tel:0312368410";
 
 export function SiteHeader() {
+  const pathname = usePathname();
+  const forceSolid = NO_DARK_HERO_PATHS.includes(pathname);
+
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   // 모바일 화면은 주소창 축소/스크롤 바운스 등으로 스크롤 위치 기반
@@ -34,7 +42,7 @@ export function SiteHeader() {
     };
   }, []);
 
-  const solid = isNarrow || scrolled || menuOpen;
+  const solid = isNarrow || scrolled || menuOpen || forceSolid;
 
   return (
     <header
