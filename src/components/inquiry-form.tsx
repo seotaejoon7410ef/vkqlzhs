@@ -206,9 +206,9 @@ export function InquiryForm() {
         <textarea
           id="message"
           name="message"
-          rows={2}
+          rows={1}
           placeholder="인원, 궁금한 점 등을 자유롭게 남겨주세요."
-          className="mt-1.5 w-full resize-none rounded-xl border-2 border-[var(--color-border)] bg-[var(--color-surface)] px-3.5 py-2 text-base text-[var(--color-text)] focus:border-[var(--color-primary)]"
+          className="mt-1.5 h-11 w-full resize-none rounded-xl border-2 border-[var(--color-border)] bg-[var(--color-surface)] px-3.5 py-2 text-sm text-[var(--color-text)] focus:border-[var(--color-primary)]"
         />
       </div>
 
