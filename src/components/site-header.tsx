@@ -44,7 +44,7 @@ export function SiteHeader() {
           : "border-b border-transparent bg-transparent"
       }`}
     >
-      <Container className="flex h-20 items-center justify-between gap-6">
+      <Container className="flex h-24 items-center justify-between gap-6">
         <Link href="/" className="flex shrink-0 items-center rounded-md">
           <Image
             src={solid ? "/logo-lockup.png" : "/logo-lockup-white-v2.png"}
@@ -52,18 +52,18 @@ export function SiteHeader() {
             width={224}
             height={92}
             priority
-            className="h-14 w-auto sm:h-16"
+            className="h-16 w-auto sm:h-20"
           />
         </Link>
 
         {/* 데스크톱 내비게이션 (각 메뉴의 별도 페이지로 이동) */}
         <nav aria-label="주요 메뉴" className="hidden lg:block">
-          <ul className="flex items-center gap-7">
+          <ul className="flex items-center gap-10">
             {NAV_ITEMS.map((item) => (
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className={`inline-flex min-h-11 items-center text-lg font-medium tracking-wide transition-colors ${
+                  className={`inline-flex min-h-11 items-center text-xl font-medium tracking-wide transition-colors ${
                     solid
                       ? "text-[var(--color-text)] hover:text-[var(--color-primary)]"
                       : "text-white/90 hover:text-white"

@@ -37,10 +37,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </noscript>
         <SiteHeader />
         {/* lg 미만에서는 헤더 아래 항상 보이는 메뉴 줄이 추가돼 고정 헤더가
-            더 높아졌으므로(약 140px), 그만큼 본문 콘텐츠를 아래로 밀어
-            헤더에 가려지지 않게 합니다. lg 이상은 헤더가 얇고(80px) 히어로
-            사진 위에 투명하게 겹치는 연출이 있어 그대로 둡니다. */}
-        <main id="main-content" className="flex-1 pt-36 lg:pt-0">
+            더 높아졌으므로(메인 줄 96px + 메뉴 줄 약 64px, 약 160px),
+            그만큼 본문 콘텐츠를 아래로 밀어 헤더에 가려지지 않게 합니다.
+            lg 이상은 헤더가 얇고(96px) 히어로 사진 위에 투명하게 겹치는
+            연출이 있어 그대로 둡니다. */}
+        <main id="main-content" className="flex-1 pt-40 lg:pt-0">
           {children}
         </main>
         <SiteFooter />
