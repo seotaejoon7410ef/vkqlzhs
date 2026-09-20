@@ -6,17 +6,16 @@ const SMS_NUMBER = "01074957410";
 
 const AREAS = ["서울", "경기", "인천", "충남", "충북", "기타 지역(협의)"];
 
-const GRADES = [
+const ELEMENTARY_GRADES = [
   "초등학교 1학년",
   "초등학교 2학년",
   "초등학교 3학년",
   "초등학교 4학년",
   "초등학교 5학년",
   "초등학교 6학년",
-  "중학교 1학년",
-  "중학교 2학년",
-  "중학교 3학년",
 ];
+
+const MIDDLE_GRADES = ["중학교 1학년", "중학교 2학년", "중학교 3학년"];
 
 const inputClass =
   "mt-2 min-h-12 w-full rounded-xl border-2 border-[var(--color-border)] bg-[var(--color-surface)] px-4 text-base text-[var(--color-text)] focus:border-[var(--color-primary)]";
@@ -93,8 +92,23 @@ export function InquiryForm() {
         <legend className={labelClass}>
           학년 (여러 학년이 함께하면 모두 선택해 주세요)
         </legend>
-        <div className="mt-3 flex flex-wrap gap-2">
-          {GRADES.map((grade) => (
+
+        <p className="mt-4 text-xs font-bold text-[var(--color-text-muted)]">초등학교</p>
+        <div className="mt-2 flex flex-wrap gap-2">
+          {ELEMENTARY_GRADES.map((grade) => (
+            <label
+              key={grade}
+              className="flex min-h-11 cursor-pointer items-center gap-2 rounded-full border-2 border-[var(--color-border)] px-4 text-sm font-bold text-[var(--color-text-muted)] has-[input:checked]:border-[var(--color-primary)] has-[input:checked]:bg-[var(--color-primary-tint)] has-[input:checked]:text-[var(--color-primary-hover)]"
+            >
+              <input type="checkbox" name="grade" value={grade} className="h-4 w-4" />
+              {grade}
+            </label>
+          ))}
+        </div>
+
+        <p className="mt-5 text-xs font-bold text-[var(--color-text-muted)]">중학교</p>
+        <div className="mt-2 flex flex-wrap gap-2">
+          {MIDDLE_GRADES.map((grade) => (
             <label
               key={grade}
               className="flex min-h-11 cursor-pointer items-center gap-2 rounded-full border-2 border-[var(--color-border)] px-4 text-sm font-bold text-[var(--color-text-muted)] has-[input:checked]:border-[var(--color-primary)] has-[input:checked]:bg-[var(--color-primary-tint)] has-[input:checked]:text-[var(--color-primary-hover)]"
