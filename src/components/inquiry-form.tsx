@@ -16,8 +16,10 @@ const ELEMENTARY_GRADES = [
 const MIDDLE_GRADES = ["중학교 1학년", "중학교 2학년", "중학교 3학년"];
 
 const inputClass =
-  "mt-2 min-h-12 w-full rounded-xl border-2 border-[var(--color-border)] bg-[var(--color-surface)] px-4 text-base text-[var(--color-text)] focus:border-[var(--color-primary)]";
+  "mt-1.5 min-h-11 w-full rounded-xl border-2 border-[var(--color-border)] bg-[var(--color-surface)] px-3.5 text-base text-[var(--color-text)] focus:border-[var(--color-primary)]";
 const labelClass = "text-sm font-bold text-[var(--color-text)]";
+const gradePillClass =
+  "flex min-h-9 cursor-pointer items-center gap-1.5 rounded-full border-2 border-[var(--color-border)] px-3 text-sm font-bold text-[var(--color-text-muted)] has-[input:checked]:border-[var(--color-primary)] has-[input:checked]:bg-[var(--color-primary-tint)] has-[input:checked]:text-[var(--color-primary-hover)]";
 
 type SubmitState = "idle" | "sending" | "success" | "error";
 
@@ -81,8 +83,8 @@ export function InquiryForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6" noValidate={false}>
-      <div className="grid gap-6 sm:grid-cols-2">
+    <form onSubmit={handleSubmit} className="space-y-4" noValidate={false}>
+      <div className="grid gap-4 sm:grid-cols-2">
         <div>
           <label htmlFor="area" className={labelClass}>
             지역
@@ -118,54 +120,50 @@ export function InquiryForm() {
           학년 (여러 학년이 함께하면 모두 선택해 주세요)
         </legend>
 
-        <p className="mt-4 text-xs font-bold text-[var(--color-text-muted)]">초등학교</p>
-        <div className="mt-2 flex flex-wrap gap-2">
+        <div className="mt-2 flex flex-wrap items-center gap-1.5">
+          <span className="mr-1 text-xs font-bold text-[var(--color-text-muted)]">초등</span>
           {ELEMENTARY_GRADES.map((grade) => (
-            <label
-              key={grade}
-              className="flex min-h-11 cursor-pointer items-center gap-2 rounded-full border-2 border-[var(--color-border)] px-4 text-sm font-bold text-[var(--color-text-muted)] has-[input:checked]:border-[var(--color-primary)] has-[input:checked]:bg-[var(--color-primary-tint)] has-[input:checked]:text-[var(--color-primary-hover)]"
-            >
-              <input type="checkbox" name="grade" value={grade} className="h-4 w-4" />
-              {grade}
+            <label key={grade} className={gradePillClass}>
+              <input type="checkbox" name="grade" value={grade} className="h-3.5 w-3.5" />
+              {grade.replace("초등학교 ", "")}
             </label>
           ))}
         </div>
 
-        <p className="mt-5 text-xs font-bold text-[var(--color-text-muted)]">중학교</p>
-        <div className="mt-2 flex flex-wrap gap-2">
+        <div className="mt-2 flex flex-wrap items-center gap-1.5">
+          <span className="mr-1 text-xs font-bold text-[var(--color-text-muted)]">중학</span>
           {MIDDLE_GRADES.map((grade) => (
-            <label
-              key={grade}
-              className="flex min-h-11 cursor-pointer items-center gap-2 rounded-full border-2 border-[var(--color-border)] px-4 text-sm font-bold text-[var(--color-text-muted)] has-[input:checked]:border-[var(--color-primary)] has-[input:checked]:bg-[var(--color-primary-tint)] has-[input:checked]:text-[var(--color-primary-hover)]"
-            >
-              <input type="checkbox" name="grade" value={grade} className="h-4 w-4" />
-              {grade}
+            <label key={grade} className={gradePillClass}>
+              <input type="checkbox" name="grade" value={grade} className="h-3.5 w-3.5" />
+              {grade.replace("중학교 ", "")}
             </label>
           ))}
         </div>
       </fieldset>
 
-      <div>
-        <label htmlFor="classCount" className={labelClass}>
-          학급수
-        </label>
-        <input
-          id="classCount"
-          name="classCount"
-          type="number"
-          min={1}
-          placeholder="예: 2"
-          className={`${inputClass} sm:max-w-xs`}
-        />
-      </div>
-
-      <div className="grid gap-6 sm:grid-cols-2">
+      <div className="grid gap-4 sm:grid-cols-2">
+        <div>
+          <label htmlFor="classCount" className={labelClass}>
+            학급수
+          </label>
+          <input
+            id="classCount"
+            name="classCount"
+            type="number"
+            min={1}
+            placeholder="예: 2"
+            className={inputClass}
+          />
+        </div>
         <div>
           <label htmlFor="name" className={labelClass}>
             담당 선생님 성함
           </label>
           <input id="name" name="name" type="text" required className={inputClass} />
         </div>
+      </div>
+
+      <div className="grid gap-4 sm:grid-cols-2">
         <div>
           <label htmlFor="phone" className={labelClass}>
             휴대폰 번호
@@ -179,27 +177,26 @@ export function InquiryForm() {
             className={inputClass}
           />
         </div>
-      </div>
-
-      <div>
-        <label htmlFor="email" className={labelClass}>
-          이메일
-        </label>
-        <input
-          id="email"
-          name="email"
-          type="email"
-          required
-          placeholder="example@school.go.kr"
-          className={`${inputClass} sm:max-w-xs`}
-        />
+        <div>
+          <label htmlFor="email" className={labelClass}>
+            이메일
+          </label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            required
+            placeholder="example@school.go.kr"
+            className={inputClass}
+          />
+        </div>
       </div>
 
       <div>
         <label htmlFor="date" className={labelClass}>
           희망 수업 일정 (선택)
         </label>
-        <input id="date" name="date" type="date" className={`${inputClass} sm:max-w-xs`} />
+        <input id="date" name="date" type="date" className={`${inputClass} sm:max-w-[calc(50%-0.5rem)]`} />
       </div>
 
       <div>
@@ -209,14 +206,14 @@ export function InquiryForm() {
         <textarea
           id="message"
           name="message"
-          rows={4}
+          rows={3}
           placeholder="인원, 궁금한 점 등을 자유롭게 남겨주세요."
-          className="mt-2 w-full rounded-xl border-2 border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3 text-base text-[var(--color-text)] focus:border-[var(--color-primary)]"
+          className="mt-1.5 w-full rounded-xl border-2 border-[var(--color-border)] bg-[var(--color-surface)] px-3.5 py-2.5 text-base text-[var(--color-text)] focus:border-[var(--color-primary)]"
         />
       </div>
 
-      <label className="flex cursor-pointer items-start gap-2 text-sm text-[var(--color-text-muted)]">
-        <input type="checkbox" required className="mt-1 h-4 w-4 shrink-0" />
+      <label className="flex cursor-pointer items-start gap-2 text-xs text-[var(--color-text-muted)]">
+        <input type="checkbox" required className="mt-0.5 h-4 w-4 shrink-0" />
         입력하신 정보는 문의 답변 목적으로만 사용되며, 별도로 저장하지 않고
         담당자 이메일로 바로 전달됩니다. 이에 동의합니다. (필수)
       </label>
@@ -225,7 +222,7 @@ export function InquiryForm() {
         <button
           type="submit"
           disabled={state === "sending"}
-          className="inline-flex min-h-14 items-center justify-center rounded-full bg-[var(--color-primary)] px-8 text-lg font-bold text-white transition-colors hover:bg-[var(--color-primary-hover)] disabled:opacity-60"
+          className="inline-flex min-h-12 items-center justify-center rounded-full bg-[var(--color-primary)] px-8 text-base font-bold text-white transition-colors hover:bg-[var(--color-primary-hover)] disabled:opacity-60"
         >
           {state === "sending" ? "보내는 중..." : "문의 보내기"}
         </button>
