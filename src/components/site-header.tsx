@@ -4,16 +4,7 @@ import Image from "next/image";
 import { Phone } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Container } from "./container";
-
-// 헤더에는 선생님이 가장 자주 찾을 항목만 노출 (전체 섹션은 페이지 스크롤/푸터에서 접근)
-const NAV_ITEMS = [
-  { href: "#about", label: "회사소개" },
-  { href: "#why-needed", label: "의무교육 안내" },
-  { href: "#programs", label: "체험 프로그램" },
-  { href: "#areas", label: "출강 지역" },
-  { href: "#faq", label: "FAQ" },
-  { href: "#contact", label: "문의하기" },
-];
+import { NAV_ITEMS } from "@/config";
 
 const PHONE_NUMBER = "031-236-8410";
 const PHONE_TEL = "tel:0312368410";

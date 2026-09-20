@@ -1,14 +1,6 @@
 import Image from "next/image";
 import { Container } from "./container";
-
-const FOOTER_NAV = [
-  { href: "#about", label: "회사소개" },
-  { href: "#why-needed", label: "의무교육 안내" },
-  { href: "#programs", label: "체험 프로그램" },
-  { href: "#areas", label: "출강 지역" },
-  { href: "#faq", label: "FAQ" },
-  { href: "#contact", label: "문의하기" },
-];
+import { NAV_ITEMS } from "@/config";
 
 export function SiteFooter() {
   return (
@@ -43,7 +35,7 @@ export function SiteFooter() {
         <div className="flex flex-col gap-6 lg:items-end">
           <nav aria-label="바로가기">
             <ul className="flex flex-wrap gap-x-6 gap-y-2 text-lg font-bold lg:justify-end">
-              {FOOTER_NAV.map((item) => (
+              {NAV_ITEMS.map((item) => (
                 <li key={item.href}>
                   <a className="hover:underline" href={item.href}>
                     {item.label}

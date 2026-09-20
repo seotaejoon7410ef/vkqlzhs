@@ -1,12 +1,10 @@
 import {
   Accessibility,
-  Backpack,
   ChevronRight,
   Eye,
   HeartHandshake,
   Presentation,
 } from "lucide-react";
-import { DraftBadge } from "./draft-badge";
 
 const ZONES = [
   {
@@ -37,85 +35,58 @@ const ZONES = [
 
 export function ProgramZones() {
   return (
-    <div className="space-y-16">
-      {/* 유치원 */}
-      <div>
-        <div className="flex items-center gap-3">
-          <span
-            aria-hidden="true"
-            className="flex h-11 w-11 items-center justify-center rounded-full bg-[var(--color-primary-tint)] text-[var(--color-primary-hover)]"
+    <>
+      <p className="mx-auto max-w-2xl text-center text-[var(--color-text-muted)]">
+        초등학교와 중학교가 함께 체험하는 4개 존이에요. 1교시 기준 초등
+        40분 · 중학교 45분이 걸려요.
+      </p>
+
+      <div className="mt-8 grid gap-6 sm:grid-cols-2">
+        {ZONES.map((zone) => (
+          <div
+            key={zone.title}
+            className="hover-lift flex min-h-64 flex-col justify-between rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface)] p-8"
           >
-            <Backpack size={22} />
-          </span>
-          <h3 className="text-xl font-bold text-[var(--color-text)]">유치원 프로그램</h3>
-          <DraftBadge />
-        </div>
-        <div className="mt-4 rounded-2xl border border-dashed border-[var(--color-border)] bg-[var(--color-surface)] p-7 text-[var(--color-text-muted)]">
-          유치원 프로그램 구성은 아직 준비 중입니다. 내용 확인 후 채워
-          넣겠습니다.
-        </div>
-      </div>
-
-      {/* 초·중등 (통합 4존) */}
-      <div>
-        <div className="flex flex-wrap items-center gap-3">
-          <h3 className="text-xl font-bold text-[var(--color-text)]">
-            초·중등 체험 프로그램 (4존)
-          </h3>
-          <DraftBadge />
-        </div>
-        <p className="mt-2 text-[var(--color-text-muted)]">
-          초등학교와 중학교가 함께 체험하는 4개 존이에요. 1교시 기준 초등
-          40분 · 중학교 45분이 걸려요.
-        </p>
-
-        <div className="mt-8 grid gap-6 sm:grid-cols-2">
-          {ZONES.map((zone) => (
-            <div
-              key={zone.title}
-              className="hover-lift flex min-h-64 flex-col justify-between rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface)] p-8"
-            >
-              <div className="flex items-center justify-between">
-                <span
-                  aria-hidden="true"
-                  className="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--color-primary-tint)] text-[var(--color-primary-hover)]"
-                >
-                  <zone.icon size={24} />
-                </span>
-                <div className="flex flex-wrap justify-end gap-2">
-                  {zone.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full bg-[var(--color-surface-alt)] px-3 py-1 text-xs font-bold text-[var(--color-text-muted)]"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="mt-6">
-                <h4 className="text-2xl font-black text-[var(--color-text)]">
-                  {zone.title}
-                </h4>
-                <p className="mt-3 leading-relaxed text-[var(--color-text-muted)]">
-                  {zone.desc}
-                </p>
-              </div>
-
+            <div className="flex items-center justify-between">
               <span
                 aria-hidden="true"
-                className="mt-6 flex h-10 w-10 items-center justify-center self-end rounded-full bg-[var(--color-primary)] text-white"
+                className="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--color-primary-tint)] text-[var(--color-primary-hover)]"
               >
-                <ChevronRight size={20} />
+                <zone.icon size={24} />
               </span>
+              <div className="flex flex-wrap justify-end gap-2">
+                {zone.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-full bg-[var(--color-surface-alt)] px-3 py-1 text-xs font-bold text-[var(--color-text-muted)]"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
-          ))}
-        </div>
-        <p className="mt-4 text-xs text-[var(--color-text-muted)]">
-          * 4존 설명은 초안입니다. 실제 진행 내용과 다르면 알려주세요.
-        </p>
+
+            <div className="mt-6">
+              <h4 className="text-2xl font-black text-[var(--color-text)]">
+                {zone.title}
+              </h4>
+              <p className="mt-3 leading-relaxed text-[var(--color-text-muted)]">
+                {zone.desc}
+              </p>
+            </div>
+
+            <span
+              aria-hidden="true"
+              className="mt-6 flex h-10 w-10 items-center justify-center self-end rounded-full bg-[var(--color-primary)] text-white"
+            >
+              <ChevronRight size={20} />
+            </span>
+          </div>
+        ))}
       </div>
-    </div>
+      <p className="mt-4 text-xs text-[var(--color-text-muted)]">
+        * 4존 설명은 초안입니다. 실제 진행 내용과 다르면 알려주세요.
+      </p>
+    </>
   );
 }

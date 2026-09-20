@@ -1,9 +1,9 @@
 import Image from "next/image";
 import {
+  Backpack,
   Camera,
   CalendarCheck,
   ChevronDown,
-  FileCheck,
   Mail,
   MapPin,
   Megaphone,
@@ -20,21 +20,7 @@ import { ProgramZones } from "@/components/program-zones";
 import { InquiryForm } from "@/components/inquiry-form";
 import { DraftBadge } from "@/components/draft-badge";
 import { Reveal } from "@/components/reveal";
-
-const ABOUT_VALUES = [
-  {
-    title: "이해",
-    desc: "아이들 눈높이에 맞춰 쉽게 이야기해요.",
-  },
-  {
-    title: "존중",
-    desc: "누구나 편하게 참여하는 분위기를 만들어요.",
-  },
-  {
-    title: "동행",
-    desc: "교육이 끝난 뒤에도 선생님과 계속 소통해요.",
-  },
-];
+import { SHOW_KINDERGARTEN } from "@/config";
 
 const MAIN_AREAS = ["서울", "경기", "인천", "충남", "충북"];
 
@@ -143,74 +129,42 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* 회사 소개 */}
-      <section id="about" aria-labelledby="about-heading" className="scroll-mt-24 py-16 sm:py-20">
-        <Container>
-          <div className="mx-auto max-w-2xl text-center">
-            <Reveal>
-              <p className="text-sm font-bold text-[var(--color-primary-hover)]">회사 소개</p>
-              <h2 id="about-heading" className="mt-3 text-3xl font-black text-[var(--color-text)]">
-                행복한길잡이를 소개합니다
-              </h2>
-            </Reveal>
+      {/* 유치원 체험 (SHOW_KINDERGARTEN으로 켜고 끔) */}
+      {SHOW_KINDERGARTEN && (
+        <section
+          id="kindergarten"
+          aria-labelledby="kindergarten-heading"
+          className="scroll-mt-24 py-16 sm:py-20"
+        >
+          <Container>
+            <div className="mx-auto max-w-2xl text-center">
+              <Reveal>
+                <div className="flex items-center justify-center gap-3">
+                  <span
+                    aria-hidden="true"
+                    className="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--color-primary-tint)] text-[var(--color-primary-hover)]"
+                  >
+                    <Backpack size={24} />
+                  </span>
+                  <p className="text-sm font-bold text-[var(--color-primary-hover)]">유치원 체험</p>
+                  <DraftBadge />
+                </div>
+                <h2 id="kindergarten-heading" className="mt-4 text-3xl font-black text-[var(--color-text)]">
+                  유치원 체험 프로그램
+                </h2>
+              </Reveal>
+            </div>
             <Reveal delay={100}>
-              <p className="mt-6 text-lg leading-relaxed text-[var(--color-text-muted)]">
-                행복한길잡이는 유치원·초등학교·중학교를 직접 찾아가 장애
-                인식 개선 체험교육을 진행하는 교육 전문 업체입니다. 아이들
-                눈높이에 맞는 체험 프로그램을 직접 기획하고 운영합니다.
-              </p>
-            </Reveal>
-          </div>
-
-          <div className="mt-10 grid gap-6 sm:grid-cols-3">
-            {ABOUT_VALUES.map((value) => (
-              <div
-                key={value.title}
-                className="hover-lift h-full rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-alt)] p-7 text-center"
-              >
-                <h3 className="text-xl font-bold text-[var(--color-primary-hover)]">
-                  {value.title}
-                </h3>
-                <p className="mt-3 leading-relaxed text-[var(--color-text-muted)]">
-                  {value.desc}
-                </p>
+              <div className="mx-auto mt-10 max-w-2xl rounded-2xl border border-dashed border-[var(--color-border)] bg-[var(--color-surface)] p-7 text-center text-[var(--color-text-muted)]">
+                유치원 프로그램 구성은 아직 준비 중입니다. 내용 확인 후 채워
+                넣겠습니다.
               </div>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* 2. 왜 필요한가 */}
-      <section id="why-needed" aria-labelledby="why-heading" className="scroll-mt-24 py-16 sm:py-20">
-        <Container>
-          <div className="mx-auto max-w-2xl text-center">
-            <Reveal>
-              <div className="flex items-center justify-center gap-3">
-                <span
-                  aria-hidden="true"
-                  className="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--color-primary-tint)] text-[var(--color-primary-hover)]"
-                >
-                  <FileCheck size={24} />
-                </span>
-                <p className="text-sm font-bold text-[var(--color-primary-hover)]">의무교육 안내</p>
-              </div>
-              <h2 id="why-heading" className="mt-4 text-3xl font-black text-[var(--color-text)]">
-                장애 인식개선교육, 매년 실시해야 하는 의무교육입니다
-              </h2>
             </Reveal>
-            <Reveal delay={100}>
-              <p className="mt-6 text-lg leading-relaxed text-[var(--color-text-muted)]">
-                「장애인복지법」 제25조 제2항에 따라 유치원, 초·중·고 각급
-                학교의 장은 매년 소속 학생을 대상으로 장애인 인식개선교육을
-                실시해야 합니다. 행복한길잡이는 이 의무교육을 체험 중심으로
-                쉽게 진행해드립니다.
-              </p>
-            </Reveal>
-          </div>
-        </Container>
-      </section>
+          </Container>
+        </section>
+      )}
 
-      {/* 3. 체험 프로그램: 유치원 / 초·중등 */}
+      {/* 초·중등 체험 */}
       <section
         id="programs"
         aria-labelledby="programs-heading"
@@ -218,9 +172,12 @@ export default function Home() {
       >
         <Container>
           <Reveal className="mx-auto max-w-2xl text-center">
-            <p className="text-sm font-bold text-[var(--color-primary-hover)]">체험 프로그램</p>
+            <div className="flex items-center justify-center gap-2">
+              <p className="text-sm font-bold text-[var(--color-primary-hover)]">초·중등 체험</p>
+              <DraftBadge />
+            </div>
             <h2 id="programs-heading" className="mt-3 text-3xl font-black text-[var(--color-text)]">
-              눈높이에 맞춘 체험 프로그램
+              초·중등 체험 프로그램
             </h2>
           </Reveal>
           <div className="mt-10">
