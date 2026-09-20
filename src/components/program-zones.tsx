@@ -1,44 +1,89 @@
 import {
   Accessibility,
+  Camera,
   ChevronRight,
   CircleQuestionMark,
   Eye,
   HeartHandshake,
 } from "lucide-react";
 
-const ZONES = [
+type Level = "elementary" | "middle";
+
+// TODO 확인 필요: 아래 4존 제목/태그/설명은 실제 진행 내용과 다르면 알려주세요.
+const ELEMENTARY_ZONES = [
   {
     icon: Eye,
     title: "시각장애존",
-    tags: ["안대 체험", "이동 훈련"],
-    desc: "안대를 쓰고 이동하며 시각장애인이 느끼는 하루를 체험해요.",
+    tags: ["안대 체험", "이동 체험"],
+    desc: "안대를 쓰고 이동하며 앞이 보이지 않을 때 어떤 도움이 필요한지 알아봐요.",
   },
   {
     icon: Accessibility,
     title: "지체장애존",
-    tags: ["휠체어 체험", "이동 훈련"],
+    tags: ["휠체어 체험", "이동 체험"],
     desc: "휠체어를 직접 타고 움직이며 이동이 얼마나 다른지 느껴봐요.",
   },
   {
     icon: HeartHandshake,
     title: "감각협력존",
-    tags: ["협동 놀이", "감각 체험"],
-    desc: "제한된 감각으로 친구와 협력해 함께 과제를 해결해요.",
+    tags: ["협력 과제", "감각 체험"],
+    desc: "사용할 수 있는 감각이 제한된 상황에서 친구와 협력해 과제를 해결해요.",
   },
   {
     icon: CircleQuestionMark,
-    title: "퀴즈형존",
-    tags: ["퀴즈 풀기", "O/X 게임"],
-    desc: "장애에 대한 퀴즈를 풀며 궁금증을 재미있게 풀어봐요.",
+    title: "퀴즈형존 · 오해와 에티켓 퀴즈",
+    tags: ["OX 퀴즈", "객관식"],
+    desc: "OX 퀴즈와 객관식 문제 10문항으로, 장애에 대한 흔한 오해와 올바른 에티켓을 배웁니다. 일상 속 상황으로 쉽게 풀어봐요.",
   },
 ];
 
-const DURATION_NOTE: Record<"elementary" | "middle", string> = {
-  elementary: "초등학교는 1교시(40분) 기준으로 4개 존을 체험해요.",
-  middle: "중학교는 1교시(45분) 기준으로 4개 존을 체험해요.",
+const MIDDLE_ZONES = [
+  {
+    icon: Eye,
+    title: "시각장애존",
+    tags: ["안대 체험", "이동 체험"],
+    desc: "안대를 쓰고 이동하며 시각장애인이 마주하는 일상의 불편을 체험하고, 어떤 배려가 필요한지 생각해 봐요.",
+  },
+  {
+    icon: Accessibility,
+    title: "지체장애존",
+    tags: ["휠체어 체험", "이동 체험"],
+    desc: "휠체어를 직접 타고 이동하며 주변 환경이 이동에 어떤 영향을 주는지 생각해 봐요.",
+  },
+  {
+    icon: HeartHandshake,
+    title: "감각협력존",
+    tags: ["협력 과제", "감각 체험"],
+    desc: "제한된 감각으로 친구와 협력하며 서로 의지하고 소통하는 방법을 배워요.",
+  },
+  {
+    icon: CircleQuestionMark,
+    title: "퀴즈형존 · 오해와 에티켓 퀴즈",
+    tags: ["OX 퀴즈", "객관식"],
+    desc: "OX 퀴즈와 객관식 문제 10문항으로, 장애에 대한 흔한 오해와 올바른 에티켓을 배웁니다. 편견과 인식을 함께 생각해 봐요.",
+  },
+];
+
+const ZONES: Record<Level, typeof ELEMENTARY_ZONES> = {
+  elementary: ELEMENTARY_ZONES,
+  middle: MIDDLE_ZONES,
 };
 
-export function ProgramZones({ level }: { level: "elementary" | "middle" }) {
+const DURATION_NOTE: Record<Level, string> = {
+  elementary: "초등학교는 1교시(40분) 기준으로 4개 존을 체험해요. 쉬운 말과 일상 속 상황으로 이해해요.",
+  middle: "중학교는 1교시(45분) 기준으로 4개 존을 체험해요. 생각해 볼 질문과 함께 깊이 이해해요.",
+};
+
+// TODO 확인 필요: 실제 수업 사진과 대체 텍스트가 준비되면 아래 placeholder를
+// <Image src="..." alt={PHOTO_PLACEHOLDER[level].alt} ... /> 로 교체하세요.
+const PHOTO_PLACEHOLDER: Record<Level, { label: string; alt: string }> = {
+  elementary: { label: "초등 수업 사진 추가 필요", alt: "" },
+  middle: { label: "중등 수업 사진 추가 필요", alt: "" },
+};
+
+export function ProgramZones({ level }: { level: Level }) {
+  const photo = PHOTO_PLACEHOLDER[level];
+
   return (
     <>
       <p className="mx-auto max-w-[36em] text-center text-[var(--color-text-muted)]">
@@ -46,7 +91,7 @@ export function ProgramZones({ level }: { level: "elementary" | "middle" }) {
       </p>
 
       <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
-        {ZONES.map((zone) => (
+        {ZONES[level].map((zone) => (
           <div
             key={zone.title}
             className="hover-lift flex min-h-64 flex-col justify-between rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface)] p-8"
@@ -88,9 +133,14 @@ export function ProgramZones({ level }: { level: "elementary" | "middle" }) {
           </div>
         ))}
       </div>
-      <p className="mt-4 text-xs text-[var(--color-text-muted)]">
-        * 4존 설명은 초안입니다. 실제 진행 내용과 다르면 알려주세요.
-      </p>
+
+      <div
+        aria-hidden="true"
+        className="mt-8 flex h-64 flex-col items-center justify-center gap-2 rounded-3xl border border-dashed border-[var(--color-border)] bg-[var(--color-surface-alt)] text-[var(--color-text-muted)] sm:h-72"
+      >
+        <Camera size={32} />
+        <p className="text-sm">{photo.label}</p>
+      </div>
     </>
   );
 }

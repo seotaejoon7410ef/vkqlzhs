@@ -222,11 +222,9 @@ export default function Home() {
         className="scroll-mt-24 py-16 sm:py-20"
       >
         <Container>
+          {/* TODO 확인 필요: 초등학교 체험 섹션 내용 전체 */}
           <Reveal className="mx-auto max-w-2xl text-center">
-            <div className="flex items-center justify-center gap-2">
-              <p className="text-sm font-bold text-[var(--color-primary-hover)]">초등학교 체험</p>
-              <DraftBadge />
-            </div>
+            <p className="text-sm font-bold text-[var(--color-primary-hover)]">초등학교 체험</p>
             <h2 id="elementary-heading" className="mt-3 text-3xl font-black text-[var(--color-text)]">
               초등학교 체험 프로그램
             </h2>
@@ -244,11 +242,9 @@ export default function Home() {
         className="scroll-mt-24 py-16 sm:py-20"
       >
         <Container>
+          {/* TODO 확인 필요: 중학교 체험 섹션 내용 전체 */}
           <Reveal className="mx-auto max-w-2xl text-center">
-            <div className="flex items-center justify-center gap-2">
-              <p className="text-sm font-bold text-[var(--color-primary-hover)]">중학교 체험</p>
-              <DraftBadge />
-            </div>
+            <p className="text-sm font-bold text-[var(--color-primary-hover)]">중학교 체험</p>
             <h2 id="middle-heading" className="mt-3 text-3xl font-black text-[var(--color-text)]">
               중학교 체험 프로그램
             </h2>
@@ -347,12 +343,12 @@ export default function Home() {
           </Reveal>
 
           {/* 수업 진행 (FAQ와 함께 묶음) */}
+          {/* TODO 확인 필요: 수업 진행 4단계 및 안내 문구 */}
           <Reveal delay={100}>
             <div className="mt-6 rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-alt)] p-7">
               <div className="flex items-center gap-2">
                 <RefreshCcw aria-hidden="true" size={20} className="text-[var(--color-primary-hover)]" />
                 <h3 className="text-lg font-bold text-[var(--color-text)]">수업은 이렇게 진행돼요</h3>
-                <DraftBadge />
               </div>
               <ol className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
                 {CLASS_FLOW_STEPS.map((step, index) => (
