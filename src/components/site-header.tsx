@@ -136,7 +136,29 @@ export function SiteHeader() {
         </button>
       </Container>
 
-      {/* 모바일 내비게이션 */}
+      {/* 모바일: 탭하지 않아도 항상 보이는 가로 스크롤 메뉴 */}
+      <nav
+        aria-label="주요 메뉴 (모바일)"
+        className={`lg:hidden ${solid ? "border-t border-[var(--color-border)]" : ""}`}
+      >
+        <div className="scrollbar-hide flex gap-2 overflow-x-auto px-6 py-3">
+          {NAV_ITEMS.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={`shrink-0 whitespace-nowrap rounded-full border px-4 py-2 text-sm font-bold transition-colors ${
+                solid
+                  ? "border-[var(--color-border)] text-[var(--color-text)] hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
+                  : "border-white/60 text-white hover:border-white hover:bg-white/10"
+              }`}
+            >
+              {item.label}
+            </Link>
+          ))}
+        </div>
+      </nav>
+
+      {/* 모바일 내비게이션 (햄버거 버튼으로 열고 닫는 전체 메뉴 + 전화 CTA) */}
       {menuOpen && (
         <nav
           id="mobile-menu"

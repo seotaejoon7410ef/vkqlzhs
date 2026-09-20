@@ -108,6 +108,17 @@ textarea:focus-visible,
   outline-color: #ffffff;
 }
 
+/* 모바일 상단 가로 스크롤 메뉴: 스크롤바를 시각적으로만 숨김
+   (마우스/키보드 스크롤 기능 자체는 그대로 동작) */
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 /* FAQ 아코디언: 기본 브라우저 화살표 대신 커스텀 ChevronDown 아이콘만 표시 */
 summary::-webkit-details-marker {
   display: none;
