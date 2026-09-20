@@ -144,14 +144,6 @@ summary::-webkit-details-marker {
   animation: hero-line-in 0.6s ease-out forwards;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .hero-anim {
-    opacity: 1;
-    animation: none;
-    transform: none;
-  }
-}
-
 /* 후기 사진 띠: 옆으로 끊김 없이 계속 흐르는 애니메이션.
    트랙 안에 카드 목록을 2벌 이어붙이고 정확히 절반(-50%)만큼
    이동시켜 이어지는 것처럼 보이게 합니다. */
@@ -180,19 +172,6 @@ summary::-webkit-details-marker {
 .hover-lift:hover {
   transform: translateY(-4px);
   box-shadow: 0 16px 32px -16px rgb(80 48 184 / 0.25);
-}
-
-/* 모션 최소화 선호 시 애니메이션·트랜지션 억제 (전정기관 장애 등 접근성 고려) */
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-  *, *::before, *::after {
-    animation-duration: 0.001ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.001ms !important;
-    scroll-behavior: auto !important;
-  }
 }
 
 /* 시스템 고대비 모드 사용자를 위한 보강 (OS/브라우저 설정 기준) */
