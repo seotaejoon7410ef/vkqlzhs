@@ -212,13 +212,13 @@ export function InquiryForm() {
         />
       </div>
 
-      <label className="flex cursor-pointer items-start gap-2 text-xs text-[var(--color-text-muted)]">
+      <label className="mx-auto flex max-w-md cursor-pointer items-start justify-center gap-2 text-center text-xs text-[var(--color-text-muted)]">
         <input type="checkbox" required className="mt-0.5 h-4 w-4 shrink-0" />
         입력하신 정보는 문의 답변 목적으로만 사용되며, 별도로 저장하지 않고
         담당자 이메일로 바로 전달됩니다. 이에 동의합니다. (필수)
       </label>
 
-      <div>
+      <div className="flex flex-col items-center text-center">
         <button
           type="submit"
           disabled={state === "sending"}
