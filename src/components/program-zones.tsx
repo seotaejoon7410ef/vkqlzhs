@@ -41,11 +41,11 @@ const DURATION_NOTE: Record<"elementary" | "middle", string> = {
 export function ProgramZones({ level }: { level: "elementary" | "middle" }) {
   return (
     <>
-      <p className="mx-auto max-w-2xl text-center text-[var(--color-text-muted)]">
+      <p className="mx-auto max-w-[36em] text-center text-[var(--color-text-muted)]">
         {DURATION_NOTE[level]}
       </p>
 
-      <div className="mt-8 grid gap-6 sm:grid-cols-2">
+      <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
         {ZONES.map((zone) => (
           <div
             key={zone.title}

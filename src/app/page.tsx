@@ -116,7 +116,7 @@ export default function Home() {
               </span>
             </h1>
             <p
-              className="hero-anim mx-auto mt-6 max-w-xl text-lg leading-relaxed text-white/80"
+              className="hero-anim mx-auto mt-6 max-w-[36em] text-lg leading-relaxed text-white/80"
               style={{ animationDelay: "200ms" }}
             >
               유치원·초등·중학교로 찾아가는 장애인식개선 체험교육. 문의
@@ -155,7 +155,7 @@ export default function Home() {
               </h2>
             </Reveal>
             <Reveal delay={100}>
-              <p className="mt-6 text-lg leading-relaxed text-[var(--color-text-muted)]">
+              <p className="mx-auto mt-6 max-w-[36em] text-lg leading-relaxed text-[var(--color-text-muted)]">
                 행복한길잡이는 유치원·초등학교·중학교를 직접 찾아가 장애
                 인식 개선 체험교육을 진행하는 교육 전문 업체입니다. 아이들
                 눈높이에 맞는 체험 프로그램을 직접 기획하고 운영합니다.
@@ -262,7 +262,7 @@ export default function Home() {
 
       {/* 4. 진행 방식 */}
       <section id="process" aria-labelledby="process-heading" className="scroll-mt-24 py-16 sm:py-20">
-        <Container className="grid gap-10 lg:grid-cols-2 lg:items-center">
+        <Container className="grid gap-10 lg:grid-cols-[45fr_55fr] lg:items-center">
           <div>
             <Reveal>
               <p className="text-sm font-bold text-[var(--color-primary-hover)]">진행 방식</p>
@@ -364,7 +364,7 @@ export default function Home() {
               </h2>
             </Reveal>
             <Reveal delay={100}>
-              <p className="mt-4 text-lg leading-relaxed text-[var(--color-text-muted)]">
+              <p className="mx-auto mt-4 max-w-[36em] text-lg leading-relaxed text-[var(--color-text-muted)]">
                 학교(원)를 찾아가 진행하는 하루 수업이 어떤 흐름으로
                 이루어지는지 안내해 드려요.
               </p>
@@ -372,7 +372,7 @@ export default function Home() {
           </div>
 
           {/* 4단계 타임라인 */}
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
             {CLASS_FLOW_STEPS.map((step, index) => (
               <div
                 key={step.title}
@@ -450,7 +450,7 @@ export default function Home() {
               신청부터 수업까지 4단계
             </h2>
           </Reveal>
-          <ol className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <ol className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
             {APPLY_STEPS.map((item, index) => (
               <li key={item.title}>
                 <div className="hover-lift flex h-full flex-col gap-3 rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-7">
@@ -480,7 +480,7 @@ export default function Home() {
         aria-labelledby="faq-heading"
         className="scroll-mt-24 py-16 sm:py-20"
       >
-        <Container className="max-w-3xl">
+        <Container className="max-w-[900px]">
           <Reveal className="text-center">
             <p className="text-sm font-bold text-[var(--color-primary-hover)]">자주 묻는 질문</p>
             <h2 id="faq-heading" className="mt-3 text-3xl font-black text-[var(--color-text)]">
@@ -542,7 +542,7 @@ export default function Home() {
         className="on-dark scroll-mt-24 bg-[var(--color-secondary)] py-16 text-white sm:py-24"
       >
         <Container>
-          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+          <div className="grid gap-12 lg:grid-cols-[55fr_45fr] lg:items-center">
             <Reveal className="flex justify-center lg:justify-start">
               <div className="relative h-96 w-80 overflow-hidden rounded-3xl sm:h-[30rem] sm:w-96 lg:h-[34rem] lg:w-[26rem]">
                 <Image
@@ -618,7 +618,7 @@ export default function Home() {
         aria-label="문의 양식"
         className="scroll-mt-24 bg-[var(--color-surface-alt)] py-16 sm:py-20"
       >
-        <Container className="max-w-3xl">
+        <Container className="max-w-[900px]">
           <h3 className="text-2xl font-black text-[var(--color-text)]">문의 양식</h3>
           <InquiryForm />
         </Container>
