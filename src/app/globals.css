@@ -152,6 +152,26 @@ summary::-webkit-details-marker {
   }
 }
 
+/* 후기 사진 띠: 옆으로 끊김 없이 계속 흐르는 애니메이션.
+   트랙 안에 카드 목록을 2벌 이어붙이고 정확히 절반(-50%)만큼
+   이동시켜 이어지는 것처럼 보이게 합니다. */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee 32s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
 /* 카드에 은은한 호버 리프트 효과 */
 .hover-lift {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
