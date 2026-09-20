@@ -76,10 +76,11 @@ export function SiteHeader() {
           </ul>
         </nav>
 
-        {/* 데스크톱 CTA: 스크롤하면 같은 버튼 안에서 문의하기 → 전화번호로 바뀜 */}
+        {/* 데스크톱 CTA: 스크롤하면 같은 버튼 안에서 문의하기 → 전화번호로 바뀜.
+            PC에서는 전화를 걸 수 없으므로 링크는 항상 문의하기 페이지로 이동 */}
         <div className="hidden shrink-0 items-center lg:flex">
-          <a
-            href={scrolled ? PHONE_TEL : "/contact"}
+          <Link
+            href="/contact"
             className="relative flex h-11 w-[150px] shrink-0 items-center justify-center overflow-hidden rounded-full bg-[var(--color-accent)] text-sm font-bold text-[var(--color-secondary)] transition-colors hover:brightness-95"
           >
             <span
@@ -99,7 +100,7 @@ export function SiteHeader() {
               <Phone aria-hidden="true" size={16} />
               {PHONE_NUMBER}
             </span>
-          </a>
+          </Link>
         </div>
 
         {/* 모바일 메뉴 버튼 */}
