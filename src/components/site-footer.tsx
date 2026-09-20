@@ -17,6 +17,7 @@ export function SiteFooter() {
           />
           <div className="mt-5 space-y-2 text-lg text-white/70">
             <p>대표 | 서태준</p>
+            <p>사업자등록번호 | 549-05-03225</p>
             <p>
               대표번호 |{" "}
               <a className="hover:underline" href="tel:0312368410">
