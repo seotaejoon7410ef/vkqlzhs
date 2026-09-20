@@ -27,7 +27,7 @@ export default function Home() {
         />
         <div className="hero-overlay absolute inset-0" />
 
-        <Container className="relative py-14 sm:py-20 lg:py-28">
+        <Container className="relative pt-14 pb-24 sm:py-20 lg:py-28">
           <div className="mx-auto max-w-2xl text-center">
             <p
               className="hero-anim text-base font-bold tracking-wide text-[var(--color-accent)]"
