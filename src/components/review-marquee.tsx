@@ -16,15 +16,15 @@ export function ReviewMarquee() {
   const cards = [...PLACEHOLDER_CARDS, ...PLACEHOLDER_CARDS];
 
   return (
-    <div className="overflow-hidden py-2" aria-hidden="true">
-      <div className="marquee-track flex w-max gap-6 px-6">
+    <div className="overflow-hidden py-4" aria-hidden="true">
+      <div className="marquee-track flex w-max gap-8 px-6">
         {cards.map((gradient, index) => (
           <div
             key={index}
-            className={`flex h-44 w-64 shrink-0 flex-col items-center justify-center gap-2 rounded-2xl bg-gradient-to-br ${gradient} text-[var(--color-primary-hover)] sm:h-52 sm:w-72`}
+            className={`flex h-64 w-96 shrink-0 flex-col items-center justify-center gap-3 rounded-3xl bg-gradient-to-br ${gradient} text-[var(--color-primary-hover)] sm:h-80 sm:w-[28rem] lg:h-96 lg:w-[34rem]`}
           >
-            <Camera size={28} />
-            <p className="text-sm font-bold">
+            <Camera size={40} />
+            <p className="text-lg font-bold">
               후기 사진 추가 예정 {(index % PLACEHOLDER_CARDS.length) + 1}
             </p>
           </div>

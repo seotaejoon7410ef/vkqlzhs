@@ -89,7 +89,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="bg-[var(--color-surface-alt)] py-10">
+      <div className="bg-[var(--color-surface-alt)] py-14 sm:py-16">
         <ReviewMarquee />
       </div>
     </>
