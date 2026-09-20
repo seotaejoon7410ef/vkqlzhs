@@ -2,9 +2,10 @@
 export const SHOW_KINDERGARTEN = false;
 
 export const NAV_ITEMS = [
+  { href: "#about", label: "회사소개" },
   ...(SHOW_KINDERGARTEN ? [{ href: "#kindergarten", label: "유치원 체험" }] : []),
-  { href: "#programs", label: "초·중등 체험" },
-  { href: "#areas", label: "출강 지역" },
+  { href: "#elementary", label: "초등학교 체험" },
+  { href: "#middle", label: "중학교 체험" },
   { href: "#faq", label: "FAQ" },
   { href: "#contact", label: "문의하기" },
 ];

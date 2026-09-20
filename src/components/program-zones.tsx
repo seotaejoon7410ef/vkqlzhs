@@ -1,9 +1,9 @@
 import {
   Accessibility,
   ChevronRight,
+  CircleQuestionMark,
   Eye,
   HeartHandshake,
-  Presentation,
 } from "lucide-react";
 
 const ZONES = [
@@ -26,19 +26,23 @@ const ZONES = [
     desc: "제한된 감각으로 친구와 협력해 함께 과제를 해결해요.",
   },
   {
-    icon: Presentation,
-    title: "전시형존",
-    tags: ["자료 전시", "질의응답"],
-    desc: "자료와 전시물로 장애에 대한 궁금증을 쉽게 풀어봐요.",
+    icon: CircleQuestionMark,
+    title: "퀴즈형존",
+    tags: ["퀴즈 풀기", "O/X 게임"],
+    desc: "장애에 대한 퀴즈를 풀며 궁금증을 재미있게 풀어봐요.",
   },
 ];
 
-export function ProgramZones() {
+const DURATION_NOTE: Record<"elementary" | "middle", string> = {
+  elementary: "초등학교는 1교시(40분) 기준으로 4개 존을 체험해요.",
+  middle: "중학교는 1교시(45분) 기준으로 4개 존을 체험해요.",
+};
+
+export function ProgramZones({ level }: { level: "elementary" | "middle" }) {
   return (
     <>
       <p className="mx-auto max-w-2xl text-center text-[var(--color-text-muted)]">
-        초등학교와 중학교가 함께 체험하는 4개 존이에요. 1교시 기준 초등
-        40분 · 중학교 45분이 걸려요.
+        {DURATION_NOTE[level]}
       </p>
 
       <div className="mt-8 grid gap-6 sm:grid-cols-2">

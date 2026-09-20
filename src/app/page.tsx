@@ -22,6 +22,21 @@ import { DraftBadge } from "@/components/draft-badge";
 import { Reveal } from "@/components/reveal";
 import { SHOW_KINDERGARTEN } from "@/config";
 
+const ABOUT_VALUES = [
+  {
+    title: "이해",
+    desc: "아이들 눈높이에 맞춰 쉽게 이야기해요.",
+  },
+  {
+    title: "존중",
+    desc: "누구나 편하게 참여하는 분위기를 만들어요.",
+  },
+  {
+    title: "동행",
+    desc: "교육이 끝난 뒤에도 선생님과 계속 소통해요.",
+  },
+];
+
 const MAIN_AREAS = ["서울", "경기", "인천", "충남", "충북"];
 
 // "함께한 학교" 섹션 복원 시 다시 사용 (아래 JSX 주석과 세트)
@@ -129,6 +144,43 @@ export default function Home() {
         </Container>
       </section>
 
+      {/* 회사 소개 */}
+      <section id="about" aria-labelledby="about-heading" className="scroll-mt-24 py-16 sm:py-20">
+        <Container>
+          <div className="mx-auto max-w-2xl text-center">
+            <Reveal>
+              <p className="text-sm font-bold text-[var(--color-primary-hover)]">회사 소개</p>
+              <h2 id="about-heading" className="mt-3 text-3xl font-black text-[var(--color-text)]">
+                행복한길잡이를 소개합니다
+              </h2>
+            </Reveal>
+            <Reveal delay={100}>
+              <p className="mt-6 text-lg leading-relaxed text-[var(--color-text-muted)]">
+                행복한길잡이는 유치원·초등학교·중학교를 직접 찾아가 장애
+                인식 개선 체험교육을 진행하는 교육 전문 업체입니다. 아이들
+                눈높이에 맞는 체험 프로그램을 직접 기획하고 운영합니다.
+              </p>
+            </Reveal>
+          </div>
+
+          <div className="mt-10 grid gap-6 sm:grid-cols-3">
+            {ABOUT_VALUES.map((value) => (
+              <div
+                key={value.title}
+                className="hover-lift h-full rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-alt)] p-7 text-center"
+              >
+                <h3 className="text-xl font-bold text-[var(--color-primary-hover)]">
+                  {value.title}
+                </h3>
+                <p className="mt-3 leading-relaxed text-[var(--color-text-muted)]">
+                  {value.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
       {/* 유치원 체험 (SHOW_KINDERGARTEN으로 켜고 끔) */}
       {SHOW_KINDERGARTEN && (
         <section
@@ -164,24 +216,46 @@ export default function Home() {
         </section>
       )}
 
-      {/* 초·중등 체험 */}
+      {/* 초등학교 체험 */}
       <section
-        id="programs"
-        aria-labelledby="programs-heading"
+        id="elementary"
+        aria-labelledby="elementary-heading"
         className="scroll-mt-24 py-16 sm:py-20"
       >
         <Container>
           <Reveal className="mx-auto max-w-2xl text-center">
             <div className="flex items-center justify-center gap-2">
-              <p className="text-sm font-bold text-[var(--color-primary-hover)]">초·중등 체험</p>
+              <p className="text-sm font-bold text-[var(--color-primary-hover)]">초등학교 체험</p>
               <DraftBadge />
             </div>
-            <h2 id="programs-heading" className="mt-3 text-3xl font-black text-[var(--color-text)]">
-              초·중등 체험 프로그램
+            <h2 id="elementary-heading" className="mt-3 text-3xl font-black text-[var(--color-text)]">
+              초등학교 체험 프로그램
             </h2>
           </Reveal>
           <div className="mt-10">
-            <ProgramZones />
+            <ProgramZones level="elementary" />
+          </div>
+        </Container>
+      </section>
+
+      {/* 중학교 체험 */}
+      <section
+        id="middle"
+        aria-labelledby="middle-heading"
+        className="scroll-mt-24 py-16 sm:py-20"
+      >
+        <Container>
+          <Reveal className="mx-auto max-w-2xl text-center">
+            <div className="flex items-center justify-center gap-2">
+              <p className="text-sm font-bold text-[var(--color-primary-hover)]">중학교 체험</p>
+              <DraftBadge />
+            </div>
+            <h2 id="middle-heading" className="mt-3 text-3xl font-black text-[var(--color-text)]">
+              중학교 체험 프로그램
+            </h2>
+          </Reveal>
+          <div className="mt-10">
+            <ProgramZones level="middle" />
           </div>
         </Container>
       </section>
@@ -231,47 +305,6 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* 5. 출강 지역 안내 */}
-      <section
-        id="areas"
-        aria-labelledby="areas-heading"
-        className="scroll-mt-24 py-16 sm:py-20"
-      >
-        <Container>
-          <div className="mx-auto max-w-2xl text-center">
-            <Reveal>
-              <div className="flex items-center justify-center gap-3">
-                <span
-                  aria-hidden="true"
-                  className="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--color-primary-tint)] text-[var(--color-primary-hover)]"
-                >
-                  <MapPin size={24} />
-                </span>
-                <p className="text-sm font-bold text-[var(--color-primary-hover)]">출강 지역</p>
-              </div>
-              <h2 id="areas-heading" className="mt-4 text-3xl font-black text-[var(--color-text)]">
-                이 지역으로 자주 찾아가요
-              </h2>
-            </Reveal>
-            <Reveal delay={100}>
-              <div className="mt-6 flex flex-wrap justify-center gap-3">
-                {MAIN_AREAS.map((area) => (
-                  <span
-                    key={area}
-                    className="rounded-full border-2 border-[var(--color-primary)] px-5 py-2 text-base font-bold text-[var(--color-primary-hover)]"
-                  >
-                    {area}
-                  </span>
-                ))}
-              </div>
-              <p className="mt-6 text-lg leading-relaxed text-[var(--color-text-muted)]">
-                위 지역이 아니어도 괜찮아요. 그 외 지역도 협의 후 얼마든지
-                찾아갈 수 있으니, 부담 갖지 마시고 편하게 문의해 주세요!
-              </p>
-            </Reveal>
-          </div>
-        </Container>
-      </section>
 
       {/* 5-1. 함께한 학교 — 잠시 숨김 (아래 "수업은 이렇게 진행돼요" 섹션으로 교체).
           나중에 다시 쓸 때: 위 import의 School 주석 해제, PARTNER_SCHOOLS_PLACEHOLDER_COUNT 주석 해제,
@@ -453,6 +486,32 @@ export default function Home() {
             <h2 id="faq-heading" className="mt-3 text-3xl font-black text-[var(--color-text)]">
               선생님들이 많이 물어보세요
             </h2>
+          </Reveal>
+
+          {/* 출강 지역 안내 (FAQ와 함께 묶음) */}
+          <Reveal delay={100}>
+            <div className="mt-10 rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-alt)] p-7 text-center">
+              <div className="flex items-center justify-center gap-2">
+                <MapPin aria-hidden="true" size={20} className="text-[var(--color-primary-hover)]" />
+                <h3 className="text-lg font-bold text-[var(--color-text)]">
+                  이 지역으로 자주 찾아가요
+                </h3>
+              </div>
+              <div className="mt-4 flex flex-wrap justify-center gap-3">
+                {MAIN_AREAS.map((area) => (
+                  <span
+                    key={area}
+                    className="rounded-full border-2 border-[var(--color-primary)] px-4 py-1.5 text-sm font-bold text-[var(--color-primary-hover)]"
+                  >
+                    {area}
+                  </span>
+                ))}
+              </div>
+              <p className="mt-4 leading-relaxed text-[var(--color-text-muted)]">
+                위 지역이 아니어도 괜찮아요. 그 외 지역도 협의 후 얼마든지
+                찾아갈 수 있으니, 부담 갖지 마시고 편하게 문의해 주세요!
+              </p>
+            </div>
           </Reveal>
 
           <div className="mt-10 space-y-3">
