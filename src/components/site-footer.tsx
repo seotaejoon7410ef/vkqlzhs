@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Container } from "./container";
 import { NAV_ITEMS } from "@/config";
 
@@ -37,9 +38,9 @@ export function SiteFooter() {
             <ul className="flex flex-wrap gap-x-6 gap-y-2 text-lg font-bold lg:justify-end">
               {NAV_ITEMS.map((item) => (
                 <li key={item.href}>
-                  <a className="hover:underline" href={item.href}>
+                  <Link className="hover:underline" href={item.href}>
                     {item.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -64,12 +65,12 @@ export function SiteFooter() {
               <Image src="/kakao-icon.png" alt="" width={32} height={32} className="h-full w-full rounded-full object-cover" />
               <span className="sr-only">카카오톡 문의</span>
             </a>
-            <a
-              href="#contact"
+            <Link
+              href="/contact"
               className="inline-flex min-h-11 items-center rounded-full bg-[var(--color-accent)] px-6 text-base font-bold text-[var(--color-secondary)] transition-colors hover:brightness-95"
             >
               문의하기
-            </a>
+            </Link>
           </div>
         </div>
       </Container>

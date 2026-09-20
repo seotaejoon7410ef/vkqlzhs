@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { Phone } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Container } from "./container";
@@ -32,7 +33,7 @@ export function SiteHeader() {
       }`}
     >
       <Container className="flex h-20 items-center justify-between gap-6">
-        <a href="#top" className="flex shrink-0 items-center rounded-md">
+        <Link href="/" className="flex shrink-0 items-center rounded-md">
           <Image
             src={solid ? "/logo-lockup.png" : "/logo-lockup-white-v2.png"}
             alt="행복한길잡이 장애이해교육센터 로고"
@@ -41,14 +42,14 @@ export function SiteHeader() {
             priority
             className="h-14 w-auto sm:h-16"
           />
-        </a>
+        </Link>
 
-        {/* 데스크톱 내비게이션 (페이지 안 섹션으로 바로 이동) */}
+        {/* 데스크톱 내비게이션 (각 메뉴의 별도 페이지로 이동) */}
         <nav aria-label="주요 메뉴" className="hidden lg:block">
           <ul className="flex items-center gap-7">
             {NAV_ITEMS.map((item) => (
               <li key={item.href}>
-                <a
+                <Link
                   href={item.href}
                   className={`inline-flex min-h-11 items-center text-lg font-medium tracking-wide transition-colors ${
                     solid
@@ -57,7 +58,7 @@ export function SiteHeader() {
                   }`}
                 >
                   {item.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -73,19 +74,22 @@ export function SiteHeader() {
               전화 문의
             </a>
           )}
-          <a
-            href={solid ? PHONE_TEL : "#contact"}
-            className="inline-flex min-h-11 items-center gap-2 rounded-full bg-[var(--color-accent)] px-5 text-sm font-bold text-[var(--color-secondary)] transition-colors hover:brightness-95"
-          >
-            {solid ? (
-              <>
-                <Phone aria-hidden="true" size={18} />
-                {PHONE_NUMBER}
-              </>
-            ) : (
-              "문의하기"
-            )}
-          </a>
+          {solid ? (
+            <a
+              href={PHONE_TEL}
+              className="inline-flex min-h-11 items-center gap-2 rounded-full bg-[var(--color-accent)] px-5 text-sm font-bold text-[var(--color-secondary)] transition-colors hover:brightness-95"
+            >
+              <Phone aria-hidden="true" size={18} />
+              {PHONE_NUMBER}
+            </a>
+          ) : (
+            <Link
+              href="/contact"
+              className="inline-flex min-h-11 items-center gap-2 rounded-full bg-[var(--color-accent)] px-5 text-sm font-bold text-[var(--color-secondary)] transition-colors hover:brightness-95"
+            >
+              문의하기
+            </Link>
+          )}
         </div>
 
         {/* 모바일 메뉴 버튼 */}
@@ -129,14 +133,14 @@ export function SiteHeader() {
         >
           <Container className="flex flex-col gap-1 py-3">
             {NAV_ITEMS.map((item) => (
-              <a
+              <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setMenuOpen(false)}
                 className="flex min-h-12 items-center rounded-md px-4 text-lg font-medium text-[var(--color-text)]"
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
             <a
               href={PHONE_TEL}
