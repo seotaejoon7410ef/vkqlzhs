@@ -196,7 +196,13 @@ export function InquiryForm() {
         <label htmlFor="date" className={labelClass}>
           희망 수업 일정 (선택)
         </label>
-        <input id="date" name="date" type="date" className={`${inputClass} sm:max-w-[calc(50%-0.5rem)]`} />
+        <input
+          id="date"
+          name="date"
+          type="text"
+          placeholder="예: 11월 3주 중 하루, 12/1~12/5 중 협의, 매주 화요일 등 자유롭게"
+          className={inputClass}
+        />
       </div>
 
       <div>
