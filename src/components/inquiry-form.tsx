@@ -1,8 +1,6 @@
 "use client";
 
-import type { FormEvent } from "react";
-
-const SMS_NUMBER = "01074957410";
+import { useState, type FormEvent } from "react";
 
 const AREAS = ["서울", "경기", "인천", "충남", "충북", "기타 지역(협의)"];
 
@@ -21,39 +19,66 @@ const inputClass =
   "mt-2 min-h-12 w-full rounded-xl border-2 border-[var(--color-border)] bg-[var(--color-surface)] px-4 text-base text-[var(--color-text)] focus:border-[var(--color-primary)]";
 const labelClass = "text-sm font-bold text-[var(--color-text)]";
 
+type SubmitState = "idle" | "sending" | "success" | "error";
+
 export function InquiryForm() {
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const [state, setState] = useState<SubmitState>("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const form = event.currentTarget;
     const data = new FormData(form);
-    const area = String(data.get("area") ?? "");
-    const school = String(data.get("school") ?? "");
-    const grades = data.getAll("grade").map(String).join(", ");
-    const classCount = String(data.get("classCount") ?? "");
-    const teacher = String(data.get("teacher") ?? "");
-    const phone = String(data.get("phone") ?? "");
-    const date = String(data.get("date") ?? "");
-    const message = String(data.get("message") ?? "");
 
-    const body = [
-      "[홈페이지 문의] 프로그램 견적 문의",
-      `지역: ${area}`,
-      `학교(원) 이름: ${school}`,
-      grades ? `학년: ${grades}` : "",
-      classCount ? `학급수: ${classCount}` : "",
-      `담당 선생님: ${teacher}`,
-      `연락처: ${phone}`,
-      date ? `희망 수업 일정: ${date}` : "",
-      message ? `문의 내용: ${message}` : "",
-    ]
-      .filter(Boolean)
-      .join("\n");
+    const payload = {
+      area: String(data.get("area") ?? ""),
+      school: String(data.get("school") ?? ""),
+      grades: data.getAll("grade").map(String).join(", "),
+      classCount: String(data.get("classCount") ?? ""),
+      name: String(data.get("name") ?? ""),
+      phone: String(data.get("phone") ?? ""),
+      email: String(data.get("email") ?? ""),
+      date: String(data.get("date") ?? ""),
+      message: String(data.get("message") ?? ""),
+    };
 
-    // iOS와 안드로이드는 sms: 링크의 본문 구분자가 서로 달라(iOS: &, 안드로이드: ?) 기기별로 나눠줍니다.
-    const isIOS = /iPhone|iPad|iPod/.test(window.navigator.userAgent);
-    const separator = isIOS ? "&" : "?";
-    window.location.href = `sms:${SMS_NUMBER}${separator}body=${encodeURIComponent(body)}`;
+    setState("sending");
+    setErrorMessage("");
+
+    try {
+      const res = await fetch("/api/inquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) {
+        const result = await res.json().catch(() => null);
+        setErrorMessage(result?.error ?? "전송에 실패했어요. 잠시 후 다시 시도해 주세요.");
+        setState("error");
+        return;
+      }
+
+      setState("success");
+      form.reset();
+    } catch {
+      setErrorMessage("전송에 실패했어요. 잠시 후 다시 시도해 주세요.");
+      setState("error");
+    }
   };
+
+  if (state === "success") {
+    return (
+      <div className="mt-10 rounded-2xl border-2 border-[var(--color-primary)] bg-[var(--color-primary-tint)] p-8 text-center">
+        <p className="text-lg font-bold text-[var(--color-primary-hover)]">
+          문의가 접수됐어요!
+        </p>
+        <p className="mt-2 text-[var(--color-text-muted)]">
+          남겨주신 연락처로 담당자가 확인 후 연락드릴게요.
+        </p>
+      </div>
+    );
+  }
 
   return (
     <form onSubmit={handleSubmit} className="mt-10 space-y-6" noValidate={false}>
@@ -136,14 +161,14 @@ export function InquiryForm() {
 
       <div className="grid gap-6 sm:grid-cols-2">
         <div>
-          <label htmlFor="teacher" className={labelClass}>
+          <label htmlFor="name" className={labelClass}>
             담당 선생님 성함
           </label>
-          <input id="teacher" name="teacher" type="text" required className={inputClass} />
+          <input id="name" name="name" type="text" required className={inputClass} />
         </div>
         <div>
           <label htmlFor="phone" className={labelClass}>
-            연락처
+            휴대폰 번호
           </label>
           <input
             id="phone"
@@ -157,6 +182,20 @@ export function InquiryForm() {
       </div>
 
       <div>
+        <label htmlFor="email" className={labelClass}>
+          이메일
+        </label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          required
+          placeholder="example@school.go.kr"
+          className={`${inputClass} sm:max-w-xs`}
+        />
+      </div>
+
+      <div>
         <label htmlFor="date" className={labelClass}>
           희망 수업 일정 (선택)
         </label>
@@ -165,7 +204,7 @@ export function InquiryForm() {
 
       <div>
         <label htmlFor="message" className={labelClass}>
-          문의 내용 (선택)
+          요청 및 문의사항 (선택)
         </label>
         <textarea
           id="message"
@@ -176,17 +215,26 @@ export function InquiryForm() {
         />
       </div>
 
-      <button
-        type="submit"
-        className="inline-flex min-h-14 items-center justify-center rounded-full bg-[var(--color-primary)] px-8 text-lg font-bold text-white transition-colors hover:bg-[var(--color-primary-hover)]"
-      >
-        작성한 내용으로 문자 보내기
-      </button>
-      <p className="text-sm text-[var(--color-text-muted)]">
-        버튼을 누르면 휴대폰 문자 앱이 열리고, 위 내용이 자동으로
-        채워져요. 확인 후 보내기만 누르시면 됩니다. (PC로 보고 계시면
-        문자 전송이 안 될 수 있어요 — 그럴 땐 전화로 문의해 주세요.)
-      </p>
+      <label className="flex cursor-pointer items-start gap-2 text-sm text-[var(--color-text-muted)]">
+        <input type="checkbox" required className="mt-1 h-4 w-4 shrink-0" />
+        입력하신 정보는 문의 답변 목적으로만 사용되며, 별도로 저장하지 않고
+        담당자 이메일로 바로 전달됩니다. 이에 동의합니다. (필수)
+      </label>
+
+      <div>
+        <button
+          type="submit"
+          disabled={state === "sending"}
+          className="inline-flex min-h-14 items-center justify-center rounded-full bg-[var(--color-primary)] px-8 text-lg font-bold text-white transition-colors hover:bg-[var(--color-primary-hover)] disabled:opacity-60"
+        >
+          {state === "sending" ? "보내는 중..." : "문의 보내기"}
+        </button>
+        {state === "error" && (
+          <p role="alert" className="mt-3 text-sm font-bold text-red-600">
+            {errorMessage} 급하시면 전화(031-236-8410)로 문의해 주세요.
+          </p>
+        )}
+      </div>
     </form>
   );
 }
