@@ -16,7 +16,7 @@ export default function ContactPage() {
         className="scroll-mt-24 bg-[var(--color-surface-alt)] py-16 sm:py-20"
       >
         <Container className="max-w-[900px]">
-          <h1 className="text-center text-4xl font-black text-[var(--color-text)] sm:text-5xl">
+          <h1 className="text-balance text-center text-3xl font-black text-[var(--color-text)] sm:text-5xl">
             프로그램 견적 문의
           </h1>
           <div className="mt-10 rounded-3xl border border-[var(--color-border)] bg-white p-6 shadow-sm sm:p-10">
