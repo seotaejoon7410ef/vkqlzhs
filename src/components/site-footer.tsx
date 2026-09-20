@@ -18,18 +18,7 @@ export function SiteFooter() {
           <div className="mt-5 space-y-2 text-lg text-white/70">
             <p>대표 | 서태준</p>
             <p>사업자등록번호 | 549-05-03225</p>
-            <p>
-              대표번호 |{" "}
-              <a className="hover:underline" href="tel:0312368410">
-                031-236-8410
-              </a>
-            </p>
-            <p>
-              이메일 |{" "}
-              <a className="hover:underline" href="mailto:happyguide95@naver.com">
-                happyguide95@naver.com
-              </a>
-            </p>
+            <p>대표번호 | 031-236-8410</p>
           </div>
           <p className="mt-6 text-base text-white/50">© 행복한길잡이 장애이해교육센터.</p>
         </div>
