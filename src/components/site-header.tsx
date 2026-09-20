@@ -45,7 +45,9 @@ export function SiteHeader() {
       }`}
     >
       <Container className="flex h-24 items-center justify-between gap-6">
-        <Link href="/" className="flex shrink-0 items-center rounded-md">
+        {/* 로고는 새로고침되도록 next/link 대신 일반 a 태그 사용 */}
+        {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+        <a href="/" className="flex shrink-0 items-center rounded-md">
           <Image
             src={solid ? "/logo-lockup.png" : "/logo-lockup-white-v2.png"}
             alt="행복한길잡이 장애이해교육센터 로고"
@@ -54,7 +56,7 @@ export function SiteHeader() {
             priority
             className="h-16 w-auto sm:h-20"
           />
-        </Link>
+        </a>
 
         {/* 데스크톱 내비게이션 (각 메뉴의 별도 페이지로 이동) */}
         <nav aria-label="주요 메뉴" className="hidden lg:block">
