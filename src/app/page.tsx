@@ -9,11 +9,11 @@ export default function Home() {
     <>
       <section
         id="top"
-        className="on-dark relative flex min-h-[600px] items-center overflow-hidden text-white sm:min-h-screen"
+        className="on-dark relative flex min-h-[560px] items-center overflow-hidden text-white sm:min-h-[640px] lg:min-h-[760px]"
       >
-        {/* 배경 사진: 문의하기 페이지와 동일한 실제 체험교육 현장 사진 */}
+        {/* 배경 사진: 실제 체험교육 현장 사진 */}
         <Image
-          src="/contact-photo.jpg"
+          src="/hero-photo.png"
           alt=""
           aria-hidden="true"
           fill
@@ -21,7 +21,7 @@ export default function Home() {
           sizes="100vw"
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-secondary-hover)]/95 via-[var(--color-secondary)]/85 to-[var(--color-primary)]/70" />
+        <div className="hero-overlay absolute inset-0" />
 
         <Container className="relative py-20 sm:py-28">
           <div className="mx-auto max-w-2xl text-center">
