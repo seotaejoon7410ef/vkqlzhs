@@ -29,7 +29,7 @@ export function InquiryForm() {
     const data = new FormData(form);
     const area = String(data.get("area") ?? "");
     const school = String(data.get("school") ?? "");
-    const grade = String(data.get("grade") ?? "");
+    const grades = data.getAll("grade").map(String).join(", ");
     const classCount = String(data.get("classCount") ?? "");
     const teacher = String(data.get("teacher") ?? "");
     const phone = String(data.get("phone") ?? "");
@@ -40,7 +40,7 @@ export function InquiryForm() {
       "[홈페이지 문의] 프로그램 견적 문의",
       `지역: ${area}`,
       `학교(원) 이름: ${school}`,
-      `학년: ${grade}`,
+      grades ? `학년: ${grades}` : "",
       classCount ? `학급수: ${classCount}` : "",
       `담당 선생님: ${teacher}`,
       `연락처: ${phone}`,
@@ -89,35 +89,35 @@ export function InquiryForm() {
         </div>
       </div>
 
-      <div className="grid gap-6 sm:grid-cols-2">
-        <div>
-          <label htmlFor="grade" className={labelClass}>
-            학년
-          </label>
-          <select id="grade" name="grade" required defaultValue="" className={inputClass}>
-            <option value="" disabled>
-              학년을 선택해 주세요
-            </option>
-            {GRADES.map((grade) => (
-              <option key={grade} value={grade}>
-                {grade}
-              </option>
-            ))}
-          </select>
+      <fieldset>
+        <legend className={labelClass}>
+          학년 (여러 학년이 함께하면 모두 선택해 주세요)
+        </legend>
+        <div className="mt-3 flex flex-wrap gap-2">
+          {GRADES.map((grade) => (
+            <label
+              key={grade}
+              className="flex min-h-11 cursor-pointer items-center gap-2 rounded-full border-2 border-[var(--color-border)] px-4 text-sm font-bold text-[var(--color-text-muted)] has-[input:checked]:border-[var(--color-primary)] has-[input:checked]:bg-[var(--color-primary-tint)] has-[input:checked]:text-[var(--color-primary-hover)]"
+            >
+              <input type="checkbox" name="grade" value={grade} className="h-4 w-4" />
+              {grade}
+            </label>
+          ))}
         </div>
-        <div>
-          <label htmlFor="classCount" className={labelClass}>
-            학급수
-          </label>
-          <input
-            id="classCount"
-            name="classCount"
-            type="number"
-            min={1}
-            placeholder="예: 2"
-            className={inputClass}
-          />
-        </div>
+      </fieldset>
+
+      <div>
+        <label htmlFor="classCount" className={labelClass}>
+          학급수
+        </label>
+        <input
+          id="classCount"
+          name="classCount"
+          type="number"
+          min={1}
+          placeholder="예: 2"
+          className={`${inputClass} sm:max-w-xs`}
+        />
       </div>
 
       <div className="grid gap-6 sm:grid-cols-2">
