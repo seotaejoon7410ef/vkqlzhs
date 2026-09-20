@@ -36,28 +36,28 @@ export function SiteFooter() {
             </ul>
           </nav>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-4">
             <a
               href="https://blog.naver.com/happyguide95"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 p-2.5 transition-colors hover:bg-white/20"
+              className="flex h-14 w-14 items-center justify-center rounded-full bg-white/10 p-3 transition-colors hover:bg-white/20"
             >
-              <Image src="/blog-icon.png" alt="" width={28} height={28} className="h-full w-full object-contain" />
+              <Image src="/blog-icon.png" alt="" width={40} height={40} className="h-full w-full object-contain" />
               <span className="sr-only">네이버 블로그</span>
             </a>
             <a
               href="https://open.kakao.com/o/seZ3yqOi"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-full bg-white/10 p-1.5 transition-colors hover:bg-white/20"
+              className="flex h-14 w-14 items-center justify-center rounded-full bg-white/10 p-3 transition-colors hover:bg-white/20"
             >
-              <Image src="/kakao-icon.png" alt="" width={32} height={32} className="h-full w-full rounded-full object-cover" />
+              <Image src="/kakao-icon.png" alt="" width={40} height={40} className="h-full w-full rounded-full object-contain" />
               <span className="sr-only">카카오톡 문의</span>
             </a>
             <Link
               href="/contact"
-              className="inline-flex min-h-11 items-center rounded-full bg-[var(--color-accent)] px-6 text-base font-bold text-[var(--color-secondary)] transition-colors hover:brightness-95"
+              className="inline-flex min-h-14 items-center rounded-full bg-[var(--color-accent)] px-7 text-lg font-bold text-[var(--color-secondary)] transition-colors hover:brightness-95"
             >
               문의하기
             </Link>
