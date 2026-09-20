@@ -13,16 +13,28 @@ const PHONE_TEL = "tel:0312368410";
 export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  // 모바일 화면은 주소창 축소/스크롤 바운스 등으로 스크롤 위치 기반
+  // 투명-불투명 전환이 불안정하게 보일 수 있어, sm 미만에서는 항상
+  // 불투명 헤더로 고정합니다(투명 오버레이 효과는 sm 이상에서만).
+  const [isNarrow, setIsNarrow] = useState(true);
 
-  // 맨 위(히어로) 위에서는 투명하게 겹쳐 보이다가, 스크롤하면 흰 배경으로 바뀝니다.
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 64);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+
+    const mql = window.matchMedia("(min-width: 640px)");
+    const onWidthChange = () => setIsNarrow(!mql.matches);
+    onWidthChange();
+    mql.addEventListener("change", onWidthChange);
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      mql.removeEventListener("change", onWidthChange);
+    };
   }, []);
 
-  const solid = scrolled || menuOpen;
+  const solid = isNarrow || scrolled || menuOpen;
 
   return (
     <header

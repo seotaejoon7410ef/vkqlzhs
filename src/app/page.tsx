@@ -13,8 +13,9 @@ export default function Home() {
       >
         {/* 배경 사진: 실제 체험교육 현장 사진.
             사진이 화면 폭 대비 훨씬 넓어서(2.12:1), 세로로 좁고 긴 모바일
-            화면에서는 가운데(빈 배경)만 남지 않도록 오른쪽 인물 쪽으로
-            치우쳐 자르고, 화면이 넓어지는 sm 이상부터는 원래 구도(가운데)로 */}
+            화면에서 가운데를 기준으로 자르면 인물 없는 빈 배경만 남습니다.
+            모바일에서는 오른쪽 끝(인물이 있는 쪽)까지 밀어서 보여주고,
+            화면이 넓어지는 sm 이상부터는 원래 구도(가운데)로 되돌립니다. */}
         <Image
           src="/hero-photo.png"
           alt=""
@@ -22,7 +23,7 @@ export default function Home() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[65%_center] sm:object-center"
+          className="object-cover object-right sm:object-center"
         />
         <div className="hero-overlay absolute inset-0" />
 
