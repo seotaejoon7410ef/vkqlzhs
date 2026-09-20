@@ -9,9 +9,12 @@ export default function Home() {
     <>
       <section
         id="top"
-        className="on-dark relative flex min-h-[560px] items-center overflow-hidden text-white sm:min-h-[640px] lg:min-h-[760px]"
+        className="on-dark relative flex min-h-[480px] items-center overflow-hidden text-white sm:min-h-[640px] lg:min-h-[760px]"
       >
-        {/* 배경 사진: 실제 체험교육 현장 사진 */}
+        {/* 배경 사진: 실제 체험교육 현장 사진.
+            사진이 화면 폭 대비 훨씬 넓어서(2.12:1), 세로로 좁고 긴 모바일
+            화면에서는 가운데(빈 배경)만 남지 않도록 오른쪽 인물 쪽으로
+            치우쳐 자르고, 화면이 넓어지는 sm 이상부터는 원래 구도(가운데)로 */}
         <Image
           src="/hero-photo.png"
           alt=""
@@ -19,11 +22,11 @@ export default function Home() {
           fill
           priority
           sizes="100vw"
-          className="object-cover"
+          className="object-cover object-[65%_center] sm:object-center"
         />
         <div className="hero-overlay absolute inset-0" />
 
-        <Container className="relative py-20 sm:py-28">
+        <Container className="relative py-14 sm:py-20 lg:py-28">
           <div className="mx-auto max-w-2xl text-center">
             <p
               className="hero-anim text-base font-bold tracking-wide text-[var(--color-accent)]"
