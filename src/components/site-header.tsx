@@ -76,23 +76,30 @@ export function SiteHeader() {
           </ul>
         </nav>
 
-        {/* 데스크톱 CTA: 스크롤하면 문의하기 버튼 옆에 전화번호가 펼쳐지며 나타남 */}
-        <div className="hidden shrink-0 items-center gap-3 lg:flex">
+        {/* 데스크톱 CTA: 스크롤하면 같은 버튼 안에서 문의하기 → 전화번호로 바뀜 */}
+        <div className="hidden shrink-0 items-center lg:flex">
           <a
-            href={PHONE_TEL}
-            className={`flex items-center gap-1.5 overflow-hidden whitespace-nowrap text-sm font-bold text-[var(--color-primary-hover)] transition-all duration-300 ${
-              scrolled ? "max-w-[180px] opacity-100" : "max-w-0 opacity-0"
-            }`}
+            href={scrolled ? PHONE_TEL : "/contact"}
+            className="relative flex h-11 w-[150px] shrink-0 items-center justify-center overflow-hidden rounded-full bg-[var(--color-accent)] text-sm font-bold text-[var(--color-secondary)] transition-colors hover:brightness-95"
           >
-            <Phone aria-hidden="true" size={16} className="shrink-0" />
-            {PHONE_NUMBER}
+            <span
+              aria-hidden={scrolled}
+              className={`absolute inset-0 flex items-center justify-center gap-2 transition-all duration-300 ${
+                scrolled ? "-translate-y-3 opacity-0" : "translate-y-0 opacity-100"
+              }`}
+            >
+              문의하기
+            </span>
+            <span
+              aria-hidden={!scrolled}
+              className={`absolute inset-0 flex items-center justify-center gap-1.5 whitespace-nowrap transition-all duration-300 ${
+                scrolled ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
+              }`}
+            >
+              <Phone aria-hidden="true" size={16} />
+              {PHONE_NUMBER}
+            </span>
           </a>
-          <Link
-            href="/contact"
-            className="inline-flex min-h-11 items-center gap-2 rounded-full bg-[var(--color-accent)] px-5 text-sm font-bold text-[var(--color-secondary)] transition-colors hover:brightness-95"
-          >
-            문의하기
-          </Link>
         </div>
 
         {/* 모바일 메뉴 버튼 */}
