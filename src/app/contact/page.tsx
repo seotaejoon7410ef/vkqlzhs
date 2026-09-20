@@ -88,7 +88,9 @@ export default function ContactPage() {
         className="scroll-mt-24 bg-[var(--color-surface-alt)] py-16 sm:py-20"
       >
         <Container className="max-w-[900px]">
-          <h2 className="text-2xl font-black text-[var(--color-text)]">문의 양식</h2>
+          <h2 className="text-center text-3xl font-black text-[var(--color-text)]">
+            프로그램 견적 문의
+          </h2>
           <InquiryForm />
         </Container>
       </section>
