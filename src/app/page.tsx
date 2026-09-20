@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Mouse, Phone } from "lucide-react";
+import { Mouse } from "lucide-react";
 import { Container } from "@/components/container";
 import { ReviewMarquee } from "@/components/review-marquee";
 
@@ -60,19 +60,12 @@ export default function Home() {
               한 번으로 일정과 견적까지 안내해 드려요.
             </p>
             <div
-              className="hero-anim mt-9 flex flex-col items-center gap-4 sm:flex-row sm:justify-center"
+              className="hero-anim mt-9 flex justify-center"
               style={{ animationDelay: "400ms" }}
             >
-              <a
-                href="tel:0312368410"
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[var(--color-accent)] px-7 text-base font-bold text-[var(--color-secondary)] transition-colors hover:brightness-95"
-              >
-                <Phone aria-hidden="true" size={20} />
-                전화로 문의하기
-              </a>
               <Link
                 href="/contact"
-                className="inline-flex min-h-12 items-center justify-center rounded-full border-2 border-white px-7 text-base font-bold text-white transition-colors hover:bg-white/10"
+                className="inline-flex min-h-12 items-center justify-center rounded-full bg-[var(--color-accent)] px-7 text-base font-bold text-[var(--color-secondary)] transition-colors hover:brightness-95"
               >
                 문의 양식 작성하기
               </Link>

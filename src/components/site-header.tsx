@@ -76,32 +76,14 @@ export function SiteHeader() {
           </ul>
         </nav>
 
-        {/* 데스크톱 CTA: 맨 위(투명)에서는 버튼 2개, 스크롤 후에는 전화 버튼 1개 */}
+        {/* 데스크톱 CTA */}
         <div className="hidden shrink-0 items-center gap-3 lg:flex">
-          {!solid && (
-            <a
-              href={PHONE_TEL}
-              className="inline-flex min-h-11 items-center rounded-full border-2 border-white/80 px-5 text-sm font-bold text-white transition-colors hover:bg-white/10"
-            >
-              전화 문의
-            </a>
-          )}
-          {solid ? (
-            <a
-              href={PHONE_TEL}
-              className="inline-flex min-h-11 items-center gap-2 rounded-full bg-[var(--color-accent)] px-5 text-sm font-bold text-[var(--color-secondary)] transition-colors hover:brightness-95"
-            >
-              <Phone aria-hidden="true" size={18} />
-              {PHONE_NUMBER}
-            </a>
-          ) : (
-            <Link
-              href="/contact"
-              className="inline-flex min-h-11 items-center gap-2 rounded-full bg-[var(--color-accent)] px-5 text-sm font-bold text-[var(--color-secondary)] transition-colors hover:brightness-95"
-            >
-              문의하기
-            </Link>
-          )}
+          <Link
+            href="/contact"
+            className="inline-flex min-h-11 items-center gap-2 rounded-full bg-[var(--color-accent)] px-5 text-sm font-bold text-[var(--color-secondary)] transition-colors hover:brightness-95"
+          >
+            문의하기
+          </Link>
         </div>
 
         {/* 모바일 메뉴 버튼 */}
