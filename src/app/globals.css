@@ -164,6 +164,20 @@ summary::-webkit-details-marker {
   animation-play-state: paused;
 }
 
+/* 히어로 하단 스크롤 유도 아이콘: 위아래로 은은하게 움직임 */
+@keyframes scroll-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+.scroll-bounce {
+  animation: scroll-bounce 1.6s ease-in-out infinite;
+}
+
 /* 카드에 은은한 호버 리프트 효과 */
 .hover-lift {
   transition: transform 0.25s ease, box-shadow 0.25s ease;

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Phone } from "lucide-react";
+import { Mouse, Phone } from "lucide-react";
 import { Container } from "@/components/container";
 import { ReviewMarquee } from "@/components/review-marquee";
 
@@ -9,42 +9,55 @@ export default function Home() {
     <>
       <section
         id="top"
-        className="on-dark relative overflow-hidden bg-gradient-to-br from-[var(--color-secondary-hover)] via-[var(--color-secondary)] to-[var(--color-primary)] text-white"
+        className="on-dark relative flex min-h-[600px] items-center overflow-hidden text-white sm:min-h-screen"
       >
-        {/* 장식용 로고 워터마크 (실제 사진 대신 깊이감을 주는 용도, 정보 없음) */}
+        {/* 배경 사진: 문의하기 페이지와 동일한 실제 체험교육 현장 사진 */}
         <Image
-          src="/logo-mark.png"
+          src="/contact-photo.jpg"
           alt=""
           aria-hidden="true"
-          width={640}
-          height={640}
-          className="pointer-events-none absolute -right-24 -top-24 h-[26rem] w-[26rem] opacity-10 sm:h-[34rem] sm:w-[34rem]"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
         />
+        <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-secondary-hover)]/95 via-[var(--color-secondary)]/85 to-[var(--color-primary)]/70" />
 
         <Container className="relative py-20 sm:py-28">
           <div className="mx-auto max-w-2xl text-center">
-            <h1 className="text-4xl font-black leading-[1.2] sm:text-5xl">
+            <p
+              className="hero-anim text-base font-bold tracking-wide text-[var(--color-accent)]"
+              style={{ animationDelay: "0ms" }}
+            >
+              함께 배우는, 더 좋은 내일
+            </p>
+            <span
+              aria-hidden="true"
+              className="hero-anim mx-auto mt-3 block h-px w-16 bg-white/40"
+              style={{ animationDelay: "50ms" }}
+            />
+            <h1 className="mt-5 text-4xl font-black leading-[1.2] sm:text-5xl">
               <span
                 className="hero-anim inline-block text-[var(--color-accent)]"
-                style={{ animationDelay: "0ms" }}
+                style={{ animationDelay: "100ms" }}
               >
                 연 1회 의무교육,
               </span>
               <br />
-              <span className="hero-anim inline-block" style={{ animationDelay: "100ms" }}>
+              <span className="hero-anim inline-block" style={{ animationDelay: "200ms" }}>
                 저희가 교실로 찾아갑니다
               </span>
             </h1>
             <p
               className="hero-anim mx-auto mt-6 max-w-[36em] text-lg leading-relaxed text-white/80"
-              style={{ animationDelay: "200ms" }}
+              style={{ animationDelay: "300ms" }}
             >
               유치원·초등·중학교로 찾아가는 장애인식개선 체험교육. 문의
               한 번으로 일정과 견적까지 안내해 드려요.
             </p>
             <div
               className="hero-anim mt-9 flex flex-col items-center gap-4 sm:flex-row sm:justify-center"
-              style={{ animationDelay: "300ms" }}
+              style={{ animationDelay: "400ms" }}
             >
               <a
                 href="tel:0312368410"
@@ -62,6 +75,21 @@ export default function Home() {
             </div>
           </div>
         </Container>
+
+        {/* 우측 하단 태그라인 */}
+        <p className="absolute bottom-24 right-6 hidden text-right text-sm font-bold leading-relaxed text-white/70 sm:right-10 sm:block lg:bottom-28">
+          다름이
+          <br />
+          틀림이 아닌
+          <br />
+          함께 살아가는 세상
+        </p>
+
+        {/* 스크롤 유도 */}
+        <div className="absolute inset-x-0 bottom-8 flex flex-col items-center gap-2 text-xs font-bold tracking-widest text-white/70">
+          <Mouse aria-hidden="true" size={22} className="scroll-bounce" />
+          SCROLL
+        </div>
       </section>
 
       <div className="bg-[var(--color-surface-alt)] py-10">
