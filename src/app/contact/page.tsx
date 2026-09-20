@@ -91,7 +91,9 @@ export default function ContactPage() {
           <h2 className="text-center text-3xl font-black text-[var(--color-text)]">
             프로그램 견적 문의
           </h2>
-          <InquiryForm />
+          <div className="mt-10 rounded-3xl border border-[var(--color-border)] bg-white p-6 shadow-sm sm:p-10">
+            <InquiryForm />
+          </div>
         </Container>
       </section>
     </>

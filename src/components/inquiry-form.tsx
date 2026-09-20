@@ -69,7 +69,7 @@ export function InquiryForm() {
 
   if (state === "success") {
     return (
-      <div className="mt-10 rounded-2xl border-2 border-[var(--color-primary)] bg-[var(--color-primary-tint)] p-8 text-center">
+      <div className="rounded-2xl border-2 border-[var(--color-primary)] bg-[var(--color-primary-tint)] p-8 text-center">
         <p className="text-lg font-bold text-[var(--color-primary-hover)]">
           문의가 접수됐어요!
         </p>
@@ -81,7 +81,7 @@ export function InquiryForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="mt-10 space-y-6" noValidate={false}>
+    <form onSubmit={handleSubmit} className="space-y-6" noValidate={false}>
       <div className="grid gap-6 sm:grid-cols-2">
         <div>
           <label htmlFor="area" className={labelClass}>
