@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Camera } from "lucide-react";
 
 const BLOG_URL = "https://blog.naver.com/happyguide95";
 
@@ -9,8 +10,7 @@ type Review = {
 };
 
 // TODO 확인 필요: 새 학교 후기가 생기면 여기에 { id, school, photos }
-// 형태로 계속 추가하세요. 카드 크기는 고정이라 사진 개수가 달라도
-// 자동으로 그리드에 맞춰 배치됩니다.
+// 형태로 추가하고, 아래 PLACEHOLDER_GRADIENTS에서 하나를 지우세요.
 const REVIEWS: Review[] = [
   {
     id: "yongin-seongji",
@@ -24,6 +24,17 @@ const REVIEWS: Review[] = [
       "/reviews/yongin-seongji-6.jpg",
     ],
   },
+];
+
+// 아직 후기가 없는 자리는 실제 후기 사진이 없을 때 쓰던 것과 같은
+// placeholder 카드로 채워, 1개짜리 후기가 그대로 복제된 것처럼
+// 보이지 않고 자연스럽게 여러 장이 흘러가는 느낌을 줍니다.
+const PLACEHOLDER_GRADIENTS = [
+  "from-[var(--color-primary-tint)] to-[var(--color-secondary-tint)]",
+  "from-[var(--color-secondary-tint)] to-[var(--color-primary-tint)]",
+  "from-[var(--color-primary-tint)] via-white to-[var(--color-secondary-tint)]",
+  "from-[var(--color-secondary-tint)] via-white to-[var(--color-primary-tint)]",
+  "from-[var(--color-primary-tint)] to-[var(--color-secondary-tint)]",
 ];
 
 function gridColsClass(count: number) {
@@ -64,15 +75,39 @@ function ReviewCard({ review }: { review: Review }) {
   );
 }
 
+function PlaceholderCard({ gradient, label }: { gradient: string; label: string }) {
+  return (
+    <div
+      aria-hidden="true"
+      className={`flex h-64 w-96 shrink-0 flex-col items-center justify-center gap-3 rounded-3xl bg-gradient-to-br ${gradient} text-[var(--color-primary-hover)] sm:h-80 sm:w-[28rem] lg:h-96 lg:w-[34rem]`}
+    >
+      <Camera size={40} />
+      <p className="text-lg font-bold">{label}</p>
+    </div>
+  );
+}
+
 export function ReviewMarquee() {
-  const cards = [...REVIEWS, ...REVIEWS];
+  const items = [
+    ...REVIEWS.map((review) => ({ kind: "review" as const, review })),
+    ...PLACEHOLDER_GRADIENTS.map((gradient, index) => ({
+      kind: "placeholder" as const,
+      gradient,
+      label: `후기 사진 추가 예정 ${index + 1}`,
+    })),
+  ];
+  const cards = [...items, ...items];
 
   return (
     <div className="overflow-hidden py-4">
       <div className="marquee-track flex w-max gap-8 px-6">
-        {cards.map((review, index) => (
-          <ReviewCard key={`${review.id}-${index}`} review={review} />
-        ))}
+        {cards.map((item, index) =>
+          item.kind === "review" ? (
+            <ReviewCard key={`review-${item.review.id}-${index}`} review={item.review} />
+          ) : (
+            <PlaceholderCard key={`placeholder-${index}`} gradient={item.gradient} label={item.label} />
+          ),
+        )}
       </div>
     </div>
   );
