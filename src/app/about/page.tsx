@@ -64,25 +64,21 @@ export default function AboutPage() {
             fill
             priority
             sizes="100vw"
-            className="object-cover"
-          />
-          <div
-            aria-hidden="true"
-            className="absolute inset-0 bg-gradient-to-t from-[var(--color-secondary-hover)]/85 via-[var(--color-secondary-hover)]/25 to-transparent"
+            className="object-cover brightness-75"
           />
 
           <Container className="absolute inset-x-0 bottom-0 pb-14 sm:pb-20 lg:pb-24">
             <div className="max-w-2xl">
               <Reveal>
                 <Kicker color="accent">장애인식개선교육 전문업체</Kicker>
-                <h1 className="text-balance mt-4 text-3xl font-black leading-tight sm:text-5xl">
+                <h1 className="text-balance mt-4 text-3xl font-black leading-tight text-white [text-shadow:0_2px_16px_rgb(0_0_0_/_60%)] sm:text-5xl">
                   다름을 이해하는 경험이
                   <br />
                   함께 살아가는 아이들을 만듭니다.
                 </h1>
               </Reveal>
               <Reveal delay={100}>
-                <p className="mx-auto mt-6 max-w-[36em] leading-relaxed text-white/85">
+                <p className="mx-auto mt-6 max-w-[36em] leading-relaxed text-white [text-shadow:0_1px_10px_rgb(0_0_0_/_60%)]">
                   행복한길잡이는 아이들이 장애를 낯설거나 특별한 것으로
                   바라보지 않고, 서로 다른 모습 그대로 함께 살아가는
                   방법을 배우도록 돕습니다.
