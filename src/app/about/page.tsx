@@ -274,7 +274,7 @@ export default function AboutPage() {
           <Container className="relative flex h-full items-end pb-14 sm:items-center sm:pb-0">
             <div className="max-w-2xl">
               <Reveal>
-                <p className="text-balance [text-shadow:0_2px_16px_rgb(0_0_0_/_70%)] text-2xl font-black leading-snug sm:text-4xl">
+                <p className="text-balance text-2xl font-black leading-snug text-white [text-shadow:0_2px_16px_rgb(0_0_0_/_70%)] sm:text-4xl">
                   오늘의 한 번의 경험이
                   <br />
                   내일 누군가를 대하는 태도를 바꿉니다.
