@@ -138,27 +138,12 @@ export default function MiddlePage() {
                 </h1>
               </Reveal>
               <Reveal delay={100}>
-                <div className="mt-6 max-w-[36em] text-white/85">
-                  <p className="leading-relaxed">
-                    중학생 시기는 자신만의 가치관과 사회를 바라보는 관점이
-                    구체적으로 만들어지는 시기입니다.
-                  </p>
-                  <p className="mt-3 leading-relaxed">
-                    행복한길잡이는 단순히 장애를 설명하는 데서 끝나지
-                    않습니다. 직접 경험하고, 질문하고, 서로의 입장에서
-                    생각하는 과정을 통해 장애를 바라보는 자신의 시선을
-                    스스로 돌아볼 수 있도록 합니다.
-                  </p>
-                </div>
-              </Reveal>
-              <Reveal delay={200}>
-                <Link
-                  href="/contact"
-                  className="mt-8 inline-flex min-h-12 items-center gap-2 rounded-full bg-[var(--color-accent)] px-7 text-base font-bold text-[var(--color-secondary)] transition-colors hover:brightness-95"
-                >
-                  중학교 체험교육 문의하기
-                  <ArrowRight aria-hidden="true" size={18} />
-                </Link>
+                <p className="mt-6 max-w-[36em] leading-relaxed text-white/85">
+                  중학생 시기는 자신만의 가치관과 사회를 바라보는 관점이
+                  만들어지는 시기입니다. 행복한길잡이는 직접 경험하고
+                  질문하며, 장애를 바라보는 자신의 시선을 스스로 돌아볼
+                  수 있도록 돕습니다.
+                </p>
               </Reveal>
             </div>
           </Container>
