@@ -90,7 +90,24 @@ export default function Home() {
       </section>
 
       <div className="bg-[var(--color-surface-alt)] py-14 sm:py-16">
-        <ReviewMarquee />
+        <Container>
+          <p className="text-center text-sm font-bold tracking-wide text-[var(--color-primary-hover)]">
+            학교 현장 후기
+          </p>
+        </Container>
+        <div className="mt-6">
+          <ReviewMarquee />
+        </div>
+        <Container>
+          <a
+            href="https://blog.naver.com/happyguide95"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-8 block text-center text-sm font-bold text-[var(--color-primary-hover)] hover:underline"
+          >
+            블로그에서 더 많은 후기 보기 →
+          </a>
+        </Container>
       </div>
     </>
   );
