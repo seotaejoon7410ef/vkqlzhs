@@ -55,7 +55,7 @@ export default function AboutPage() {
     <>
       {/* 1. HERO — 실제 현장 사진 + 감성적인 카피 */}
       <section id="top" className="on-dark relative isolate overflow-hidden">
-        <div className="relative min-h-[480px] w-full sm:min-h-[640px] lg:min-h-[760px]">
+        <div className="relative min-h-[280px] w-full sm:min-h-[640px] lg:min-h-[760px]">
           {/* 실제 체험교육 현장 사진 — 지체장애 공감 체험(휠체어)과
               시각장애 공감 체험 부스가 설치된 체육관 */}
           <Image
@@ -67,17 +67,17 @@ export default function AboutPage() {
             className="object-cover brightness-95"
           />
 
-          <Container className="absolute inset-x-0 bottom-0 pb-14 sm:pb-20 lg:pb-24">
+          <Container className="absolute inset-x-0 bottom-0 pb-6 sm:pb-20 lg:pb-24">
             <div className="max-w-2xl">
               <Reveal>
-                <h1 className="text-balance text-3xl font-black leading-tight text-white [text-shadow:0_2px_16px_rgb(0_0_0_/_60%)] sm:text-5xl">
+                <h1 className="text-balance text-xl font-black leading-tight text-white [text-shadow:0_2px_16px_rgb(0_0_0_/_60%)] sm:text-5xl">
                   다름을 이해하는 경험이
                   <br />
                   함께 살아가는 아이들을 만듭니다.
                 </h1>
               </Reveal>
               <Reveal delay={100}>
-                <p className="mx-auto mt-6 max-w-[36em] leading-relaxed text-white [text-shadow:0_1px_10px_rgb(0_0_0_/_60%)]">
+                <p className="mt-2 max-w-[36em] text-sm leading-snug text-white [text-shadow:0_1px_10px_rgb(0_0_0_/_60%)] sm:mt-5 sm:text-base sm:leading-relaxed">
                   행복한길잡이는 아이들이 장애를 낯설거나 특별한 것으로
                   바라보지 않고, 서로 다른 모습 그대로 함께 살아가는
                   방법을 배우도록 돕습니다.
