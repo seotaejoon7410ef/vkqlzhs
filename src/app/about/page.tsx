@@ -271,29 +271,17 @@ export default function AboutPage() {
             sizes="100vw"
             className="object-cover"
           />
-          {/* 텍스트가 항상 왼쪽에 놓이므로, 사진 내용과 무관하게 왼쪽을
-              확실히 어둡게 하는 좌우 그라데이션을 기본으로 깔고
-              위/아래도 살짝 어둡게 보강 */}
-          <div
-            aria-hidden="true"
-            className="absolute inset-0 bg-gradient-to-r from-[var(--color-secondary-hover)]/92 via-[var(--color-secondary-hover)]/60 to-[var(--color-secondary-hover)]/10"
-          />
-          <div
-            aria-hidden="true"
-            className="absolute inset-0 bg-gradient-to-t from-[var(--color-secondary-hover)]/50 via-transparent to-[var(--color-secondary-hover)]/20"
-          />
-
           <Container className="relative flex h-full items-end pb-14 sm:items-center sm:pb-0">
             <div className="max-w-2xl">
               <Reveal>
-                <p className="text-balance text-2xl font-black leading-snug sm:text-4xl">
+                <p className="text-balance [text-shadow:0_2px_16px_rgb(0_0_0_/_70%)] text-2xl font-black leading-snug sm:text-4xl">
                   오늘의 한 번의 경험이
                   <br />
                   내일 누군가를 대하는 태도를 바꿉니다.
                 </p>
               </Reveal>
               <Reveal delay={100}>
-                <p className="mt-5 leading-relaxed text-white/85">
+                <p className="mt-5 leading-relaxed text-white [text-shadow:0_1px_10px_rgb(0_0_0_/_70%)]">
                   다름을 이해하고 자연스럽게 함께하는 교실,
                   <br className="hidden sm:block" />
                   행복한길잡이가 함께하겠습니다.
