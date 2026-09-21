@@ -71,7 +71,7 @@ export default function ElementaryPage() {
       <section className="bg-[var(--color-surface)] py-20 sm:py-28">
         <Container>
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
-            <div className="order-2 lg:order-1">
+            <div>
               <Reveal>
                 <Kicker>WHY ELEMENTARY</Kicker>
                 <h2 className="text-balance mt-4 text-3xl font-black leading-tight text-[var(--color-text)] sm:text-4xl">
@@ -96,7 +96,7 @@ export default function ElementaryPage() {
               </Reveal>
             </div>
 
-            <Reveal className="order-1 lg:order-2">
+            <Reveal>
               <div className="relative aspect-[1672/941] w-full overflow-hidden rounded-sm">
                 <Image
                   src="/elementary-why.png"

@@ -172,10 +172,6 @@ summary::-webkit-details-marker {
   animation: marquee 32s linear infinite;
 }
 
-.marquee-track:hover {
-  animation-play-state: paused;
-}
-
 /* 히어로 배경 사진 위 오버레이: 보랏빛 대신 무채색(검정 계열)으로
    살짝만 어둡게 해서 사진이 밝고 선명하게 보이도록 하되, 위/아래는
    헤더·스크롤 인디케이터 대비를 위해 조금 더 어둡게, 가운데는 텍스트
