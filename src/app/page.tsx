@@ -91,9 +91,14 @@ export default function Home() {
 
       <div className="bg-[var(--color-surface-alt)] py-14 sm:py-16">
         <Container>
-          <h2 className="text-center text-2xl font-black text-[var(--color-text)] sm:text-3xl">
-            학교 현장 후기
-          </h2>
+          <div className="text-center">
+            <p className="text-sm font-bold tracking-[0.2em] text-[var(--color-accent-strong)]">
+              SCHOOL REVIEW
+            </p>
+            <h2 className="mt-3 text-2xl font-black text-[var(--color-text)] sm:text-3xl">
+              학교 현장 후기
+            </h2>
+          </div>
         </Container>
         <div className="mt-6">
           <ReviewMarquee />
