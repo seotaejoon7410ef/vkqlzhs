@@ -92,18 +92,6 @@ export default function AboutPage() {
       <section className="bg-[var(--color-surface)] py-20 sm:py-28">
         <Container>
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
-            <Reveal>
-              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm bg-[var(--color-surface-alt)]">
-                <div
-                  aria-hidden="true"
-                  className="flex h-full w-full flex-col items-center justify-center gap-2 border border-dashed border-[var(--color-border)] text-[var(--color-text-muted)]"
-                >
-                  <Camera size={32} />
-                  <p className="text-sm">아이들이 체험하는 모습 사진 추가 필요</p>
-                </div>
-              </div>
-            </Reveal>
-
             <div>
               <Reveal>
                 <Kicker>WHY WE DO IT</Kicker>
@@ -134,6 +122,18 @@ export default function AboutPage() {
                 </div>
               </Reveal>
             </div>
+
+            <Reveal>
+              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm bg-[var(--color-surface-alt)]">
+                <div
+                  aria-hidden="true"
+                  className="flex h-full w-full flex-col items-center justify-center gap-2 border border-dashed border-[var(--color-border)] text-[var(--color-text-muted)]"
+                >
+                  <Camera size={32} />
+                  <p className="text-sm">아이들이 체험하는 모습 사진 추가 필요</p>
+                </div>
+              </div>
+            </Reveal>
           </div>
         </Container>
       </section>
