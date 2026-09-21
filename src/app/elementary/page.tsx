@@ -44,7 +44,7 @@ export default function ElementaryPage() {
             fill
             priority
             sizes="100vw"
-            className="object-cover sm:object-top brightness-75"
+            className="object-cover sm:object-top brightness-95"
           />
 
           <Container className="absolute inset-x-0 bottom-0 pb-6 sm:pb-20 lg:pb-24">
