@@ -96,10 +96,10 @@ export default function ElementaryPage() {
             </div>
 
             <Reveal className="order-1 lg:order-2">
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-sm">
+              <div className="relative aspect-[1672/941] w-full overflow-hidden rounded-sm">
                 <Image
-                  src="/reviews/yongin-seongji-3.jpg"
-                  alt="강사가 초등학생들에게 장애가 있는 위인들의 이야기를 소개하는 모습"
+                  src="/elementary-why.png"
+                  alt="강사가 장애가 있는 위인들을 소개하는 '다름 속의 위대함' 보드 앞에서 초등학생들에게 설명하는 모습"
                   fill
                   sizes="(min-width: 1024px) 40rem, 90vw"
                   className="object-cover"
