@@ -264,16 +264,23 @@ export default function AboutPage() {
       <section className="on-dark relative isolate overflow-hidden">
         <div className="relative h-[60vh] min-h-[440px] w-full sm:h-[70vh] sm:min-h-[520px]">
           <Image
-            src="/hero-photo.png"
+            src="/about-closing.jpg"
             alt=""
             aria-hidden="true"
             fill
             sizes="100vw"
-            className="object-cover object-right sm:object-center"
+            className="object-cover"
+          />
+          {/* 텍스트가 항상 왼쪽에 놓이므로, 사진 내용과 무관하게 왼쪽을
+              확실히 어둡게 하는 좌우 그라데이션을 기본으로 깔고
+              위/아래도 살짝 어둡게 보강 */}
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-gradient-to-r from-[var(--color-secondary-hover)]/92 via-[var(--color-secondary-hover)]/60 to-[var(--color-secondary-hover)]/10"
           />
           <div
             aria-hidden="true"
-            className="absolute inset-0 bg-gradient-to-t from-[var(--color-secondary-hover)]/88 via-[var(--color-secondary-hover)]/45 to-[var(--color-secondary-hover)]/15"
+            className="absolute inset-0 bg-gradient-to-t from-[var(--color-secondary-hover)]/50 via-transparent to-[var(--color-secondary-hover)]/20"
           />
 
           <Container className="relative flex h-full items-end pb-14 sm:items-center sm:pb-0">
