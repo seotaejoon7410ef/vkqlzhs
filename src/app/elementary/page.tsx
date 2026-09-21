@@ -34,10 +34,10 @@ export default function ElementaryPage() {
       {/* 1. HERO — 초등학교 체험교육임을 바로 알 수 있게, 설명은 짧게 */}
       <section id="top" className="on-dark relative isolate overflow-hidden">
         <div className="relative h-[55vh] min-h-[420px] w-full sm:h-[60vh] sm:min-h-[480px]">
-          {/* 실제 초등학교(경기 용인 OO초) 장애인식개선교육 현장 사진 */}
+          {/* 실제 초등학교 장애인식개선의 날 행사 현장 사진 */}
           <Image
-            src="/reviews/yongin-seongji-1.jpg"
-            alt="초등학교 체육관에서 진행된 장애인식개선의 날 행사 — 학생들이 체험존 아치 아래 모여 있다"
+            src="/elementary-hero.png"
+            alt="장애인식개선의 날 행사장 아치 아래 모인 초등학생들이 밝게 웃으며 브이 포즈를 하고 있다"
             fill
             priority
             sizes="100vw"
