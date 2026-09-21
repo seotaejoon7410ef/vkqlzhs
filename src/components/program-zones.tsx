@@ -31,7 +31,7 @@ export const ELEMENTARY_ZONES = [
   },
   {
     icon: CircleQuestionMark,
-    title: "퀴즈형존 · 오해와 에티켓 퀴즈",
+    title: "퀴즈형존",
     tags: ["OX 퀴즈", "객관식"],
     desc: "OX 퀴즈와 객관식 문제 10문항으로, 장애에 대한 흔한 오해와 올바른 에티켓을 배웁니다. 일상 속 상황으로 쉽게 풀어봐요.",
   },
