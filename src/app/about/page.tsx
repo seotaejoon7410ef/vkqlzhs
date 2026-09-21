@@ -56,12 +56,11 @@ export default function AboutPage() {
       {/* 1. HERO — 실제 현장 사진 + 감성적인 카피 */}
       <section id="top" className="on-dark relative isolate overflow-hidden">
         <div className="relative min-h-[480px] w-full sm:min-h-[640px] lg:min-h-[760px]">
-          {/* TODO 확인 필요: 문의하기 페이지에서 쓰던 실제 현장 사진을 재사용.
-              전체 화면 배경으로 쓰기엔 인물 위치가 애매할 수 있어 실제
-              화면에서 크롭 위치(object-position) 확인 후 조정 필요 */}
+          {/* 실제 체험교육 현장 사진 — 지체장애 공감 체험(휠체어)과
+              시각장애 공감 체험 부스가 설치된 체육관 */}
           <Image
-            src="/contact-photo.jpg"
-            alt="행복한길잡이 체험교육 현장 — 휠체어 체험 구역과 대형 미로형 체험 부스가 설치된 체육관"
+            src="/about-hero.jpg"
+            alt="행복한길잡이 체험교육 현장 — 지체장애 공감 체험(휠체어)과 시각장애 공감 체험 부스가 설치된 체육관"
             fill
             priority
             sizes="100vw"
