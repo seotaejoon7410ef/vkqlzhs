@@ -269,7 +269,7 @@ export default function AboutPage() {
             aria-hidden="true"
             fill
             sizes="100vw"
-            className="object-cover"
+            className="object-cover brightness-75"
           />
           <Container className="relative flex h-full items-end pb-14 sm:items-center sm:pb-0">
             <div className="max-w-2xl">
