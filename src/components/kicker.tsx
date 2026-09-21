@@ -7,9 +7,10 @@ const COLOR_CLASSES: Record<KickerColor, { text: string; bar: string }> = {
     text: "text-[var(--color-primary-hover)]",
     bar: "bg-[var(--color-primary)]",
   },
+  // 사진 위에 얹히는 용도라 사진이 밝을 때도 잘 읽히도록 그림자를 둡니다.
   accent: {
-    text: "text-[var(--color-accent)]",
-    bar: "bg-[var(--color-accent)]",
+    text: "text-[var(--color-accent)] [text-shadow:0_1px_10px_rgb(0_0_0_/_60%)]",
+    bar: "bg-[var(--color-accent)] shadow-[0_1px_6px_rgb(0_0_0_/_50%)]",
   },
   "accent-strong": {
     text: "text-[var(--color-accent-strong)]",
