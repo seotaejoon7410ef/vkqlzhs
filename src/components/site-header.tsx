@@ -151,8 +151,9 @@ export function SiteHeader() {
         className={`lg:hidden ${solid ? "border-t border-[var(--color-border)]" : ""}`}
       >
         <div className="scrollbar-hide flex gap-2 overflow-x-auto px-6 py-3">
+          {/* 모바일 메뉴는 새로고침되도록 next/link 대신 일반 a 태그 사용 */}
           {NAV_ITEMS.map((item) => (
-            <Link
+            <a
               key={item.href}
               href={item.href}
               className={`shrink-0 whitespace-nowrap rounded-full border px-4 py-2 text-sm font-bold transition-colors ${
@@ -162,7 +163,7 @@ export function SiteHeader() {
               }`}
             >
               {item.label}
-            </Link>
+            </a>
           ))}
         </div>
       </nav>
@@ -175,15 +176,16 @@ export function SiteHeader() {
           className="border-t border-[var(--color-border)] bg-[var(--color-surface)] lg:hidden"
         >
           <Container className="flex flex-col gap-1 py-3">
+            {/* 모바일 메뉴는 새로고침되도록 next/link 대신 일반 a 태그 사용 */}
             {NAV_ITEMS.map((item) => (
-              <Link
+              <a
                 key={item.href}
                 href={item.href}
                 onClick={() => setMenuOpen(false)}
                 className="flex min-h-12 items-center rounded-md px-4 text-lg font-medium text-[var(--color-text)]"
               >
                 {item.label}
-              </Link>
+              </a>
             ))}
             <a
               href={PHONE_TEL}
