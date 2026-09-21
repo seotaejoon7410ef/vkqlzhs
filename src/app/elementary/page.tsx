@@ -31,46 +31,40 @@ const APPLY_FLOW = [
 export default function ElementaryPage() {
   return (
     <>
-      {/* 1. HERO — 텍스트를 사진 위에 겹치지 않고 분리해, 사진 비율을 원본
-          그대로 유지합니다. 겹쳐진 구조에서는 화면 폭에 따라 사진 위/아래
-          또는 좌/우 중 한쪽이 항상 잘릴 수밖에 없어(아치가 잘리거나,
-          배너가 잘리거나) 아예 자르지 않는 방식으로 바꿨습니다. */}
-      <section id="top" className="bg-[var(--color-surface)] pt-14 pb-14 sm:pt-20 sm:pb-20">
-        <Container>
-          <div className="max-w-2xl">
-            <Reveal>
-              <Kicker color="accent-strong">초등학교 체험교육</Kicker>
-              <h1 className="text-balance mt-4 text-3xl font-black leading-tight text-[var(--color-text)] sm:text-5xl">
-                초등학생을 위한
-                <br />
-                체험형 장애인식개선교육
-              </h1>
-            </Reveal>
-            <Reveal delay={100}>
-              <p className="mt-5 max-w-[32em] leading-relaxed text-[var(--color-text-muted)]">
-                학급 단위로 학교를 직접 찾아가, 몸으로 겪고 느끼는
-                체험으로 진행합니다.
-              </p>
-            </Reveal>
-          </div>
-        </Container>
+      {/* 1. HERO — 텍스트를 사진 위에 겹치는 기존 방식 유지. 사진은 위쪽
+          기준으로 크롭해(object-top) 바닥 대신 아치 배너 쪽이 잘리도록
+          해서 아이들 얼굴과 에어아치가 함께 보이게 합니다. */}
+      <section id="top" className="on-dark relative isolate overflow-hidden">
+        <div className="relative h-[60vh] min-h-[380px] w-full sm:h-[65vh] sm:min-h-[460px] lg:h-[70vh] lg:max-h-[680px]">
+          {/* 실제 초등학교 장애인식개선의 날 행사 현장 사진 */}
+          <Image
+            src="/elementary-hero.png"
+            alt="장애인식개선의 날 행사장 아치 아래 모인 초등학생들이 밝게 웃으며 브이 포즈를 하고 있다"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-top brightness-75"
+          />
 
-        {/* 실제 초등학교 장애인식개선의 날 행사 현장 사진 — 원본 비율
-            그대로라 아치와 배너, 아이들 전체가 잘리지 않습니다. */}
-        <Reveal delay={150}>
-          <Container className="mt-10 sm:mt-12">
-            <div className="relative aspect-[1672/941] w-full overflow-hidden rounded-sm">
-              <Image
-                src="/elementary-hero.png"
-                alt="장애인식개선의 날 행사장 아치 아래 모인 초등학생들이 밝게 웃으며 브이 포즈를 하고 있다"
-                fill
-                priority
-                sizes="(min-width: 1360px) 1360px, 100vw"
-                className="object-cover"
-              />
+          <Container className="absolute inset-x-0 bottom-0 pb-10 sm:pb-14 lg:pb-16">
+            <div className="max-w-2xl">
+              <Reveal>
+                <Kicker color="accent">초등학교 체험교육</Kicker>
+                <h1 className="text-balance mt-3 text-2xl font-black leading-tight text-white [text-shadow:0_2px_16px_rgb(0_0_0_/_60%)] sm:text-4xl">
+                  초등학생을 위한
+                  <br />
+                  체험형 장애인식개선교육
+                </h1>
+              </Reveal>
+              <Reveal delay={100}>
+                <p className="mt-3 max-w-[32em] leading-relaxed text-white [text-shadow:0_1px_10px_rgb(0_0_0_/_60%)]">
+                  학급 단위로 학교를 직접 찾아가, 몸으로 겪고 느끼는
+                  체험으로 진행합니다.
+                </p>
+              </Reveal>
             </div>
           </Container>
-        </Reveal>
+        </div>
       </section>
 
       {/* 2. WHY — 왜 초등학생 시기에 필요한가 */}
