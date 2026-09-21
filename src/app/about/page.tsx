@@ -164,7 +164,7 @@ export default function AboutPage() {
           <div className="mt-16 flex flex-col lg:flex-row lg:items-start">
             <Reveal className="flex-1 lg:px-4 lg:text-center">
               <div className="flex items-baseline gap-3 lg:justify-center">
-                <span aria-hidden="true" className="text-5xl font-black text-[var(--color-primary)]/20 sm:text-6xl">
+                <span aria-hidden="true" className="text-5xl font-black text-[var(--color-primary)] sm:text-6xl">
                   {CORE_VALUES[0].number}
                 </span>
                 <span className="text-xs font-bold tracking-[0.2em] text-[var(--color-primary-hover)]">
@@ -186,7 +186,7 @@ export default function AboutPage() {
 
             <Reveal delay={100} className="flex-1 lg:px-4 lg:text-center">
               <div className="flex items-baseline gap-3 lg:justify-center">
-                <span aria-hidden="true" className="text-5xl font-black text-[var(--color-primary)]/20 sm:text-6xl">
+                <span aria-hidden="true" className="text-5xl font-black text-[var(--color-primary)] sm:text-6xl">
                   {CORE_VALUES[1].number}
                 </span>
                 <span className="text-xs font-bold tracking-[0.2em] text-[var(--color-primary-hover)]">
@@ -208,7 +208,7 @@ export default function AboutPage() {
 
             <Reveal delay={200} className="flex-1 lg:px-4 lg:text-center">
               <div className="flex items-baseline gap-3 lg:justify-center">
-                <span aria-hidden="true" className="text-5xl font-black text-[var(--color-primary)]/20 sm:text-6xl">
+                <span aria-hidden="true" className="text-5xl font-black text-[var(--color-primary)] sm:text-6xl">
                   {CORE_VALUES[2].number}
                 </span>
                 <span className="text-xs font-bold tracking-[0.2em] text-[var(--color-primary-hover)]">
