@@ -31,9 +31,9 @@ const APPLY_FLOW = [
 export default function ElementaryPage() {
   return (
     <>
-      {/* 1. HERO — 회사소개 페이지 히어로와 동일한 전체화면 사진 + 그라데이션 패턴 */}
+      {/* 1. HERO — 아치가 양쪽 끝까지 잘리지 않도록 낮은 박스 + 밝기 조정 방식 */}
       <section id="top" className="on-dark relative isolate overflow-hidden">
-        <div className="relative h-[70vh] min-h-[520px] w-full sm:h-[80vh] sm:min-h-[600px] lg:h-screen lg:max-h-[840px]">
+        <div className="relative h-[50vh] min-h-[320px] w-full sm:h-[55vh] sm:min-h-[420px] lg:h-[60vh] lg:max-h-[560px]">
           {/* 실제 초등학교 장애인식개선의 날 행사 현장 사진 */}
           <Image
             src="/elementary-hero.png"
@@ -41,25 +41,21 @@ export default function ElementaryPage() {
             fill
             priority
             sizes="100vw"
-            className="object-cover"
-          />
-          <div
-            aria-hidden="true"
-            className="absolute inset-0 bg-gradient-to-t from-[var(--color-secondary-hover)]/85 via-[var(--color-secondary-hover)]/25 to-transparent"
+            className="object-cover brightness-75"
           />
 
-          <Container className="absolute inset-x-0 bottom-0 pb-14 sm:pb-20 lg:pb-24">
+          <Container className="absolute inset-x-0 bottom-0 pb-8 sm:pb-12 lg:pb-14">
             <div className="max-w-2xl">
               <Reveal>
                 <Kicker color="accent">초등학교 체험교육</Kicker>
-                <h1 className="text-balance mt-4 text-3xl font-black leading-tight sm:text-5xl">
+                <h1 className="text-balance mt-3 text-2xl font-black leading-tight text-white [text-shadow:0_2px_16px_rgb(0_0_0_/_60%)] sm:text-4xl">
                   초등학생을 위한
                   <br />
                   체험형 장애인식개선교육
                 </h1>
               </Reveal>
               <Reveal delay={100}>
-                <p className="mt-5 max-w-[32em] leading-relaxed text-white/85">
+                <p className="mt-3 max-w-[32em] leading-relaxed text-white [text-shadow:0_1px_10px_rgb(0_0_0_/_60%)]">
                   학급 단위로 학교를 직접 찾아가, 몸으로 겪고 느끼는
                   체험으로 진행합니다.
                 </p>
