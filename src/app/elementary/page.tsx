@@ -31,42 +31,42 @@ const APPLY_FLOW = [
 export default function ElementaryPage() {
   return (
     <>
-      {/* 1. HERO — 배경 띠 없이, 사진은 본문 폭 안에서 전체가 보이도록 배치 */}
-      <section id="top" className="bg-[var(--color-surface)] pt-14 pb-16 sm:pt-20 sm:pb-20">
-        <Container>
-          <div className="max-w-2xl">
-            <Reveal>
-              <Kicker color="accent-strong">초등학교 체험교육</Kicker>
-              <h1 className="text-balance mt-4 text-3xl font-black leading-tight text-[var(--color-text)] sm:text-5xl">
-                초등학생을 위한
-                <br />
-                체험형 장애인식개선교육
-              </h1>
-            </Reveal>
-            <Reveal delay={100}>
-              <p className="mt-5 max-w-[32em] leading-relaxed text-[var(--color-text-muted)]">
-                학급 단위로 학교를 직접 찾아가, 몸으로 겪고 느끼는
-                체험으로 진행합니다.
-              </p>
-            </Reveal>
-          </div>
+      {/* 1. HERO — 회사소개 페이지 히어로와 동일한 전체화면 사진 + 그라데이션 패턴 */}
+      <section id="top" className="on-dark relative isolate overflow-hidden">
+        <div className="relative h-[70vh] min-h-[520px] w-full sm:h-[80vh] sm:min-h-[600px] lg:h-screen lg:max-h-[840px]">
+          {/* 실제 초등학교 장애인식개선의 날 행사 현장 사진 */}
+          <Image
+            src="/elementary-hero.png"
+            alt="장애인식개선의 날 행사장 아치 아래 모인 초등학생들이 밝게 웃으며 브이 포즈를 하고 있다"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-gradient-to-t from-[var(--color-secondary-hover)]/85 via-[var(--color-secondary-hover)]/25 to-transparent"
+          />
 
-          {/* 실제 초등학교 장애인식개선의 날 행사 현장 사진 — 본문 폭 안에
-              담아 화면을 꽉 채우지 않으면서, 아치와 배너가 잘리지 않도록
-              원본 비율을 유지합니다. */}
-          <Reveal delay={150}>
-            <div className="relative mt-10 aspect-[1672/941] max-h-[520px] w-full overflow-hidden rounded-sm sm:mt-12">
-              <Image
-                src="/elementary-hero.png"
-                alt="장애인식개선의 날 행사장 아치 아래 모인 초등학생들이 밝게 웃으며 브이 포즈를 하고 있다"
-                fill
-                priority
-                sizes="(min-width: 1024px) 1280px, 100vw"
-                className="object-cover"
-              />
+          <Container className="absolute inset-x-0 bottom-0 pb-14 sm:pb-20 lg:pb-24">
+            <div className="max-w-2xl">
+              <Reveal>
+                <Kicker color="accent">초등학교 체험교육</Kicker>
+                <h1 className="text-balance mt-4 text-3xl font-black leading-tight sm:text-5xl">
+                  초등학생을 위한
+                  <br />
+                  체험형 장애인식개선교육
+                </h1>
+              </Reveal>
+              <Reveal delay={100}>
+                <p className="mt-5 max-w-[32em] leading-relaxed text-white/85">
+                  학급 단위로 학교를 직접 찾아가, 몸으로 겪고 느끼는
+                  체험으로 진행합니다.
+                </p>
+              </Reveal>
             </div>
-          </Reveal>
-        </Container>
+          </Container>
+        </div>
       </section>
 
       {/* 2. WHY — 왜 초등학생 시기에 필요한가 */}
