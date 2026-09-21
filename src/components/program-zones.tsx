@@ -7,10 +7,10 @@ import {
   HeartHandshake,
 } from "lucide-react";
 
-type Level = "elementary" | "middle";
+export type Level = "elementary" | "middle";
 
 // TODO 확인 필요: 아래 4존 제목/태그/설명은 실제 진행 내용과 다르면 알려주세요.
-const ELEMENTARY_ZONES = [
+export const ELEMENTARY_ZONES = [
   {
     icon: Eye,
     title: "시각장애존",
@@ -37,7 +37,7 @@ const ELEMENTARY_ZONES = [
   },
 ];
 
-const MIDDLE_ZONES = [
+export const MIDDLE_ZONES = [
   {
     icon: Eye,
     title: "시각장애존",
