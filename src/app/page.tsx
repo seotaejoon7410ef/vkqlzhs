@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Mouse } from "lucide-react";
 import { Container } from "@/components/container";
+import { Kicker } from "@/components/kicker";
 import { ReviewMarquee } from "@/components/review-marquee";
 
 export default function Home() {
@@ -92,9 +93,7 @@ export default function Home() {
       <div className="bg-[var(--color-surface-alt)] py-14 sm:py-16">
         <Container>
           <div className="text-center">
-            <p className="text-sm font-bold tracking-[0.2em] text-[var(--color-accent-strong)]">
-              SCHOOL REVIEW
-            </p>
+            <Kicker color="accent-strong">SCHOOL REVIEW</Kicker>
             <h2 className="mt-3 text-2xl font-black text-[var(--color-text)] sm:text-3xl">
               학교 현장 후기
             </h2>

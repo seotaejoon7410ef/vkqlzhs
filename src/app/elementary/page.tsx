@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowDown, ArrowRight, Camera } from "lucide-react";
 import { Container } from "@/components/container";
+import { Kicker } from "@/components/kicker";
 import { Reveal } from "@/components/reveal";
 import { ELEMENTARY_ZONES } from "@/components/program-zones";
 
@@ -45,9 +46,7 @@ export default function ElementaryPage() {
           <Container className="relative flex h-full items-end pb-12 sm:items-center sm:pb-0">
             <div className="max-w-2xl">
               <Reveal>
-                <p className="text-sm font-bold tracking-[0.2em] text-[var(--color-accent)]">
-                  초등학교 체험교육
-                </p>
+                <Kicker color="accent">초등학교 체험교육</Kicker>
                 <h1 className="text-balance mt-4 text-3xl font-black leading-tight text-white [text-shadow:0_2px_16px_rgb(0_0_0_/_60%)] sm:text-5xl">
                   초등학생을 위한
                   <br />
@@ -71,9 +70,7 @@ export default function ElementaryPage() {
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
             <div className="order-2 lg:order-1">
               <Reveal>
-                <p className="text-sm font-bold tracking-[0.2em] text-[var(--color-primary-hover)]">
-                  WHY ELEMENTARY
-                </p>
+                <Kicker>WHY ELEMENTARY</Kicker>
                 <h2 className="text-balance mt-4 text-3xl font-black leading-tight text-[var(--color-text)] sm:text-4xl">
                   몸이 자라는 만큼,
                   <br />
@@ -134,9 +131,7 @@ export default function ElementaryPage() {
         <Container>
           <div className="mx-auto max-w-2xl text-center">
             <Reveal>
-              <p className="text-sm font-bold tracking-[0.2em] text-[var(--color-primary-hover)]">
-                EXPERIENCE
-              </p>
+              <Kicker>EXPERIENCE</Kicker>
               <h2 className="text-balance mt-4 text-3xl font-black text-[var(--color-text)] sm:text-4xl">
                 직접 경험하는 4가지 체험존
               </h2>
@@ -239,7 +234,7 @@ export default function ElementaryPage() {
       <section className="bg-[var(--color-surface-alt)] py-20 sm:py-24">
         <Container className="max-w-[900px]">
           <Reveal>
-            <p className="text-sm font-bold tracking-[0.2em] text-[var(--color-primary-hover)]">GUIDE</p>
+            <Kicker>GUIDE</Kicker>
             <h2 className="mt-3 text-2xl font-black text-[var(--color-text)] sm:text-3xl">
               교육 안내
             </h2>

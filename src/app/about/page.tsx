@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowDown, ArrowRight, Camera } from "lucide-react";
 import { Container } from "@/components/container";
+import { Kicker } from "@/components/kicker";
 import { Reveal } from "@/components/reveal";
 
 export const metadata: Metadata = {
@@ -74,9 +75,7 @@ export default function AboutPage() {
           <Container className="absolute inset-x-0 bottom-0 pb-14 sm:pb-20 lg:pb-24">
             <div className="max-w-2xl">
               <Reveal>
-                <p className="text-sm font-bold tracking-[0.2em] text-[var(--color-accent)]">
-                  장애인식개선교육 전문업체
-                </p>
+                <Kicker color="accent">장애인식개선교육 전문업체</Kicker>
                 <h1 className="text-balance mt-4 text-3xl font-black leading-tight sm:text-5xl">
                   다름을 이해하는 경험이
                   <br />
@@ -113,9 +112,7 @@ export default function AboutPage() {
 
             <div>
               <Reveal>
-                <p className="text-sm font-bold tracking-[0.2em] text-[var(--color-primary-hover)]">
-                  WHY WE DO IT
-                </p>
+                <Kicker>WHY WE DO IT</Kicker>
                 <h2 className="text-balance mt-4 text-3xl font-black leading-tight text-[var(--color-text)] sm:text-4xl">
                   낯섦이 이해가 되고,
                   <br />
@@ -152,9 +149,7 @@ export default function AboutPage() {
         <Container>
           <div className="mx-auto max-w-2xl text-center">
             <Reveal>
-              <p className="text-sm font-bold tracking-[0.2em] text-[var(--color-primary-hover)]">
-                OUR VALUE
-              </p>
+              <Kicker>OUR VALUE</Kicker>
               <h2 className="text-balance mt-4 text-3xl font-black text-[var(--color-text)] sm:text-4xl">
                 경험에서 시작해, 함께하는 태도로.
               </h2>
@@ -231,9 +226,7 @@ export default function AboutPage() {
         <Container>
           <div className="mx-auto max-w-2xl text-center">
             <Reveal>
-              <p className="text-sm font-bold tracking-[0.2em] text-[var(--color-primary-hover)]">
-                HOW WE WORK
-              </p>
+              <Kicker>HOW WE WORK</Kicker>
               <h2 className="text-balance mt-4 text-3xl font-black text-[var(--color-text)] sm:text-4xl">
                 좋은 교육이 실제 학교에서 가능하도록.
               </h2>
