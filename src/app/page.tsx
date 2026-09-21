@@ -94,9 +94,11 @@ export default function Home() {
           <p className="text-center text-sm font-bold tracking-wide text-[var(--color-primary-hover)]">
             학교 현장 후기
           </p>
-          <div className="mt-6">
-            <ReviewMarquee />
-          </div>
+        </Container>
+        <div className="mt-6">
+          <ReviewMarquee />
+        </div>
+        <Container>
           <a
             href="https://blog.naver.com/happyguide95"
             target="_blank"
