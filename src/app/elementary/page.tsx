@@ -50,8 +50,7 @@ export default function ElementaryPage() {
           <Container className="absolute inset-x-0 bottom-0 pb-6 sm:pb-20 lg:pb-24">
             <div className="max-w-2xl">
               <Reveal>
-                <Kicker color="accent">초등학교 체험교육</Kicker>
-                <h1 className="text-balance mt-2 text-xl font-black leading-tight text-white [text-shadow:0_2px_16px_rgb(0_0_0_/_60%)] sm:mt-4 sm:text-5xl">
+                <h1 className="text-balance text-xl font-black leading-tight text-white [text-shadow:0_2px_16px_rgb(0_0_0_/_60%)] sm:text-5xl">
                   초등학생을 위한
                   <br />
                   체험형 장애인식개선교육

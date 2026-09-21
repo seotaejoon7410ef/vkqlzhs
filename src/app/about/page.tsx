@@ -70,8 +70,7 @@ export default function AboutPage() {
           <Container className="absolute inset-x-0 bottom-0 pb-14 sm:pb-20 lg:pb-24">
             <div className="max-w-2xl">
               <Reveal>
-                <Kicker color="accent">장애인식개선교육 전문업체</Kicker>
-                <h1 className="text-balance mt-4 text-3xl font-black leading-tight text-white [text-shadow:0_2px_16px_rgb(0_0_0_/_60%)] sm:text-5xl">
+                <h1 className="text-balance text-3xl font-black leading-tight text-white [text-shadow:0_2px_16px_rgb(0_0_0_/_60%)] sm:text-5xl">
                   다름을 이해하는 경험이
                   <br />
                   함께 살아가는 아이들을 만듭니다.
