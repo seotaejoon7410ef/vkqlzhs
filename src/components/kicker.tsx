@@ -29,9 +29,12 @@ export function Kicker({
   color?: KickerColor;
 }) {
   const { text, bar } = COLOR_CLASSES[color];
+  // accent는 사진 위에 얹히는 용도라, 사진 속 색(노란 배너 등)과 겹치면
+  // 그림자만으로는 부족해서 어두운 반투명 칩 배경을 함께 둡니다.
+  const chip = color === "accent" ? "rounded-full bg-black/45 px-3 py-1.5" : "";
 
   return (
-    <p className={`inline-flex items-center gap-2 text-sm font-bold tracking-[0.2em] ${text}`}>
+    <p className={`inline-flex items-center gap-2 text-sm font-bold tracking-[0.2em] ${text} ${chip}`}>
       <span aria-hidden="true" className={`h-[3px] w-8 rounded-full ${bar}`} />
       {children}
     </p>

@@ -31,7 +31,7 @@ export default function Home() {
         <Container className="relative pt-14 pb-24 sm:py-20 lg:py-28">
           <div className="mx-auto max-w-2xl text-center">
             <p
-              className="hero-anim text-base font-bold tracking-wide text-[var(--color-accent)] [text-shadow:0_1px_10px_rgb(0_0_0_/_60%)]"
+              className="hero-anim inline-block rounded-full bg-black/45 px-3 py-1.5 text-base font-bold tracking-wide text-[var(--color-accent)] [text-shadow:0_1px_10px_rgb(0_0_0_/_60%)]"
               style={{ animationDelay: "0ms" }}
             >
               함께 배우는, 더 좋은 내일
