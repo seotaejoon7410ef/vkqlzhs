@@ -55,7 +55,7 @@ export default function AboutPage() {
     <>
       {/* 1. HERO — 실제 현장 사진 + 감성적인 카피 */}
       <section id="top" className="on-dark relative isolate overflow-hidden">
-        <div className="relative h-[70vh] min-h-[520px] w-full sm:h-[80vh] sm:min-h-[600px] lg:h-screen lg:max-h-[840px]">
+        <div className="relative min-h-[480px] w-full sm:min-h-[640px] lg:min-h-[760px]">
           {/* TODO 확인 필요: 문의하기 페이지에서 쓰던 실제 현장 사진을 재사용.
               전체 화면 배경으로 쓰기엔 인물 위치가 애매할 수 있어 실제
               화면에서 크롭 위치(object-position) 확인 후 조정 필요 */}
