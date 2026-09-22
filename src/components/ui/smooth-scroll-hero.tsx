@@ -26,7 +26,7 @@ export function SmoothScrollHero({
   children?: ReactNode;
 }) {
   const wrapperRef = useRef<HTMLDivElement>(null);
-  const [progress, setProgress] = useState(0);
+  const [visiblePercent, setVisiblePercent] = useState(initialClipPercentage);
 
   useEffect(() => {
     let frame = 0;
@@ -35,11 +35,13 @@ export function SmoothScrollHero({
       const el = wrapperRef.current;
       if (!el) return;
       const scrollableRange = el.offsetHeight - window.innerHeight;
-      const next =
+      const progress =
         scrollableRange > 0
           ? Math.min(1, Math.max(0, -el.getBoundingClientRect().top / scrollableRange))
           : 0;
-      setProgress(next);
+      setVisiblePercent(
+        initialClipPercentage + (finalClipPercentage - initialClipPercentage) * progress,
+      );
     };
 
     const onScroll = () => {
@@ -55,20 +57,16 @@ export function SmoothScrollHero({
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
     };
-  }, []);
+  }, [initialClipPercentage, finalClipPercentage]);
 
-  const visiblePercent = initialClipPercentage + (finalClipPercentage - initialClipPercentage) * progress;
   const inset = (100 - visiblePercent) / 2;
-  // 화면을 완전히 채우는 순간(inset이 0에 가까워질 때)에는 둥근 모서리도
-  // 함께 사라지게 해, 꽉 찼을 때 화면 귀퉁이가 어색하게 잘려 보이지 않게 합니다.
-  const radius = 28 * (1 - progress);
 
   return (
     <div ref={wrapperRef} style={{ height: `${scrollHeight}px` }} className="relative">
       <div className="sticky top-0 h-screen w-full overflow-hidden">
         <div
           className="absolute inset-0"
-          style={{ clipPath: `inset(${inset}% ${inset}% ${inset}% ${inset}% round ${radius}px)` }}
+          style={{ clipPath: `inset(${inset}% ${inset}% ${inset}% ${inset}% round 28px)` }}
         >
           <Image
             src={desktopImage}

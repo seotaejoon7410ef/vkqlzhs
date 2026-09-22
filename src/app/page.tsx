@@ -17,8 +17,8 @@ export default function Home() {
         scrollHeight={1500}
         desktopImage="/hero-photo.png"
         mobileImage="/hero-photo.png"
-        initialClipPercentage={90}
-        finalClipPercentage={100}
+        initialClipPercentage={25}
+        finalClipPercentage={75}
       >
         <div id="top" className="on-dark relative flex h-full items-center text-white">
           <div className="hero-overlay absolute inset-0" />
