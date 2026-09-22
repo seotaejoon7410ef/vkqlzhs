@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowDown, ArrowRight, Camera } from "lucide-react";
+import { ArrowDown, ArrowRight } from "lucide-react";
 import { Container } from "@/components/container";
 import { Kicker } from "@/components/kicker";
 import { Reveal } from "@/components/reveal";
@@ -124,14 +124,14 @@ export default function AboutPage() {
             </div>
 
             <Reveal>
-              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm bg-[var(--color-surface-alt)]">
-                <div
-                  aria-hidden="true"
-                  className="flex h-full w-full flex-col items-center justify-center gap-2 border border-dashed border-[var(--color-border)] text-[var(--color-text-muted)]"
-                >
-                  <Camera size={32} />
-                  <p className="text-sm">아이들이 체험하는 모습 사진 추가 필요</p>
-                </div>
+              <div className="relative aspect-[1672/941] w-full overflow-hidden rounded-sm">
+                <Image
+                  src="/about-why.jpg"
+                  alt="지체장애 공감 체험(휠체어 타보기)과 시각장애 공감 체험(흰지팡이) 부스에서 학생들이 체험하는 모습"
+                  fill
+                  sizes="(min-width: 1024px) 40rem, 90vw"
+                  className="object-cover"
+                />
               </div>
             </Reveal>
           </div>
