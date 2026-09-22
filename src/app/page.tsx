@@ -24,7 +24,7 @@ export default function Home() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-right sm:object-center"
+          className="hero-ken-burns object-cover object-right sm:object-center"
         />
         <div className="hero-overlay absolute inset-0" />
 
