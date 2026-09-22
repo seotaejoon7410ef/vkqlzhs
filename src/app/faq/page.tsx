@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { CalendarCheck, ChevronDown, MapPin, RefreshCcw, Truck } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { Container } from "@/components/container";
+import { Kicker } from "@/components/kicker";
 import { PageTitle } from "@/components/page-title";
 import { Reveal } from "@/components/reveal";
 
@@ -56,115 +57,84 @@ export default function FaqPage() {
     <>
       <PageTitle label="FAQ" title="선생님들이 많이 물어보세요" />
 
-      <Container className="max-w-[900px] py-16 sm:py-20">
-        {/* 진행 방식 */}
-        <Reveal>
-          <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-alt)] p-7">
-            <div className="flex items-center gap-2">
-              <Truck aria-hidden="true" size={20} className="text-[var(--color-primary-hover)]" />
-              <h2 className="text-lg font-bold text-[var(--color-text)]">학교(원)로 직접 찾아갑니다</h2>
-            </div>
-            <ul className="mt-4 space-y-3 leading-relaxed text-[var(--color-text-muted)]">
-              <li className="flex items-start gap-3">
-                <span
-                  aria-hidden="true"
-                  className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[var(--color-primary-tint)] text-xs font-extrabold text-[var(--color-primary-hover)]"
-                >
-                  1
-                </span>
-                강사와 체험 도구가 모두 학교(원)로 이동합니다.
-              </li>
-              <li className="flex items-start gap-3">
-                <span
-                  aria-hidden="true"
-                  className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[var(--color-primary-tint)] text-xs font-extrabold text-[var(--color-primary-hover)]"
-                >
-                  2
-                </span>
-                최대 4학급이 동시에 4개 존을 돌며 체험합니다.
-              </li>
-            </ul>
-          </div>
-        </Reveal>
-
-        {/* 수업 진행 */}
-        {/* TODO 확인 필요: 수업 진행 4단계 및 안내 문구 */}
-        <Reveal delay={100}>
-          <div className="mt-6 rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-alt)] p-7">
-            <div className="flex items-center gap-2">
-              <RefreshCcw aria-hidden="true" size={20} className="text-[var(--color-primary-hover)]" />
-              <h2 className="text-lg font-bold text-[var(--color-text)]">수업은 이렇게 진행돼요</h2>
-            </div>
-            <ol className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-              {CLASS_FLOW_STEPS.map((step, index) => (
-                <li
-                  key={step.title}
-                  className="flex items-start gap-2 rounded-xl bg-[var(--color-surface)] p-4"
-                >
-                  <span
-                    aria-hidden="true"
-                    className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[var(--color-primary)] text-xs font-extrabold text-white"
-                  >
-                    {index + 1}
-                  </span>
-                  <div>
-                    <p className="text-sm font-bold text-[var(--color-text)]">{step.title}</p>
-                    <p className="mt-1 text-xs leading-relaxed text-[var(--color-text-muted)]">
-                      {step.desc}
-                    </p>
-                  </div>
-                </li>
-              ))}
-            </ol>
-            <p className="mt-4 leading-relaxed text-[var(--color-text-muted)]">
-              공간(강당 또는 교실)과 참여할 학급 수만 알려주시면 돼요. 체험
-              장비와 강사는 저희가 모두 준비해서 찾아가고, 수업이 끝나면
-              간단한 만족도 조사로 의견을 들어 다음 교육에 반영합니다.
+      {/* 운영 안내 — 다른 페이지의 GUIDE 섹션과 동일한 스타일
+          (카드+원형 배지 대신 상단 테두리+숫자 리스트) */}
+      <section className="bg-[var(--color-surface)] py-16 sm:py-20">
+        <Container className="max-w-[900px]">
+          <Reveal>
+            <Kicker>GUIDE</Kicker>
+            <h2 className="text-balance mt-3 text-2xl font-black leading-tight text-[var(--color-text)] sm:text-3xl">
+              학교(원)로 직접 찾아갑니다
+            </h2>
+            <p className="mt-3 max-w-[36em] leading-relaxed text-[var(--color-text-muted)]">
+              강사와 체험 도구가 모두 학교(원)로 이동하며, 최대 4학급이
+              동시에 4개 존을 돌며 체험할 수 있습니다.
             </p>
-          </div>
-        </Reveal>
+          </Reveal>
 
-        {/* 신청 절차 */}
-        <Reveal delay={100}>
-          <div className="mt-6 rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-alt)] p-7">
-            <div className="flex items-center gap-2">
-              <CalendarCheck aria-hidden="true" size={20} className="text-[var(--color-primary-hover)]" />
-              <h2 className="text-lg font-bold text-[var(--color-text)]">신청부터 수업까지 4단계</h2>
-            </div>
-            <ol className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-              {APPLY_STEPS.map((item, index) => (
-                <li
-                  key={item.title}
-                  className="flex items-start gap-2 rounded-xl bg-[var(--color-surface)] p-4"
-                >
-                  <span
-                    aria-hidden="true"
-                    className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[var(--color-primary)] text-xs font-extrabold text-white"
-                  >
-                    {index + 1}
+          <div className="mt-12 border-t border-[var(--color-border)] pt-8">
+            <Reveal>
+              <h3 className="text-lg font-black text-[var(--color-text)]">
+                수업은 이렇게 진행돼요
+              </h3>
+            </Reveal>
+            <ol className="mt-6 grid gap-x-6 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
+              {CLASS_FLOW_STEPS.map((step, index) => (
+                <li key={step.title} className="border-t-2 border-[var(--color-text)] pt-4">
+                  <span className="text-sm font-black text-[var(--color-primary-hover)]">
+                    0{index + 1}
                   </span>
-                  <div>
-                    <p className="text-sm font-bold text-[var(--color-text)]">{item.title}</p>
-                    <p className="mt-1 text-xs leading-relaxed text-[var(--color-text-muted)]">
-                      {item.desc}
-                    </p>
-                  </div>
+                  <p className="mt-1 font-bold text-[var(--color-text)]">{step.title}</p>
+                  <p className="mt-2 text-sm leading-relaxed text-[var(--color-text-muted)]">
+                    {step.desc}
+                  </p>
+                </li>
+              ))}
+            </ol>
+            <Reveal delay={100}>
+              <p className="mt-8 max-w-[36em] leading-relaxed text-[var(--color-text-muted)]">
+                공간(강당 또는 교실)과 참여할 학급 수만 알려주시면 돼요.
+                체험 장비와 강사는 저희가 모두 준비해서 찾아가고, 수업이
+                끝나면 간단한 만족도 조사로 의견을 들어 다음 교육에
+                반영합니다.
+              </p>
+            </Reveal>
+          </div>
+
+          <div className="mt-14 border-t border-[var(--color-border)] pt-8">
+            <Reveal>
+              <h3 className="text-lg font-black text-[var(--color-text)]">
+                신청부터 수업까지 4단계
+              </h3>
+            </Reveal>
+            <ol className="mt-6 grid gap-x-6 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
+              {APPLY_STEPS.map((item, index) => (
+                <li key={item.title} className="border-t-2 border-[var(--color-text)] pt-4">
+                  <span className="text-sm font-black text-[var(--color-primary-hover)]">
+                    0{index + 1}
+                  </span>
+                  <p className="mt-1 font-bold text-[var(--color-text)]">{item.title}</p>
+                  <p className="mt-2 text-sm leading-relaxed text-[var(--color-text-muted)]">
+                    {item.desc}
+                  </p>
                 </li>
               ))}
             </ol>
           </div>
-        </Reveal>
+        </Container>
+      </section>
 
-        {/* 출강 지역 */}
-        <Reveal delay={100}>
-          <div className="mt-6 rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-alt)] p-7 text-center">
-            <div className="flex items-center justify-center gap-2">
-              <MapPin aria-hidden="true" size={20} className="text-[var(--color-primary-hover)]" />
-              <h2 className="text-lg font-bold text-[var(--color-text)]">
-                이 지역으로 자주 찾아가요
-              </h2>
-            </div>
-            <div className="mt-4 flex flex-wrap justify-center gap-3">
+      {/* 출강 지역 */}
+      <section className="bg-[var(--color-surface-alt)] py-16 sm:py-20">
+        <Container className="max-w-[900px] text-center">
+          <Reveal>
+            <Kicker>AREA</Kicker>
+            <h2 className="text-balance mt-3 text-2xl font-black leading-tight text-[var(--color-text)] sm:text-3xl">
+              이 지역으로 자주 찾아가요
+            </h2>
+          </Reveal>
+          <Reveal delay={100}>
+            <div className="mt-6 flex flex-wrap justify-center gap-3">
               {MAIN_AREAS.map((area) => (
                 <span
                   key={area}
@@ -174,32 +144,43 @@ export default function FaqPage() {
                 </span>
               ))}
             </div>
-            <p className="mt-4 leading-relaxed text-[var(--color-text-muted)]">
+            <p className="mx-auto mt-4 max-w-[36em] leading-relaxed text-[var(--color-text-muted)]">
               위 지역이 아니어도 괜찮아요. 그 외 지역도 협의 후 얼마든지
               찾아갈 수 있으니, 부담 갖지 마시고 편하게 문의해 주세요!
             </p>
-          </div>
-        </Reveal>
+          </Reveal>
+        </Container>
+      </section>
 
-        <div className="mt-10 space-y-3">
-          {FAQS.map((item) => (
-            <details
-              key={item.q}
-              className="group rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] px-6 py-2 open:pb-5"
-            >
-              <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-3 text-lg font-bold text-[var(--color-text)]">
-                {item.q}
-                <ChevronDown
-                  aria-hidden="true"
-                  size={22}
-                  className="shrink-0 text-[var(--color-primary)] transition-transform group-open:rotate-180"
-                />
-              </summary>
-              <p className="leading-relaxed text-[var(--color-text-muted)]">{item.a}</p>
-            </details>
-          ))}
-        </div>
-      </Container>
+      {/* 자주 묻는 질문 */}
+      <section className="bg-[var(--color-surface)] py-16 sm:py-20">
+        <Container className="max-w-[900px]">
+          <Reveal>
+            <Kicker>FAQ</Kicker>
+            <h2 className="mt-3 text-2xl font-black text-[var(--color-text)] sm:text-3xl">
+              자주 묻는 질문
+            </h2>
+          </Reveal>
+
+          <div className="mt-8 space-y-3">
+            {FAQS.map((item, index) => (
+              <Reveal key={item.q} delay={(index % 3) * 80}>
+                <details className="group rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-alt)] px-6 py-2 open:pb-5">
+                  <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-3 text-lg font-bold text-[var(--color-text)]">
+                    {item.q}
+                    <ChevronDown
+                      aria-hidden="true"
+                      size={22}
+                      className="shrink-0 text-[var(--color-primary)] transition-transform group-open:rotate-180"
+                    />
+                  </summary>
+                  <p className="leading-relaxed text-[var(--color-text-muted)]">{item.a}</p>
+                </details>
+              </Reveal>
+            ))}
+          </div>
+        </Container>
+      </section>
     </>
   );
 }
