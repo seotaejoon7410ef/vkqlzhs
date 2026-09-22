@@ -13,13 +13,13 @@ export type Level = "elementary" | "middle";
 export const ELEMENTARY_ZONES = [
   {
     icon: Eye,
-    title: "시각장애존",
+    title: "시각장애공감체험 존",
     tags: ["안대 체험", "이동 체험"],
     desc: "안대를 쓰고 이동하며 앞이 보이지 않을 때 어떤 도움이 필요한지 알아봐요.",
   },
   {
     icon: Accessibility,
-    title: "지체장애존",
+    title: "지체장애공감체험 존",
     tags: ["휠체어 체험", "이동 체험"],
     desc: "휠체어를 직접 타고 움직이며 이동이 얼마나 다른지 느껴봐요.",
   },
