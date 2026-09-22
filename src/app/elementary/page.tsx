@@ -28,6 +28,23 @@ const APPLY_FLOW = [
   { title: "만족도 조사", desc: "교육 후 의견을 들어 다음 교육을 더 좋게 만듭니다." },
 ];
 
+// 4. EXPERIENCE 존 사진 — ELEMENTARY_ZONES 배열 순서(시각/지체/감각협력/퀴즈)에
+// 맞춰 존별 실제 현장 사진을 매핑. 퀴즈형존은 아직 사진이 없어 placeholder 유지.
+const ZONE_PHOTOS: Record<number, { src: string; alt: string }> = {
+  0: {
+    src: "/elementary-zone-visual.jpg",
+    alt: "시각장애 공감 체험존 배너 앞에서 강사가 체험 진행 방법을 설명하는 모습",
+  },
+  1: {
+    src: "/elementary-zone-mobility.jpg",
+    alt: "지체장애 공감 체험존에서 학생들이 줄지어 놓인 휠체어를 살펴보는 모습",
+  },
+  2: {
+    src: "/elementary-zone-sensory.jpg",
+    alt: "감각협력 체험존 배너 앞에서 강사가 학생들에게 체험 방법을 설명하는 모습",
+  },
+};
+
 export default function ElementaryPage() {
   return (
     <>
@@ -174,10 +191,10 @@ export default function ElementaryPage() {
                     </p>
                   </div>
                   <div className="relative mt-5 aspect-[4/3] w-full overflow-hidden rounded-sm bg-[var(--color-surface)]">
-                    {index === 0 ? (
+                    {ZONE_PHOTOS[index] ? (
                       <Image
-                        src="/reviews/yongin-seongji-6.jpg"
-                        alt="시각장애 공감 체험존에서 강사가 진행 방법을 안내하는 모습"
+                        src={ZONE_PHOTOS[index].src}
+                        alt={ZONE_PHOTOS[index].alt}
                         fill
                         sizes="(min-width: 640px) 28rem, 90vw"
                         className="object-cover"
