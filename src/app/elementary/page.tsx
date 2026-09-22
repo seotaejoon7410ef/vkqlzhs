@@ -147,30 +147,32 @@ export default function ElementaryPage() {
 
           <div className="mt-16 grid gap-x-12 gap-y-16 sm:grid-cols-2">
             {ELEMENTARY_ZONES.map((zone, index) => (
-              <Reveal key={zone.title} delay={(index % 2) * 100}>
-                <div className="border-t-2 border-[var(--color-text)] pt-6">
-                  <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                    <span aria-hidden="true" className="text-4xl font-black text-[var(--color-primary)] sm:text-5xl">
-                      0{index + 1}
-                    </span>
-                    <zone.icon aria-hidden="true" size={22} className="self-center text-[var(--color-primary-hover)]" />
-                    <h3 className="text-4xl font-black text-[var(--color-text)] sm:text-5xl">
-                      {zone.title}
-                    </h3>
-                  </div>
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {zone.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="rounded-full bg-[var(--color-surface)] px-3 py-1 text-xs font-bold text-[var(--color-text-muted)]"
-                      >
-                        {tag}
+              <Reveal key={zone.title} delay={(index % 2) * 100} className="h-full">
+                <div className="flex h-full flex-col border-t-2 border-[var(--color-text)] pt-6">
+                  <div className="flex-1">
+                    <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                      <span aria-hidden="true" className="text-4xl font-black text-[var(--color-primary)] sm:text-5xl">
+                        0{index + 1}
                       </span>
-                    ))}
+                      <zone.icon aria-hidden="true" size={22} className="self-center text-[var(--color-primary-hover)]" />
+                      <h3 className="text-4xl font-black text-[var(--color-text)] sm:text-5xl">
+                        {zone.title}
+                      </h3>
+                    </div>
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {zone.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="rounded-full bg-[var(--color-surface)] px-3 py-1 text-xs font-bold text-[var(--color-text-muted)]"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <p className="mt-3 max-w-[32em] leading-relaxed text-[var(--color-text-muted)]">
+                      {zone.desc}
+                    </p>
                   </div>
-                  <p className="mt-3 max-w-[32em] leading-relaxed text-[var(--color-text-muted)]">
-                    {zone.desc}
-                  </p>
                   <div className="relative mt-5 aspect-[4/3] w-full overflow-hidden rounded-sm bg-[var(--color-surface)]">
                     {index === 0 ? (
                       <Image
