@@ -1,16 +1,16 @@
 import Image from "next/image";
 import { Camera } from "lucide-react";
 
-const BLOG_URL = "https://blog.naver.com/happyguide95";
-
+// TODO 확인 필요: 새 학교 후기가 생기면 여기에 { id, school, photos, postUrl }
+// 형태로 추가하고, 아래 PLACEHOLDER_GRADIENTS에서 하나를 지우세요.
+// postUrl은 블로그 첫 화면이 아니라 해당 후기 글의 실제 주소여야 합니다.
 type Review = {
   id: string;
   school: string;
   photos: string[];
+  postUrl: string;
 };
 
-// TODO 확인 필요: 새 학교 후기가 생기면 여기에 { id, school, photos }
-// 형태로 추가하고, 아래 PLACEHOLDER_GRADIENTS에서 하나를 지우세요.
 const REVIEWS: Review[] = [
   {
     id: "yongin-seongji",
@@ -23,6 +23,7 @@ const REVIEWS: Review[] = [
       "/reviews/yongin-seongji-5.jpg",
       "/reviews/yongin-seongji-6.jpg",
     ],
+    postUrl: "https://blog.naver.com/happyguide95/224314050461",
   },
 ];
 
@@ -46,7 +47,7 @@ function gridColsClass(count: number) {
 function ReviewCard({ review }: { review: Review }) {
   return (
     <a
-      href={BLOG_URL}
+      href={review.postUrl}
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`${review.school} 후기, 블로그에서 더 보기`}
