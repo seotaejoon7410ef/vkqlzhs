@@ -63,15 +63,6 @@ export default function Home() {
           </div>
         </Container>
 
-        {/* 우측 하단 태그라인 */}
-        <p className="absolute bottom-24 right-6 hidden text-right text-sm font-bold leading-relaxed text-white/70 sm:right-10 sm:block lg:bottom-28">
-          다름이
-          <br />
-          틀림이 아닌
-          <br />
-          함께 살아가는 세상
-        </p>
-
         {/* 스크롤 유도 */}
         <div className="absolute inset-x-0 bottom-8 flex flex-col items-center gap-2 text-xs font-bold tracking-widest text-white/70">
           <Mouse aria-hidden="true" size={22} className="scroll-bounce" />

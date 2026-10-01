@@ -9,7 +9,7 @@ export function SiteFooter() {
       <Container className="flex flex-col gap-10 py-14 lg:flex-row lg:items-start lg:justify-between">
         <div>
           <Image
-            src="/logo-lockup.png"
+            src="/logo-lockup-white-v2.png"
             alt="행복한길잡이 장애이해교육센터 로고"
             width={236}
             height={92}
