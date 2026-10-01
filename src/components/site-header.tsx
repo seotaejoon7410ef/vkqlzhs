@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Phone } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import { Container } from "./container";
 import { NAV_ITEMS } from "@/config";
 
@@ -25,8 +25,14 @@ export function SiteHeader() {
   // 투명-불투명 전환이 불안정하게 보일 수 있어, sm 미만에서는 항상
   // 불투명 헤더로 고정합니다(투명 오버레이 효과는 sm 이상에서만).
   const [isNarrow, setIsNarrow] = useState(true);
+  // 서버 렌더링 시점에는 실제 화면 폭을 알 수 없어 isNarrow가 true로
+  // 시작합니다. 데스크톱에서는 이 초기값이 곧바로 틀린 것으로
+  // 정정되는데, 이때 배경색 전환 애니메이션까지 같이 재생되면 로고
+  // 위로 흰 배경이 잠깐 번쩍이는 것처럼 보입니다. mounted 이전에는
+  // transition을 꺼서 이 첫 정정이 애니메이션 없이 즉시 적용되게 합니다.
+  const [mounted, setMounted] = useState(false);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 64);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -35,6 +41,9 @@ export function SiteHeader() {
     const onWidthChange = () => setIsNarrow(!mql.matches);
     onWidthChange();
     mql.addEventListener("change", onWidthChange);
+
+    const markMounted = () => setMounted(true);
+    markMounted();
 
     return () => {
       window.removeEventListener("scroll", onScroll);
@@ -46,7 +55,7 @@ export function SiteHeader() {
 
   return (
     <header
-      className={`fixed top-0 z-50 w-full transition-colors duration-300 ${
+      className={`fixed top-0 z-50 w-full ${mounted ? "transition-colors duration-300" : ""} ${
         solid
           ? "border-b border-[var(--color-border)] bg-[var(--color-surface)]/95 backdrop-blur"
           : "border-b border-transparent bg-transparent"
