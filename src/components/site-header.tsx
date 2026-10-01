@@ -59,7 +59,7 @@ export function SiteHeader() {
           <Image
             src={solid ? "/logo-lockup.png" : "/logo-lockup-white-v2.png"}
             alt="행복한길잡이 장애이해교육센터 로고"
-            width={224}
+            width={236}
             height={92}
             priority
             className="h-16 w-auto sm:h-20"

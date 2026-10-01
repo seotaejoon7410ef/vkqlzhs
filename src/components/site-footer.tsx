@@ -11,7 +11,7 @@ export function SiteFooter() {
           <Image
             src="/logo-lockup.png"
             alt="행복한길잡이 장애이해교육센터 로고"
-            width={224}
+            width={236}
             height={92}
             className="h-auto w-44"
           />
