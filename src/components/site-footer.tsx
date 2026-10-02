@@ -29,20 +29,20 @@ export function SiteFooter() {
               <Building2 aria-hidden="true" size={17} className="shrink-0 text-white/40" />
               사업자등록번호 549-05-03225
             </p>
-            <a href="tel:0312368410" className="flex items-center gap-2.5 transition-colors hover:text-white">
+            <p className="flex items-center gap-2.5">
               <Phone aria-hidden="true" size={17} className="shrink-0 text-white/40" />
               031-236-8410
-            </a>
-            <a href="mailto:happyguide95@naver.com" className="flex items-center gap-2.5 transition-colors hover:text-white">
+            </p>
+            <p className="flex items-center gap-2.5">
               <Mail aria-hidden="true" size={17} className="shrink-0 text-white/40" />
               happyguide95@naver.com
-            </a>
+            </p>
             <p className="flex items-start gap-2.5">
               <MapPin aria-hidden="true" size={17} className="mt-0.5 shrink-0 text-white/40" />
               경기도 화성시 동탄중심상가1길 36, 8층 801호
             </p>
           </div>
-          <p className="mt-6 text-sm text-white/40">© 행복한길잡이 체험교육센터.</p>
+          <p className="mt-6 text-sm text-white/40">© 체험교육센터 행복한길잡이.</p>
         </div>
 
         <div className="flex flex-col gap-6 lg:items-end">
