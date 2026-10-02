@@ -49,19 +49,11 @@ function QuickMenuButton({
 export function FloatingQuickMenu() {
   return (
     <>
-      {/* 화면 오른쪽 세로 퀵메뉴 (전화 버튼은 PC에서는 숨기고 모바일·태블릿에만 표시) */}
-      <div className="fixed right-3 top-1/2 z-40 flex -translate-y-1/2 flex-col gap-2 sm:right-6 sm:gap-3">
-        <div className="lg:hidden">
-          <QuickMenuButton
-            href={PHONE_TEL}
-            label={`전화 문의 ${PHONE_NUMBER}`}
-            bgClass="bg-[var(--color-primary)]"
-          >
-            <Phone aria-hidden="true" size={26} className="text-white sm:hidden" />
-            <Phone aria-hidden="true" size={30} className="hidden text-white sm:block" />
-          </QuickMenuButton>
-        </div>
-
+      {/* 화면 오른쪽 세로 퀵메뉴. 모바일은 화면 중앙이 아니라 아래쪽에 둬서
+          히어로 문구를 가리지 않게 하고(하단 고정 전화바 바로 위),
+          태블릿·PC는 기존처럼 세로 중앙에 둡니다. 전화 버튼은 모바일
+          하단에 이미 전화바가 있어 중복이라 빼고 카카오톡/블로그만 둡니다. */}
+      <div className="fixed right-3 bottom-24 z-40 flex flex-col gap-2 sm:right-6 sm:top-1/2 sm:bottom-auto sm:-translate-y-1/2 sm:gap-3">
         <QuickMenuButton href={KAKAO_URL} label="카카오톡 문의" bgClass="bg-[#FEE500]">
           <Image
             src="/kakao-icon.png"

@@ -63,8 +63,9 @@ export default function Home() {
           </div>
         </Container>
 
-        {/* 스크롤 유도 */}
-        <div className="absolute inset-x-0 bottom-8 flex flex-col items-center gap-2 text-xs font-bold tracking-widest text-white/70">
+        {/* 스크롤 유도 — 모바일은 화면이 좁아 다른 요소와 겹치기 쉬워 숨기고,
+            sm 이상에서만 보여줍니다. */}
+        <div className="absolute inset-x-0 bottom-8 hidden flex-col items-center gap-2 text-xs font-bold tracking-widest text-white/70 sm:flex">
           <Mouse aria-hidden="true" size={22} className="scroll-bounce" />
           SCROLL
         </div>
