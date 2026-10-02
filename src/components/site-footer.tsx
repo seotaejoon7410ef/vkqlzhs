@@ -13,7 +13,7 @@ export function SiteFooter() {
             alt="행복한길잡이 장애이해교육센터 로고"
             width={236}
             height={92}
-            className="h-auto w-44"
+            className="h-auto w-44 [filter:drop-shadow(0_0_1px_rgba(255,255,255,0.55))_drop-shadow(0_0_5px_rgba(255,255,255,0.18))]"
           />
           <div className="mt-5 space-y-2 text-lg text-white/70">
             <p>대표 | 서태준</p>
