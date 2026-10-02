@@ -5,14 +5,13 @@ import { NAV_ITEMS } from "@/config";
 
 export function SiteFooter() {
   return (
-    <footer className="on-dark bg-[#0a0712] pb-16 text-white sm:pb-0">
+    <footer className="on-dark bg-gradient-to-br from-[#0a0712] via-[#0a0712] to-[#2a1458] pb-16 text-white sm:pb-0">
       <Container className="flex flex-col gap-10 py-14 lg:flex-row lg:items-start lg:justify-between">
         <div>
-          {/* 로고 색은 원래 브랜드 보라(logo-lockup.png) 그대로 유지하고
-              싶다는 요청. 로고 보라 자체가 명도가 낮아(연산상 검정
-              배경에서도 대비 한계가 약 2.4:1) 배경을 바꾸는 것만으로는
-              완벽한 대비를 낼 수 없지만, 배경을 거의 무채색에 가까운
-              검정으로 최대한 밀어 대비를 최대화함. */}
+          {/* 로고는 원래 브랜드 보라(logo-lockup.png) 그대로. 배경을
+              검정에 가까운 톤에서 오른쪽 아래로 갈수록 짙은 보라로
+              번지는 그라데이션으로 바꿔, 로고가 걸리는 왼쪽 위는 대비를
+              확보하면서 밋밋하지 않게 깊이감을 줌. */}
           <Image
             src="/logo-lockup.png"
             alt="행복한길잡이 장애이해교육센터 로고"
