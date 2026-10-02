@@ -62,7 +62,7 @@ export function FloatingQuickMenu() {
           </QuickMenuButton>
         </div>
 
-        <QuickMenuButton href={KAKAO_URL} label="카카오톡 문의">
+        <QuickMenuButton href={KAKAO_URL} label="카카오톡 문의" bgClass="bg-[#FEE500]">
           <Image
             src="/kakao-icon.png"
             alt=""
