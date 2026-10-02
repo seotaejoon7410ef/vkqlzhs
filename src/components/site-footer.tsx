@@ -5,20 +5,20 @@ import { NAV_ITEMS } from "@/config";
 
 export function SiteFooter() {
   return (
-    <footer className="on-dark bg-[var(--color-secondary)] pb-16 text-white sm:pb-0">
+    <footer className="on-dark bg-[#0a0712] pb-16 text-white sm:pb-0">
       <Container className="flex flex-col gap-10 py-14 lg:flex-row lg:items-start lg:justify-between">
         <div>
-          {/* 컬러 로고는 어두운 배경에서 대비가 약해(보라 위 보라, 약
-              2:1) 잘 안 보인다는 피드백이 반복됨. 완전히 흰색으로 바꾸면
-              로고 느낌이 사라진다는 피드백도 있어, 보라 계열은 유지하되
-              더 밝은 라벤더 톤으로 바꿔 대비를 확보(약 6.3:1). 흰 다이얼
-              면과 주황 바늘은 원래 색 그대로 둠. */}
+          {/* 로고 색은 원래 브랜드 보라(logo-lockup.png) 그대로 유지하고
+              싶다는 요청. 로고 보라 자체가 명도가 낮아(연산상 검정
+              배경에서도 대비 한계가 약 2.4:1) 배경을 바꾸는 것만으로는
+              완벽한 대비를 낼 수 없지만, 배경을 거의 무채색에 가까운
+              검정으로 최대한 밀어 대비를 최대화함. */}
           <Image
-            src="/logo-lockup-footer.png"
+            src="/logo-lockup.png"
             alt="행복한길잡이 장애이해교육센터 로고"
             width={236}
             height={92}
-            className="h-auto w-44"
+            className="h-auto w-52"
           />
           <div className="mt-5 space-y-2 text-lg text-white/70">
             <p>대표 | 서태준</p>
