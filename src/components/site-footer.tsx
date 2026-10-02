@@ -5,15 +5,15 @@ import { NAV_ITEMS } from "@/config";
 
 export function SiteFooter() {
   return (
-    <footer className="on-dark bg-gradient-to-br from-[#160f24] via-[#160f24] to-[#432679] pb-16 text-white sm:pb-0">
+    <footer className="on-dark bg-[#10141c] pb-16 text-white sm:pb-0">
       <Container className="flex flex-col gap-10 py-14 lg:flex-row lg:items-start lg:justify-between">
         <div>
-          {/* 로고는 원래 브랜드 보라(logo-lockup.png) 그대로. 배경을
-              검정에 가까운 톤에서 오른쪽 아래로 갈수록 짙은 보라로
-              번지는 그라데이션으로 바꿔, 로고가 걸리는 왼쪽 위는 대비를
-              확보하면서 밋밋하지 않게 깊이감을 줌. */}
+          {/* 안전교육/장애인식개선 체험교육 업종에 어울리는 차분하고
+              신뢰감 있는 차콜 네이비 배경. 로고는 아이콘(나침반+손)은
+              브랜드 보라 그대로 두고 글자만 흰색으로 바꾼 버전을 써서,
+              배경 어두운 정도와 무관하게 항상 확실히 읽히게 함. */}
           <Image
-            src="/logo-lockup.png"
+            src="/logo-lockup-footer.png"
             alt="행복한길잡이 장애이해교육센터 로고"
             width={236}
             height={92}

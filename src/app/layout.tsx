@@ -16,11 +16,11 @@ const notoSansKr = Noto_Sans_KR({
 
 export const metadata: Metadata = {
   title: {
-    default: "행복한길잡이 | 유치원·초중학교 찾아가는 장애 인식 개선 체험교육",
+    default: "행복한길잡이 | 초중학교 찾아가는 장애 인식 개선 체험교육",
     template: "%s | 행복한길잡이",
   },
   description:
-    "행복한길잡이는 유치원, 초등학교, 중학교로 직접 찾아가 장애 인식 개선 체험교육을 진행합니다. 시각장애존, 지체장애존, 감각협력존, 퀴즈형존 4개 프로그램을 운영합니다.",
+    "행복한길잡이는 초등학교, 중학교로 직접 찾아가 장애 인식 개선 체험교육을 진행합니다. 시각장애존, 지체장애존, 감각협력존, 퀴즈형존 4개 프로그램을 운영합니다.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
