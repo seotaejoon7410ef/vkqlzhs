@@ -5,7 +5,7 @@ import { NAV_ITEMS } from "@/config";
 
 export function SiteFooter() {
   return (
-    <footer className="on-dark bg-gradient-to-br from-[#0a0712] via-[#0a0712] to-[#2a1458] pb-16 text-white sm:pb-0">
+    <footer className="on-dark bg-gradient-to-br from-[#160f24] via-[#160f24] to-[#432679] pb-16 text-white sm:pb-0">
       <Container className="flex flex-col gap-10 py-14 lg:flex-row lg:items-start lg:justify-between">
         <div>
           {/* 로고는 원래 브랜드 보라(logo-lockup.png) 그대로. 배경을
