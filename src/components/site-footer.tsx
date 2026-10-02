@@ -8,12 +8,13 @@ export function SiteFooter() {
     <footer className="on-dark bg-[var(--color-secondary)] pb-16 text-white sm:pb-0">
       <Container className="flex flex-col gap-10 py-14 lg:flex-row lg:items-start lg:justify-between">
         <div>
-          {/* 컬러 로고는 어두운 배경에서 대비가 약해(보라 위 보라) 잘
-              안 보인다는 피드백이 반복됨. 카드/글로우 같은 효과 대신,
-              다이얼 링 구조는 살리되 흰색 실루엣으로 바꾼 버전을 써서
-              배경과 무관하게 확실히 읽히게 함. */}
+          {/* 컬러 로고는 어두운 배경에서 대비가 약해(보라 위 보라, 약
+              2:1) 잘 안 보인다는 피드백이 반복됨. 완전히 흰색으로 바꾸면
+              로고 느낌이 사라진다는 피드백도 있어, 보라 계열은 유지하되
+              더 밝은 라벤더 톤으로 바꿔 대비를 확보(약 6.3:1). 흰 다이얼
+              면과 주황 바늘은 원래 색 그대로 둠. */}
           <Image
-            src="/logo-lockup-white-v2.png"
+            src="/logo-lockup-footer.png"
             alt="행복한길잡이 장애이해교육센터 로고"
             width={236}
             height={92}

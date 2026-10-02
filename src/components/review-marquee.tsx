@@ -34,6 +34,7 @@ const REVIEWS: Review[] = [
       "/reviews/gwangjin-oo-3.jpg",
       "/reviews/gwangjin-oo-4.jpg",
       "/reviews/gwangjin-oo-5.jpg",
+      "/reviews/gwangjin-oo-6.jpg",
     ],
     postUrl: "https://blog.naver.com/happyguide95/224428336191",
   },
