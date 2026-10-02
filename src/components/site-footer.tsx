@@ -9,11 +9,11 @@ export function SiteFooter() {
       <Container className="flex flex-col gap-10 py-14 lg:flex-row lg:items-start lg:justify-between">
         <div>
           {/* 안전교육/장애인식개선 체험교육 업종에 어울리는 차분하고
-              신뢰감 있는 차콜 네이비 배경. 로고는 아이콘(나침반+손)은
-              브랜드 보라 그대로 두고 글자만 흰색으로 바꾼 버전을 써서,
-              배경 어두운 정도와 무관하게 항상 확실히 읽히게 함. */}
+              신뢰감 있는 차콜 네이비 배경. 로고 색은 절대 보정하지
+              말고 원본(logo-lockup.png) 그대로 사용 — 배경을 충분히
+              어둡게 둬서 대비를 확보. */}
           <Image
-            src="/logo-lockup-footer.png"
+            src="/logo-lockup.png"
             alt="행복한길잡이 장애이해교육센터 로고"
             width={236}
             height={92}

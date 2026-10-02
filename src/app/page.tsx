@@ -39,7 +39,7 @@ export default function Home() {
               </span>
               <br />
               <span className="hero-anim inline-block" style={{ animationDelay: "200ms" }}>
-                저희가 교실로 찾아갑니다
+                저희가 학교로 찾아갑니다
               </span>
             </h1>
             <div
