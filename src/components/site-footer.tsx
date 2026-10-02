@@ -5,14 +5,15 @@ import { NAV_ITEMS } from "@/config";
 
 export function SiteFooter() {
   return (
-    <footer className="on-dark bg-[#120b22] pb-16 text-white sm:pb-0">
+    <footer className="on-dark bg-[var(--color-secondary)] pb-16 text-white sm:pb-0">
       <Container className="flex flex-col gap-10 py-14 lg:flex-row lg:items-start lg:justify-between">
         <div>
-          {/* 로고가 보라색 단일톤이라 기존 네이비 배경(--color-secondary)과
-              색 계열이 겹쳐 대비가 약했습니다. 카드/글로우 같은 효과 대신
-              푸터만 보라기가 거의 없는 짙은 배경으로 바꿔 대비를 확보합니다. */}
+          {/* 컬러 로고는 어두운 배경에서 대비가 약해(보라 위 보라) 잘
+              안 보인다는 피드백이 반복됨. 카드/글로우 같은 효과 대신,
+              다이얼 링 구조는 살리되 흰색 실루엣으로 바꾼 버전을 써서
+              배경과 무관하게 확실히 읽히게 함. */}
           <Image
-            src="/logo-lockup.png"
+            src="/logo-lockup-white-v2.png"
             alt="행복한길잡이 장애이해교육센터 로고"
             width={236}
             height={92}
@@ -22,6 +23,7 @@ export function SiteFooter() {
             <p>대표 | 서태준</p>
             <p>사업자등록번호 | 549-05-03225</p>
             <p>대표번호 | 031-236-8410</p>
+            <p>주소 | 경기도 화성시 동탄중심상가1길 36, 8층 801호</p>
           </div>
           <p className="mt-6 text-base text-white/50">© 행복한길잡이 체험교육센터.</p>
         </div>
