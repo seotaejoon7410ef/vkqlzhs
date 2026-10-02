@@ -20,7 +20,7 @@ export function SiteFooter() {
             <p>사업자등록번호 | 549-05-03225</p>
             <p>대표번호 | 031-236-8410</p>
           </div>
-          <p className="mt-6 text-base text-white/50">© 행복한길잡이 장애이해교육센터.</p>
+          <p className="mt-6 text-base text-white/50">© 행복한길잡이 체험교육센터.</p>
         </div>
 
         <div className="flex flex-col gap-6 lg:items-end">
