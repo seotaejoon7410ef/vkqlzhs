@@ -8,13 +8,18 @@ export function SiteFooter() {
     <footer className="on-dark bg-[var(--color-secondary)] pb-16 text-white sm:pb-0">
       <Container className="flex flex-col gap-10 py-14 lg:flex-row lg:items-start lg:justify-between">
         <div>
-          <Image
-            src="/logo-lockup.png"
-            alt="행복한길잡이 장애이해교육센터 로고"
-            width={236}
-            height={92}
-            className="h-auto w-44"
-          />
+          {/* 로고가 보라색 단일톤이라 어두운 네이비 배경과 색 계열이
+              겹쳐 대비가 약했습니다. 글로우 효과 대신 흰색 카드를 깔아
+              대비를 확실히 확보합니다. */}
+          <div className="inline-block rounded-2xl bg-white px-5 py-3.5 shadow-sm">
+            <Image
+              src="/logo-lockup.png"
+              alt="행복한길잡이 장애이해교육센터 로고"
+              width={236}
+              height={92}
+              className="h-auto w-40"
+            />
+          </div>
           <div className="mt-5 space-y-2 text-lg text-white/70">
             <p>대표 | 서태준</p>
             <p>사업자등록번호 | 549-05-03225</p>
