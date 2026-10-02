@@ -25,6 +25,18 @@ const REVIEWS: Review[] = [
     ],
     postUrl: "https://blog.naver.com/happyguide95/224314050461",
   },
+  {
+    id: "gwangjin-oo",
+    school: "서울 광진구 OO초",
+    photos: [
+      "/reviews/gwangjin-oo-1.jpg",
+      "/reviews/gwangjin-oo-2.jpg",
+      "/reviews/gwangjin-oo-3.jpg",
+      "/reviews/gwangjin-oo-4.jpg",
+      "/reviews/gwangjin-oo-5.jpg",
+    ],
+    postUrl: "https://blog.naver.com/happyguide95/224428336191",
+  },
 ];
 
 // 아직 후기가 없는 자리는 실제 후기 사진이 없을 때 쓰던 것과 같은
@@ -35,7 +47,6 @@ const PLACEHOLDER_GRADIENTS = [
   "from-[var(--color-secondary-tint)] to-[var(--color-primary-tint)]",
   "from-[var(--color-primary-tint)] via-white to-[var(--color-secondary-tint)]",
   "from-[var(--color-secondary-tint)] via-white to-[var(--color-primary-tint)]",
-  "from-[var(--color-primary-tint)] to-[var(--color-secondary-tint)]",
 ];
 
 function gridColsClass(count: number) {
