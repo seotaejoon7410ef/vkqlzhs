@@ -29,7 +29,7 @@ export function SiteFooter() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-10 lg:items-end">
+          <div className="flex flex-col gap-16 lg:items-end">
             <nav aria-label="바로가기">
               <ul className="flex flex-wrap gap-x-6 gap-y-2 text-lg font-bold lg:justify-end lg:text-xl">
                 {NAV_ITEMS.map((item) => (
