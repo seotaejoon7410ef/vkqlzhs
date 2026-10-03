@@ -7,7 +7,7 @@ export function SiteFooter() {
   return (
     <footer className="on-dark mt-[113px] bg-[#10141c] pb-16 text-white sm:pb-0">
       <Container className="py-14">
-        <div className="flex flex-col gap-7 lg:flex-row lg:items-start lg:justify-between">
+        <div className="flex flex-col gap-7 lg:flex-row lg:items-center lg:justify-between">
           <div>
             {/* 안전교육/장애인식개선 체험교육 업종에 어울리는 차분하고
                 신뢰감 있는 차콜 네이비 배경. 로고 색은 절대 보정하지
