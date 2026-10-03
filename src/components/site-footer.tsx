@@ -7,7 +7,7 @@ import { NAV_ITEMS } from "@/config";
 export function SiteFooter() {
   return (
     <footer className="on-dark bg-[#10141c] pb-16 text-white sm:pb-0">
-      <Container className="flex flex-col gap-10 py-14 lg:flex-row lg:items-start lg:justify-between">
+      <Container className="flex flex-col gap-10 py-14 lg:grid lg:grid-cols-[1.3fr_0.8fr_0.9fr] lg:items-start lg:gap-8">
         <div>
           {/* 안전교육/장애인식개선 체험교육 업종에 어울리는 차분하고
               신뢰감 있는 차콜 네이비 배경. 로고 색은 절대 보정하지
@@ -45,19 +45,20 @@ export function SiteFooter() {
           <p className="mt-6 text-sm text-white/40">© 체험교육센터 행복한길잡이.</p>
         </div>
 
-        <div className="flex flex-col gap-6 lg:items-end">
-          <nav aria-label="바로가기">
-            <ul className="flex flex-wrap gap-x-6 gap-y-2 text-lg font-bold lg:justify-end">
-              {NAV_ITEMS.map((item) => (
-                <li key={item.href}>
-                  <Link className="hover:underline" href={item.href}>
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
+        <nav aria-label="바로가기">
+          <p className="text-sm font-bold tracking-wide text-white/40">바로가기</p>
+          <ul className="mt-4 flex flex-col gap-3 text-lg font-bold">
+            {NAV_ITEMS.map((item) => (
+              <li key={item.href}>
+                <Link className="hover:underline" href={item.href}>
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
 
+        <div className="flex flex-col gap-6 lg:items-end">
           <div className="flex items-center gap-4">
             <a
               href="https://blog.naver.com/happyguide95"
