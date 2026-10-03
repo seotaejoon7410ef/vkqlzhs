@@ -5,7 +5,7 @@ import { NAV_ITEMS } from "@/config";
 
 export function SiteFooter() {
   return (
-    <footer className="on-dark bg-[#10141c] pb-16 text-white sm:pb-0">
+    <footer className="on-dark mt-[113px] bg-[#10141c] pb-16 text-white sm:pb-0">
       <Container className="py-14">
         <div className="flex flex-col gap-7 lg:flex-row lg:items-start lg:justify-between">
           <div>
