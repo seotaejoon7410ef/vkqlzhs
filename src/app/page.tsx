@@ -54,19 +54,23 @@ export default function Home() {
             >
               <Link
                 href="/kindergarten"
-                className="flex flex-col gap-1 rounded-2xl border-2 border-white/30 bg-white/10 p-5 transition-colors hover:border-[var(--color-accent)] hover:bg-white/20"
+                className="flex flex-col gap-2 rounded-2xl border-2 border-white/50 bg-[#10141c]/85 p-6 text-left shadow-lg transition-colors hover:border-[var(--color-accent)] hover:bg-[#10141c]"
               >
-                <span className="text-sm font-bold text-[var(--color-accent)]">유치원 · 2027년 예약 접수 중</span>
-                <span className="text-xl font-black">안전체험</span>
-                <span className="text-sm text-white/80">교통·화재·응급처치·수상안전을 직접 체험해요</span>
+                <span className="inline-flex w-fit rounded-full bg-[var(--color-accent)] px-3 py-1 text-sm font-black text-[var(--color-secondary)]">
+                  유치원 · 2027년 예약 접수 중
+                </span>
+                <span className="text-2xl font-black text-white">안전체험</span>
+                <span className="text-base leading-relaxed text-white">교통·화재·응급처치·수상안전을 직접 체험해요</span>
               </Link>
               <Link
                 href="/elementary"
-                className="flex flex-col gap-1 rounded-2xl border-2 border-white/30 bg-white/10 p-5 transition-colors hover:border-[var(--color-accent)] hover:bg-white/20"
+                className="flex flex-col gap-2 rounded-2xl border-2 border-white/50 bg-[#10141c]/85 p-6 text-left shadow-lg transition-colors hover:border-[var(--color-accent)] hover:bg-[#10141c]"
               >
-                <span className="text-sm font-bold text-[var(--color-accent)]">초·중학교</span>
-                <span className="text-xl font-black">장애인식개선 체험</span>
-                <span className="text-sm text-white/80">직접 움직이고 느끼며 함께하는 법을 배워요</span>
+                <span className="inline-flex w-fit rounded-full bg-[var(--color-accent)] px-3 py-1 text-sm font-black text-[var(--color-secondary)]">
+                  초·중학교
+                </span>
+                <span className="text-2xl font-black text-white">장애인식개선 체험</span>
+                <span className="text-base leading-relaxed text-white">직접 움직이고 느끼며 함께하는 법을 배워요</span>
               </Link>
             </div>
             <div

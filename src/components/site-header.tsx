@@ -114,13 +114,14 @@ export function SiteHeader() {
                     <ul className="min-w-[11rem] rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-2 shadow-lg">
                       {item.children.map((child) => (
                         <li key={child.href}>
-                          <Link
+                          {/* 드롭다운 하위 메뉴는 누르면 새로고침되도록 일반 a 태그 사용 */}
+                          <a
                             href={child.href}
                             onClick={() => setClosedDesktopGroup(item.label)}
                             className="block rounded-lg px-4 py-3 text-base font-bold text-[var(--color-text)] hover:bg-[var(--color-primary-tint)] hover:text-[var(--color-primary-hover)]"
                           >
                             {child.label}
-                          </Link>
+                          </a>
                         </li>
                       ))}
                     </ul>
