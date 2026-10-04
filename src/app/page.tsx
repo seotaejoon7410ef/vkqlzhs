@@ -18,7 +18,7 @@ export default function Home() {
             모바일에서는 오른쪽 끝(인물이 있는 쪽)까지 밀어서 보여주고,
             화면이 넓어지는 sm 이상부터는 원래 구도(가운데)로 되돌립니다. */}
         <Image
-          src="/hero-photo.png"
+          src="/hero-main.jpg"
           alt=""
           aria-hidden="true"
           fill
