@@ -34,13 +34,13 @@ export default function Home() {
         <Container className="relative pt-10 pb-12 sm:py-20 lg:py-28">
           <div className="relative mx-auto w-full text-center font-pretendard sm:w-[min(760px,70vw)] [text-shadow:0_1px_6px_rgb(0_0_0_/_5%)]">
             <p
-              className="hero-anim mb-6 text-[16px] font-semibold tracking-[-0.01em] text-[#111111] sm:text-[20px]"
+              className="hero-anim mb-6 text-[15px] font-medium tracking-[-0.01em] text-[#555A60] sm:text-[20px] sm:font-semibold sm:text-[#111111]"
               style={{ animationDelay: "50ms" }}
             >
               아이들의 오늘이, 더 안전하고 더 따뜻한 내일이 되도록
             </p>
             <h1
-              className="text-balance text-[clamp(38px,11vw,52px)] font-extrabold leading-[1.15] tracking-[-0.045em] [word-break:keep-all] sm:text-[clamp(54px,4.8vw,82px)] sm:leading-[1.12]"
+              className="text-balance text-[clamp(42px,11vw,58px)] font-extrabold leading-[1.1] tracking-[-0.045em] [word-break:keep-all] sm:text-[clamp(54px,4.8vw,82px)] sm:leading-[1.12]"
               style={{ fontFamily: '"SUIT", "Pretendard", sans-serif' }}
             >
               <span className="hero-anim inline-block text-[#202124]" style={{ animationDelay: "100ms" }}>
@@ -70,28 +70,29 @@ export default function Home() {
               </Link>
             </div>
           </div>
-
-          <div className="mt-10 flex flex-col gap-3 sm:hidden">
-            <div className="relative h-[220px] w-full overflow-hidden rounded-2xl">
-              <Image
-                src="/hero-reference.jpg"
-                alt="유치원 안전체험 현장"
-                fill
-                sizes="100vw"
-                className="object-cover object-[0%_center]"
-              />
-            </div>
-            <div className="relative h-[220px] w-full overflow-hidden rounded-2xl">
-              <Image
-                src="/hero-reference.jpg"
-                alt="초·중학교 장애인식개선 체험 현장"
-                fill
-                sizes="100vw"
-                className="object-cover object-[100%_center]"
-              />
-            </div>
-          </div>
         </Container>
+
+        <div className="relative mt-10 sm:hidden">
+          <div className="relative h-[300px] w-full">
+            <Image
+              src="/hero-reference.jpg"
+              alt="유치원 안전체험 현장"
+              fill
+              sizes="100vw"
+              className="object-cover object-[0%_center]"
+            />
+            <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#fdfaf5] to-transparent" />
+          </div>
+          <div className="relative h-[300px] w-full">
+            <Image
+              src="/hero-reference.jpg"
+              alt="초·중학교 장애인식개선 체험 현장"
+              fill
+              sizes="100vw"
+              className="object-cover object-[100%_center]"
+            />
+          </div>
+        </div>
 
         {/* 스크롤 유도 — 모바일은 화면이 좁아 다른 요소와 겹치기 쉬워 숨기고,
             sm 이상에서만 보여줍니다. */}
