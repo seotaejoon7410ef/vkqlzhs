@@ -37,15 +37,16 @@ export default function Home() {
         />
         <div className="hero-overlay absolute inset-0" />
 
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse 42% 50% at 50% 50%, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.45) 45%, rgba(255,255,255,0) 100%)",
+          }}
+        />
+
         <Container className="relative pt-14 pb-24 sm:py-20 lg:py-28">
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-0"
-            style={{
-              background:
-                "radial-gradient(ellipse 60% 62% at 50% 50%, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0.86) 50%, rgba(255,255,255,0) 100%)",
-            }}
-          />
           <div className="relative mx-auto max-w-2xl text-center">
             <h1 className="text-balance text-4xl font-black leading-[1.2] sm:text-5xl">
               <span
