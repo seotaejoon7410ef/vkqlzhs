@@ -72,7 +72,7 @@ export default function Home() {
               </span>
             </h1>
             <div
-              className="hero-anim mx-auto mt-1 sm:mt-7 text-[15px] font-medium leading-[1.65] tracking-[-0.02em] text-[#555A60] sm:text-[19px] sm:font-bold sm:text-[#111111]"
+              className="hero-anim mx-auto mt-1 max-w-[280px] sm:mt-7 sm:max-w-none text-[15px] font-medium leading-[1.65] tracking-[-0.02em] text-[#555A60] sm:text-[19px] sm:font-bold sm:text-[#111111]"
               style={{ animationDelay: "300ms" }}
             >
               <p>
