@@ -131,7 +131,11 @@ export default function MiddlePage() {
             sizes="100vw"
             className="object-cover object-center"
           />
-          <div className="hero-overlay absolute inset-0" />
+          <div
+            aria-hidden="true"
+            className="absolute inset-0"
+            style={{ background: "linear-gradient(to top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 55%)" }}
+          />
 
           <Container className="absolute inset-x-0 bottom-0 pb-14 sm:pb-20 lg:pb-24">
             <div className="max-w-2xl">
