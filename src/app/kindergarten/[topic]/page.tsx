@@ -42,7 +42,7 @@ export default async function KindergartenTopicPage({ params }: Props) {
   return (
     <>
       <Container className="pt-28 sm:pt-32">
-        <div className="relative mx-auto aspect-[21/9] w-full max-w-5xl overflow-hidden rounded-2xl shadow-lg">
+        <div className="relative mx-auto aspect-[4/5] w-full max-w-5xl overflow-hidden rounded-2xl shadow-lg sm:aspect-[21/9]">
           <Image
             src={`/kindergarten-${topic.slug}.jpg`}
             alt=""
@@ -52,8 +52,8 @@ export default async function KindergartenTopicPage({ params }: Props) {
             sizes="(min-width: 1024px) 64rem, 100vw"
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
-          <div className="absolute inset-0 flex flex-col justify-center gap-4 p-6 sm:p-12">
+          <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/45 to-transparent sm:bg-gradient-to-r sm:from-black/70 sm:via-black/40 sm:to-transparent" />
+          <div className="absolute inset-0 flex flex-col justify-end gap-4 p-6 sm:justify-center sm:p-12">
             <span className="inline-flex w-fit items-center gap-2 rounded-full bg-white px-4 py-1.5 text-sm font-bold text-[#222]">
               <span aria-hidden="true" className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: topic.heroAccent }} />
               {topic.heroChip}

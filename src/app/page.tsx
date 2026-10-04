@@ -24,7 +24,7 @@ export default function Home() {
           fill
           priority
           sizes="100vw"
-          className="hero-ken-burns object-cover object-[30%_center] sm:hidden"
+          className="hero-ken-burns object-cover object-center sm:hidden"
         />
         <Image
           src="/hero-reference.jpg"
