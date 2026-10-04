@@ -252,6 +252,18 @@ export default function ElementaryPage() {
         </Container>
       </section>
 
+      <section className="bg-[var(--color-surface)] py-10">
+        <Container>
+          <Link
+            href="/middle"
+            className="flex items-center justify-between gap-4 rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-alt)] px-6 py-5 font-bold text-[var(--color-primary-hover)] hover:border-[var(--color-primary)]"
+          >
+            중학교 장애인식개선 체험도 함께 진행해요
+            <ArrowRight aria-hidden="true" size={20} />
+          </Link>
+        </Container>
+      </section>
+
       {/* 6. GUIDE — 실제 운영 정보 (감성보다 정보 전달 우선) */}
       <section className="bg-[var(--color-surface-alt)] py-20 sm:py-24">
         <Container className="max-w-[900px]">
