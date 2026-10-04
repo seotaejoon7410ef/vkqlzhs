@@ -6,7 +6,7 @@ import { NAV_GROUPS, isNavChildren } from "@/config";
 export function SiteFooter() {
   return (
     <footer className="on-dark mt-[113px] bg-[#10141c] pb-16 text-white sm:pb-0">
-      <Container className="py-14">
+      <Container className="py-10">
         {/* 1행: 로고와 메뉴를 같은 높이로 정렬 */}
         <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
           {/* 안전교육/장애인식개선 체험교육 업종에 어울리는 차분하고
@@ -48,7 +48,7 @@ export function SiteFooter() {
         </div>
 
         {/* 2행: 연락처 정보와 소셜 아이콘+문의 버튼 */}
-        <div className="mt-10 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+        <div className="mt-6 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div className="space-y-2 text-base text-white/70 lg:text-lg">
             <p>대표 | 서태준</p>
             <p>사업자등록번호 | 549-05-03225</p>
@@ -87,7 +87,7 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <p className="mt-8 text-left text-sm text-white/70 lg:text-right lg:text-base">
+        <p className="mt-6 text-left text-sm text-white/70 lg:text-right lg:text-base">
           Copyright © 2026 행복한길잡이. All rights reserved.
         </p>
       </Container>
