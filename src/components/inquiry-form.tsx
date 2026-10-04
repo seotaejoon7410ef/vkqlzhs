@@ -15,6 +15,8 @@ const ELEMENTARY_GRADES = [
 
 const MIDDLE_GRADES = ["중학교 1학년", "중학교 2학년", "중학교 3학년"];
 
+const PROGRAM_TYPES = ["안전체험 (유치원)", "장애인식개선체험 (초·중학교)"];
+
 const inputClass =
   "mt-1.5 min-h-11 w-full rounded-xl border-2 border-[var(--color-border)] bg-[var(--color-surface)] px-3.5 text-base text-[var(--color-text)] focus:border-[var(--color-primary)]";
 const labelClass = "text-sm font-bold text-[var(--color-text)]";
@@ -34,8 +36,11 @@ export function InquiryForm() {
 
     const payload = {
       area: String(data.get("area") ?? ""),
+      programType: String(data.get("programType") ?? ""),
       school: String(data.get("school") ?? ""),
       grades: data.getAll("grade").map(String).join(", "),
+      age: String(data.get("age") ?? ""),
+      headcount: String(data.get("headcount") ?? ""),
       classCount: String(data.get("classCount") ?? ""),
       name: String(data.get("name") ?? ""),
       phone: String(data.get("phone") ?? ""),
@@ -101,23 +106,39 @@ export function InquiryForm() {
           </select>
         </div>
         <div>
-          <label htmlFor="school" className={labelClass}>
-            학교 이름
+          <label htmlFor="programType" className={labelClass}>
+            체험 종류
           </label>
-          <input
-            id="school"
-            name="school"
-            type="text"
-            required
-            placeholder="예: OO초등학교"
-            className={inputClass}
-          />
+          <select id="programType" name="programType" required defaultValue="" className={inputClass}>
+            <option value="" disabled>
+              체험 종류를 선택해 주세요
+            </option>
+            {PROGRAM_TYPES.map((type) => (
+              <option key={type} value={type}>
+                {type}
+              </option>
+            ))}
+          </select>
         </div>
+      </div>
+
+      <div>
+        <label htmlFor="school" className={labelClass}>
+          학교 · 유치원 이름
+        </label>
+        <input
+          id="school"
+          name="school"
+          type="text"
+          required
+          placeholder="예: OO유치원 / OO초등학교"
+          className={inputClass}
+        />
       </div>
 
       <fieldset>
         <legend className={labelClass}>
-          학년 (여러 학년이 함께하면 모두 선택해 주세요)
+          학년 (초·중학교, 여러 학년이 함께하면 모두 선택해 주세요)
         </legend>
 
         <div className="mt-2 flex flex-wrap items-center gap-1.5">
@@ -141,7 +162,32 @@ export function InquiryForm() {
         </div>
       </fieldset>
 
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="grid gap-4 sm:grid-cols-3">
+        <div>
+          <label htmlFor="age" className={labelClass}>
+            연령 (세, 유치원)
+          </label>
+          <input
+            id="age"
+            name="age"
+            type="text"
+            placeholder="예: 5~7세"
+            className={inputClass}
+          />
+        </div>
+        <div>
+          <label htmlFor="headcount" className={labelClass}>
+            인원 (명)
+          </label>
+          <input
+            id="headcount"
+            name="headcount"
+            type="number"
+            min={1}
+            placeholder="예: 30"
+            className={inputClass}
+          />
+        </div>
         <div>
           <label htmlFor="classCount" className={labelClass}>
             학급수
