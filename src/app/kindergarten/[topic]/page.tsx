@@ -42,15 +42,39 @@ export default async function KindergartenTopicPage({ params }: Props) {
   return (
     <>
       <Container className="pt-28 sm:pt-32">
-        <div className="relative mx-auto aspect-[3/2] w-full max-w-4xl overflow-hidden rounded-2xl shadow-lg">
+        <div className="relative mx-auto aspect-[21/9] w-full max-w-5xl overflow-hidden rounded-2xl shadow-lg">
           <Image
             src={`/kindergarten-${topic.slug}.jpg`}
-            alt={`유치원 ${topic.title} 체험 현장`}
+            alt=""
+            aria-hidden="true"
             fill
             priority
-            sizes="(min-width: 896px) 56rem, 100vw"
+            sizes="(min-width: 1024px) 64rem, 100vw"
             className="object-cover"
           />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
+          <div className="absolute inset-0 flex flex-col justify-center gap-4 p-6 sm:p-12">
+            <span className="inline-flex w-fit items-center gap-2 rounded-full bg-white px-4 py-1.5 text-sm font-bold text-[#222]">
+              <span aria-hidden="true" className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: topic.heroAccent }} />
+              {topic.heroChip}
+            </span>
+            <h1
+              className="text-[clamp(2rem,5vw,4.25rem)] leading-tight text-white [text-shadow:0_2px_12px_rgb(0_0_0_/_45%)]"
+              style={{ fontFamily: '"Black Han Sans", sans-serif' }}
+            >
+              <span style={{ color: topic.heroAccent }}>{topic.title}</span> 체험
+            </h1>
+            <p className="max-w-[24em] text-base font-medium leading-relaxed text-white [text-shadow:0_1px_8px_rgb(0_0_0_/_45%)] sm:text-lg">
+              {topic.heroLead}
+            </p>
+            <ul className="mt-2 flex flex-wrap gap-2">
+              {topic.heroChips.map((chip) => (
+                <li key={chip} className="rounded-xl bg-white/95 px-4 py-2 text-sm font-bold text-[#222]">
+                  {chip}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </Container>
 
