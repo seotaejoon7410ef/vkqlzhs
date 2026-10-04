@@ -56,12 +56,12 @@ export default function AboutPage() {
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse 55% 60% at 50% 50%, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 55%, rgba(255,255,255,0.25) 100%)",
+              "radial-gradient(ellipse 55% 60% at 50% 50%, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.35) 55%, rgba(255,255,255,0) 100%)",
           }}
         />
         <Container className="relative text-center">
           <p
-            className="hero-anim text-sm font-bold tracking-[0.2em] text-[#2E3138]"
+            className="hero-anim text-base font-bold tracking-[0.2em] text-[#2E3138] sm:text-lg"
             style={{ animationDelay: "50ms" }}
           >
             체험교육센터 행복한길잡이
