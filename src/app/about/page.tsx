@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ClipboardCheck, Hand, MapPin, Phone, type LucideIcon } from "lucide-react";
 import { Container } from "@/components/container";
@@ -41,7 +42,24 @@ export default function AboutPage() {
         id="top"
         className="relative flex min-h-[70vh] items-center overflow-hidden bg-gradient-to-br from-[#fff3df] via-[#fbf8ff] to-[#e9e1fa] pt-32 pb-20 sm:min-h-[80vh]"
       >
-        <Container className="text-center">
+        <Image
+          src="/about-hero-3.jpg"
+          alt=""
+          aria-hidden="true"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse 55% 60% at 50% 50%, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 55%, rgba(255,255,255,0.25) 100%)",
+          }}
+        />
+        <Container className="relative text-center">
           <p
             className="hero-anim text-sm font-bold tracking-[0.2em] text-[#2E3138]"
             style={{ animationDelay: "50ms" }}
@@ -64,7 +82,8 @@ export default function AboutPage() {
 
       <section className="bg-[var(--color-surface)] py-20 sm:py-28">
         <Container>
-          <Reveal className="mx-auto max-w-2xl text-center">
+          <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+          <Reveal>
             <Kicker large>우리의 생각</Kicker>
             <p className="mt-6 break-keep text-2xl font-black leading-relaxed text-[var(--color-text)] sm:text-3xl">
               나를 지킬 줄 아는 아이가 친구도 지킬 수 있고,
@@ -79,6 +98,18 @@ export default function AboutPage() {
               직접 몸으로 체험하며 배웁니다.
             </p>
           </Reveal>
+          <Reveal delay={100}>
+            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl">
+              <Image
+                src="/about-why.jpg"
+                alt="휠체어 체험과 흰지팡이 체험 부스에서 학생들이 체험하는 모습"
+                fill
+                sizes="(min-width: 1024px) 40rem, 90vw"
+                className="object-cover"
+              />
+            </div>
+          </Reveal>
+          </div>
         </Container>
       </section>
 
