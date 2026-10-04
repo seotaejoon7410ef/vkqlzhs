@@ -27,7 +27,7 @@ export default function Home() {
           className="absolute inset-0 sm:hidden"
           style={{
             background:
-              "linear-gradient(to bottom, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 72%)",
+              "radial-gradient(ellipse 75% 26% at 50% 36%, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.6) 55%, rgba(255,255,255,0) 100%)",
           }}
         />
 
