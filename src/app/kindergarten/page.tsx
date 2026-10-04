@@ -35,6 +35,9 @@ export default function KindergartenPage() {
         <div className="inline-flex items-center rounded-full bg-[var(--color-primary-tint)] px-5 py-2 text-sm font-black text-[var(--color-primary-hover)]">
           2027년 예약 접수 중
         </div>
+        <p className="mt-6 text-lg text-[var(--color-text)]">
+          강사는 수업 1시간 전에 도착해 셋팅합니다.
+        </p>
       </Container>
 
       <Container className="pb-16 sm:pb-20">

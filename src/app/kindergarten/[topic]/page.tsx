@@ -25,6 +25,7 @@ const FEATURES = [
   "아이가 직접 해보는 체험형",
   "유치원 교실 안에서 진행",
   "강사 2명이 방문",
+  "강사는 수업 1시간 전에 도착해 셋팅",
 ];
 
 export default async function KindergartenTopicPage({ params }: Props) {
