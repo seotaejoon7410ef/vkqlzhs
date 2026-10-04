@@ -10,9 +10,9 @@ export default function Home() {
     <>
       <section
         id="top"
-        className="on-dark relative -mt-40 block min-h-[620px] overflow-hidden bg-[#fdfaf5] text-white sm:mt-0 sm:flex sm:min-h-[700px] sm:items-center sm:pt-24 lg:min-h-[800px]"
+        className="on-dark relative -mt-40 block min-h-[760px] overflow-hidden bg-[#fdfaf5] text-white sm:mt-0 sm:flex sm:min-h-[700px] sm:items-center sm:pt-24 lg:min-h-[800px]"
       >
-        <div className="absolute inset-0 sm:hidden">
+        <div className="absolute inset-x-0 top-[130px] h-[693px] sm:hidden">
           <Image
             src="/hero-mobile-full.jpg"
             alt="유치원 안전체험과 학교 장애인식개선 체험 현장"
@@ -21,15 +21,15 @@ export default function Home() {
             sizes="100vw"
             className="object-cover object-center"
           />
-          <div
-            aria-hidden="true"
-            className="absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(to bottom, rgba(253,250,245,0.92) 0%, rgba(253,250,245,0.88) 40%, rgba(253,250,245,0) 52%)",
-            }}
-          />
         </div>
+        <div
+          aria-hidden="true"
+          className="absolute inset-x-0 top-0 h-[380px] sm:hidden"
+          style={{
+            background:
+              "linear-gradient(to bottom, rgba(253,250,245,0.92) 0%, rgba(253,250,245,0.9) 70%, rgba(253,250,245,0) 100%)",
+          }}
+        />
 
         <div className="absolute inset-x-0 bottom-0 top-24 hidden sm:block">
           <Image
@@ -51,7 +51,7 @@ export default function Home() {
           />
         </div>
 
-        <Container className="relative pt-16 pb-12 sm:pt-20 sm:pb-20 lg:py-28">
+        <Container className="relative pt-[88px] pb-12 sm:pt-20 sm:pb-20 lg:py-28">
           <div className="relative mx-auto w-full text-center font-pretendard sm:w-[min(760px,70vw)] [text-shadow:0_1px_6px_rgb(0_0_0_/_5%)]">
             <p
               className="hero-anim mb-6 text-[15px] font-medium tracking-[-0.01em] text-[#555A60] sm:text-[20px] sm:font-semibold sm:text-[#111111]"
