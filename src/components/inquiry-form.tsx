@@ -4,6 +4,10 @@ import { useState, type FormEvent } from "react";
 
 const AREAS = ["서울", "경기", "인천", "충남", "충북", "기타 지역(협의)"];
 
+const KINDERGARTEN = "안전체험 (유치원)";
+const SCHOOL = "장애인식개선체험 (초·중학교)";
+const PROGRAM_TYPES = [KINDERGARTEN, SCHOOL];
+
 const ELEMENTARY_GRADES = [
   "초등학교 1학년",
   "초등학교 2학년",
@@ -15,19 +19,20 @@ const ELEMENTARY_GRADES = [
 
 const MIDDLE_GRADES = ["중학교 1학년", "중학교 2학년", "중학교 3학년"];
 
-const PROGRAM_TYPES = ["안전체험 (유치원)", "장애인식개선체험 (초·중학교)"];
-
 const inputClass =
   "mt-1.5 min-h-11 w-full rounded-xl border-2 border-[var(--color-border)] bg-[var(--color-surface)] px-3.5 text-base text-[var(--color-text)] focus:border-[var(--color-primary)]";
 const labelClass = "text-sm font-bold text-[var(--color-text)]";
 const gradePillClass =
   "flex min-h-9 cursor-pointer items-center gap-1.5 rounded-full border-2 border-[var(--color-border)] px-3 text-sm font-bold text-[var(--color-text-muted)] has-[input:checked]:border-[var(--color-primary)] has-[input:checked]:bg-[var(--color-primary-tint)] has-[input:checked]:text-[var(--color-primary-hover)]";
+const sectionClass = "rounded-2xl border-2 border-[var(--color-border)] bg-[var(--color-surface-alt)] p-5 space-y-4";
+const sectionTitleClass = "text-sm font-black text-[var(--color-primary-hover)]";
 
 type SubmitState = "idle" | "sending" | "success" | "error";
 
 export function InquiryForm() {
   const [state, setState] = useState<SubmitState>("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const [programType, setProgramType] = useState("");
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -38,9 +43,9 @@ export function InquiryForm() {
       area: String(data.get("area") ?? ""),
       programType: String(data.get("programType") ?? ""),
       school: String(data.get("school") ?? ""),
-      grades: data.getAll("grade").map(String).join(", "),
       age: String(data.get("age") ?? ""),
       headcount: String(data.get("headcount") ?? ""),
+      grades: data.getAll("grade").map(String).join(", "),
       classCount: String(data.get("classCount") ?? ""),
       name: String(data.get("name") ?? ""),
       phone: String(data.get("phone") ?? ""),
@@ -67,6 +72,7 @@ export function InquiryForm() {
       }
 
       setState("success");
+      setProgramType("");
       form.reset();
     } catch {
       setErrorMessage("전송에 실패했어요. 잠시 후 다시 시도해 주세요.");
@@ -88,7 +94,7 @@ export function InquiryForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4" noValidate={false}>
+    <form onSubmit={handleSubmit} className="space-y-6" noValidate={false}>
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
           <label htmlFor="area" className={labelClass}>
@@ -109,7 +115,14 @@ export function InquiryForm() {
           <label htmlFor="programType" className={labelClass}>
             체험 종류
           </label>
-          <select id="programType" name="programType" required defaultValue="" className={inputClass}>
+          <select
+            id="programType"
+            name="programType"
+            required
+            value={programType}
+            onChange={(event) => setProgramType(event.target.value)}
+            className={inputClass}
+          >
             <option value="" disabled>
               체험 종류를 선택해 주세요
             </option>
@@ -136,80 +149,85 @@ export function InquiryForm() {
         />
       </div>
 
-      <fieldset>
-        <legend className={labelClass}>
-          학년 (초·중학교, 여러 학년이 함께하면 모두 선택해 주세요)
-        </legend>
+      {programType === KINDERGARTEN && (
+        <section className={sectionClass} aria-label="유치원 정보">
+          <p className={sectionTitleClass}>유치원 정보</p>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div>
+              <label htmlFor="age" className={labelClass}>
+                연령 (세)
+              </label>
+              <input id="age" name="age" type="text" required placeholder="예: 5~7세" className={inputClass} />
+            </div>
+            <div>
+              <label htmlFor="headcount" className={labelClass}>
+                인원 (명)
+              </label>
+              <input
+                id="headcount"
+                name="headcount"
+                type="number"
+                min={1}
+                required
+                placeholder="예: 30"
+                className={inputClass}
+              />
+            </div>
+          </div>
+        </section>
+      )}
 
-        <div className="mt-2 flex flex-wrap items-center gap-1.5">
-          <span className="mr-1 text-xs font-bold text-[var(--color-text-muted)]">초등</span>
-          {ELEMENTARY_GRADES.map((grade) => (
-            <label key={grade} className={gradePillClass}>
-              <input type="checkbox" name="grade" value={grade} className="h-3.5 w-3.5" />
-              {grade.replace("초등학교 ", "")}
+      {programType === SCHOOL && (
+        <section className={sectionClass} aria-label="초·중학교 정보">
+          <p className={sectionTitleClass}>초·중학교 정보</p>
+          <fieldset>
+            <legend className={labelClass}>학년 (여러 학년이 함께하면 모두 선택해 주세요)</legend>
+
+            <div className="mt-2 flex flex-wrap items-center gap-1.5">
+              <span className="mr-1 text-xs font-bold text-[var(--color-text-muted)]">초등</span>
+              {ELEMENTARY_GRADES.map((grade) => (
+                <label key={grade} className={gradePillClass}>
+                  <input type="checkbox" name="grade" value={grade} className="h-3.5 w-3.5" />
+                  {grade.replace("초등학교 ", "")}
+                </label>
+              ))}
+            </div>
+
+            <div className="mt-2 flex flex-wrap items-center gap-1.5">
+              <span className="mr-1 text-xs font-bold text-[var(--color-text-muted)]">중학</span>
+              {MIDDLE_GRADES.map((grade) => (
+                <label key={grade} className={gradePillClass}>
+                  <input type="checkbox" name="grade" value={grade} className="h-3.5 w-3.5" />
+                  {grade.replace("중학교 ", "")}
+                </label>
+              ))}
+            </div>
+          </fieldset>
+
+          <div>
+            <label htmlFor="classCount" className={labelClass}>
+              학급수
             </label>
-          ))}
-        </div>
+            <input
+              id="classCount"
+              name="classCount"
+              type="number"
+              min={1}
+              required
+              placeholder="예: 2"
+              className={inputClass}
+            />
+          </div>
+        </section>
+      )}
 
-        <div className="mt-2 flex flex-wrap items-center gap-1.5">
-          <span className="mr-1 text-xs font-bold text-[var(--color-text-muted)]">중학</span>
-          {MIDDLE_GRADES.map((grade) => (
-            <label key={grade} className={gradePillClass}>
-              <input type="checkbox" name="grade" value={grade} className="h-3.5 w-3.5" />
-              {grade.replace("중학교 ", "")}
-            </label>
-          ))}
-        </div>
-      </fieldset>
-
-      <div className="grid gap-4 sm:grid-cols-3">
-        <div>
-          <label htmlFor="age" className={labelClass}>
-            연령 (세, 유치원)
-          </label>
-          <input
-            id="age"
-            name="age"
-            type="text"
-            placeholder="예: 5~7세"
-            className={inputClass}
-          />
-        </div>
-        <div>
-          <label htmlFor="headcount" className={labelClass}>
-            인원 (명)
-          </label>
-          <input
-            id="headcount"
-            name="headcount"
-            type="number"
-            min={1}
-            placeholder="예: 30"
-            className={inputClass}
-          />
-        </div>
-        <div>
-          <label htmlFor="classCount" className={labelClass}>
-            학급수
-          </label>
-          <input
-            id="classCount"
-            name="classCount"
-            type="number"
-            min={1}
-            placeholder="예: 2"
-            className={inputClass}
-          />
-        </div>
+      <div className="grid gap-4 sm:grid-cols-2">
         <div>
           <label htmlFor="name" className={labelClass}>
             담당 선생님 성함
           </label>
           <input id="name" name="name" type="text" required className={inputClass} />
         </div>
-      </div>
-
-      <div className="grid gap-4 sm:grid-cols-2">
         <div>
           <label htmlFor="phone" className={labelClass}>
             휴대폰 번호
@@ -223,19 +241,20 @@ export function InquiryForm() {
             className={inputClass}
           />
         </div>
-        <div>
-          <label htmlFor="email" className={labelClass}>
-            이메일
-          </label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            required
-            placeholder="example@school.go.kr"
-            className={inputClass}
-          />
-        </div>
+      </div>
+
+      <div>
+        <label htmlFor="email" className={labelClass}>
+          이메일
+        </label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          required
+          placeholder="example@school.go.kr"
+          className={inputClass}
+        />
       </div>
 
       <div>
@@ -259,7 +278,7 @@ export function InquiryForm() {
           id="message"
           name="message"
           rows={1}
-          placeholder="인원, 궁금한 점 등을 자유롭게 남겨주세요."
+          placeholder="궁금한 점 등을 자유롭게 남겨주세요."
           className="mt-1.5 h-11 w-full resize-none rounded-xl border-2 border-[var(--color-border)] bg-[var(--color-surface)] px-3.5 py-2 text-sm text-[var(--color-text)] focus:border-[var(--color-primary)]"
         />
       </div>
