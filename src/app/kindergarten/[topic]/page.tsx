@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/container";
 import { Kicker } from "@/components/kicker";
-import { PageTitle } from "@/components/page-title";
 import { Reveal } from "@/components/reveal";
 import { SHOW_KINDERGARTEN } from "@/config";
 import { KINDERGARTEN_TOPICS, findKindergartenTopic } from "@/content/kindergarten-topics";
@@ -41,11 +41,18 @@ export default async function KindergartenTopicPage({ params }: Props) {
 
   return (
     <>
-      <PageTitle
-        label="안전체험"
-        title={`유치원 ${topic.title}`}
-        description="유치원 대상 프로그램입니다"
-      />
+      <Container className="pt-28 sm:pt-32">
+        <div className="relative mx-auto aspect-[3/2] w-full max-w-4xl overflow-hidden rounded-2xl shadow-lg">
+          <Image
+            src={`/kindergarten-${topic.slug}.jpg`}
+            alt={`유치원 ${topic.title} 체험 현장`}
+            fill
+            priority
+            sizes="(min-width: 896px) 56rem, 100vw"
+            className="object-cover"
+          />
+        </div>
+      </Container>
 
       <Container className="py-14 sm:py-16">
         <div className="inline-flex items-center rounded-full bg-[var(--color-primary-tint)] px-5 py-2 text-sm font-black text-[var(--color-primary-hover)]">
