@@ -42,21 +42,30 @@ export default function AboutPage() {
         className="relative flex min-h-[70vh] items-center overflow-hidden bg-gradient-to-br from-[#fff3df] via-[#fbf8ff] to-[#e9e1fa] pt-32 pb-20 sm:min-h-[80vh]"
       >
         <Container className="text-center">
-          <Reveal>
-            <p className="text-sm font-bold tracking-[0.2em] text-[#2E3138]">체험교육센터 행복한길잡이</p>
-            <h1 className="text-balance mt-6 break-keep text-3xl font-extrabold leading-[1.3] tracking-[-0.03em] text-[#2E3138] sm:text-5xl lg:text-6xl">
+          <p
+            className="hero-anim text-sm font-bold tracking-[0.2em] text-[#2E3138]"
+            style={{ animationDelay: "50ms" }}
+          >
+            체험교육센터 행복한길잡이
+          </p>
+          <h1
+            className="text-balance mt-6 break-keep text-3xl font-extrabold leading-[1.3] tracking-[-0.03em] text-[#2E3138] sm:text-5xl lg:text-6xl"
+          >
+            <span className="hero-anim inline-block" style={{ animationDelay: "150ms" }}>
               나를 <span className="text-[#E07800]">지킬</span> 줄 아는 아이가
-              <br />
+            </span>
+            <br />
+            <span className="hero-anim inline-block" style={{ animationDelay: "250ms" }}>
               <span className="text-[var(--color-primary)]">친구</span>도 지킬 수 있습니다
-            </h1>
-          </Reveal>
+            </span>
+          </h1>
         </Container>
       </section>
 
       <section className="bg-[var(--color-surface)] py-20 sm:py-28">
         <Container>
           <Reveal className="mx-auto max-w-2xl text-center">
-            <Kicker>우리의 생각</Kicker>
+            <Kicker large>우리의 생각</Kicker>
             <p className="mt-6 break-keep text-2xl font-black leading-relaxed text-[var(--color-text)] sm:text-3xl">
               나를 지킬 줄 아는 아이가 친구도 지킬 수 있고,
               <br />
@@ -76,7 +85,7 @@ export default function AboutPage() {
       <section className="bg-[var(--color-surface-alt)] py-20 sm:py-28">
         <Container>
           <Reveal>
-            <Kicker>우리가 하는 일</Kicker>
+            <Kicker large>우리가 하는 일</Kicker>
           </Reveal>
           <div className="mt-12 grid gap-6 md:grid-cols-2">
             <Reveal>
@@ -124,7 +133,7 @@ export default function AboutPage() {
       <section className="bg-[var(--color-surface)] py-20 sm:py-28">
         <Container>
           <Reveal className="text-center">
-            <Kicker>세 가지 약속</Kicker>
+            <Kicker large>세 가지 약속</Kicker>
           </Reveal>
           <div className="mt-12 grid gap-10 md:grid-cols-3">
             {PROMISES.map((item, index) => {
@@ -146,7 +155,7 @@ export default function AboutPage() {
       <section className="bg-[var(--color-surface-alt)] py-20 sm:py-28">
         <Container>
           <Reveal className="text-center">
-            <Kicker>숫자로 보는 진행 방식</Kicker>
+            <Kicker large>숫자로 보는 진행 방식</Kicker>
           </Reveal>
           <div className="mt-12 grid gap-10 text-center md:grid-cols-3">
             {STATS.map((item, index) => (

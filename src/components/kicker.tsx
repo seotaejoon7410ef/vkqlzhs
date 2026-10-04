@@ -24,9 +24,11 @@ const COLOR_CLASSES: Record<KickerColor, { text: string; bar: string }> = {
 export function Kicker({
   children,
   color = "primary",
+  large = false,
 }: {
   children: ReactNode;
   color?: KickerColor;
+  large?: boolean;
 }) {
   const { text, bar } = COLOR_CLASSES[color];
   // accent는 사진 위에 얹히는 용도라, 사진 속 색(노란 배너 등)과 겹치면
@@ -34,7 +36,9 @@ export function Kicker({
   const chip = color === "accent" ? "rounded-full bg-black/45 px-3 py-1.5" : "";
 
   return (
-    <p className={`inline-flex items-center gap-2 text-sm font-bold tracking-[0.2em] ${text} ${chip}`}>
+    <p
+      className={`inline-flex items-center gap-2 font-bold tracking-[0.2em] ${large ? "text-lg sm:text-xl" : "text-sm"} ${text} ${chip}`}
+    >
       <span aria-hidden="true" className={`h-[3px] w-8 rounded-full ${bar}`} />
       {children}
     </p>
