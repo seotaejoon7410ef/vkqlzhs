@@ -10,9 +10,14 @@ const ALL_NAV_GROUPS: NavGroup[] = [
   { href: "/about", label: "회사소개" },
   {
     label: "안전체험",
-    children: [
-      ...(SHOW_KINDERGARTEN ? [{ href: "/kindergarten", label: "유치원" }] : []),
-    ],
+    children: SHOW_KINDERGARTEN
+      ? [
+          { href: "/kindergarten/traffic", label: "교통안전" },
+          { href: "/kindergarten/fire", label: "화재안전" },
+          { href: "/kindergarten/first-aid", label: "응급처치" },
+          { href: "/kindergarten/water", label: "수상안전" },
+        ]
+      : [],
   },
   {
     label: "장애인식개선체험",

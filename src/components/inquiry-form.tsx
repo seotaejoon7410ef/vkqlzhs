@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { KINDERGARTEN_TOPICS } from "@/content/kindergarten-topics";
 
 const AREAS = ["서울", "경기", "인천", "충남", "충북", "기타 지역(협의)"];
 
@@ -43,6 +44,7 @@ export function InquiryForm() {
       area: String(data.get("area") ?? ""),
       programType: String(data.get("programType") ?? ""),
       school: String(data.get("school") ?? ""),
+      topic: String(data.get("topic") ?? ""),
       age: String(data.get("age") ?? ""),
       headcount: String(data.get("headcount") ?? ""),
       sessions: String(data.get("sessions") ?? ""),
@@ -154,6 +156,21 @@ export function InquiryForm() {
       {programType === KINDERGARTEN && (
         <section className={sectionClass} aria-label="유치원 정보">
           <p className={sectionTitleClass}>유치원 정보</p>
+          <div>
+            <label htmlFor="topic" className={labelClass}>
+              체험 주제 (하나만 선택)
+            </label>
+            <select id="topic" name="topic" required defaultValue="" className={inputClass}>
+              <option value="" disabled>
+                주제를 선택해 주세요
+              </option>
+              {KINDERGARTEN_TOPICS.map((topic) => (
+                <option key={topic.slug} value={topic.title}>
+                  {topic.title}
+                </option>
+              ))}
+            </select>
+          </div>
           <div className="grid gap-4 sm:grid-cols-2">
             <div>
               <label htmlFor="age" className={labelClass}>
