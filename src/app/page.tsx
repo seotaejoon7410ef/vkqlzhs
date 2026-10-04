@@ -62,7 +62,7 @@ export default function Home() {
               style={{ animationDelay: "400ms" }}
             >
               <Link
-                href="/kindergarten"
+                href="/kindergarten/traffic"
                 className="group flex h-full flex-col rounded-2xl border-2 border-white/50 bg-[#0a0e14]/90 p-6 text-left shadow-lg transition duration-300 hover:-translate-y-1 hover:border-[var(--color-accent)]"
               >
                 <span className="flex items-center gap-2">
