@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "./container";
-import { NAV_ITEMS } from "@/config";
+import { NAV_GROUPS, isNavChildren } from "@/config";
 
 export function SiteFooter() {
   return (
@@ -21,16 +21,29 @@ export function SiteFooter() {
             className="h-auto w-36 sm:w-44 lg:w-48"
           />
 
-          <nav aria-label="바로가기">
-            <ul className="flex flex-wrap gap-x-6 gap-y-2 text-lg font-bold lg:justify-end lg:text-xl">
-              {NAV_ITEMS.map((item) => (
-                <li key={item.href}>
-                  <Link className="hover:underline" href={item.href}>
+          <nav aria-label="바로가기" className="flex flex-wrap gap-x-10 gap-y-6 lg:justify-end">
+            {NAV_GROUPS.map((item) =>
+              isNavChildren(item) ? (
+                <div key={item.label} className="flex flex-col gap-2">
+                  <p className="text-sm font-bold text-white/60">{item.label}</p>
+                  <ul className="flex flex-col gap-1.5 text-base font-bold">
+                    {item.children.map((child) => (
+                      <li key={child.href}>
+                        <Link className="hover:underline" href={child.href}>
+                          {child.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : (
+                <div key={item.href} className="flex flex-col gap-2">
+                  <Link className="text-base font-bold hover:underline" href={item.href}>
                     {item.label}
                   </Link>
-                </li>
-              ))}
-            </ul>
+                </div>
+              ),
+            )}
           </nav>
         </div>
 
