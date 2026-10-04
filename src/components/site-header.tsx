@@ -129,7 +129,7 @@ export function SiteHeader() {
                 </li>
               ) : (
                 <li key={item.href}>
-                  <Link
+                  <a
                     href={item.href}
                     className={`inline-flex min-h-11 items-center text-xl font-medium tracking-wide transition-colors ${
                       solid
@@ -138,7 +138,7 @@ export function SiteHeader() {
                     }`}
                   >
                     {item.label}
-                  </Link>
+                  </a>
                 </li>
               ),
             )}
