@@ -50,7 +50,7 @@ export function SiteFooter() {
             {NAV_GROUPS.map((item) =>
               isNavChildren(item) ? (
                 <div key={item.label} className="flex flex-col gap-3">
-                  <p className="text-lg font-bold text-white">{item.label}</p>
+                  <p className="text-lg font-bold text-white">{item.label.replace("학교 ", "")}</p>
                   <ul className="flex flex-col gap-2.5 text-base font-bold">
                     {item.children.map((child) => (
                       <li key={child.href}>
