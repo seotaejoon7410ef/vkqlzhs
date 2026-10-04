@@ -49,7 +49,7 @@ export default function Home() {
         <Container className="relative pt-14 pb-24 sm:py-20 lg:py-28">
           <div className="relative mx-auto w-[min(760px,70vw)] text-center font-pretendard [text-shadow:0_1px_6px_rgb(0_0_0_/_5%)]">
             <p
-              className="hero-anim mb-6 text-[18px] font-semibold tracking-[-0.01em] text-[#111111]"
+              className="hero-anim mb-6 text-[20px] font-semibold tracking-[-0.01em] text-[#111111]"
               style={{ animationDelay: "50ms" }}
             >
               아이들의 오늘이, 더 안전하고 더 따뜻한 내일이 되도록
@@ -67,7 +67,7 @@ export default function Home() {
               </span>
             </h1>
             <div
-              className="hero-anim mx-auto mt-7 text-[17px] font-bold leading-[1.65] tracking-[-0.02em] text-[#111111]"
+              className="hero-anim mx-auto mt-7 text-[19px] font-bold leading-[1.65] tracking-[-0.02em] text-[#111111]"
               style={{ animationDelay: "300ms" }}
             >
               <p>
