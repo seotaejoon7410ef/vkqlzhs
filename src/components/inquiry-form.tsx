@@ -34,17 +34,24 @@ export function InquiryForm() {
   const [state, setState] = useState<SubmitState>("idle");
   const [errorMessage, setErrorMessage] = useState("");
   const [programType, setProgramType] = useState("");
+  const [topicError, setTopicError] = useState("");
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const form = event.currentTarget;
     const data = new FormData(form);
 
+    if (programType === KINDERGARTEN && data.getAll("topic").length === 0) {
+      setTopicError("체험 주제를 하나 이상 선택해 주세요.");
+      return;
+    }
+    setTopicError("");
+
     const payload = {
       area: String(data.get("area") ?? ""),
       programType: String(data.get("programType") ?? ""),
       school: String(data.get("school") ?? ""),
-      topic: String(data.get("topic") ?? ""),
+      topic: data.getAll("topic").map(String).join(", "),
       age: String(data.get("age") ?? ""),
       headcount: String(data.get("headcount") ?? ""),
       sessions: String(data.get("sessions") ?? ""),
@@ -156,21 +163,31 @@ export function InquiryForm() {
       {programType === KINDERGARTEN && (
         <section className={sectionClass} aria-label="유치원 정보">
           <p className={sectionTitleClass}>유치원 정보</p>
-          <div>
-            <label htmlFor="topic" className={labelClass}>
-              체험 주제 (하나만 선택)
-            </label>
-            <select id="topic" name="topic" required defaultValue="" className={inputClass}>
-              <option value="" disabled>
-                주제를 선택해 주세요
-              </option>
+          <fieldset>
+            <legend className={labelClass}>체험 주제 (여러 개 선택 가능)</legend>
+            <div className="mt-2 flex flex-wrap items-center gap-1.5">
               {KINDERGARTEN_TOPICS.map((topic) => (
-                <option key={topic.slug} value={topic.title}>
+                <label key={topic.slug} className={gradePillClass}>
+                  <input
+                    type="checkbox"
+                    name="topic"
+                    value={topic.title}
+                    className="h-3.5 w-3.5"
+                    onChange={() => setTopicError("")}
+                  />
                   {topic.title}
-                </option>
+                </label>
               ))}
-            </select>
-          </div>
+            </div>
+            {topicError && (
+              <p role="alert" className="mt-2 text-sm font-bold text-red-600">
+                {topicError}
+              </p>
+            )}
+            <p className="mt-2 text-xs text-[var(--color-text-muted)]">
+              여러 주제를 함께 신청할 수 있어요. 주제마다 희망 날짜를 적어 주시면, 같은 날짜가 겹치지 않도록 담당자가 확인해 연락드려요.
+            </p>
+          </fieldset>
           <div className="grid gap-4 sm:grid-cols-2">
             <div>
               <label htmlFor="age" className={labelClass}>

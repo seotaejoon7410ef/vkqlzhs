@@ -21,6 +21,8 @@ export function SiteHeader() {
 
   const [menuOpen, setMenuOpen] = useState(false);
   const [openGroup, setOpenGroup] = useState<string | null>(null);
+  // 데스크톱: 하위 카테고리를 누르면 드롭다운을 닫고, 마우스가 메뉴를 떠나면 다시 열 수 있게 함
+  const [closedDesktopGroup, setClosedDesktopGroup] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
   // 모바일 화면은 주소창 축소/스크롤 바운스 등으로 스크롤 위치 기반
   // 투명-불투명 전환이 불안정하게 보일 수 있어, sm 미만에서는 항상
@@ -85,7 +87,11 @@ export function SiteHeader() {
           <ul className="flex items-center gap-10">
             {NAV_GROUPS.map((item) =>
               isNavChildren(item) ? (
-                <li key={item.label} className="group relative">
+                <li
+                  key={item.label}
+                  className="group relative"
+                  onMouseLeave={() => setClosedDesktopGroup(null)}
+                >
                   <button
                     type="button"
                     aria-haspopup="true"
@@ -98,12 +104,19 @@ export function SiteHeader() {
                     {item.label}
                     <ChevronDown aria-hidden="true" size={18} />
                   </button>
-                  <div className="invisible absolute left-1/2 top-full z-50 -translate-x-1/2 pt-3 opacity-0 transition group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
+                  <div
+                    className={`invisible absolute left-1/2 top-full z-50 -translate-x-1/2 pt-3 opacity-0 transition ${
+                      closedDesktopGroup === item.label
+                        ? ""
+                        : "group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100"
+                    }`}
+                  >
                     <ul className="min-w-[11rem] rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-2 shadow-lg">
                       {item.children.map((child) => (
                         <li key={child.href}>
                           <Link
                             href={child.href}
+                            onClick={() => setClosedDesktopGroup(item.label)}
                             className="block rounded-lg px-4 py-3 text-base font-bold text-[var(--color-text)] hover:bg-[var(--color-primary-tint)] hover:text-[var(--color-primary-hover)]"
                           >
                             {child.label}
