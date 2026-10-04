@@ -66,11 +66,6 @@ export default function Home() {
               </span>
             </h1>
             <div
-              aria-hidden="true"
-              className="hero-anim mx-auto mt-6 h-12 w-px bg-[#2a2a3a]/50"
-              style={{ animationDelay: "250ms" }}
-            />
-            <div
               className="hero-anim mx-auto mt-6 max-w-[36em] text-lg leading-relaxed text-[#2a2a3a]"
               style={{ animationDelay: "300ms" }}
             >
