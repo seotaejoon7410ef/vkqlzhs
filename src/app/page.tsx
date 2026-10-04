@@ -50,13 +50,17 @@ export default function Home() {
           <div className="relative mx-auto w-[min(840px,70vw)] text-center font-pretendard [text-shadow:0_2px_10px_rgb(0_0_0_/_8%)]">
             <p
               className="hero-anim mb-6 font-medium tracking-[0.02em] text-[rgb(47_49_54_/_72%)]"
-              style={{ animationDelay: "50ms", fontSize: "max(13px, calc(clamp(38px, 4.2vw, 76px) * 0.25))" }}
+              style={{
+                animationDelay: "50ms",
+                fontSize: "max(13px, calc(clamp(38px, 4.2vw, 76px) * 0.25))",
+                fontFamily: '"Gowun Batang", serif',
+              }}
             >
               아이들의 오늘이, 더 안전하고 더 따뜻한 내일이 되도록
             </p>
             <h1
-              className="text-balance text-[clamp(38px,4.2vw,76px)] font-bold leading-[1.15] tracking-[-0.03em] text-[#111111] [word-break:keep-all]"
-              style={{ fontFamily: '"Gowun Batang", serif' }}
+              className="text-balance text-[clamp(38px,4.2vw,76px)] font-extrabold leading-[1.15] tracking-[-0.03em] text-[#111111] [word-break:keep-all]"
+              style={{ fontFamily: '"SUIT", "Pretendard", sans-serif' }}
             >
               <span className="hero-anim inline-block text-[#111111]" style={{ animationDelay: "100ms" }}>
                 체험으로 배우는
