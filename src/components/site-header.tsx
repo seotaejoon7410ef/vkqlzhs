@@ -67,7 +67,7 @@ export function SiteHeader() {
         <a href="/" className="flex shrink-0 items-center rounded-md">
           <Image
             src="/logo-lockup.png"
-            alt="행복한길잡이 장애이해교육센터 로고"
+            alt="행복한길잡이 체험교육센터 로고"
             width={236}
             height={92}
             priority

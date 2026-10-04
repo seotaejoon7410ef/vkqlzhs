@@ -35,18 +35,18 @@ export default function Home() {
                 className="hero-anim inline-block text-[var(--color-accent)] [text-shadow:0_1px_10px_rgb(0_0_0_/_60%)]"
                 style={{ animationDelay: "100ms" }}
               >
-                연 1회 의무교육,
+                안전과 배려를 직접 체험하는,
               </span>
               <br />
               <span className="hero-anim inline-block" style={{ animationDelay: "200ms" }}>
-                저희가 학교로 찾아갑니다
+                찾아가는 체험교육센터
               </span>
             </h1>
             <div
               className="hero-anim mx-auto mt-6 max-w-[36em] text-lg leading-relaxed text-white/80"
               style={{ animationDelay: "300ms" }}
             >
-              <p>초등·중학교로 찾아가는 장애인식개선 체험교육.</p>
+              <p>화재·교통·응급처치·수상안전과 장애인식개선을 학교로 찾아가 체험으로 배웁니다.</p>
               <p className="mt-2">문의 한 번으로 일정과 견적까지 안내해 드려요.</p>
             </div>
             <div

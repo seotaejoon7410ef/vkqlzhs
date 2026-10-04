@@ -31,6 +31,13 @@ const CORE_VALUES = [
   },
 ];
 
+const SAFETY_TOPICS = [
+  { title: "화재 안전", desc: "화재가 났을 때 대피하는 방법과 생활 속 화재 예방을 익힙니다." },
+  { title: "교통 안전", desc: "길과 횡단보도에서 스스로를 지키는 올바른 행동을 배웁니다." },
+  { title: "응급처치", desc: "위급한 상황에서 침착하게 대처하는 기본 응급처치를 배웁니다." },
+  { title: "수상 안전", desc: "물가와 물놀이에서 지켜야 할 안전 수칙을 익힙니다." },
+];
+
 const HOW_WE_WORK = [
   {
     title: "직접 기획한 4가지 체험존",
@@ -71,21 +78,46 @@ export default function AboutPage() {
             <div className="max-w-2xl">
               <Reveal>
                 <h1 className="text-balance text-xl font-black leading-tight text-white [text-shadow:0_2px_16px_rgb(0_0_0_/_60%)] sm:text-5xl">
-                  다름을 이해하는 경험이
+                  안전과 배려를 직접 체험하며
                   <br />
                   함께 살아가는 아이들을 만듭니다.
                 </h1>
               </Reveal>
               <Reveal delay={100}>
                 <p className="mt-2 max-w-[36em] text-sm leading-snug text-white [text-shadow:0_1px_10px_rgb(0_0_0_/_60%)] sm:mt-5 sm:text-base sm:leading-relaxed">
-                  행복한길잡이는 아이들이 장애를 낯설거나 특별한 것으로
-                  바라보지 않고, 서로 다른 모습 그대로 함께 살아가는
-                  방법을 배우도록 돕습니다.
+                  행복한길잡이는 학교로 직접 찾아가 생활 속 안전 교육과
+                  장애인식개선 체험을 함께 진행합니다. 아이들이 몸으로
+                  겪으며 배우도록 돕습니다.
                 </p>
               </Reveal>
             </div>
           </Container>
         </div>
+      </section>
+
+      {/* 안전교육 4가지 주제 */}
+      <section className="bg-[var(--color-surface-alt)] py-20 sm:py-28">
+        <Container>
+          <Reveal>
+            <Kicker>SAFETY</Kicker>
+            <h2 className="text-balance mt-4 text-3xl font-black leading-tight text-[var(--color-text)] sm:text-4xl">
+              생활 속 안전을 몸으로 익힙니다
+            </h2>
+          </Reveal>
+          <div className="mt-12 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+            {SAFETY_TOPICS.map((topic, index) => (
+              <Reveal key={topic.title} delay={index * 80}>
+                <div className="border-t-2 border-[var(--color-text)] pt-5">
+                  <span className="text-sm font-black text-[var(--color-primary-hover)]">
+                    0{index + 1}
+                  </span>
+                  <p className="mt-2 text-xl font-black text-[var(--color-text)]">{topic.title}</p>
+                  <p className="mt-3 leading-relaxed text-[var(--color-text-muted)]">{topic.desc}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </Container>
       </section>
 
       {/* 2. WHY WE DO IT — 화이트 배경, 사진+텍스트 editorial layout */}

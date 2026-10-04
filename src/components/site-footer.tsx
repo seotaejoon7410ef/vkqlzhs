@@ -15,7 +15,7 @@ export function SiteFooter() {
               어둡게 둬서 대비를 확보. */}
           <Image
             src="/logo-lockup.png"
-            alt="행복한길잡이 장애이해교육센터 로고"
+            alt="행복한길잡이 체험교육센터 로고"
             width={236}
             height={92}
             className="h-auto w-36 sm:w-44 lg:w-48"
