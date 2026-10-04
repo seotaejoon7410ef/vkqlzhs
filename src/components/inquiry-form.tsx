@@ -102,7 +102,7 @@ export function InquiryForm() {
         </div>
         <div>
           <label htmlFor="school" className={labelClass}>
-            학교(원) 이름
+            학교 이름
           </label>
           <input
             id="school"

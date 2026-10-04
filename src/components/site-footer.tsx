@@ -74,7 +74,7 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <p className="mt-8 text-left text-sm text-white/40 lg:text-right lg:text-base">
+        <p className="mt-8 text-left text-sm text-white/70 lg:text-right lg:text-base">
           Copyright © 2026 행복한길잡이. All rights reserved.
         </p>
       </Container>

@@ -122,7 +122,7 @@ export default function MiddlePage() {
         <div className="relative min-h-[480px] w-full bg-gradient-to-br from-[var(--color-secondary-hover)] via-[var(--color-secondary)] to-[var(--color-primary)] sm:min-h-[640px] lg:min-h-[760px]">
           <div
             aria-hidden="true"
-            className="absolute inset-x-0 top-10 flex flex-col items-center justify-center gap-2 text-white/40 sm:top-14"
+            className="absolute inset-x-0 top-10 flex flex-col items-center justify-center gap-2 text-white/80 sm:top-14"
           >
             <Camera size={28} />
             <p className="text-sm">중학교 체험 현장 사진 추가 필요</p>

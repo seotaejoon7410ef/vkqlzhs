@@ -27,7 +27,7 @@ export async function POST(request: Request) {
     "행복한길잡이 홈페이지로 문의가 도착했습니다.",
     "",
     `지역: ${area}`,
-    `학교(원) 이름: ${school}`,
+    `학교 이름: ${school}`,
     grades ? `학년: ${grades}` : "",
     classCount ? `학급수: ${classCount}` : "",
     `담당 선생님: ${name}`,

@@ -35,7 +35,7 @@ export function PageTitle({
         {!photoSrc && photoPlaceholderLabel && (
           <div
             aria-hidden="true"
-            className="absolute inset-x-0 top-10 flex flex-col items-center justify-center gap-2 text-white/50 sm:top-14"
+            className="absolute inset-x-0 top-10 flex flex-col items-center justify-center gap-2 text-white/80 sm:top-14"
           >
             <Camera size={28} />
             <p className="text-sm">{photoPlaceholderLabel}</p>
