@@ -55,7 +55,7 @@ export default function Home() {
               아이들의 오늘이, 더 안전하고 더 따뜻한 내일이 되도록
             </p>
             <h1 className="text-balance text-[clamp(38px,4.2vw,76px)] font-extrabold leading-[1.15] tracking-[-0.045em] text-[#111111] [word-break:keep-all]">
-              <span className="hero-anim inline-block" style={{ animationDelay: "100ms" }}>
+              <span className="hero-anim inline-block text-[#111111]" style={{ animationDelay: "100ms" }}>
                 체험으로 배우는
               </span>
               <br />
