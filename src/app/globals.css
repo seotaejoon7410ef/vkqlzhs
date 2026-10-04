@@ -1,4 +1,9 @@
+@import url("https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/static/pretendard.min.css");
 @import "tailwindcss";
+
+.font-pretendard {
+  font-family: "Pretendard", var(--font-noto-sans-kr), sans-serif;
+}
 
 /* ------------------------------------------------------------------
    행복한길잡이 디자인 토큰

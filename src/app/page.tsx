@@ -54,23 +54,34 @@ export default function Home() {
             >
               <Link
                 href="/kindergarten"
-                className="flex flex-col gap-2 rounded-2xl border-2 border-white/50 bg-[#10141c]/85 p-6 text-left shadow-lg transition-colors hover:border-[var(--color-accent)] hover:bg-[#10141c]"
+                className="group flex h-full flex-col rounded-2xl border-2 border-white/50 bg-[#0a0e14]/90 p-6 text-left shadow-lg transition duration-300 hover:-translate-y-1 hover:border-[var(--color-accent)]"
               >
-                <span className="inline-flex w-fit rounded-full bg-[var(--color-accent)] px-3 py-1 text-sm font-black text-[var(--color-secondary)]">
-                  유치원 · 2027년 예약 접수 중
+                <span className="flex items-center gap-2">
+                  <span className="text-sm font-bold text-[var(--color-accent)]">유치원</span>
+                  <span className="rounded-full border border-[var(--color-accent)] px-2.5 py-0.5 text-xs font-bold text-[var(--color-accent)]">
+                    2027년 예약 접수 중
+                  </span>
                 </span>
-                <span className="text-2xl font-black text-white">안전체험</span>
-                <span className="text-base leading-relaxed text-white">교통·화재·응급처치·수상안전을 직접 체험해요</span>
+                <span className="mt-2 text-2xl font-black text-white">안전체험</span>
+                <span className="font-pretendard mt-3 text-base leading-relaxed text-white">
+                  <span className="block">교통·화재·응급처치·수상안전</span>
+                  <span className="block">아이가 직접 해보는 안전 체험</span>
+                </span>
+                <span className="mt-auto flex justify-end pt-6 font-bold text-[var(--color-accent)]">자세히 보기 →</span>
               </Link>
               <Link
                 href="/elementary"
-                className="flex flex-col gap-2 rounded-2xl border-2 border-white/50 bg-[#10141c]/85 p-6 text-left shadow-lg transition-colors hover:border-[var(--color-accent)] hover:bg-[#10141c]"
+                className="group flex h-full flex-col rounded-2xl border-2 border-white/50 bg-[#0a0e14]/90 p-6 text-left shadow-lg transition duration-300 hover:-translate-y-1 hover:border-[var(--color-accent)]"
               >
-                <span className="inline-flex w-fit rounded-full bg-[var(--color-accent)] px-3 py-1 text-sm font-black text-[var(--color-secondary)]">
-                  초·중학교
+                <span className="flex items-center gap-2">
+                  <span className="text-sm font-bold text-[var(--color-accent)]">초·중학교</span>
                 </span>
-                <span className="text-2xl font-black text-white">장애인식개선 체험</span>
-                <span className="text-base leading-relaxed text-white">직접 움직이고 느끼며 함께하는 법을 배워요</span>
+                <span className="mt-2 text-2xl font-black text-white">장애인식개선 체험</span>
+                <span className="font-pretendard mt-3 text-base leading-relaxed text-white">
+                  <span className="block">직접 움직이고 느끼며</span>
+                  <span className="block">친구와 함께하는 법을 배워요</span>
+                </span>
+                <span className="mt-auto flex justify-end pt-6 font-bold text-[var(--color-accent)]">자세히 보기 →</span>
               </Link>
             </div>
             <div
