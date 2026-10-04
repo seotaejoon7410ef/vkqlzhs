@@ -8,6 +8,7 @@ export type KindergartenProgram = {
   slogan: string;
   target: string;
   steps: KindergartenProgramStep[];
+  teacherPrep: string[];
 };
 
 export type KindergartenTopic = {
@@ -64,6 +65,12 @@ export const KINDERGARTEN_TOPICS: KindergartenTopic[] = [
           title: "마무리",
           desc: "약속을 함께 외치고 로고 스티커를 받아요.",
         },
+      ],
+      teacherPrep: [
+        "교실 책상은 벽 쪽으로 밀어서 체험 공간을 비워 주세요.",
+        "담임 선생님 한 분이 기다리는 아이들 곁에 계셔 주세요.",
+        "체험 중 기다리는 친구들은 '신호 지킴이'가 되어 엄지로 응원해요. 말 없이 손으로만 표현해요.",
+        "유희실이나 강당에서는 최대 30명까지 진행할 수 있어요.",
       ],
     },
   },

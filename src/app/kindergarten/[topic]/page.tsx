@@ -106,6 +106,20 @@ export default async function KindergartenTopicPage({ params }: Props) {
                 </Reveal>
               ))}
             </div>
+
+            <Reveal>
+              <div className="mt-12 rounded-2xl bg-[var(--color-surface-alt)] p-8 sm:p-10">
+                <p className="text-lg font-black text-[var(--color-text)]">선생님께 부탁드릴 것</p>
+                <ul className="mt-5 space-y-3 leading-relaxed text-[var(--color-text-muted)]">
+                  {topic.program.teacherPrep.map((item) => (
+                    <li key={item} className="flex gap-3">
+                      <span aria-hidden="true" className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-primary)]" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </Reveal>
           </Container>
         </section>
       )}
