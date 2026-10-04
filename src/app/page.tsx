@@ -62,7 +62,7 @@ export default function Home() {
               <span className="hero-anim inline-block" style={{ animationDelay: "200ms" }}>
                 <span className="text-[#F2A126]">안전</span>
                 <span className="text-[#111111]">과</span>{" "}
-                <span className="text-[#6FA65B]">배려</span>
+                <span className="text-[var(--color-primary)]">배려</span>
               </span>
             </h1>
             <div
