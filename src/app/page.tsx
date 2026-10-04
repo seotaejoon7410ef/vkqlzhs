@@ -33,8 +33,19 @@ export default function Home() {
           fill
           priority
           sizes="100vw"
-          className="hero-ken-burns hidden object-cover object-center sm:block"
+          className="hidden scale-110 object-cover object-center blur-2xl brightness-75 sm:block"
         />
+        <div className="absolute inset-x-[12%] top-1/2 hidden aspect-[1920/740] -translate-y-1/2 sm:block [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
+          <Image
+            src="/hero-reference.jpg"
+            alt=""
+            aria-hidden="true"
+            fill
+            priority
+            sizes="76vw"
+            className="hero-ken-burns object-cover object-center"
+          />
+        </div>
         <div className="hero-overlay absolute inset-0" />
 
         <div
