@@ -12,15 +12,9 @@ export default function Home() {
         id="top"
         className="on-dark relative -mt-40 block min-h-[760px] overflow-hidden bg-[#fdfaf5] text-white sm:mt-0 sm:flex sm:min-h-[700px] sm:items-center sm:pt-24 lg:min-h-[800px]"
       >
-        <div
-          aria-hidden="true"
-          className="absolute inset-x-0 top-0 h-[150px] sm:hidden"
-          style={{ background: "linear-gradient(to bottom, #fdfaf5 0%, #f8f0e6 100%)" }}
-        />
-
-        <div className="absolute inset-x-0 top-[130px] h-[693px] sm:hidden">
+        <div className="absolute inset-0 sm:hidden">
           <Image
-            src="/hero-mobile-full.jpg"
+            src="/hero-mobile-top.jpg"
             alt="유치원 안전체험과 학교 장애인식개선 체험 현장"
             fill
             priority
@@ -30,10 +24,10 @@ export default function Home() {
         </div>
         <div
           aria-hidden="true"
-          className="absolute inset-x-0 top-0 h-[440px] sm:hidden"
+          className="absolute inset-0 sm:hidden"
           style={{
             background:
-              "linear-gradient(to bottom, rgba(253,250,245,0.92) 0%, rgba(253,250,245,0.9) 70%, rgba(253,250,245,0) 100%)",
+              "linear-gradient(to bottom, rgba(253,250,245,0.7) 0%, rgba(253,250,245,0.5) 45%, rgba(253,250,245,0) 70%)",
           }}
         />
 
@@ -57,7 +51,7 @@ export default function Home() {
           />
         </div>
 
-        <Container className="relative pt-[130px] pb-12 sm:pt-20 sm:pb-20 lg:py-28">
+        <Container className="relative pt-[110px] pb-12 sm:pt-20 sm:pb-20 lg:py-28">
           <div className="relative mx-auto w-full text-center font-pretendard sm:w-[min(760px,70vw)] [text-shadow:0_1px_6px_rgb(0_0_0_/_5%)]">
             <p
               className="hero-anim mt-4 mb-3 text-[15px] sm:mt-0 sm:mb-6 font-medium tracking-[-0.01em] text-[#555A60] sm:text-[20px] sm:font-semibold sm:text-[#111111]"
