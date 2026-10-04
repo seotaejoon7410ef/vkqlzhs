@@ -10,7 +10,7 @@ export default function Home() {
     <>
       <section
         id="top"
-        className="on-dark relative flex min-h-[480px] items-center overflow-hidden text-white sm:min-h-[640px] lg:min-h-[760px]"
+        className="on-dark relative flex min-h-[700px] items-start overflow-hidden text-white sm:min-h-[640px] sm:items-center lg:min-h-[760px]"
       >
         {/* 배경 사진: 실제 체험교육 현장 사진.
             사진이 화면 폭 대비 훨씬 넓어서(2.12:1), 세로로 좁고 긴 모바일
@@ -45,16 +45,21 @@ export default function Home() {
           }}
         />
 
-        <Container className="relative pt-14 pb-24 sm:py-20 lg:py-28">
-          <div className="relative mx-auto w-[min(760px,70vw)] text-center font-pretendard [text-shadow:0_1px_6px_rgb(0_0_0_/_5%)]">
+        <div
+          aria-hidden="true"
+          className="absolute inset-x-0 top-0 h-[60%] bg-gradient-to-b from-[#fdfaf5] via-[#fdfaf5]/85 to-transparent sm:hidden"
+        />
+
+        <Container className="relative pt-28 pb-16 sm:py-20 lg:py-28">
+          <div className="relative mx-auto w-full text-center font-pretendard sm:w-[min(760px,70vw)] [text-shadow:0_1px_6px_rgb(0_0_0_/_5%)]">
             <p
-              className="hero-anim mb-6 text-[20px] font-semibold tracking-[-0.01em] text-[#111111]"
+              className="hero-anim mb-6 text-[16px] font-semibold tracking-[-0.01em] text-[#111111] sm:text-[20px]"
               style={{ animationDelay: "50ms" }}
             >
               아이들의 오늘이, 더 안전하고 더 따뜻한 내일이 되도록
             </p>
             <h1
-              className="text-balance text-[clamp(54px,4.8vw,82px)] font-extrabold leading-[1.12] tracking-[-0.045em] [word-break:keep-all]"
+              className="text-balance text-[38px] font-extrabold leading-[1.12] tracking-[-0.045em] [word-break:keep-all] sm:text-[clamp(54px,4.8vw,82px)]"
               style={{ fontFamily: '"SUIT", "Pretendard", sans-serif' }}
             >
               <span className="hero-anim inline-block text-[#202124]" style={{ animationDelay: "100ms" }}>
@@ -66,7 +71,7 @@ export default function Home() {
               </span>
             </h1>
             <div
-              className="hero-anim mx-auto mt-7 text-[19px] font-bold leading-[1.65] tracking-[-0.02em] text-[#111111]"
+              className="hero-anim mx-auto mt-7 text-[16px] font-bold leading-[1.65] tracking-[-0.02em] text-[#111111] sm:text-[19px]"
               style={{ animationDelay: "300ms" }}
             >
               <p>
