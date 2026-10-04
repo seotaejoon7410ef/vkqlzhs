@@ -27,7 +27,7 @@ export default function Home() {
           className="hero-ken-burns object-cover object-center sm:hidden"
         />
         <Image
-          src="/hero-main.jpg"
+          src="/hero-reference.jpg"
           alt=""
           aria-hidden="true"
           fill
@@ -47,26 +47,31 @@ export default function Home() {
         />
 
         <Container className="relative pt-14 pb-24 sm:py-20 lg:py-28">
-          <div className="relative mx-auto max-w-2xl text-center">
-            <p className="hero-anim mx-auto mb-5 text-sm font-bold tracking-wide text-[#2a2a3a] sm:text-base" style={{ animationDelay: "50ms" }}>
+          <div className="relative mx-auto w-[min(840px,70vw)] text-center font-pretendard [text-shadow:0_2px_10px_rgb(0_0_0_/_8%)]">
+            <p
+              className="hero-anim mb-6 text-[15px] font-medium tracking-[0.02em] text-[rgb(47_49_54_/_72%)]"
+              style={{ animationDelay: "50ms" }}
+            >
               아이들의 오늘이, 더 안전하고 더 따뜻한 내일이 되도록
             </p>
-            <h1 className="text-balance text-4xl font-black leading-[1.2] sm:text-5xl">
-              <span
-                className="hero-anim inline-block text-[#111111]"
-                style={{ animationDelay: "100ms" }}
-              >
+            <h1 className="text-balance text-[clamp(38px,4.2vw,76px)] font-extrabold leading-[1.15] tracking-[-0.045em] text-[#2E3138] [word-break:keep-all]">
+              <span className="hero-anim inline-block" style={{ animationDelay: "100ms" }}>
                 체험으로 배우는
               </span>
               <br />
               <span className="hero-anim inline-block" style={{ animationDelay: "200ms" }}>
-                <span className="text-[#e07800]">안전</span>
-                <span className="text-[#111111]">과</span>{" "}
-                <span className="text-[var(--color-primary)]">배려</span>
+                <span className="text-[#F2A126]">안전</span>
+                <span className="text-[#2E3138]">과</span>{" "}
+                <span className="text-[#6FA65B]">배려</span>
               </span>
             </h1>
             <div
-              className="hero-anim mx-auto mt-6 max-w-[36em] text-lg leading-relaxed text-[#2a2a3a]"
+              aria-hidden="true"
+              className="hero-anim mx-auto mt-7 h-12 w-px bg-[#2E3138]/40"
+              style={{ animationDelay: "250ms" }}
+            />
+            <div
+              className="hero-anim mx-auto mt-7 text-[clamp(17px,1.25vw,22px)] font-medium leading-[1.65] tracking-[-0.02em] text-[rgb(47_49_54_/_78%)]"
               style={{ animationDelay: "300ms" }}
             >
               <p>
@@ -81,17 +86,6 @@ export default function Home() {
                 className="inline-flex min-h-12 items-center rounded-full border-2 border-[#2a2a3a] bg-white/60 px-8 text-base font-bold text-[#111111] transition-colors hover:bg-[#2a2a3a] hover:text-white"
               >
                 교육 문의하기 →
-              </Link>
-            </div>
-            <div
-              className="hero-anim mt-6 flex justify-center"
-              style={{ animationDelay: "500ms" }}
-            >
-              <Link
-                href="/contact"
-                className="inline-flex min-h-12 items-center justify-center rounded-full bg-[var(--color-accent)] px-7 text-base font-bold text-[var(--color-secondary)] transition-colors hover:brightness-95"
-              >
-                문의 양식 작성하기
               </Link>
             </div>
           </div>
