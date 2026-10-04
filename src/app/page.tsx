@@ -10,7 +10,7 @@ export default function Home() {
     <>
       <section
         id="top"
-        className="on-dark relative block overflow-hidden bg-[#fdfaf5] text-white sm:flex sm:min-h-[700px] sm:items-center sm:pt-24 lg:min-h-[800px]"
+        className="on-dark relative -mt-40 block overflow-hidden bg-[#fdfaf5] text-white sm:mt-0 sm:flex sm:min-h-[700px] sm:items-center sm:pt-24 lg:min-h-[800px]"
       >
         <div className="absolute inset-x-0 top-0 h-[360px] sm:hidden">
           <Image
@@ -44,7 +44,7 @@ export default function Home() {
           />
         </div>
 
-        <Container className="relative pt-[280px] pb-12 sm:pt-20 sm:pb-20 lg:py-28">
+        <Container className="relative pt-[440px] pb-12 sm:pt-20 sm:pb-20 lg:py-28">
           <div className="relative mx-auto w-full text-center font-pretendard sm:w-[min(760px,70vw)] [text-shadow:0_1px_6px_rgb(0_0_0_/_5%)]">
             <p
               className="hero-anim mb-6 text-[15px] font-medium tracking-[-0.01em] text-[#555A60] sm:text-[20px] sm:font-semibold sm:text-[#111111]"
