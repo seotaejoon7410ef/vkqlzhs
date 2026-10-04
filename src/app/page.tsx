@@ -48,6 +48,9 @@ export default function Home() {
 
         <Container className="relative pt-14 pb-24 sm:py-20 lg:py-28">
           <div className="relative mx-auto max-w-2xl text-center">
+            <p className="hero-anim mx-auto mb-5 text-sm font-bold tracking-wide text-[#2a2a3a] sm:text-base" style={{ animationDelay: "50ms" }}>
+              아이들의 오늘이, 더 안전하고 더 따뜻한 내일이 되도록
+            </p>
             <h1 className="text-balance text-4xl font-black leading-[1.2] sm:text-5xl">
               <span
                 className="hero-anim inline-block text-[#111111]"
@@ -63,6 +66,11 @@ export default function Home() {
               </span>
             </h1>
             <div
+              aria-hidden="true"
+              className="hero-anim mx-auto mt-6 h-12 w-px bg-[#2a2a3a]/50"
+              style={{ animationDelay: "250ms" }}
+            />
+            <div
               className="hero-anim mx-auto mt-6 max-w-[36em] text-lg leading-relaxed text-[#2a2a3a]"
               style={{ animationDelay: "300ms" }}
             >
@@ -71,6 +79,14 @@ export default function Home() {
                 <br />
                 아이들의 눈높이에 맞춘 체험교육을 제공합니다.
               </p>
+            </div>
+            <div className="hero-anim mt-8" style={{ animationDelay: "350ms" }}>
+              <Link
+                href="/contact"
+                className="inline-flex min-h-12 items-center rounded-full border-2 border-[#2a2a3a] bg-white/60 px-8 text-base font-bold text-[#111111] transition-colors hover:bg-[#2a2a3a] hover:text-white"
+              >
+                교육 문의하기 →
+              </Link>
             </div>
             <div
               className="hero-anim mx-auto mt-9 grid max-w-xl gap-4 text-left sm:grid-cols-2"
