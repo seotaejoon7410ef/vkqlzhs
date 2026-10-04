@@ -69,7 +69,7 @@ export default function Home() {
             >
               <Link
                 href="/kindergarten/traffic"
-                className="group flex h-full flex-col rounded-2xl border-2 border-white/50 bg-[#0a0e14]/90 p-6 text-left shadow-lg transition duration-300 hover:-translate-y-1 hover:border-[var(--color-accent)]"
+                className="group flex h-full flex-col rounded-2xl border border-white/15 bg-[#1a2657]/75 p-8 text-left leading-loose shadow-[0_12px_40px_-12px_rgb(0_0_0_/_35%)] backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-[var(--color-accent)]"
               >
                 <span className="flex items-center gap-2">
                   <span className="text-sm font-bold text-[var(--color-accent)]">유치원</span>
@@ -86,7 +86,7 @@ export default function Home() {
               </Link>
               <Link
                 href="/elementary"
-                className="group flex h-full flex-col rounded-2xl border-2 border-white/50 bg-[#0a0e14]/90 p-6 text-left shadow-lg transition duration-300 hover:-translate-y-1 hover:border-[var(--color-accent)]"
+                className="group flex h-full flex-col rounded-2xl border border-white/15 bg-[#1a2657]/75 p-8 text-left leading-loose shadow-[0_12px_40px_-12px_rgb(0_0_0_/_35%)] backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-[var(--color-accent)]"
               >
                 <span className="flex items-center gap-2">
                   <span className="text-sm font-bold text-[var(--color-accent)]">초·중학교</span>
