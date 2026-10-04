@@ -145,30 +145,14 @@ export function SiteHeader() {
           </ul>
         </nav>
 
-        {/* 데스크톱 CTA: 스크롤하면 같은 버튼 안에서 문의하기 → 전화번호로 바뀜.
-            PC에서는 전화를 걸 수 없으므로 링크는 항상 문의하기 페이지로 이동 */}
+        {/* 데스크톱 CTA: PC에서는 전화를 걸 수 없으므로 링크는 문의하기 페이지로 이동 */}
         <div className="hidden shrink-0 items-center lg:flex">
           <Link
             href="/contact"
-            className="relative flex h-11 w-[150px] shrink-0 items-center justify-center overflow-hidden rounded-full bg-[var(--color-accent)] text-sm font-bold text-[var(--color-secondary)] transition-colors hover:brightness-95"
+            className="flex h-11 w-[150px] shrink-0 items-center justify-center gap-1.5 whitespace-nowrap rounded-full bg-[var(--color-primary)] text-sm font-bold text-white transition-colors hover:brightness-110"
           >
-            <span
-              aria-hidden={scrolled}
-              className={`absolute inset-0 flex items-center justify-center gap-2 transition-all duration-300 ${
-                scrolled ? "-translate-y-3 opacity-0" : "translate-y-0 opacity-100"
-              }`}
-            >
-              문의하기
-            </span>
-            <span
-              aria-hidden={!scrolled}
-              className={`absolute inset-0 flex items-center justify-center gap-1.5 whitespace-nowrap transition-all duration-300 ${
-                scrolled ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
-              }`}
-            >
-              <Phone aria-hidden="true" size={16} />
-              {PHONE_NUMBER}
-            </span>
+            <Phone aria-hidden="true" size={16} />
+            {PHONE_NUMBER}
           </Link>
         </div>
 
