@@ -9,7 +9,7 @@ export type NavGroup =
 const ALL_NAV_GROUPS: NavGroup[] = [
   { href: "/about", label: "회사소개" },
   {
-    label: "안전체험",
+    label: "유치원 안전체험",
     children: SHOW_KINDERGARTEN
       ? [
           { href: "/kindergarten/traffic", label: "교통안전" },
@@ -20,7 +20,7 @@ const ALL_NAV_GROUPS: NavGroup[] = [
       : [],
   },
   {
-    label: "장애인식개선체험",
+    label: "학교 장애인식개선체험",
     children: [
       { href: "/elementary", label: "초등학교" },
       { href: "/middle", label: "중학교" },
