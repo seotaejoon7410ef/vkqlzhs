@@ -67,7 +67,7 @@ export default function Home() {
               </span>
             </h1>
             <div
-              className="hero-anim mx-auto mt-7 text-[17px] font-medium leading-[1.65] tracking-[-0.02em] text-[#555A60]"
+              className="hero-anim mx-auto mt-7 text-[17px] font-medium leading-[1.65] tracking-[-0.02em] text-[#2E3138]"
               style={{ animationDelay: "300ms" }}
             >
               <p>
