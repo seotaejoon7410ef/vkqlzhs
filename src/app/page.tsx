@@ -72,26 +72,16 @@ export default function Home() {
           </div>
         </Container>
 
-        <div className="relative mt-10 sm:hidden">
-          <div className="relative h-[300px] w-full">
-            <Image
-              src="/hero-reference.jpg"
-              alt="유치원 안전체험 현장"
-              fill
-              sizes="100vw"
-              className="object-cover object-[0%_center]"
-            />
-            <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#fdfaf5] to-transparent" />
-          </div>
-          <div className="relative h-[300px] w-full">
-            <Image
-              src="/hero-reference.jpg"
-              alt="초·중학교 장애인식개선 체험 현장"
-              fill
-              sizes="100vw"
-              className="object-cover object-[100%_center]"
-            />
-          </div>
+        <div className="relative mt-8 sm:hidden">
+          <Image
+            src="/hero-mobile-poster.jpg"
+            alt="유치원 안전체험과 학교 장애인식개선 체험 현장"
+            width={1029}
+            height={841}
+            sizes="100vw"
+            className="h-auto w-full"
+          />
+          <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-[#fdfaf5] to-transparent" />
         </div>
 
         {/* 스크롤 유도 — 모바일은 화면이 좁아 다른 요소와 겹치기 쉬워 숨기고,
