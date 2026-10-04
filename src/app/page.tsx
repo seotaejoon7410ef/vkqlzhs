@@ -10,7 +10,7 @@ export default function Home() {
     <>
       <section
         id="top"
-        className="on-dark relative -mt-40 block min-h-[640px] overflow-hidden bg-[#fdfaf5] text-white sm:mt-0 sm:flex sm:min-h-[700px] sm:items-center sm:pt-24 lg:min-h-[800px]"
+        className="on-dark relative -mt-40 block min-h-[720px] overflow-hidden bg-[#fdfaf5] text-white sm:mt-0 sm:flex sm:min-h-[700px] sm:items-center sm:pt-24 lg:min-h-[800px]"
       >
         <div className="absolute inset-0 sm:hidden">
           <Image
@@ -26,7 +26,7 @@ export default function Home() {
             className="absolute inset-0"
             style={{
               background:
-                "linear-gradient(to bottom, rgba(253,250,245,0.92) 0%, rgba(253,250,245,0.85) 45%, rgba(253,250,245,0.4) 62%, rgba(253,250,245,0) 75%)",
+                "linear-gradient(to bottom, rgba(253,250,245,0.92) 0%, rgba(253,250,245,0.88) 55%, rgba(253,250,245,0.5) 72%, rgba(253,250,245,0) 88%)",
             }}
           />
         </div>
