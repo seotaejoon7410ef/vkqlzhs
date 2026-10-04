@@ -10,7 +10,7 @@ import { NAV_GROUPS, isNavChildren } from "@/config";
 
 // 맨 위에 어두운 배너(히어로/PageTitle)가 없는 페이지 — 투명 오버레이로
 // 두면 밝은 배경 위에 흰 글자가 겹쳐 안 보이므로 헤더를 항상 불투명으로 고정
-const NO_DARK_HERO_PATHS = ["/contact"];
+const NO_DARK_HERO_PATHS = ["/contact", "/about"];
 
 const PHONE_NUMBER = "031-236-8410";
 const PHONE_TEL = "tel:0312368410";
