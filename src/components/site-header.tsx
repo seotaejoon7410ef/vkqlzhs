@@ -98,7 +98,7 @@ export function SiteHeader() {
                     className={`inline-flex min-h-11 items-center gap-1 text-xl font-medium tracking-wide transition-colors ${
                       solid
                         ? "text-[var(--color-text)] hover:text-[var(--color-primary)]"
-                        : "text-white/90 hover:text-white"
+                        : "text-[#111111] hover:text-[var(--color-primary)]"
                     }`}
                   >
                     {item.label}
@@ -134,7 +134,7 @@ export function SiteHeader() {
                     className={`inline-flex min-h-11 items-center text-xl font-medium tracking-wide transition-colors ${
                       solid
                         ? "text-[var(--color-text)] hover:text-[var(--color-primary)]"
-                        : "text-white/90 hover:text-white"
+                        : "text-[#111111] hover:text-[var(--color-primary)]"
                     }`}
                   >
                     {item.label}
@@ -176,7 +176,7 @@ export function SiteHeader() {
         <button
           type="button"
           className={`inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-md border lg:hidden ${
-            solid ? "border-[var(--color-border)] text-[var(--color-text)]" : "border-white/60 text-white"
+            solid ? "border-[var(--color-border)] text-[var(--color-text)]" : "border-[#111111]/60 text-[#111111]"
           }`}
           aria-expanded={menuOpen}
           aria-controls="mobile-menu"
@@ -220,7 +220,7 @@ export function SiteHeader() {
                 className={`inline-flex shrink-0 items-center gap-1 whitespace-nowrap rounded-full border px-4 py-2 text-sm font-bold transition-colors ${
                   solid
                     ? "border-[var(--color-border)] text-[var(--color-text)] hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
-                    : "border-white/60 text-white hover:border-white hover:bg-white/10"
+                    : "border-[#111111]/60 text-[#111111] hover:border-[#111111] hover:bg-black/5"
                 }`}
               >
                 {item.label}
@@ -237,7 +237,7 @@ export function SiteHeader() {
                 className={`shrink-0 whitespace-nowrap rounded-full border px-4 py-2 text-sm font-bold transition-colors ${
                   solid
                     ? "border-[var(--color-border)] text-[var(--color-text)] hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
-                    : "border-white/60 text-white hover:border-white hover:bg-white/10"
+                    : "border-[#111111]/60 text-[#111111] hover:border-[#111111] hover:bg-black/5"
                 }`}
               >
                 {item.label}
@@ -254,7 +254,7 @@ export function SiteHeader() {
                 className={`shrink-0 whitespace-nowrap rounded-full border-2 px-4 py-1.5 text-sm font-bold transition-colors ${
                   solid
                     ? "border-[var(--color-primary)] bg-[var(--color-primary-tint)] text-[var(--color-primary-hover)]"
-                    : "border-white bg-white/10 text-white"
+                    : "border-[#111111] bg-black/5 text-[#111111]"
                 }`}
               >
                 {child.label}
