@@ -1,3 +1,15 @@
+export type KindergartenProgramStep = {
+  time: string;
+  title: string;
+  desc: string;
+};
+
+export type KindergartenProgram = {
+  slogan: string;
+  target: string;
+  steps: KindergartenProgramStep[];
+};
+
 export type KindergartenTopic = {
   slug: string;
   title: string;
@@ -6,6 +18,7 @@ export type KindergartenTopic = {
   heroLead: string;
   heroAccent: string;
   heroChips: string[];
+  program?: KindergartenProgram;
 };
 
 export const KINDERGARTEN_TOPICS: KindergartenTopic[] = [
@@ -17,6 +30,42 @@ export const KINDERGARTEN_TOPICS: KindergartenTopic[] = [
     heroLead: "올바른 교통습관으로 안전한 오늘, 즐거운 내일!",
     heroAccent: "#2E7D32",
     heroChips: ["신호등 이해", "횡단보도 건너기", "통학차량 안전"],
+    program: {
+      slogan: "멈춰요! 살펴요! 건너요!",
+      target: "만 5~7세 · 최대 25명 · 약 50분",
+      steps: [
+        {
+          time: "4분",
+          title: "오프닝",
+          desc: "선생님이 공을 줍다 자동차에 부딪힐 뻔한 장면을 함께 보며 시작해요.",
+        },
+        {
+          time: "6분",
+          title: "이론",
+          desc: "신호등 약속을 익히고, 운전자에게 내가 잘 안 보이는 이유를 알아봐요.",
+        },
+        {
+          time: "15분",
+          title: "횡단보도 체험",
+          desc: "신호에 맞춰 왼쪽과 오른쪽을 살피고, 손을 들고 건너요.",
+        },
+        {
+          time: "15분",
+          title: "킥보드 체험",
+          desc: "헬멧을 쓰고 천천히 타다 멈추고, 횡단보도 앞에서는 내려서 끌고 가요.",
+        },
+        {
+          time: "6분",
+          title: "전원 건너기",
+          desc: "모든 아이가 한 번씩 횡단보도를 건너며 약속을 몸으로 익혀요.",
+        },
+        {
+          time: "4분",
+          title: "마무리",
+          desc: "약속을 함께 외치고 로고 스티커를 받아요.",
+        },
+      ],
+    },
   },
   {
     slug: "fire",

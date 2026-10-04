@@ -87,6 +87,29 @@ export default async function KindergartenTopicPage({ params }: Props) {
         </p>
       </Container>
 
+      {topic.program && (
+        <section className="py-16 sm:py-20">
+          <Container>
+            <Reveal>
+              <Kicker>수업 흐름</Kicker>
+              <p className="mt-6 text-2xl font-black text-[var(--color-text)] sm:text-3xl">{topic.program.slogan}</p>
+              <p className="mt-3 text-[var(--color-text-muted)]">{topic.program.target}</p>
+            </Reveal>
+            <div className="mt-10 grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
+              {topic.program.steps.map((step, index) => (
+                <Reveal key={step.title} delay={index * 60}>
+                  <div className="border-t-2 border-[var(--color-text)] pt-5">
+                    <p className="text-sm font-bold text-[var(--color-primary-hover)]">{step.time}</p>
+                    <p className="mt-2 text-xl font-black text-[var(--color-text)]">{step.title}</p>
+                    <p className="mt-3 leading-relaxed text-[var(--color-text-muted)]">{step.desc}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </Container>
+        </section>
+      )}
+
       <section className="bg-[var(--color-surface-alt)] py-16 sm:py-20">
         <Container>
           <Reveal>
