@@ -38,7 +38,15 @@ export default function Home() {
         <div className="hero-overlay absolute inset-0" />
 
         <Container className="relative pt-14 pb-24 sm:py-20 lg:py-28">
-          <div className="mx-auto max-w-2xl text-center">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0"
+            style={{
+              background:
+                "radial-gradient(ellipse 60% 62% at 50% 50%, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0.86) 50%, rgba(255,255,255,0) 100%)",
+            }}
+          />
+          <div className="relative mx-auto max-w-2xl text-center">
             <h1 className="text-balance text-4xl font-black leading-[1.2] sm:text-5xl">
               <span
                 className="hero-anim inline-block text-[#111111]"
@@ -48,13 +56,13 @@ export default function Home() {
               </span>
               <br />
               <span className="hero-anim inline-block" style={{ animationDelay: "200ms" }}>
-                <span className="text-[var(--color-accent)]">안전</span>
+                <span className="text-[#e07800]">안전</span>
                 <span className="text-[#111111]">과</span>{" "}
                 <span className="text-[var(--color-primary)]">배려</span>
               </span>
             </h1>
             <div
-              className="hero-anim mx-auto mt-6 max-w-[36em] text-lg leading-relaxed text-white/80"
+              className="hero-anim mx-auto mt-6 max-w-[36em] text-lg leading-relaxed text-[#2a2a3a]"
               style={{ animationDelay: "300ms" }}
             >
               <p>
