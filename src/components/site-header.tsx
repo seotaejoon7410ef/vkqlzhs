@@ -3,10 +3,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Phone } from "lucide-react";
+import { ChevronDown, Phone } from "lucide-react";
 import { useLayoutEffect, useState } from "react";
 import { Container } from "./container";
-import { NAV_ITEMS } from "@/config";
+import { NAV_GROUPS, isNavChildren } from "@/config";
 
 // 맨 위에 어두운 배너(히어로/PageTitle)가 없는 페이지 — 투명 오버레이로
 // 두면 밝은 배경 위에 흰 글자가 겹쳐 안 보이므로 헤더를 항상 불투명으로 고정
@@ -20,6 +20,7 @@ export function SiteHeader() {
   const forceSolid = NO_DARK_HERO_PATHS.includes(pathname);
 
   const [menuOpen, setMenuOpen] = useState(false);
+  const [openGroup, setOpenGroup] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
   // 모바일 화면은 주소창 축소/스크롤 바운스 등으로 스크롤 위치 기반
   // 투명-불투명 전환이 불안정하게 보일 수 있어, sm 미만에서는 항상
@@ -53,6 +54,10 @@ export function SiteHeader() {
 
   const solid = isNarrow || scrolled || menuOpen || forceSolid;
 
+  const activeGroup = NAV_GROUPS.find(
+    (item) => isNavChildren(item) && item.label === openGroup,
+  );
+
   return (
     <header
       className={`fixed top-0 z-50 w-full ${mounted ? "transition-colors duration-300" : ""} ${
@@ -75,23 +80,54 @@ export function SiteHeader() {
           />
         </a>
 
-        {/* 데스크톱 내비게이션 (각 메뉴의 별도 페이지로 이동) */}
+        {/* 데스크톱 내비게이션: 대분류에 마우스를 올리거나 키보드로 포커스하면 하위 메뉴가 펼쳐짐 */}
         <nav aria-label="주요 메뉴" className="hidden lg:block">
           <ul className="flex items-center gap-10">
-            {NAV_ITEMS.map((item) => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  className={`inline-flex min-h-11 items-center text-xl font-medium tracking-wide transition-colors ${
-                    solid
-                      ? "text-[var(--color-text)] hover:text-[var(--color-primary)]"
-                      : "text-white/90 hover:text-white"
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
+            {NAV_GROUPS.map((item) =>
+              isNavChildren(item) ? (
+                <li key={item.label} className="group relative">
+                  <button
+                    type="button"
+                    aria-haspopup="true"
+                    className={`inline-flex min-h-11 items-center gap-1 text-xl font-medium tracking-wide transition-colors ${
+                      solid
+                        ? "text-[var(--color-text)] hover:text-[var(--color-primary)]"
+                        : "text-white/90 hover:text-white"
+                    }`}
+                  >
+                    {item.label}
+                    <ChevronDown aria-hidden="true" size={18} />
+                  </button>
+                  <div className="invisible absolute left-1/2 top-full z-50 -translate-x-1/2 pt-3 opacity-0 transition group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
+                    <ul className="min-w-[11rem] rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-2 shadow-lg">
+                      {item.children.map((child) => (
+                        <li key={child.href}>
+                          <Link
+                            href={child.href}
+                            className="block rounded-lg px-4 py-3 text-base font-bold text-[var(--color-text)] hover:bg-[var(--color-primary-tint)] hover:text-[var(--color-primary-hover)]"
+                          >
+                            {child.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </li>
+              ) : (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className={`inline-flex min-h-11 items-center text-xl font-medium tracking-wide transition-colors ${
+                      solid
+                        ? "text-[var(--color-text)] hover:text-[var(--color-primary)]"
+                        : "text-white/90 hover:text-white"
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ),
+            )}
           </ul>
         </nav>
 
@@ -154,27 +190,64 @@ export function SiteHeader() {
         </button>
       </Container>
 
-      {/* 모바일: 탭하지 않아도 항상 보이는 가로 스크롤 메뉴 */}
+      {/* 모바일: 탭하지 않아도 항상 보이는 가로 스크롤 메뉴. 대분류를 누르면 하위 메뉴가 아래에 펼쳐짐 */}
       <nav
         aria-label="주요 메뉴 (모바일)"
         className={`lg:hidden ${solid ? "border-t border-[var(--color-border)]" : ""}`}
       >
         <div className="scrollbar-hide flex gap-2 overflow-x-auto px-6 py-3">
-          {/* 모바일 메뉴는 새로고침되도록 next/link 대신 일반 a 태그 사용 */}
-          {NAV_ITEMS.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className={`shrink-0 whitespace-nowrap rounded-full border px-4 py-2 text-sm font-bold transition-colors ${
-                solid
-                  ? "border-[var(--color-border)] text-[var(--color-text)] hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
-                  : "border-white/60 text-white hover:border-white hover:bg-white/10"
-              }`}
-            >
-              {item.label}
-            </a>
-          ))}
+          {NAV_GROUPS.map((item) =>
+            isNavChildren(item) ? (
+              <button
+                key={item.label}
+                type="button"
+                aria-expanded={openGroup === item.label}
+                onClick={() => setOpenGroup((current) => (current === item.label ? null : item.label))}
+                className={`inline-flex shrink-0 items-center gap-1 whitespace-nowrap rounded-full border px-4 py-2 text-sm font-bold transition-colors ${
+                  solid
+                    ? "border-[var(--color-border)] text-[var(--color-text)] hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
+                    : "border-white/60 text-white hover:border-white hover:bg-white/10"
+                }`}
+              >
+                {item.label}
+                <ChevronDown
+                  aria-hidden="true"
+                  size={16}
+                  className={`transition-transform ${openGroup === item.label ? "rotate-180" : ""}`}
+                />
+              </button>
+            ) : (
+              <a
+                key={item.href}
+                href={item.href}
+                className={`shrink-0 whitespace-nowrap rounded-full border px-4 py-2 text-sm font-bold transition-colors ${
+                  solid
+                    ? "border-[var(--color-border)] text-[var(--color-text)] hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
+                    : "border-white/60 text-white hover:border-white hover:bg-white/10"
+                }`}
+              >
+                {item.label}
+              </a>
+            ),
+          )}
         </div>
+        {activeGroup && isNavChildren(activeGroup) && (
+          <div className="scrollbar-hide flex gap-2 overflow-x-auto px-6 pb-3">
+            {activeGroup.children.map((child) => (
+              <a
+                key={child.href}
+                href={child.href}
+                className={`shrink-0 whitespace-nowrap rounded-full border-2 px-4 py-1.5 text-sm font-bold transition-colors ${
+                  solid
+                    ? "border-[var(--color-primary)] bg-[var(--color-primary-tint)] text-[var(--color-primary-hover)]"
+                    : "border-white bg-white/10 text-white"
+                }`}
+              >
+                {child.label}
+              </a>
+            ))}
+          </div>
+        )}
       </nav>
 
       {/* 모바일 내비게이션 (햄버거 버튼으로 열고 닫는 전체 메뉴 + 전화 CTA) */}
@@ -185,17 +258,34 @@ export function SiteHeader() {
           className="border-t border-[var(--color-border)] bg-[var(--color-surface)] lg:hidden"
         >
           <Container className="flex flex-col gap-1 py-3">
-            {/* 모바일 메뉴는 새로고침되도록 next/link 대신 일반 a 태그 사용 */}
-            {NAV_ITEMS.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                onClick={() => setMenuOpen(false)}
-                className="flex min-h-12 items-center rounded-md px-4 text-lg font-medium text-[var(--color-text)]"
-              >
-                {item.label}
-              </a>
-            ))}
+            {NAV_GROUPS.map((item) =>
+              isNavChildren(item) ? (
+                <div key={item.label} className="flex flex-col">
+                  <p className="px-4 pt-3 text-sm font-bold text-[var(--color-primary-hover)]">
+                    {item.label}
+                  </p>
+                  {item.children.map((child) => (
+                    <a
+                      key={child.href}
+                      href={child.href}
+                      onClick={() => setMenuOpen(false)}
+                      className="flex min-h-12 items-center rounded-md px-8 text-lg font-medium text-[var(--color-text)]"
+                    >
+                      {child.label}
+                    </a>
+                  ))}
+                </div>
+              ) : (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setMenuOpen(false)}
+                  className="flex min-h-12 items-center rounded-md px-4 text-lg font-medium text-[var(--color-text)]"
+                >
+                  {item.label}
+                </a>
+              ),
+            )}
             <a
               href={PHONE_TEL}
               onClick={() => setMenuOpen(false)}
