@@ -41,14 +41,15 @@ export default function Home() {
           <div className="mx-auto max-w-2xl text-center">
             <h1 className="text-balance text-4xl font-black leading-[1.2] sm:text-5xl">
               <span
-                className="hero-anim inline-block [text-shadow:0_1px_10px_rgb(0_0_0_/_60%)]"
+                className="hero-anim inline-block text-[#111111]"
                 style={{ animationDelay: "100ms" }}
               >
                 체험으로 배우는
               </span>
               <br />
               <span className="hero-anim inline-block" style={{ animationDelay: "200ms" }}>
-                <span className="text-[var(--color-accent)]">안전</span>과{" "}
+                <span className="text-[var(--color-accent)]">안전</span>
+                <span className="text-[#111111]">과</span>{" "}
                 <span className="text-[var(--color-primary)]">배려</span>
               </span>
             </h1>
