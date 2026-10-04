@@ -8,7 +8,7 @@ export function SiteFooter() {
     <footer className="on-dark mt-[113px] bg-[#10141c] pb-16 text-white sm:pb-0">
       <Container className="py-14">
         {/* 1행: 로고와 메뉴를 같은 높이로 정렬 */}
-        <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+        <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
           {/* 안전교육/장애인식개선 체험교육 업종에 어울리는 차분하고
               신뢰감 있는 차콜 네이비 배경. 로고 색은 절대 보정하지
               말고 원본(logo-lockup.png) 그대로 사용 — 배경을 충분히
@@ -21,12 +21,12 @@ export function SiteFooter() {
             className="h-auto w-36 sm:w-44 lg:w-48"
           />
 
-          <nav aria-label="바로가기" className="flex flex-wrap gap-x-10 gap-y-6 lg:justify-end">
+          <nav aria-label="바로가기" className="flex flex-wrap items-start gap-x-12 gap-y-6 lg:justify-end lg:pt-5">
             {NAV_GROUPS.map((item) =>
               isNavChildren(item) ? (
-                <div key={item.label} className="flex flex-col gap-2">
-                  <p className="text-sm font-bold text-white/60">{item.label}</p>
-                  <ul className="flex flex-col gap-1.5 text-base font-bold">
+                <div key={item.label} className="flex flex-col gap-3">
+                  <p className="flex h-9 items-center text-xl font-bold text-white/70">{item.label}</p>
+                  <ul className="flex flex-col gap-2 text-lg font-bold">
                     {item.children.map((child) => (
                       <li key={child.href}>
                         <Link className="hover:underline" href={child.href}>
@@ -37,8 +37,8 @@ export function SiteFooter() {
                   </ul>
                 </div>
               ) : (
-                <div key={item.href} className="flex flex-col gap-2">
-                  <Link className="text-base font-bold hover:underline" href={item.href}>
+                <div key={item.href} className="flex flex-col gap-3">
+                  <Link className="flex h-9 items-center text-xl font-bold hover:underline" href={item.href}>
                     {item.label}
                   </Link>
                 </div>
