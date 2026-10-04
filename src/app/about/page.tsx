@@ -93,8 +93,8 @@ export default function AboutPage() {
           <Reveal delay={100}>
             <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl">
               <Image
-                src="/about-why.jpg"
-                alt="휠체어 체험과 흰지팡이 체험 부스에서 학생들이 체험하는 모습"
+                src="/about-why-kindergarten.jpg"
+                alt="유치원 아이들이 소화기 체험과 횡단보도 체험을 하는 모습"
                 fill
                 sizes="(min-width: 1024px) 40rem, 90vw"
                 className="object-cover"
