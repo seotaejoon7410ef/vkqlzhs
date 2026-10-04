@@ -10,16 +10,16 @@ export default function Home() {
     <>
       <section
         id="top"
-        className="on-dark relative -mt-40 block min-h-[760px] overflow-hidden bg-[#fdfaf5] text-white sm:mt-0 sm:flex sm:min-h-[700px] sm:items-center sm:pt-24 lg:min-h-[800px]"
+        className="on-dark relative -mt-40 block min-h-[640px] overflow-hidden bg-[#fdfaf5] text-white sm:mt-0 sm:flex sm:min-h-[700px] sm:items-center sm:pt-24 lg:min-h-[800px]"
       >
         <div className="absolute inset-0 sm:hidden">
           <Image
-            src="/hero-mobile-poster.jpg"
+            src="/hero-mobile-full.jpg"
             alt="유치원 안전체험과 학교 장애인식개선 체험 현장"
             fill
             priority
             sizes="100vw"
-            className="object-cover object-[30%_center]"
+            className="object-cover object-center"
           />
           <div
             aria-hidden="true"
@@ -51,7 +51,7 @@ export default function Home() {
           />
         </div>
 
-        <Container className="relative pt-[150px] pb-12 sm:pt-20 sm:pb-20 lg:py-28">
+        <Container className="relative pt-[170px] pb-12 sm:pt-20 sm:pb-20 lg:py-28">
           <div className="relative mx-auto w-full text-center font-pretendard sm:w-[min(760px,70vw)] [text-shadow:0_1px_6px_rgb(0_0_0_/_5%)]">
             <p
               className="hero-anim mb-6 text-[15px] font-medium tracking-[-0.01em] text-[#555A60] sm:text-[20px] sm:font-semibold sm:text-[#111111]"
