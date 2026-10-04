@@ -44,18 +44,22 @@ export default function Home() {
                 className="hero-anim inline-block text-[var(--color-accent)] [text-shadow:0_1px_10px_rgb(0_0_0_/_60%)]"
                 style={{ animationDelay: "100ms" }}
               >
-                나를 지키고, 친구와 함께하는 법을
+                체험으로 배우는
               </span>
               <br />
               <span className="hero-anim inline-block" style={{ animationDelay: "200ms" }}>
-                체험으로 배웁니다
+                안전과 배려
               </span>
             </h1>
             <div
               className="hero-anim mx-auto mt-6 max-w-[36em] text-lg leading-relaxed text-white/80"
               style={{ animationDelay: "300ms" }}
             >
-              <p>유치원에는 찾아가는 안전체험을, 초·중학교에는 장애공감 체험교육을 진행합니다.</p>
+              <p>
+                유치원 안전체험부터 초·중학교 장애인식개선체험까지
+                <br />
+                아이들의 눈높이에 맞춘 체험교육을 제공합니다.
+              </p>
             </div>
             <div
               className="hero-anim mx-auto mt-9 grid max-w-xl gap-4 text-left sm:grid-cols-2"
