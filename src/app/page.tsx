@@ -12,7 +12,7 @@ export default function Home() {
         id="top"
         className="on-dark relative -mt-40 block min-h-[760px] overflow-hidden bg-[#fdfaf5] text-white sm:mt-0 sm:flex sm:min-h-[700px] sm:items-center sm:pt-24 lg:min-h-[800px]"
       >
-        <div className="absolute inset-0 sm:hidden">
+        <div className="absolute inset-x-0 -top-10 bottom-0 sm:hidden">
           <Image
             src="/hero-mobile-top.jpg"
             alt="유치원 안전체험과 학교 장애인식개선 체험 현장"
@@ -27,7 +27,7 @@ export default function Home() {
           className="absolute inset-0 sm:hidden"
           style={{
             background:
-              "radial-gradient(ellipse 75% 26% at 50% 36%, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.6) 55%, rgba(255,255,255,0) 100%)",
+              "radial-gradient(ellipse 75% 26% at 50% 31%, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.6) 55%, rgba(255,255,255,0) 100%)",
           }}
         />
 
@@ -51,7 +51,7 @@ export default function Home() {
           />
         </div>
 
-        <Container className="relative pt-[110px] pb-12 sm:pt-20 sm:pb-20 lg:py-28">
+        <Container className="relative pt-[70px] pb-12 sm:pt-20 sm:pb-20 lg:py-28">
           <div className="relative mx-auto w-full text-center font-pretendard sm:w-[min(760px,70vw)] [text-shadow:0_1px_6px_rgb(0_0_0_/_5%)]">
             <p
               className="hero-anim mt-7 mb-3 text-[15px] sm:mt-0 sm:mb-6 font-bold tracking-[-0.01em] text-[#555A60] sm:text-[20px] sm:font-semibold sm:text-[#111111]"
