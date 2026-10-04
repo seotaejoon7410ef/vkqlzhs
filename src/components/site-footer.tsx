@@ -18,7 +18,7 @@ export function SiteFooter() {
             alt="행복한길잡이 체험교육센터 로고"
             width={236}
             height={92}
-            className="h-auto w-36 sm:w-44 lg:mt-6 lg:w-48"
+            className="h-auto w-36 sm:w-44 lg:mt-[68px] lg:w-48"
           />
 
           <nav aria-label="바로가기" className="flex flex-wrap items-start gap-x-12 gap-y-6 lg:justify-end lg:pt-5">
