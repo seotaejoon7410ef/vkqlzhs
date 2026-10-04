@@ -35,7 +35,6 @@ export default function Home() {
           sizes="100vw"
           className="hero-ken-burns hidden object-cover object-center sm:block"
         />
-        <div className="hero-overlay absolute inset-0" />
 
         <div
           aria-hidden="true"
