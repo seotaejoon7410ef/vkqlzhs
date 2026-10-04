@@ -51,6 +51,14 @@ export default function AboutPage() {
           sizes="100vw"
           className="object-cover object-center"
         />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse 55% 60% at 50% 50%, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.35) 55%, rgba(255,255,255,0) 100%)",
+          }}
+        />
         <Container className="relative text-center">
           <p
             className="hero-anim text-base font-bold tracking-[0.2em] text-[#2E3138] sm:text-lg"
