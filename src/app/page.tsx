@@ -10,7 +10,7 @@ export default function Home() {
     <>
       <section
         id="top"
-        className="on-dark relative -mt-40 block min-h-[720px] overflow-hidden bg-[#fdfaf5] text-white sm:mt-0 sm:flex sm:min-h-[700px] sm:items-center sm:pt-24 lg:min-h-[800px]"
+        className="on-dark relative -mt-40 block min-h-[620px] overflow-hidden bg-[#fdfaf5] text-white sm:mt-0 sm:flex sm:min-h-[700px] sm:items-center sm:pt-24 lg:min-h-[800px]"
       >
         <div className="absolute inset-0 sm:hidden">
           <Image
@@ -26,7 +26,7 @@ export default function Home() {
             className="absolute inset-0"
             style={{
               background:
-                "linear-gradient(to bottom, rgba(253,250,245,0.92) 0%, rgba(253,250,245,0.88) 55%, rgba(253,250,245,0.5) 72%, rgba(253,250,245,0) 88%)",
+                "linear-gradient(to bottom, rgba(253,250,245,0.92) 0%, rgba(253,250,245,0.88) 40%, rgba(253,250,245,0) 52%)",
             }}
           />
         </div>
@@ -51,7 +51,7 @@ export default function Home() {
           />
         </div>
 
-        <Container className="relative pt-[170px] pb-12 sm:pt-20 sm:pb-20 lg:py-28">
+        <Container className="relative pt-16 pb-12 sm:pt-20 sm:pb-20 lg:py-28">
           <div className="relative mx-auto w-full text-center font-pretendard sm:w-[min(760px,70vw)] [text-shadow:0_1px_6px_rgb(0_0_0_/_5%)]">
             <p
               className="hero-anim mb-6 text-[15px] font-medium tracking-[-0.01em] text-[#555A60] sm:text-[20px] sm:font-semibold sm:text-[#111111]"
