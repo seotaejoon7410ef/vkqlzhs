@@ -13,7 +13,6 @@ import { NAV_GROUPS, isNavChildren } from "@/config";
 const NO_DARK_HERO_PATHS = ["/contact", "/about"];
 
 const PHONE_NUMBER = "031-236-8410";
-const PHONE_TEL = "tel:0312368410";
 
 export function SiteHeader() {
   const pathname = usePathname();
@@ -284,14 +283,6 @@ export function SiteHeader() {
                 </a>
               ),
             )}
-            <a
-              href={PHONE_TEL}
-              onClick={() => setMenuOpen(false)}
-              className="mt-2 flex min-h-12 items-center justify-center gap-2 rounded-full bg-[var(--color-primary)] px-5 text-base font-bold text-white"
-            >
-              <Phone aria-hidden="true" size={18} />
-              전화로 문의하기 {PHONE_NUMBER}
-            </a>
           </Container>
         </nav>
       )}
