@@ -9,12 +9,14 @@ import { Reveal } from "./reveal";
 export function PageTitle({
   label,
   title,
+  description,
   photoSrc,
   photoAlt,
   photoPlaceholderLabel,
 }: {
   label: string;
   title: string;
+  description?: string;
   photoSrc?: string;
   photoAlt?: string;
   photoPlaceholderLabel?: string;
@@ -49,6 +51,9 @@ export function PageTitle({
               <h1 className="text-balance mt-4 text-3xl font-black leading-tight sm:text-5xl">
                 {title}
               </h1>
+              {description && (
+                <p className="mt-3 text-base text-white/90 sm:text-lg">{description}</p>
+              )}
             </Reveal>
           </div>
         </Container>

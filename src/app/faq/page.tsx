@@ -67,7 +67,7 @@ export default function FaqPage() {
               학교로 직접 찾아갑니다
             </h2>
             <p className="mt-3 max-w-[36em] leading-relaxed text-[var(--color-text-muted)]">
-              강사와 체험 도구가 모두 학교(원)로 이동하며, 최대 4학급이
+              강사와 체험 도구가 모두 학교·유치원으로 이동하며, 최대 4학급이
               동시에 4개 존을 돌며 체험할 수 있습니다.
             </p>
           </Reveal>

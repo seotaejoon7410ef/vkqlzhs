@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     template: "%s | 행복한길잡이",
   },
   description:
-    "행복한길잡이는 학교로 직접 찾아가 화재·교통·응급처치·수상안전 교육과 장애인식개선 체험교육을 진행합니다.",
+    "행복한길잡이는 유치원으로 찾아가는 안전체험과 초·중학교로 찾아가는 장애인식개선 체험교육을 진행합니다.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

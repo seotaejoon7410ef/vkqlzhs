@@ -30,28 +30,48 @@ export default function Home() {
 
         <Container className="relative pt-14 pb-24 sm:py-20 lg:py-28">
           <div className="mx-auto max-w-2xl text-center">
-            <h1 className="text-4xl font-black leading-[1.2] sm:text-5xl">
+            <h1 className="text-balance text-4xl font-black leading-[1.2] sm:text-5xl">
               <span
                 className="hero-anim inline-block text-[var(--color-accent)] [text-shadow:0_1px_10px_rgb(0_0_0_/_60%)]"
                 style={{ animationDelay: "100ms" }}
               >
-                안전과 배려를 직접 체험하는,
+                나를 지키고, 친구와 함께하는 법을
               </span>
               <br />
               <span className="hero-anim inline-block" style={{ animationDelay: "200ms" }}>
-                찾아가는 체험교육센터
+                체험으로 배웁니다
               </span>
             </h1>
             <div
               className="hero-anim mx-auto mt-6 max-w-[36em] text-lg leading-relaxed text-white/80"
               style={{ animationDelay: "300ms" }}
             >
-              <p>화재·교통·응급처치·수상안전과 장애인식개선을 학교로 찾아가 체험으로 배웁니다.</p>
-              <p className="mt-2">문의 한 번으로 일정과 견적까지 안내해 드려요.</p>
+              <p>유치원에는 찾아가는 안전체험을, 초·중학교에는 장애공감 체험교육을 진행합니다.</p>
             </div>
             <div
-              className="hero-anim mt-9 flex justify-center"
+              className="hero-anim mx-auto mt-9 grid max-w-xl gap-4 text-left sm:grid-cols-2"
               style={{ animationDelay: "400ms" }}
+            >
+              <Link
+                href="/kindergarten"
+                className="flex flex-col gap-1 rounded-2xl border-2 border-white/30 bg-white/10 p-5 transition-colors hover:border-[var(--color-accent)] hover:bg-white/20"
+              >
+                <span className="text-sm font-bold text-[var(--color-accent)]">유치원 · 2027년 예약 접수 중</span>
+                <span className="text-xl font-black">안전체험</span>
+                <span className="text-sm text-white/80">교통·화재·응급처치·수상안전을 직접 체험해요</span>
+              </Link>
+              <Link
+                href="/elementary"
+                className="flex flex-col gap-1 rounded-2xl border-2 border-white/30 bg-white/10 p-5 transition-colors hover:border-[var(--color-accent)] hover:bg-white/20"
+              >
+                <span className="text-sm font-bold text-[var(--color-accent)]">초·중학교</span>
+                <span className="text-xl font-black">장애인식개선 체험</span>
+                <span className="text-sm text-white/80">직접 움직이고 느끼며 함께하는 법을 배워요</span>
+              </Link>
+            </div>
+            <div
+              className="hero-anim mt-6 flex justify-center"
+              style={{ animationDelay: "500ms" }}
             >
               <Link
                 href="/contact"
