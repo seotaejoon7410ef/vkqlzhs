@@ -25,7 +25,7 @@ export function SiteFooter() {
             {NAV_GROUPS.map((item) =>
               isNavChildren(item) ? (
                 <div key={item.label} className="flex flex-col gap-3">
-                  <p className="flex h-9 items-center text-xl font-bold text-white/70">{item.label}</p>
+                  <p className="flex h-9 items-center text-xl font-bold text-white">{item.label}</p>
                   <ul className="flex flex-col gap-2 text-lg font-bold">
                     {item.children.map((child) => (
                       <li key={child.href}>
