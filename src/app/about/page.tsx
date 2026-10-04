@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
-import { ArrowDown, ArrowRight } from "lucide-react";
+import { ArrowRight, ClipboardCheck, Hand, MapPin, Phone, type LucideIcon } from "lucide-react";
 import { Container } from "@/components/container";
+import { CountUp } from "@/components/count-up";
 import { Kicker } from "@/components/kicker";
 import { Reveal } from "@/components/reveal";
 
@@ -10,312 +10,183 @@ export const metadata: Metadata = {
   title: "회사 소개",
 };
 
-const CORE_VALUES = [
+const PROMISES: { icon: LucideIcon; title: string; desc: string }[] = [
   {
-    number: "01",
-    step: "EXPERIENCE",
-    title: "직접 경험합니다",
-    desc: "눈으로만 배우는 장애이해교육이 아니라 직접 움직이고 느끼며 서로 다른 일상의 방식을 경험합니다.",
+    icon: MapPin,
+    title: "찾아갑니다",
+    desc: "현장학습 준비 없이, 우리 학교·우리 유치원 교실에서",
   },
   {
-    number: "02",
-    step: "UNDERSTANDING",
-    title: "다름을 이해합니다",
-    desc: "체험을 통해 장애를 불편하거나 특별한 누군가의 문제가 아니라 서로 다른 삶의 방식으로 바라봅니다.",
+    icon: Hand,
+    title: "직접 해봅니다",
+    desc: "보고 듣는 수업이 아니라 몸으로 느끼는 체험",
   },
   {
-    number: "03",
-    step: "TOGETHER",
-    title: "자연스럽게 함께합니다",
-    desc: "교육의 마지막은 장애를 아는 것이 아닙니다. 장애가 있는 친구와 없는 친구가 서로를 의식하지 않고 자연스럽게 어울리는 것이 우리의 목표입니다.",
+    icon: ClipboardCheck,
+    title: "꼼꼼하게 준비합니다",
+    desc: "체험 장비와 진행 순서를 미리 맞춰, 선생님은 아이들만 챙기시면 됩니다",
   },
 ];
 
-const SAFETY_TOPICS = [
-  { title: "교통안전", desc: "길과 횡단보도에서 스스로를 지키는 올바른 행동을 직접 해보며 익힙니다." },
-  { title: "화재안전", desc: "불이 났을 때 침착하게 대피하는 방법을 직접 움직여 봅니다." },
-  { title: "응급처치", desc: "다쳤을 때 도움을 요청하고 기본 응급처치를 따라 해봅니다." },
-  { title: "수상안전", desc: "물가와 물놀이에서 지켜야 할 안전 수칙을 몸으로 익힙니다." },
-];
-
-const HOW_WE_WORK = [
-  {
-    title: "직접 기획한 4가지 체험존",
-    desc: "시각장애존, 지체장애존, 감각협력존, 퀴즈협동존. 눈으로 보는 교육이 아니라 몸으로 겪는 체험을 직접 만들었습니다.",
-  },
-  {
-    title: "교실로 찾아가는 수업",
-    desc: "강사와 장비를 모두 준비해 학교로 찾아갑니다. 선생님의 준비 부담을 최소화합니다.",
-  },
-  {
-    title: "최대 4학급 동시 체험",
-    desc: "학급이 존을 순환하며 체험하여 한 번의 방문으로 여러 학급이 함께 교육을 마칠 수 있습니다.",
-  },
-  {
-    title: "수업 후 만족도 조사",
-    desc: "수업이 끝난 뒤 선생님의 의견을 받아 프로그램을 지속적으로 개선합니다.",
-  },
+const STATS = [
+  { value: 4, suffix: "개", label: "한 교시 안에 체험하는 체험존" },
+  { value: 4, suffix: "학급", label: "동시에 진행 가능한 최대 학급 수" },
+  { value: 5, suffix: "개 지역", label: "서울 · 경기 · 인천 · 충남 · 충북" },
 ];
 
 export default function AboutPage() {
   return (
     <>
-      {/* 1. HERO — 실제 현장 사진 + 감성적인 카피 */}
-      <section id="top" className="on-dark relative isolate overflow-hidden">
-        <div className="relative min-h-[280px] w-full sm:min-h-[640px] lg:min-h-[760px]">
-          <Image
-            src="/about-hero-3.jpg"
-            alt="행복한길잡이 체험교육 현장 — 시각장애 공감 체험(흰지팡이)을 하는 모습"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-top brightness-95"
-          />
-
-          <Container className="absolute inset-x-0 bottom-0 pb-6 sm:pb-20 lg:pb-24">
-            <div className="max-w-2xl">
-              <Reveal>
-                <h1 className="text-balance text-xl font-black leading-tight text-white [text-shadow:0_2px_16px_rgb(0_0_0_/_60%)] sm:text-5xl">
-                  안전과 배려를 직접 체험하며
-                  <br />
-                  함께 살아가는 아이들을 만듭니다.
-                </h1>
-              </Reveal>
-              <Reveal delay={100}>
-                <p className="mt-2 max-w-[36em] text-sm leading-snug text-white [text-shadow:0_1px_10px_rgb(0_0_0_/_60%)] sm:mt-5 sm:text-base sm:leading-relaxed">
-                  행복한길잡이는 학교로 직접 찾아가 생활 속 안전 교육과
-                  장애인식개선 체험을 함께 진행합니다. 아이들이 몸으로
-                  겪으며 배우도록 돕습니다.
-                </p>
-              </Reveal>
-            </div>
-          </Container>
-        </div>
+      <section
+        id="top"
+        className="relative flex min-h-[70vh] items-center overflow-hidden bg-gradient-to-br from-[#fff3df] via-[#fbf8ff] to-[#e9e1fa] pt-32 pb-20 sm:min-h-[80vh]"
+      >
+        <Container className="text-center">
+          <Reveal>
+            <p className="text-sm font-bold tracking-[0.2em] text-[#2E3138]">체험교육센터 행복한길잡이</p>
+            <h1 className="text-balance mt-6 break-keep text-3xl font-extrabold leading-[1.3] tracking-[-0.03em] text-[#2E3138] sm:text-5xl lg:text-6xl">
+              나를 <span className="text-[#E07800]">지킬</span> 줄 아는 아이가
+              <br />
+              <span className="text-[var(--color-primary)]">친구</span>도 지킬 수 있습니다
+            </h1>
+          </Reveal>
+        </Container>
       </section>
 
-      {/* 안전교육 4가지 주제 */}
+      <section className="bg-[var(--color-surface)] py-20 sm:py-28">
+        <Container>
+          <Reveal className="mx-auto max-w-2xl text-center">
+            <Kicker>우리의 생각</Kicker>
+            <p className="mt-6 break-keep text-2xl font-black leading-relaxed text-[var(--color-text)] sm:text-3xl">
+              나를 지킬 줄 아는 아이가 친구도 지킬 수 있고,
+              <br />
+              친구를 이해하는 아이가 더 안전한 교실을 만듭니다.
+            </p>
+            <p className="mt-8 break-keep leading-[1.9] text-[var(--color-text-muted)]">
+              그래서 행복한길잡이는 안전과 공감을 따로 가르치지 않습니다.
+              <br />
+              유치원에서는 나를 지키는 법을, 학교에서는 친구와 함께하는 법을
+              <br />
+              직접 몸으로 체험하며 배웁니다.
+            </p>
+          </Reveal>
+        </Container>
+      </section>
+
       <section className="bg-[var(--color-surface-alt)] py-20 sm:py-28">
         <Container>
           <Reveal>
-            <Kicker>SAFETY</Kicker>
-            <h2 className="text-balance mt-4 text-3xl font-black leading-tight text-[var(--color-text)] sm:text-4xl">
-              생활 속 안전을 몸으로 익힙니다
-            </h2>
+            <Kicker>우리가 하는 일</Kicker>
           </Reveal>
-          <div className="mt-12 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
-            {SAFETY_TOPICS.map((topic, index) => (
-              <Reveal key={topic.title} delay={index * 80}>
-                <div className="border-t-2 border-[var(--color-text)] pt-5">
-                  <span className="text-sm font-black text-[var(--color-primary-hover)]">
-                    0{index + 1}
+          <div className="mt-12 grid gap-6 md:grid-cols-2">
+            <Reveal>
+              <div className="flex h-full flex-col rounded-2xl border-t-4 border-[var(--color-accent)] bg-[var(--color-surface)] p-8 shadow-sm sm:p-10">
+                <div className="flex flex-wrap items-center gap-3">
+                  <h3 className="text-2xl font-black text-[var(--color-text)]">유치원 안전체험</h3>
+                  <span className="rounded-full border border-[var(--color-accent)] px-2.5 py-0.5 text-xs font-bold text-[#B36B00]">
+                    2027년 예약 접수 중
                   </span>
-                  <p className="mt-2 text-xl font-black text-[var(--color-text)]">{topic.title}</p>
-                  <p className="mt-3 leading-relaxed text-[var(--color-text-muted)]">{topic.desc}</p>
                 </div>
-              </Reveal>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* 2. WHY WE DO IT — 화이트 배경, 사진+텍스트 editorial layout */}
-      <section className="bg-[var(--color-surface)] py-20 sm:py-28">
-        <Container>
-          <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
-            <div>
-              <Reveal>
-                <Kicker>WHY WE DO IT</Kicker>
-                <h2 className="text-balance mt-4 text-3xl font-black leading-tight text-[var(--color-text)] sm:text-4xl">
-                  낯섦이 이해가 되고,
-                  <br />
-                  이해가 자연스러움이 되도록.
-                </h2>
-              </Reveal>
-              <Reveal delay={100}>
-                <div className="mt-8 space-y-6 text-[var(--color-text-muted)]">
-                  <p className="max-w-[36em] leading-[1.9]">
-                    아이들은 경험하지 못한 것을 낯설게 느낄 수 있습니다.
-                    장애 역시 마찬가지입니다.
-                  </p>
-                  <p className="max-w-[36em] leading-[1.9]">
-                    그래서 행복한길잡이는 설명하는 데서 그치지 않습니다.
-                    직접 보고, 움직이고, 느끼고, 친구와 함께 체험하게
-                    합니다. 장애를 누군가의 부족함이 아니라 서로 다른
-                    삶의 방식으로 이해할 수 있도록 말입니다.
-                  </p>
-                  <p className="max-w-[36em] leading-[1.9]">
-                    우리가 바라는 변화는 거창하지 않습니다. 교육이 끝난
-                    뒤 교실로 돌아간 아이들이 장애가 있는 친구를 만났을
-                    때 머뭇거리지 않고 자연스럽게 함께할 수 있는 것.
-                    그 작은 변화가 더 좋은 사회의 시작이라고 믿습니다.
-                  </p>
-                </div>
-              </Reveal>
-            </div>
-
-            <Reveal>
-              <div className="relative aspect-[1672/941] w-full overflow-hidden rounded-sm">
-                <Image
-                  src="/about-why.jpg"
-                  alt="지체장애 공감 체험(휠체어 타보기)과 시각장애 공감 체험(흰지팡이) 부스에서 학생들이 체험하는 모습"
-                  fill
-                  sizes="(min-width: 1024px) 40rem, 90vw"
-                  className="object-cover"
-                />
-              </div>
-            </Reveal>
-          </div>
-        </Container>
-      </section>
-
-      {/* 3. OUR VALUE — 경험→이해→함께, 하나의 흐름으로 연결 */}
-      <section className="bg-[var(--color-surface-alt)] py-20 sm:py-28">
-        <Container>
-          <div className="mx-auto max-w-2xl text-center">
-            <Reveal>
-              <Kicker>OUR VALUE</Kicker>
-              <h2 className="text-balance mt-4 text-3xl font-black text-[var(--color-text)] sm:text-4xl">
-                경험에서 시작해, 함께하는 태도로.
-              </h2>
-            </Reveal>
-          </div>
-
-          <div className="mt-16 flex flex-col lg:flex-row lg:items-start">
-            <Reveal className="flex-1 lg:px-4 lg:text-center">
-              <div className="flex items-baseline gap-3 lg:justify-center">
-                <span aria-hidden="true" className="text-5xl font-black text-[var(--color-primary)] sm:text-6xl">
-                  {CORE_VALUES[0].number}
-                </span>
-                <span className="text-xs font-bold tracking-[0.2em] text-[var(--color-primary-hover)]">
-                  {CORE_VALUES[0].step}
-                </span>
-              </div>
-              <h3 className="mt-4 text-xl font-black text-[var(--color-text)]">
-                {CORE_VALUES[0].title}
-              </h3>
-              <p className="mt-3 leading-relaxed text-[var(--color-text-muted)] lg:mx-auto lg:max-w-[24em]">
-                {CORE_VALUES[0].desc}
-              </p>
-            </Reveal>
-
-            <div aria-hidden="true" className="flex items-center justify-center py-8 lg:px-2 lg:py-16">
-              <ArrowDown size={22} className="text-[var(--color-border)] lg:hidden" />
-              <ArrowRight size={22} className="hidden text-[var(--color-border)] lg:block" />
-            </div>
-
-            <Reveal delay={100} className="flex-1 lg:px-4 lg:text-center">
-              <div className="flex items-baseline gap-3 lg:justify-center">
-                <span aria-hidden="true" className="text-5xl font-black text-[var(--color-primary)] sm:text-6xl">
-                  {CORE_VALUES[1].number}
-                </span>
-                <span className="text-xs font-bold tracking-[0.2em] text-[var(--color-primary-hover)]">
-                  {CORE_VALUES[1].step}
-                </span>
-              </div>
-              <h3 className="mt-4 text-xl font-black text-[var(--color-text)]">
-                {CORE_VALUES[1].title}
-              </h3>
-              <p className="mt-3 leading-relaxed text-[var(--color-text-muted)] lg:mx-auto lg:max-w-[24em]">
-                {CORE_VALUES[1].desc}
-              </p>
-            </Reveal>
-
-            <div aria-hidden="true" className="flex items-center justify-center py-8 lg:px-2 lg:py-16">
-              <ArrowDown size={22} className="text-[var(--color-border)] lg:hidden" />
-              <ArrowRight size={22} className="hidden text-[var(--color-border)] lg:block" />
-            </div>
-
-            <Reveal delay={200} className="flex-1 lg:px-4 lg:text-center">
-              <div className="flex items-baseline gap-3 lg:justify-center">
-                <span aria-hidden="true" className="text-5xl font-black text-[var(--color-primary)] sm:text-6xl">
-                  {CORE_VALUES[2].number}
-                </span>
-                <span className="text-xs font-bold tracking-[0.2em] text-[var(--color-primary-hover)]">
-                  {CORE_VALUES[2].step}
-                </span>
-              </div>
-              <h3 className="mt-4 text-xl font-black text-[var(--color-text)]">
-                {CORE_VALUES[2].title}
-              </h3>
-              <p className="mt-3 leading-relaxed text-[var(--color-text-muted)] lg:mx-auto lg:max-w-[24em]">
-                {CORE_VALUES[2].desc}
-              </p>
-            </Reveal>
-          </div>
-        </Container>
-      </section>
-
-      {/* 4. HOW WE WORK — 2x2 editorial grid, 큰 숫자 */}
-      <section className="bg-[var(--color-surface)] py-20 sm:py-28">
-        <Container>
-          <div className="mx-auto max-w-2xl text-center">
-            <Reveal>
-              <Kicker>HOW WE WORK</Kicker>
-              <h2 className="text-balance mt-4 text-3xl font-black text-[var(--color-text)] sm:text-4xl">
-                좋은 교육이 실제 학교에서 가능하도록.
-              </h2>
-            </Reveal>
-          </div>
-
-          <div className="mt-16 grid gap-x-12 gap-y-14 sm:grid-cols-2">
-            {HOW_WE_WORK.map((item, index) => (
-              <Reveal key={item.title} delay={(index % 2) * 100}>
-                <div className="border-t-2 border-[var(--color-text)] pt-5">
-                  <span className="text-sm font-black text-[var(--color-primary-hover)]">
-                    0{index + 1}
-                  </span>
-                  <h3 className="mt-2 text-xl font-black text-[var(--color-text)]">
-                    {item.title}
-                  </h3>
-                  <p className="mt-3 max-w-[32em] leading-relaxed text-[var(--color-text-muted)]">
-                    {item.desc}
-                  </p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* 5. CLOSING — 넓은 실제 사진 + 카피 + CTA */}
-      <section className="on-dark relative isolate overflow-hidden">
-        <div className="relative h-[60vh] min-h-[440px] w-full sm:h-[70vh] sm:min-h-[520px]">
-          <Image
-            src="/about-closing.jpg"
-            alt=""
-            aria-hidden="true"
-            fill
-            sizes="100vw"
-            className="object-cover brightness-75"
-          />
-          <Container className="relative flex h-full items-end pb-14 sm:items-center sm:pb-0">
-            <div className="max-w-2xl">
-              <Reveal>
-                <p className="text-balance text-2xl font-black leading-snug text-white [text-shadow:0_2px_16px_rgb(0_0_0_/_70%)] sm:text-4xl">
-                  오늘 한 번의 경험이
-                  <br />
-                  내일 누군가를 대하는 태도를 바꿉니다.
+                <p className="mt-4 font-bold text-[#B36B00]">교통안전 · 화재안전 · 응급처치 · 수상안전</p>
+                <p className="mt-4 break-keep leading-relaxed text-[var(--color-text-muted)]">
+                  아이가 직접 해보며 위험한 순간 스스로 지키는 법을 익힙니다
                 </p>
-              </Reveal>
-              <Reveal delay={100}>
-                <p className="mt-5 leading-relaxed text-white [text-shadow:0_1px_10px_rgb(0_0_0_/_70%)]">
-                  다름을 이해하고 자연스럽게 함께하는 교실,
-                  <br className="hidden sm:block" />
-                  행복한길잡이가 함께하겠습니다.
-                </p>
-              </Reveal>
-              <Reveal delay={200}>
                 <Link
-                  href="/contact"
-                  className="mt-8 inline-flex min-h-12 items-center gap-2 rounded-full bg-[var(--color-accent)] px-7 text-base font-bold text-[var(--color-secondary)] transition-colors hover:brightness-95"
+                  href="/kindergarten"
+                  className="mt-auto inline-flex items-center gap-2 pt-8 font-bold text-[#B36B00] hover:underline"
                 >
-                  체험교육 문의하기
+                  안전체험 자세히 보기
                   <ArrowRight aria-hidden="true" size={18} />
                 </Link>
+              </div>
+            </Reveal>
+
+            <Reveal delay={100}>
+              <div className="flex h-full flex-col rounded-2xl border-t-4 border-[var(--color-primary)] bg-[var(--color-surface)] p-8 shadow-sm sm:p-10">
+                <h3 className="text-2xl font-black text-[var(--color-text)]">초·중등 장애인식개선 체험</h3>
+                <p className="mt-4 font-bold text-[var(--color-primary-hover)]">한 교시 안에 4개 체험존을 모두 체험</p>
+                <p className="mt-4 break-keep leading-relaxed text-[var(--color-text-muted)]">
+                  불편함을 직접 느껴보고, 함께하는 방법을 스스로 찾습니다
+                </p>
+                <Link
+                  href="/elementary"
+                  className="mt-auto inline-flex items-center gap-2 pt-8 font-bold text-[var(--color-primary-hover)] hover:underline"
+                >
+                  장애인식개선 체험 자세히 보기
+                  <ArrowRight aria-hidden="true" size={18} />
+                </Link>
+              </div>
+            </Reveal>
+          </div>
+        </Container>
+      </section>
+
+      <section className="bg-[var(--color-surface)] py-20 sm:py-28">
+        <Container>
+          <Reveal className="text-center">
+            <Kicker>세 가지 약속</Kicker>
+          </Reveal>
+          <div className="mt-12 grid gap-10 md:grid-cols-3">
+            {PROMISES.map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <Reveal key={item.title} delay={index * 100} className="text-center">
+                  <span className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[var(--color-primary-tint)] text-[var(--color-primary)]">
+                    <Icon aria-hidden="true" size={28} />
+                  </span>
+                  <h3 className="mt-6 text-xl font-black text-[var(--color-text)]">{item.title}</h3>
+                  <p className="mt-3 break-keep leading-relaxed text-[var(--color-text-muted)]">{item.desc}</p>
+                </Reveal>
+              );
+            })}
+          </div>
+        </Container>
+      </section>
+
+      <section className="bg-[var(--color-surface-alt)] py-20 sm:py-28">
+        <Container>
+          <Reveal className="text-center">
+            <Kicker>숫자로 보는 진행 방식</Kicker>
+          </Reveal>
+          <div className="mt-12 grid gap-10 text-center md:grid-cols-3">
+            {STATS.map((item, index) => (
+              <Reveal key={item.label} delay={index * 100}>
+                <p className="text-5xl font-black text-[var(--color-primary)] sm:text-6xl">
+                  <CountUp to={item.value} suffix={item.suffix} />
+                </p>
+                <p className="mt-3 break-keep text-[var(--color-text-muted)]">{item.label}</p>
               </Reveal>
-            </div>
-          </Container>
-        </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="relative overflow-hidden bg-gradient-to-r from-[#F2A126] to-[var(--color-primary)] py-24 text-white">
+        <Container className="text-center">
+          <Reveal>
+            <h2 className="text-balance break-keep text-3xl font-black leading-tight [text-shadow:0_2px_12px_rgb(0_0_0_/_25%)] sm:text-4xl">
+              우리 학교, 우리 유치원에도 찾아갈게요
+            </h2>
+            <p className="mt-5 break-keep text-lg text-white [text-shadow:0_1px_10px_rgb(0_0_0_/_25%)]">
+              문의 한 번으로 일정과 진행 방식까지 안내해 드립니다
+            </p>
+          </Reveal>
+          <Reveal delay={100} className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <Link
+              href="/contact"
+              className="inline-flex min-h-12 items-center rounded-full bg-white px-8 text-base font-bold text-[var(--color-primary)] transition-colors hover:brightness-95"
+            >
+              문의 양식 작성하기
+            </Link>
+            <a
+              href="tel:0312368410"
+              className="inline-flex min-h-12 items-center gap-2 rounded-full border-2 border-white px-8 text-base font-bold text-white transition-colors hover:bg-white/10"
+            >
+              <Phone aria-hidden="true" size={18} />
+              031-236-8410
+            </a>
+          </Reveal>
+        </Container>
       </section>
     </>
   );
