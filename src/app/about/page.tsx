@@ -69,7 +69,7 @@ export default function AboutPage() {
             fill
             priority
             sizes="100vw"
-            className="bg-[#10141c] object-contain brightness-95"
+            className="object-cover object-top brightness-95"
           />
 
           <Container className="absolute inset-x-0 bottom-0 pb-6 sm:pb-20 lg:pb-24">
