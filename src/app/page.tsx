@@ -22,6 +22,7 @@ export default function Home() {
             className="object-cover object-top"
           />
           <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#fdfaf5] to-transparent" />
+          <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#fdfaf5]/95 to-transparent" />
         </div>
 
         <div className="absolute inset-x-0 bottom-0 top-24 hidden sm:block">
@@ -44,7 +45,7 @@ export default function Home() {
           />
         </div>
 
-        <Container className="relative pt-[440px] pb-12 sm:pt-20 sm:pb-20 lg:py-28">
+        <Container className="relative pt-[370px] pb-12 sm:pt-20 sm:pb-20 lg:py-28">
           <div className="relative mx-auto w-full text-center font-pretendard sm:w-[min(760px,70vw)] [text-shadow:0_1px_6px_rgb(0_0_0_/_5%)]">
             <p
               className="hero-anim mb-6 text-[15px] font-medium tracking-[-0.01em] text-[#555A60] sm:text-[20px] sm:font-semibold sm:text-[#111111]"
