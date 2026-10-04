@@ -42,34 +42,28 @@ export default function Home() {
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse 42% 50% at 50% 50%, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.45) 45%, rgba(255,255,255,0) 100%)",
+              "linear-gradient(90deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.52) 35%, rgba(255,255,255,0.72) 50%, rgba(255,255,255,0.52) 65%, rgba(255,255,255,0.10) 100%)",
           }}
         />
 
         <Container className="relative pt-14 pb-24 sm:py-20 lg:py-28">
-          <div className="relative mx-auto w-[min(840px,70vw)] text-center font-pretendard [text-shadow:0_2px_10px_rgb(0_0_0_/_8%)]">
+          <div className="relative mx-auto w-[min(840px,70vw)] text-center font-pretendard [text-shadow:0_1px_8px_rgb(0_0_0_/_6%)]">
             <p
-              className="hero-anim mb-6 font-semibold tracking-[0.02em] text-[#2E3138]"
-              style={{
-                animationDelay: "50ms",
-                fontSize: "max(13px, calc(clamp(38px, 4.2vw, 76px) * 0.25))",
-                fontFamily: '"SUIT", "Pretendard", sans-serif',
-              }}
+              className="hero-anim mb-6 text-[16px] font-medium tracking-[-0.01em] text-[#555A60]"
+              style={{ animationDelay: "50ms" }}
             >
               아이들의 오늘이, 더 안전하고 더 따뜻한 내일이 되도록
             </p>
             <h1
-              className="text-balance text-[clamp(38px,4.2vw,76px)] font-extrabold leading-[1.15] tracking-[-0.03em] text-[#111111] [word-break:keep-all]"
+              className="text-balance text-[clamp(52px,4.5vw,78px)] font-extrabold leading-[1.12] tracking-[-0.045em] [word-break:keep-all]"
               style={{ fontFamily: '"SUIT", "Pretendard", sans-serif' }}
             >
-              <span className="hero-anim inline-block text-[#111111]" style={{ animationDelay: "100ms" }}>
+              <span className="hero-anim inline-block text-[#202124]" style={{ animationDelay: "100ms" }}>
                 체험으로 배우는
               </span>
               <br />
-              <span className="hero-anim inline-block" style={{ animationDelay: "200ms" }}>
-                <span className="text-[#E07800]">안전</span>
-                <span className="text-[#111111]">과</span>{" "}
-                <span className="text-[var(--color-primary)]">공감</span>
+              <span className="hero-anim inline-block text-[#4B32B8]" style={{ animationDelay: "200ms" }}>
+                안전과 공감
               </span>
             </h1>
             <div
@@ -78,7 +72,7 @@ export default function Home() {
               style={{ animationDelay: "250ms" }}
             />
             <div
-              className="hero-anim mx-auto mt-7 text-[clamp(17px,1.25vw,22px)] font-medium leading-[1.65] tracking-[-0.02em] text-[rgb(47_49_54_/_78%)]"
+              className="hero-anim mx-auto mt-7 text-[18px] font-medium leading-[1.7] tracking-[-0.02em] text-[#555A60]"
               style={{ animationDelay: "300ms" }}
             >
               <p>
@@ -90,7 +84,7 @@ export default function Home() {
             <div className="hero-anim mt-8" style={{ animationDelay: "350ms" }}>
               <Link
                 href="/contact"
-                className="inline-flex min-h-12 items-center rounded-full border-2 border-[#2a2a3a] bg-white/60 px-8 text-base font-bold text-[#111111] transition-colors hover:bg-[#2a2a3a] hover:text-white"
+                className="inline-flex min-h-12 items-center rounded-full bg-[#F5A623] px-8 text-base font-bold text-[#111111] transition-colors hover:bg-[#E89512]"
               >
                 교육 문의하기 →
               </Link>
