@@ -45,8 +45,10 @@ export function InquiryForm() {
       school: String(data.get("school") ?? ""),
       age: String(data.get("age") ?? ""),
       headcount: String(data.get("headcount") ?? ""),
+      sessions: String(data.get("sessions") ?? ""),
       grades: data.getAll("grade").map(String).join(", "),
       classCount: String(data.get("classCount") ?? ""),
+      periods: String(data.get("periods") ?? ""),
       name: String(data.get("name") ?? ""),
       phone: String(data.get("phone") ?? ""),
       email: String(data.get("email") ?? ""),
@@ -173,6 +175,20 @@ export function InquiryForm() {
                 className={inputClass}
               />
             </div>
+            <div>
+              <label htmlFor="sessions" className={labelClass}>
+                희망 회차 (회)
+              </label>
+              <input
+                id="sessions"
+                name="sessions"
+                type="number"
+                min={1}
+                required
+                placeholder="예: 2"
+                className={inputClass}
+              />
+            </div>
           </div>
         </section>
       )}
@@ -204,19 +220,35 @@ export function InquiryForm() {
             </div>
           </fieldset>
 
-          <div>
-            <label htmlFor="classCount" className={labelClass}>
-              학급수
-            </label>
-            <input
-              id="classCount"
-              name="classCount"
-              type="number"
-              min={1}
-              required
-              placeholder="예: 2"
-              className={inputClass}
-            />
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div>
+              <label htmlFor="classCount" className={labelClass}>
+                학급수
+              </label>
+              <input
+                id="classCount"
+                name="classCount"
+                type="number"
+                min={1}
+                required
+                placeholder="예: 2"
+                className={inputClass}
+              />
+            </div>
+            <div>
+              <label htmlFor="periods" className={labelClass}>
+                희망 교시 수 (교시)
+              </label>
+              <input
+                id="periods"
+                name="periods"
+                type="number"
+                min={1}
+                required
+                placeholder="예: 2"
+                className={inputClass}
+              />
+            </div>
           </div>
         </section>
       )}

@@ -14,8 +14,22 @@ export async function POST(request: Request) {
   }
 
   const body = await request.json();
-  const { area, programType, school, grades, age, headcount, classCount, name, phone, email, date, message } =
-    body as Record<string, string>;
+  const {
+    area,
+    programType,
+    school,
+    grades,
+    age,
+    headcount,
+    sessions,
+    classCount,
+    periods,
+    name,
+    phone,
+    email,
+    date,
+    message,
+  } = body as Record<string, string>;
 
   if (!area || !programType || !school || !name || !phone || !email) {
     return NextResponse.json({ error: "필수 항목을 입력해 주세요." }, { status: 400 });
@@ -30,7 +44,9 @@ export async function POST(request: Request) {
     grades ? `학년: ${grades}` : "",
     age ? `연령: ${age}` : "",
     headcount ? `인원: ${headcount}명` : "",
+    sessions ? `희망 회차: ${sessions}회` : "",
     classCount ? `학급수: ${classCount}` : "",
+    periods ? `희망 교시 수: ${periods}교시` : "",
     `담당 선생님: ${name}`,
     `연락처: ${phone}`,
     `이메일: ${email}`,
