@@ -62,7 +62,7 @@ export default async function KindergartenTopicPage({ params }: Props) {
               className="text-[clamp(2rem,5vw,4.25rem)] leading-tight text-white [text-shadow:0_2px_12px_rgb(0_0_0_/_45%)]"
               style={{ fontFamily: '"Black Han Sans", sans-serif' }}
             >
-              <span style={{ color: topic.heroAccent }}>{topic.title}</span> 체험
+              <span style={{ color: topic.heroAccent }}>{topic.title}</span> <span className="text-white">체험</span>
             </h1>
             <p className="max-w-[24em] text-base font-medium leading-relaxed text-white [text-shadow:0_1px_8px_rgb(0_0_0_/_45%)] sm:text-lg">
               {topic.heroLead}
