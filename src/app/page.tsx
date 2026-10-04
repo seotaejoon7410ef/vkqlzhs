@@ -12,7 +12,7 @@ export default function Home() {
         id="top"
         className="on-dark relative -mt-40 block min-h-[760px] overflow-hidden bg-[#fdfaf5] text-white sm:mt-0 sm:flex sm:min-h-[700px] sm:items-center sm:pt-24 lg:min-h-[800px]"
       >
-        <div className="absolute inset-x-0 -top-10 bottom-0 sm:hidden">
+        <div className="absolute inset-x-0 -top-20 bottom-0 sm:hidden">
           <Image
             src="/hero-mobile-top.jpg"
             alt="유치원 안전체험과 학교 장애인식개선 체험 현장"
