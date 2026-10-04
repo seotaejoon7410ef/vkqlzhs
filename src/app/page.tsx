@@ -27,7 +27,7 @@ export default function Home() {
             className="pointer-events-none absolute inset-0"
             style={{
               background:
-                "linear-gradient(90deg, rgba(20,20,20,0.05) 0%, rgba(255,255,255,0.08) 30%, rgba(255,255,255,0.18) 50%, rgba(255,255,255,0.08) 70%, rgba(20,20,20,0.05) 100%)",
+                "radial-gradient(ellipse 40% 55% at 50% 50%, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.45) 50%, rgba(255,255,255,0) 100%)",
             }}
           />
         </div>
