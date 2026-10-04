@@ -10,22 +10,8 @@ export default function Home() {
     <>
       <section
         id="top"
-        className="on-dark relative flex min-h-[700px] items-start overflow-hidden text-white sm:min-h-[640px] sm:items-center lg:min-h-[760px]"
+        className="on-dark relative block overflow-hidden bg-[#fdfaf5] text-white sm:flex sm:min-h-[640px] sm:items-center sm:bg-none lg:min-h-[760px]"
       >
-        {/* 배경 사진: 실제 체험교육 현장 사진.
-            사진이 화면 폭 대비 훨씬 넓어서(2.12:1), 세로로 좁고 긴 모바일
-            화면에서 가운데를 기준으로 자르면 인물 없는 빈 배경만 남습니다.
-            모바일에서는 오른쪽 끝(인물이 있는 쪽)까지 밀어서 보여주고,
-            화면이 넓어지는 sm 이상부터는 원래 구도(가운데)로 되돌립니다. */}
-        <Image
-          src="/hero-reference.jpg"
-          alt=""
-          aria-hidden="true"
-          fill
-          priority
-          sizes="100vw"
-          className="hero-ken-burns object-cover object-[4%_center] sm:hidden"
-        />
         <Image
           src="/hero-reference.jpg"
           alt=""
@@ -38,19 +24,14 @@ export default function Home() {
 
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0"
+          className="pointer-events-none absolute inset-0 hidden sm:block"
           style={{
             background:
               "linear-gradient(90deg, rgba(20,20,20,0.05) 0%, rgba(255,255,255,0.08) 30%, rgba(255,255,255,0.18) 50%, rgba(255,255,255,0.08) 70%, rgba(20,20,20,0.05) 100%)",
           }}
         />
 
-        <div
-          aria-hidden="true"
-          className="absolute inset-x-0 top-0 h-[60%] bg-gradient-to-b from-[#fdfaf5] via-[#fdfaf5]/85 to-transparent sm:hidden"
-        />
-
-        <Container className="relative pt-28 pb-16 sm:py-20 lg:py-28">
+        <Container className="relative pt-24 pb-12 sm:py-20 lg:py-28">
           <div className="relative mx-auto w-full text-center font-pretendard sm:w-[min(760px,70vw)] [text-shadow:0_1px_6px_rgb(0_0_0_/_5%)]">
             <p
               className="hero-anim mb-6 text-[16px] font-semibold tracking-[-0.01em] text-[#111111] sm:text-[20px]"
@@ -59,7 +40,7 @@ export default function Home() {
               아이들의 오늘이, 더 안전하고 더 따뜻한 내일이 되도록
             </p>
             <h1
-              className="text-balance text-[38px] font-extrabold leading-[1.12] tracking-[-0.045em] [word-break:keep-all] sm:text-[clamp(54px,4.8vw,82px)]"
+              className="text-balance text-[clamp(38px,11vw,52px)] font-extrabold leading-[1.15] tracking-[-0.045em] [word-break:keep-all] sm:text-[clamp(54px,4.8vw,82px)] sm:leading-[1.12]"
               style={{ fontFamily: '"SUIT", "Pretendard", sans-serif' }}
             >
               <span className="hero-anim inline-block text-[#202124]" style={{ animationDelay: "100ms" }}>
@@ -71,7 +52,7 @@ export default function Home() {
               </span>
             </h1>
             <div
-              className="hero-anim mx-auto mt-7 text-[16px] font-bold leading-[1.65] tracking-[-0.02em] text-[#111111] sm:text-[19px]"
+              className="hero-anim mx-auto mt-7 text-[15px] font-medium leading-[1.65] tracking-[-0.02em] text-[#555A60] sm:text-[19px] sm:font-bold sm:text-[#111111]"
               style={{ animationDelay: "300ms" }}
             >
               <p>
@@ -83,10 +64,31 @@ export default function Home() {
             <div className="hero-anim mt-8" style={{ animationDelay: "350ms" }}>
               <Link
                 href="/contact"
-                className="inline-flex items-center rounded-full bg-[#F5A623] px-[30px] py-3.5 text-base font-bold text-[#111111] transition duration-200 hover:-translate-y-0.5 hover:bg-[#E89512]"
+                className="inline-flex items-center rounded-full bg-[#F5A623] px-7 py-3.5 text-base font-bold text-[#111111] transition duration-200 hover:-translate-y-0.5 hover:bg-[#E89512] sm:px-[30px]"
               >
                 교육 문의하기 →
               </Link>
+            </div>
+          </div>
+
+          <div className="mt-10 flex flex-col gap-3 sm:hidden">
+            <div className="relative h-[220px] w-full overflow-hidden rounded-2xl">
+              <Image
+                src="/hero-reference.jpg"
+                alt="유치원 안전체험 현장"
+                fill
+                sizes="100vw"
+                className="object-cover object-[0%_center]"
+              />
+            </div>
+            <div className="relative h-[220px] w-full overflow-hidden rounded-2xl">
+              <Image
+                src="/hero-reference.jpg"
+                alt="초·중학교 장애인식개선 체험 현장"
+                fill
+                sizes="100vw"
+                className="object-cover object-[100%_center]"
+              />
             </div>
           </div>
         </Container>

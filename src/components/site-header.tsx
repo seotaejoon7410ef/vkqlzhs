@@ -207,7 +207,7 @@ export function SiteHeader() {
       {/* 모바일: 탭하지 않아도 항상 보이는 가로 스크롤 메뉴. 대분류를 누르면 하위 메뉴가 아래에 펼쳐짐 */}
       <nav
         aria-label="주요 메뉴 (모바일)"
-        className={`lg:hidden ${solid ? "border-t border-[var(--color-border)]" : ""}`}
+        className="hidden"
       >
         <div className="scrollbar-hide flex gap-2 overflow-x-auto px-6 py-3">
           {NAV_GROUPS.map((item) =>
