@@ -26,7 +26,7 @@ export default function Home() {
             className="absolute inset-0"
             style={{
               background:
-                "linear-gradient(to bottom, rgba(253,250,245,0.92) 0%, rgba(253,250,245,0.6) 35%, rgba(253,250,245,0) 60%)",
+                "linear-gradient(to bottom, rgba(253,250,245,0.92) 0%, rgba(253,250,245,0.85) 45%, rgba(253,250,245,0.4) 62%, rgba(253,250,245,0) 75%)",
             }}
           />
         </div>
