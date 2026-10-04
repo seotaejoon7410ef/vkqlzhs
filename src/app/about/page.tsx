@@ -63,11 +63,9 @@ export default function AboutPage() {
       {/* 1. HERO — 실제 현장 사진 + 감성적인 카피 */}
       <section id="top" className="on-dark relative isolate overflow-hidden">
         <div className="relative min-h-[280px] w-full sm:min-h-[640px] lg:min-h-[760px]">
-          {/* 실제 체험교육 현장 사진 — 지체장애 공감 체험(휠체어)과
-              시각장애 공감 체험 부스가 설치된 체육관 */}
           <Image
-            src="/about-hero-2.jpg"
-            alt="행복한길잡이 체험교육 현장 — 지체장애 공감 체험(휠체어)과 시각장애 공감 체험 부스가 설치된 체육관"
+            src="/about-hero-3.jpg"
+            alt="행복한길잡이 체험교육 현장 — 시각장애 공감 체험(흰지팡이)을 하는 모습"
             fill
             priority
             sizes="100vw"
