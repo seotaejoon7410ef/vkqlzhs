@@ -12,6 +12,18 @@ export default function Home() {
         id="top"
         className="on-dark relative block overflow-hidden bg-[#fdfaf5] text-white sm:flex sm:min-h-[700px] sm:items-center sm:pt-24 lg:min-h-[800px]"
       >
+        <div className="absolute inset-x-0 top-0 h-[360px] sm:hidden">
+          <Image
+            src="/hero-mobile-poster.jpg"
+            alt="유치원 안전체험과 학교 장애인식개선 체험 현장"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-top"
+          />
+          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#fdfaf5] to-transparent" />
+        </div>
+
         <div className="absolute inset-x-0 bottom-0 top-24 hidden sm:block">
           <Image
             src="/hero-reference.jpg"
@@ -32,7 +44,7 @@ export default function Home() {
           />
         </div>
 
-        <Container className="relative pt-10 pb-12 sm:py-20 lg:py-28">
+        <Container className="relative pt-[280px] pb-12 sm:pt-20 sm:pb-20 lg:py-28">
           <div className="relative mx-auto w-full text-center font-pretendard sm:w-[min(760px,70vw)] [text-shadow:0_1px_6px_rgb(0_0_0_/_5%)]">
             <p
               className="hero-anim mb-6 text-[15px] font-medium tracking-[-0.01em] text-[#555A60] sm:text-[20px] sm:font-semibold sm:text-[#111111]"
@@ -73,17 +85,6 @@ export default function Home() {
           </div>
         </Container>
 
-        <div className="relative mt-8 sm:hidden">
-          <Image
-            src="/hero-mobile-poster.jpg"
-            alt="유치원 안전체험과 학교 장애인식개선 체험 현장"
-            width={1029}
-            height={841}
-            sizes="100vw"
-            className="h-auto w-full"
-          />
-          <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-[#fdfaf5] to-transparent" />
-        </div>
 
         {/* 스크롤 유도 — 모바일은 화면이 좁아 다른 요소와 겹치기 쉬워 숨기고,
             sm 이상에서만 보여줍니다. */}

@@ -54,7 +54,7 @@ export function SiteHeader() {
     };
   }, []);
 
-  const solid = isNarrow || scrolled || menuOpen || forceSolid;
+  const solid = (isNarrow && pathname !== "/") || scrolled || menuOpen || forceSolid;
 
   const activeGroup = NAV_GROUPS.find(
     (item) => isNavChildren(item) && item.label === openGroup,
