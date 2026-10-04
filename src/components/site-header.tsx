@@ -75,8 +75,8 @@ export function SiteHeader() {
           <Image
             src="/logo-lockup.png"
             alt="행복한길잡이 체험교육센터 로고"
-            width={236}
-            height={92}
+            width={329}
+            height={114}
             priority
             className="h-16 w-auto sm:h-20"
           />

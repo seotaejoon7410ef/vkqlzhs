@@ -16,8 +16,8 @@ export function SiteFooter() {
           <Image
             src="/logo-lockup.png"
             alt="행복한길잡이 체험교육센터 로고"
-            width={236}
-            height={92}
+            width={329}
+            height={114}
             className="h-16 w-auto self-start sm:h-20 lg:mt-6 lg:self-auto"
           />
 
