@@ -92,7 +92,7 @@ export default function AboutPage() {
                   아이가 직접 해보며 위험한 순간 스스로 지키는 법을 익힙니다
                 </p>
                 <Link
-                  href="/kindergarten"
+                  href="/kindergarten/traffic"
                   className="mt-auto inline-flex items-center gap-2 pt-8 font-bold text-[#B36B00] hover:underline"
                 >
                   안전체험 자세히 보기
