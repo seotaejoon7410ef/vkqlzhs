@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import {
   Accessibility,
@@ -119,18 +120,18 @@ const OPERATION_POINTS = [
 export default function MiddlePage() {
   return (
     <>
-      {/* 1. HERO — 홈/회사소개/초등학교 체험과 동일한 박스 크기.
-          실제 현장 사진이 준비되면 아래 placeholder를
-          <Image src="/middle-hero.jpg" ... /> 로 교체하세요. */}
       <section id="top" className="on-dark relative isolate overflow-hidden">
-        <div className="relative min-h-[480px] w-full bg-gradient-to-br from-[var(--color-secondary-hover)] via-[var(--color-secondary)] to-[var(--color-primary)] sm:min-h-[640px] lg:min-h-[760px]">
-          <div
+        <div className="relative min-h-[480px] w-full sm:min-h-[640px] lg:min-h-[760px]">
+          <Image
+            src="/middle-hero.jpg"
+            alt=""
             aria-hidden="true"
-            className="absolute inset-x-0 top-10 flex flex-col items-center justify-center gap-2 text-white/80 sm:top-14"
-          >
-            <Camera size={28} />
-            <p className="text-sm">중학교 체험 현장 사진 추가 필요</p>
-          </div>
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+          <div className="hero-overlay absolute inset-0" />
 
           <Container className="absolute inset-x-0 bottom-0 pb-14 sm:pb-20 lg:pb-24">
             <div className="max-w-2xl">
