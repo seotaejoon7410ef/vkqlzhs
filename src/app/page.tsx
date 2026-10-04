@@ -12,6 +12,12 @@ export default function Home() {
         id="top"
         className="on-dark relative -mt-40 block min-h-[760px] overflow-hidden bg-[#fdfaf5] text-white sm:mt-0 sm:flex sm:min-h-[700px] sm:items-center sm:pt-24 lg:min-h-[800px]"
       >
+        <div
+          aria-hidden="true"
+          className="absolute inset-x-0 top-0 h-[150px] sm:hidden"
+          style={{ background: "linear-gradient(to bottom, #fdfaf5 0%, #f8f0e6 100%)" }}
+        />
+
         <div className="absolute inset-x-0 top-[130px] h-[693px] sm:hidden">
           <Image
             src="/hero-mobile-full.jpg"
