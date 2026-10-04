@@ -31,7 +31,7 @@ export default function Home() {
           }}
         />
 
-        <Container className="relative pt-24 pb-12 sm:py-20 lg:py-28">
+        <Container className="relative pt-10 pb-12 sm:py-20 lg:py-28">
           <div className="relative mx-auto w-full text-center font-pretendard sm:w-[min(760px,70vw)] [text-shadow:0_1px_6px_rgb(0_0_0_/_5%)]">
             <p
               className="hero-anim mb-6 text-[16px] font-semibold tracking-[-0.01em] text-[#111111] sm:text-[20px]"
