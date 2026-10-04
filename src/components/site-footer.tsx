@@ -21,7 +21,7 @@ export function SiteFooter() {
             className="h-16 w-auto self-start sm:h-20 lg:mt-6 lg:self-auto"
           />
 
-          <nav aria-label="바로가기" className="flex flex-wrap items-start gap-x-12 gap-y-6 lg:justify-end lg:pt-5">
+          <nav aria-label="바로가기" className="hidden flex-wrap items-start gap-x-12 gap-y-6 lg:flex lg:justify-end lg:pt-5">
             {NAV_GROUPS.map((item) =>
               isNavChildren(item) ? (
                 <div key={item.label} className="flex flex-col gap-3">
@@ -44,6 +44,34 @@ export function SiteFooter() {
                 </div>
               ),
             )}
+          </nav>
+
+          <nav aria-label="바로가기" className="grid grid-cols-2 gap-x-6 gap-y-8 lg:hidden">
+            {NAV_GROUPS.map((item) =>
+              isNavChildren(item) ? (
+                <div key={item.label} className="flex flex-col gap-3">
+                  <p className="text-lg font-bold text-white">{item.label}</p>
+                  <ul className="flex flex-col gap-2.5 text-base font-bold">
+                    {item.children.map((child) => (
+                      <li key={child.href}>
+                        <Link className="hover:underline" href={child.href}>
+                          {child.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null,
+            )}
+            <div className="col-span-2 flex flex-wrap gap-x-8 gap-y-3 border-t border-white/15 pt-6 text-base font-bold">
+              {NAV_GROUPS.map((item) =>
+                isNavChildren(item) ? null : (
+                  <Link key={item.href} className="hover:underline" href={item.href}>
+                    {item.label}
+                  </Link>
+                ),
+              )}
+            </div>
           </nav>
         </div>
 
