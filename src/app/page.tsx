@@ -52,7 +52,7 @@ export default function Home() {
         </div>
 
         <Container className="relative py-10 sm:pt-20 sm:pb-20 lg:py-28">
-          <div className="relative mx-auto -mt-10 w-full text-center font-pretendard sm:mt-0 sm:w-[min(760px,70vw)] [text-shadow:0_1px_6px_rgb(0_0_0_/_5%)]">
+          <div className="relative mx-auto -mt-24 w-full text-center font-pretendard sm:mt-0 sm:w-[min(760px,70vw)] [text-shadow:0_1px_6px_rgb(0_0_0_/_5%)]">
             <p
               className="hero-anim mb-3 text-[15px] sm:mb-6 font-bold tracking-[-0.01em] text-[#111111] sm:text-[20px] sm:font-semibold"
               style={{ animationDelay: "50ms" }}
