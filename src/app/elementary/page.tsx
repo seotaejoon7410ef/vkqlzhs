@@ -59,7 +59,7 @@ export default function ElementaryPage() {
             fill
             priority
             sizes="100vw"
-            className="object-cover object-[center_22%] brightness-95 sm:scale-[1.12] sm:translate-x-[-3%]"
+            className="object-cover object-[center_22%] brightness-95"
           />
 
           <Container className="absolute inset-x-0 bottom-0 pb-3 sm:pb-8 lg:pb-10">
