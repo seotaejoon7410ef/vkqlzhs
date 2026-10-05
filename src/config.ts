@@ -27,7 +27,7 @@ const ALL_NAV_GROUPS: NavGroup[] = [
     ],
   },
   { href: "/faq", label: "FAQ" },
-  { href: "/contact", label: "문의하기" },
+  { href: "/contact", label: "체험문의" },
 ];
 
 export function isNavChildren(item: NavGroup): item is { label: string; children: NavLeaf[] } {
