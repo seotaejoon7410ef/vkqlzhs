@@ -137,21 +137,20 @@ export default function MiddlePage() {
             style={{ background: "linear-gradient(to top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 55%)" }}
           />
 
-          <Container className="absolute inset-x-0 bottom-0 pb-14 sm:pb-20 lg:pb-24">
+          <Container className="absolute inset-x-0 bottom-0 pb-3 sm:pb-8 lg:pb-10">
             <div className="max-w-2xl">
               <Reveal>
-                <h1 className="text-balance text-3xl font-black leading-tight text-white sm:text-5xl">
-                  생각이 깊어지는 시기,
-                  <br />
-                  다름을 바라보는 시선도 함께 자랍니다.
+                <h1 className="text-balance text-xl font-black leading-tight text-white [text-shadow:0_2px_16px_rgb(0_0_0_/_60%)] sm:text-5xl">
+                  중학교 장애인식개선 체험
                 </h1>
+                <p className="mt-2 text-sm font-bold text-[var(--color-accent)] [text-shadow:0_1px_10px_rgb(0_0_0_/_60%)] sm:mt-3 sm:text-base">
+                  중학교 대상 프로그램입니다
+                </p>
               </Reveal>
               <Reveal delay={100}>
-                <p className="mt-6 max-w-[36em] leading-relaxed text-white/85">
-                  중학생 시기는 자신만의 가치관과 사회를 바라보는 관점이
-                  만들어지는 시기입니다. 행복한길잡이는 직접 경험하고
-                  질문하며, 장애를 바라보는 자신의 시선을 스스로 돌아볼
-                  수 있도록 돕습니다.
+                <p className="mt-2 max-w-[32em] text-sm leading-snug text-white [text-shadow:0_1px_10px_rgb(0_0_0_/_60%)] sm:mt-5 sm:text-base sm:leading-relaxed">
+                  학급 단위로 학교를 직접 찾아가, 몸으로 겪고 느끼는
+                  체험으로 진행합니다.
                 </p>
               </Reveal>
             </div>
