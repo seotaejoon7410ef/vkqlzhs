@@ -68,7 +68,7 @@ export default function AboutPage() {
             sizes="100vw"
             className="hidden object-cover sm:block"
           />
-          <div className="absolute inset-0 flex flex-col justify-start px-6 pt-[14%] sm:justify-center sm:pt-0 sm:pl-[18%] sm:pr-10">
+          <div className="absolute inset-0 flex flex-col justify-start px-6 pt-[14%] sm:justify-center sm:px-12 sm:pt-0 lg:px-16">
             <Reveal className="max-w-[520px]">
               <p className="text-sm font-bold tracking-wide text-[#F5C518] sm:text-base">
                 체험교육센터 행복한길잡이
