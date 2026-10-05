@@ -25,7 +25,7 @@ export default function AboutPage() {
           />
           <div className="absolute inset-0 mx-auto flex max-w-[1360px] flex-col justify-start px-6 pt-[14%] sm:justify-center sm:pt-0 lg:px-10">
             <Reveal className="max-w-[520px]">
-              <p className="text-base font-bold tracking-wide text-[#F5C518] sm:text-lg">
+              <p className="text-lg font-bold tracking-wide text-[#F5C518] sm:text-xl">
                 체험교육센터 행복한길잡이
               </p>
               <h1 className="mt-4 text-4xl leading-[1.15] font-black text-white sm:text-5xl lg:text-6xl">
@@ -35,7 +35,7 @@ export default function AboutPage() {
                 <br />
                 길을 냅니다
               </h1>
-              <p className="mt-6 text-lg text-[#C7CDDA] sm:text-xl">
+              <p className="mt-6 text-xl text-[#C7CDDA] sm:text-2xl">
                 학교로 찾아가는
                 <br className="sm:hidden" />
                 <span className="hidden sm:inline"> </span>
