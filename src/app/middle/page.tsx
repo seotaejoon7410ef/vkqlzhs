@@ -81,7 +81,7 @@ const MIDDLE_PROGRAMS = [
 const PROGRAM_PHOTOS: Record<number, { src: string; alt: string }> = {
   0: {
     src: "/middle-zone-mobility.jpg",
-    alt: "지체장애 공감 체험 배너와 휠체어들 앞에서 강사가 학생들에게 체험 방법을 설명하는 모습",
+    alt: "지체장애 공감 체험 존에서 학생이 휠체어를 탄 친구를 밀어주고, 다른 학생들이 둘러앉아 지켜보는 모습",
   },
   2: {
     src: "/intellectual-zone.jpg",
