@@ -27,7 +27,7 @@ export const ELEMENTARY_ZONES = [
     icon: HeartHandshake,
     title: "지적장애공감체험 존",
     tags: ["협력 과제", "감각 체험"],
-    desc: "사용할 수 있는 감각이 제한된 상황에서 친구와 협력해 과제를 해결해요.",
+    desc: "같은 설명도 어렵게 할 때와 쉽게 할 때 결과가 어떻게 달라지는지, 짝과 함께 컵블록을 쌓으며 비교해 봐요.",
   },
   {
     icon: CircleQuestionMark,
