@@ -53,29 +53,35 @@ export default function Home() {
 
         <Container className="relative py-10 sm:pt-20 sm:pb-20 lg:py-28">
           <div className="relative mx-auto -mt-24 w-full text-center font-pretendard sm:mt-0 sm:w-[min(760px,70vw)] [text-shadow:0_1px_6px_rgb(0_0_0_/_5%)]">
-            <p className="mb-3 text-[15px] sm:mb-6 font-bold tracking-[-0.01em] text-[#111111] sm:text-[20px] sm:font-semibold">
+            <p
+              className="hero-anim mb-3 text-[15px] sm:mb-6 font-bold tracking-[-0.01em] text-[#111111] sm:text-[20px] sm:font-semibold"
+              style={{ animationDelay: "50ms" }}
+            >
               아이들의 오늘이, 더 따뜻한 내일이 되도록
             </p>
             <h1
               className="text-balance text-[clamp(26px,7vw,32px)] font-extrabold leading-[1.25] tracking-[-0.03em] [word-break:keep-all] sm:text-[clamp(40px,3.4vw,60px)] sm:leading-[1.25]"
               style={{ fontFamily: '"SUIT", "Pretendard", sans-serif' }}
             >
-              <span className="inline-block text-[#202124]">
+              <span className="hero-anim inline-block text-[#202124]" style={{ animationDelay: "100ms" }}>
                 체험으로 배우는 장애이해,
               </span>
               <br />
-              <span className="inline-block text-[#4B32B8]">
+              <span className="hero-anim inline-block text-[#4B32B8]" style={{ animationDelay: "200ms" }}>
                 공감으로 이어지는 변화
               </span>
             </h1>
-            <div className="mx-auto mt-1 max-w-[280px] sm:mt-7 sm:max-w-none text-[15px] font-bold leading-[1.65] tracking-[-0.02em] text-[#111111] sm:text-[19px]">
+            <div
+              className="hero-anim mx-auto mt-1 max-w-[280px] sm:mt-7 sm:max-w-none text-[15px] font-bold leading-[1.65] tracking-[-0.02em] text-[#111111] sm:text-[19px]"
+              style={{ animationDelay: "300ms" }}
+            >
               <p>
                 초·중학교로 찾아가는 장애인식개선 체험교육
                 <br />
                 아이들의 눈높이에 맞춘 자체 개발 프로그램을 제공합니다.
               </p>
             </div>
-            <div className="mt-3 sm:mt-8">
+            <div className="hero-anim mt-3 sm:mt-8" style={{ animationDelay: "350ms" }}>
               <Link
                 href="/contact"
                 className="inline-flex items-center rounded-full bg-[#F5A623] px-7 py-3.5 text-base font-bold text-[#111111] transition duration-200 hover:-translate-y-0.5 hover:bg-[#E89512] sm:px-[30px]"

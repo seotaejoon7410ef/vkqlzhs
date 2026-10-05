@@ -148,9 +148,9 @@ export function SiteHeader() {
         <div className="hidden shrink-0 items-center lg:flex">
           <Link
             href="/contact"
-            className="flex h-11 w-[150px] shrink-0 items-center justify-center gap-1.5 whitespace-nowrap rounded-full bg-[#463C94] text-sm font-bold text-white transition-colors hover:brightness-110"
+            className="flex h-14 w-[190px] shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-full bg-[#463C94] text-base font-bold text-white transition-colors hover:brightness-110"
           >
-            <Phone aria-hidden="true" size={16} />
+            <Phone aria-hidden="true" size={20} />
             {PHONE_NUMBER}
           </Link>
         </div>
