@@ -1,47 +1,11 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Camera } from "lucide-react";
 import { Container } from "@/components/container";
 import { Reveal } from "@/components/reveal";
 
 export const metadata: Metadata = {
   title: "회사소개",
 };
-
-// 사진이 아직 없는 자리를 표시하는 자리표시자.
-// role="img" + aria-label로 화면낭독기에는 실제 사진이 있을 때와
-// 동일하게 대체 설명이 읽히게 하고, 보이는 텍스트는 중복 안내를
-// 막기 위해 aria-hidden으로 숨깁니다.
-function PhotoPlaceholder({
-  alt,
-  className = "",
-  showLabel = true,
-}: {
-  alt: string;
-  className?: string;
-  showLabel?: boolean;
-}) {
-  return (
-    <div
-      role="img"
-      aria-label={alt}
-      className={`flex flex-col items-center justify-center gap-2 rounded-sm border border-dashed border-[var(--color-border)] ${
-        showLabel
-          ? "bg-[var(--color-surface-alt)] text-[var(--color-text-muted)]"
-          : "bg-[var(--color-bg)]"
-      } ${className}`}
-    >
-      {showLabel && (
-        <>
-          <Camera aria-hidden="true" size={32} />
-          <p aria-hidden="true" className="text-sm">
-            사진 준비 중
-          </p>
-        </>
-      )}
-    </div>
-  );
-}
 
 export default function AboutPage() {
   return (
@@ -160,10 +124,15 @@ export default function AboutPage() {
               </p>
             </Reveal>
             <Reveal delay={100} className="lg:order-1">
-              <PhotoPlaceholder
-                alt="필로티 공간에 체험존이 설치된 모습"
-                className="aspect-[4/3] w-full"
-              />
+              <div className="relative aspect-[1200/1060] w-full overflow-hidden rounded-sm">
+                <Image
+                  src="/about-four-zones.jpg"
+                  alt="시각장애·지체장애·지적장애 공감 체험존과 퀴즈존, 네 가지 체험 사진과 한 교시에 네 존을 모두 체험한다는 안내"
+                  fill
+                  sizes="(min-width: 1024px) 40rem, 90vw"
+                  className="object-contain"
+                />
+              </div>
             </Reveal>
           </div>
         </Container>
