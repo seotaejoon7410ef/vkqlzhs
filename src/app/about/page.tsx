@@ -10,27 +10,18 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      {/* 맨 위 큰 사진 — 노란 블록 그래픽은 장식용 배경(alt 없음)이고,
+      {/* 맨 위 큰 사진 — 장식용 배경 사진(alt 없음)이고,
           제목·문구는 실제 글자로 올려 위치를 자유롭게 조정할 수 있게 합니다. */}
       <section className="on-dark relative isolate overflow-hidden lg:pt-24">
         <div className="relative aspect-[1080/1350] w-full sm:aspect-[1920/720]">
           <Image
-            src="/about-hero-mobile-bg.png"
+            src="/about-hero-bg.jpg"
             alt=""
             aria-hidden="true"
             fill
             priority
             sizes="100vw"
-            className="object-cover sm:hidden"
-          />
-          <Image
-            src="/about-hero-desktop-bg.png"
-            alt=""
-            aria-hidden="true"
-            fill
-            priority
-            sizes="100vw"
-            className="hidden object-cover sm:block"
+            className="object-cover object-[40%_center] sm:object-[70%_center]"
           />
           <div className="absolute inset-0 mx-auto flex max-w-[1360px] flex-col justify-start px-6 pt-[14%] sm:justify-center sm:pt-0 lg:px-10">
             <Reveal className="max-w-[520px]">
