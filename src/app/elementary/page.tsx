@@ -59,11 +59,11 @@ export default function ElementaryPage() {
             fill
             priority
             sizes="100vw"
-            className="object-cover object-[center_22%] brightness-95"
+            className="object-cover object-[center_22%] brightness-95 sm:scale-[1.12] sm:translate-x-[-3%]"
           />
 
           <Container className="absolute inset-x-0 bottom-0 pb-3 sm:pb-8 lg:pb-10">
-            <div className="max-w-2xl sm:pl-10 lg:pl-16">
+            <div className="max-w-2xl">
               <Reveal>
                 <h1 className="text-balance text-xl font-black leading-tight text-white [text-shadow:0_2px_16px_rgb(0_0_0_/_60%)] sm:text-5xl">
                   초·중등 장애인식개선 체험
