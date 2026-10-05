@@ -61,7 +61,7 @@ export default function AboutPage() {
         <Container className="max-w-[820px]">
           <Reveal>
             <h1 className="text-balance text-3xl font-black leading-tight text-[var(--color-text)] sm:text-4xl lg:text-5xl">
-              안전과 공감, 아이들의 마음에 길을 냅니다
+              공감으로, 아이들의 마음에 길을 냅니다
             </h1>
             <p className="mt-8 text-lg leading-[1.8] text-[var(--color-text)]">
               장애를 이해한다는 건 지식을 외우는 일이 아니라 마음이 움직이는

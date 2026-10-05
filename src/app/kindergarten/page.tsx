@@ -1,3 +1,4 @@
+// 메뉴 다시 켤 때 제목과 문구 다시 확인할 것 (안전교육은 2028년 예정)
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
