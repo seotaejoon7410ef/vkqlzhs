@@ -46,13 +46,12 @@ function PhotoPlaceholder({
 export default function AboutPage() {
   return (
     <>
-      {/* 맨 위 큰 사진 — 제목·부제가 그림 안에 이미 디자인되어 있어
-          장식용(alt 없음)으로 넣습니다. 화면낭독기를 위한 실제 제목은
-          바로 아래 h1로 그대로 제공합니다(화면에는 안 보이고 읽히기만 함). */}
+      {/* 맨 위 큰 사진 — 노란 블록 그래픽은 장식용 배경(alt 없음)이고,
+          제목·문구는 실제 글자로 올려 위치를 자유롭게 조정할 수 있게 합니다. */}
       <section className="on-dark relative isolate overflow-hidden lg:pt-24">
         <div className="relative aspect-[1080/1350] w-full sm:aspect-[1920/720]">
           <Image
-            src="/about-hero-mobile.png"
+            src="/about-hero-mobile-bg.png"
             alt=""
             aria-hidden="true"
             fill
@@ -61,7 +60,7 @@ export default function AboutPage() {
             className="object-cover sm:hidden"
           />
           <Image
-            src="/about-hero-desktop.png"
+            src="/about-hero-desktop-bg.png"
             alt=""
             aria-hidden="true"
             fill
@@ -69,14 +68,33 @@ export default function AboutPage() {
             sizes="100vw"
             className="hidden object-cover sm:block"
           />
+          <div className="absolute inset-0 flex flex-col justify-start px-6 pt-[14%] sm:justify-center sm:pt-0 sm:pl-[18%] sm:pr-10">
+            <Reveal className="max-w-[520px]">
+              <p className="text-sm font-bold tracking-wide text-[#F5C518] sm:text-base">
+                체험교육센터 행복한길잡이
+              </p>
+              <h1 className="mt-4 text-4xl leading-[1.15] font-black text-white sm:text-5xl lg:text-6xl">
+                공감으로,
+                <br />
+                아이들의 마음에
+                <br />
+                길을 냅니다
+              </h1>
+              <p className="mt-6 text-base text-[#C7CDDA] sm:text-lg">
+                학교로 찾아가는
+                <br className="sm:hidden" />
+                <span className="hidden sm:inline"> </span>
+                장애인식개선 체험교육
+              </p>
+            </Reveal>
+          </div>
         </div>
       </section>
 
-      {/* 페이지 제목 + 인트로 */}
+      {/* 인트로 */}
       <section className="bg-[var(--color-surface)] py-16 sm:py-20">
         <Container className="max-w-[820px]">
           <Reveal>
-            <h1 className="sr-only">공감으로, 아이들의 마음에 길을 냅니다</h1>
             <p className="text-lg leading-[1.8] text-[var(--color-text)]">
               장애를 이해한다는 건 지식을 외우는 일이 아니라 마음이 움직이는
               일이라고 믿습니다.
