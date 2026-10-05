@@ -166,15 +166,15 @@ export default function ElementaryPage() {
               <Reveal key={zone.title} delay={(index % 2) * 100} className="h-full">
                 <div className="flex h-full flex-col border-t-2 border-[var(--color-text)] pt-6">
                   <div className="flex-1">
-                    <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                    <div className="flex items-baseline gap-3">
                       <span aria-hidden="true" className="text-4xl font-black text-[var(--color-primary)] sm:text-5xl">
                         0{index + 1}
                       </span>
-                      <zone.icon aria-hidden="true" size={22} className="self-center text-[var(--color-primary-hover)]" />
-                      <h3 className="text-4xl font-black text-[var(--color-text)] sm:text-5xl">
-                        {zone.title}
-                      </h3>
+                      <zone.icon aria-hidden="true" size={22} className="text-[var(--color-primary-hover)]" />
                     </div>
+                    <h3 className="mt-3 text-2xl font-black text-[var(--color-text)]">
+                      {zone.title}
+                    </h3>
                     <div className="mt-4 flex flex-wrap gap-2">
                       {zone.tags.map((tag) => (
                         <span
