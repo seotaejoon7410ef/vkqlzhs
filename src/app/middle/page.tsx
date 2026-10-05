@@ -84,8 +84,8 @@ const PROGRAM_PHOTOS: Record<number, { src: string; alt: string }> = {
     alt: "지체장애 공감 체험 존에서 학생이 휠체어를 탄 친구를 밀어주고, 다른 학생들이 둘러앉아 지켜보는 모습",
   },
   2: {
-    src: "/intellectual-zone.jpg",
-    alt: "지적장애 공감 체험 존에서 학생들이 컵블록 쌓기 체험을 하는 모습",
+    src: "/middle-zone-intellectual.jpg",
+    alt: "지적장애 공감 체험 존에서 학생들이 안내 카드를 보며 컵블록 쌓기 체험을 하는 모습",
   },
 };
 
