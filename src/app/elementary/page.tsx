@@ -49,20 +49,18 @@ const ZONE_PHOTOS: Record<number, { src: string; alt: string }> = {
 export default function ElementaryPage() {
   return (
     <>
-      {/* 1. HERO — sm 이상은 홈/회사소개와 동일한 박스 크기로 통일.
-          모바일(sm 미만)만 따로 낮춰서 에어아치 양끝이 잘리지 않게
-          합니다 — 모바일은 한 화면에 페이지 하나만 보이므로 다른
-          페이지와 나란히 비교되지 않아 크기를 달리해도 무방합니다. */}
+      {/* 1. HERO — 사진 원본 비율(1600x1133)에 박스를 맞춰서 화면 전체 폭을
+          꽉 채우면서도 사진이 잘리지 않게(양옆 여백 없음, 아이들도 안 잘림) 합니다. */}
       <section id="top" className="on-dark relative isolate overflow-hidden bg-[var(--color-secondary)]">
-        <div className="relative min-h-[280px] w-full sm:min-h-[640px] lg:min-h-[760px]">
-          {/* 실제 초등학교 장애인식개선의 날 행사 현장 사진 — 사진 전체(아이들 포함)가 잘리지 않도록 contain으로 표시 */}
+        <div className="relative aspect-[1600/1133] w-full">
+          {/* 실제 초등학교 장애인식개선의 날 행사 현장 사진 */}
           <Image
             src="/elementary-hero.jpg"
             alt="장애인식개선의 날 행사장 아치 아래 모인 초등학생들이 밝게 웃으며 브이 포즈를 하고 있다"
             fill
             priority
             sizes="100vw"
-            className="object-contain brightness-95"
+            className="object-cover brightness-95"
           />
 
           <Container className="absolute inset-x-0 bottom-0 pb-6 sm:pb-20 lg:pb-24">
