@@ -57,7 +57,7 @@ export default function ElementaryPage() {
         <div className="relative min-h-[280px] w-full sm:min-h-[640px] lg:min-h-[760px]">
           {/* 실제 초등학교 장애인식개선의 날 행사 현장 사진 */}
           <Image
-            src="/elementary-hero.png"
+            src="/elementary-hero.jpg"
             alt="장애인식개선의 날 행사장 아치 아래 모인 초등학생들이 밝게 웃으며 브이 포즈를 하고 있다"
             fill
             priority
