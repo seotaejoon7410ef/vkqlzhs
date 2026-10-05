@@ -10,7 +10,7 @@ export default function Home() {
     <>
       <section
         id="top"
-        className="on-dark relative flex min-h-[calc(100dvh-160px)] items-center overflow-hidden bg-[#fdfaf5] text-white sm:min-h-[700px] sm:pt-24 lg:min-h-[800px]"
+        className="on-dark relative flex min-h-[calc(100dvh-96px)] items-center overflow-hidden bg-[#fdfaf5] text-white sm:min-h-[700px] sm:pt-24 lg:min-h-[800px]"
       >
         <div className="absolute inset-x-0 -top-48 bottom-0 sm:hidden">
           <Image
