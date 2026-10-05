@@ -38,7 +38,7 @@ const ZONE_PHOTOS: Record<number, { src: string; alt: string }> = {
   },
   1: {
     src: "/elementary-zone-mobility.jpg",
-    alt: "지체장애 공감 체험존에서 학생들이 줄지어 놓인 휠체어를 살펴보는 모습",
+    alt: "지체장애 공감 체험 배너와 휠체어들 앞에서 강사가 학생들에게 체험 방법을 설명하는 모습",
   },
   2: {
     src: "/intellectual-zone.jpg",
@@ -251,17 +251,6 @@ export default function ElementaryPage() {
         </Container>
       </section>
 
-      <section className="bg-[var(--color-surface)] py-10">
-        <Container>
-          <Link
-            href="/middle"
-            className="flex items-center justify-between gap-4 rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-alt)] px-6 py-5 font-bold text-[var(--color-primary-hover)] hover:border-[var(--color-primary)]"
-          >
-            중학교 장애인식개선 체험도 함께 진행해요
-            <ArrowRight aria-hidden="true" size={20} />
-          </Link>
-        </Container>
-      </section>
 
       {/* 6. GUIDE — 실제 운영 정보 (감성보다 정보 전달 우선) */}
       <section className="bg-[var(--color-surface-alt)] py-20 sm:py-24">
