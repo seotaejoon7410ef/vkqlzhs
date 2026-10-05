@@ -310,7 +310,7 @@ export default function MiddlePage() {
                     </span>
                     <program.icon aria-hidden="true" size={22} className="text-[var(--color-primary-hover)]" />
                   </div>
-                  <h3 className="mt-3 text-xl font-black text-[var(--color-text)]">
+                  <h3 className="mt-3 text-2xl font-black text-[var(--color-text)]">
                     {program.title}
                   </h3>
                   <div className="mt-2 flex flex-wrap gap-2">
