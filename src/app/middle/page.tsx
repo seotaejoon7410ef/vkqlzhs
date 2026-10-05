@@ -79,6 +79,10 @@ const MIDDLE_PROGRAMS = [
 // MIDDLE_PROGRAMS 배열 순서(지체/시각/지적/퀴즈)에 맞춰 존별 실제 현장 사진을 매핑.
 // 사진이 없는 존은 아직 placeholder 유지.
 const PROGRAM_PHOTOS: Record<number, { src: string; alt: string }> = {
+  0: {
+    src: "/middle-zone-mobility.jpg",
+    alt: "지체장애 공감 체험 배너와 휠체어들 앞에서 강사가 학생들에게 체험 방법을 설명하는 모습",
+  },
   2: {
     src: "/intellectual-zone.jpg",
     alt: "지적장애 공감 체험 존에서 학생들이 컵블록 쌓기 체험을 하는 모습",
