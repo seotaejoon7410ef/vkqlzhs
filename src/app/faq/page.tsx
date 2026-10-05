@@ -13,9 +13,9 @@ const MAIN_AREAS = ["서울", "경기", "인천", "충남", "충북"];
 
 const CLASS_FLOW_STEPS = [
   { title: "도착·설치", desc: "강사가 학교에 도착해 체험 도구를 설치합니다." },
-  { title: "안내", desc: "학생들에게 오늘 체험할 내용을 간단히 안내합니다." },
-  { title: "학급별 존 체험 로테이션", desc: "학급별로 순서를 정해 4개 존을 돌아가며 체험합니다." },
-  { title: "정리·마무리", desc: "체험 도구를 정리하고 오늘 배운 내용을 간단히 되짚어봅니다." },
+  { title: "존별 이론 설명", desc: "학급이 각 존에 도착하면, 그 자리에서 짧게 이론을 설명합니다." },
+  { title: "체험 후 로테이션", desc: "설명을 들은 뒤 직접 체험하고, 끝나면 다음 존으로 이동합니다." },
+  { title: "정리·마무리", desc: "4개 존을 모두 체험한 뒤 정리하고 오늘 배운 내용을 간단히 되짚어봅니다." },
 ];
 
 const APPLY_STEPS = [
@@ -74,7 +74,7 @@ export default function FaqPage() {
 
           <div className="mt-12 border-t border-[var(--color-border)] pt-8">
             <Reveal>
-              <h3 className="text-lg font-black text-[var(--color-text)]">
+              <h3 className="text-xl font-black text-[var(--color-text)] sm:text-2xl">
                 수업은 이렇게 진행돼요
               </h3>
             </Reveal>
@@ -103,7 +103,7 @@ export default function FaqPage() {
 
           <div className="mt-14 border-t border-[var(--color-border)] pt-8">
             <Reveal>
-              <h3 className="text-lg font-black text-[var(--color-text)]">
+              <h3 className="text-xl font-black text-[var(--color-text)] sm:text-2xl">
                 신청부터 수업까지 4단계
               </h3>
             </Reveal>
