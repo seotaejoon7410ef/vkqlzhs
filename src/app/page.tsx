@@ -64,7 +64,7 @@ export default function Home() {
               style={{ fontFamily: '"SUIT", "Pretendard", sans-serif' }}
             >
               <span className="hero-anim inline-block text-[#202124]" style={{ animationDelay: "100ms" }}>
-                체험으로 배우는 장애이해,
+                체험으로 배우는 장애인식,
               </span>
               <br />
               <span className="hero-anim inline-block text-[#4B32B8]" style={{ animationDelay: "200ms" }}>
