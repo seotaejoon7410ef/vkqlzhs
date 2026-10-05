@@ -14,20 +14,30 @@ export const metadata: Metadata = {
 function PhotoPlaceholder({
   alt,
   className = "",
+  showLabel = true,
 }: {
   alt: string;
   className?: string;
+  showLabel?: boolean;
 }) {
   return (
     <div
       role="img"
       aria-label={alt}
-      className={`flex flex-col items-center justify-center gap-2 rounded-sm border border-dashed border-[var(--color-border)] bg-[var(--color-surface-alt)] text-[var(--color-text-muted)] ${className}`}
+      className={`flex flex-col items-center justify-center gap-2 rounded-sm border border-dashed border-[var(--color-border)] ${
+        showLabel
+          ? "bg-[var(--color-surface-alt)] text-[var(--color-text-muted)]"
+          : "bg-[var(--color-bg)]"
+      } ${className}`}
     >
-      <Camera aria-hidden="true" size={32} />
-      <p aria-hidden="true" className="text-sm">
-        사진 준비 중
-      </p>
+      {showLabel && (
+        <>
+          <Camera aria-hidden="true" size={32} />
+          <p aria-hidden="true" className="text-sm">
+            사진 준비 중
+          </p>
+        </>
+      )}
     </div>
   );
 }
@@ -41,6 +51,7 @@ export default function AboutPage() {
           <PhotoPlaceholder
             alt="학생들이 체험존에서 장애 공감 체험을 하고 있는 모습"
             className="aspect-[16/9] w-full sm:aspect-[21/9]"
+            showLabel={false}
           />
         </Container>
       </section>
