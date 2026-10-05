@@ -60,7 +60,7 @@ export default function Home() {
               아이들의 오늘이, 더 따뜻한 내일이 되도록
             </p>
             <h1
-              className="text-balance text-[clamp(42px,11vw,58px)] font-extrabold leading-[1.1] tracking-[-0.045em] [word-break:keep-all] sm:text-[clamp(54px,4.8vw,82px)] sm:leading-[1.12]"
+              className="text-balance text-[clamp(26px,7vw,32px)] font-extrabold leading-[1.25] tracking-[-0.03em] [word-break:keep-all] sm:text-[clamp(40px,3.4vw,60px)] sm:leading-[1.25]"
               style={{ fontFamily: '"SUIT", "Pretendard", sans-serif' }}
             >
               <span className="hero-anim inline-block text-[#202124]" style={{ animationDelay: "100ms" }}>
