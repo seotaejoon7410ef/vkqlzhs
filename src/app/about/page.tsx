@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Camera } from "lucide-react";
 import { Container } from "@/components/container";
 import { Reveal } from "@/components/reveal";
@@ -45,25 +46,38 @@ function PhotoPlaceholder({
 export default function AboutPage() {
   return (
     <>
-      {/* 맨 위 큰 사진 */}
-      <section className="bg-[var(--color-surface-alt)] pt-14 pb-10 sm:pt-20 sm:pb-14">
-        <Container>
-          <PhotoPlaceholder
-            alt="학생들이 체험존에서 장애 공감 체험을 하고 있는 모습"
-            className="aspect-[16/9] w-full sm:aspect-[21/9]"
-            showLabel={false}
+      {/* 맨 위 큰 사진 — 제목·부제가 그림 안에 이미 디자인되어 있어
+          장식용(alt 없음)으로 넣습니다. 화면낭독기를 위한 실제 제목은
+          바로 아래 h1로 그대로 제공합니다(화면에는 안 보이고 읽히기만 함). */}
+      <section className="on-dark relative isolate overflow-hidden lg:pt-24">
+        <div className="relative aspect-[1080/1350] w-full sm:aspect-[1920/720]">
+          <Image
+            src="/about-hero-mobile.png"
+            alt=""
+            aria-hidden="true"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover sm:hidden"
           />
-        </Container>
+          <Image
+            src="/about-hero-desktop.png"
+            alt=""
+            aria-hidden="true"
+            fill
+            priority
+            sizes="100vw"
+            className="hidden object-cover sm:block"
+          />
+        </div>
       </section>
 
       {/* 페이지 제목 + 인트로 */}
       <section className="bg-[var(--color-surface)] py-16 sm:py-20">
         <Container className="max-w-[820px]">
           <Reveal>
-            <h1 className="text-balance text-3xl font-black leading-tight text-[var(--color-text)] sm:text-4xl lg:text-5xl">
-              공감으로, 아이들의 마음에 길을 냅니다
-            </h1>
-            <p className="mt-8 text-lg leading-[1.8] text-[var(--color-text)]">
+            <h1 className="sr-only">공감으로, 아이들의 마음에 길을 냅니다</h1>
+            <p className="text-lg leading-[1.8] text-[var(--color-text)]">
               장애를 이해한다는 건 지식을 외우는 일이 아니라 마음이 움직이는
               일이라고 믿습니다.
             </p>
