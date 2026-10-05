@@ -51,7 +51,7 @@ export default function Home() {
           />
         </div>
 
-        <Container className="relative pt-[70px] pb-12 sm:pt-20 sm:pb-20 lg:py-28">
+        <Container className="relative pt-[340px] pb-12 sm:pt-20 sm:pb-20 lg:py-28">
           <div className="relative mx-auto w-full text-center font-pretendard sm:w-[min(760px,70vw)] [text-shadow:0_1px_6px_rgb(0_0_0_/_5%)]">
             <p
               className="hero-anim mt-7 mb-3 text-[15px] sm:mt-0 sm:mb-6 font-bold tracking-[-0.01em] text-[#111111] sm:text-[20px] sm:font-semibold"
