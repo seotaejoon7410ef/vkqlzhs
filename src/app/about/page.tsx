@@ -159,7 +159,7 @@ export default function AboutPage() {
         />
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-[var(--color-secondary)]/85"
+          className="absolute inset-0 bg-[var(--color-secondary)]/70"
         />
         <Container className="relative max-w-[820px] text-center">
           <Reveal>
