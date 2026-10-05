@@ -20,7 +20,7 @@ const ALL_NAV_GROUPS: NavGroup[] = [
       : [],
   },
   {
-    label: "학교 장애인식개선체험",
+    label: "장애인식개선 체험교육",
     children: [
       { href: "/elementary", label: "초등학교" },
       { href: "/middle", label: "중학교" },
