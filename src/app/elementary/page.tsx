@@ -62,7 +62,7 @@ export default function ElementaryPage() {
             className="object-cover object-[center_42%] brightness-95"
           />
 
-          <Container className="absolute inset-x-0 bottom-0 pb-4 sm:pb-10 lg:pb-12">
+          <Container className="absolute inset-x-0 bottom-0 pb-3 sm:pb-8 lg:pb-10">
             <div className="max-w-2xl">
               <Reveal>
                 <h1 className="text-balance text-xl font-black leading-tight text-white [text-shadow:0_2px_16px_rgb(0_0_0_/_60%)] sm:text-5xl">
