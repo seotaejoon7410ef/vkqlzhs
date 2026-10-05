@@ -57,18 +57,18 @@ export default function Home() {
               className="hero-anim mt-7 mb-3 text-[15px] sm:mt-0 sm:mb-6 font-bold tracking-[-0.01em] text-[#111111] sm:text-[20px] sm:font-semibold"
               style={{ animationDelay: "50ms" }}
             >
-              아이들의 오늘이, 더 안전하고 더 따뜻한 내일이 되도록
+              아이들의 오늘이, 더 따뜻한 내일이 되도록
             </p>
             <h1
               className="text-balance text-[clamp(42px,11vw,58px)] font-extrabold leading-[1.1] tracking-[-0.045em] [word-break:keep-all] sm:text-[clamp(54px,4.8vw,82px)] sm:leading-[1.12]"
               style={{ fontFamily: '"SUIT", "Pretendard", sans-serif' }}
             >
               <span className="hero-anim inline-block text-[#202124]" style={{ animationDelay: "100ms" }}>
-                체험으로 배우는
+                체험으로 배우는 장애이해,
               </span>
               <br />
               <span className="hero-anim inline-block text-[#4B32B8]" style={{ animationDelay: "200ms" }}>
-                안전과 공감
+                공감으로 이어지는 변화
               </span>
             </h1>
             <div
@@ -76,9 +76,9 @@ export default function Home() {
               style={{ animationDelay: "300ms" }}
             >
               <p>
-                초·중학교로 찾아가는 장애인식개선체험
+                초·중학교로 찾아가는 장애인식개선 체험교육
                 <br />
-                아이들의 눈높이에 맞춘 체험교육을 제공합니다.
+                아이들의 눈높이에 맞춘 자체 개발 프로그램을 제공합니다.
               </p>
             </div>
             <div className="hero-anim mt-3 sm:mt-8" style={{ animationDelay: "350ms" }}>
