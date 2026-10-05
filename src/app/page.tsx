@@ -15,7 +15,7 @@ export default function Home() {
         <div className="absolute inset-x-0 -top-48 bottom-0 sm:hidden">
           <Image
             src="/hero-mobile-top.jpg"
-            alt="유치원 안전체험과 학교 장애인식개선 체험 현장"
+            alt="학교 장애인식개선 체험 현장"
             fill
             priority
             sizes="100vw"
@@ -76,7 +76,7 @@ export default function Home() {
               style={{ animationDelay: "300ms" }}
             >
               <p>
-                유치원 안전체험부터 초·중학교 장애인식개선체험까지
+                초·중학교로 찾아가는 장애인식개선체험
                 <br />
                 아이들의 눈높이에 맞춘 체험교육을 제공합니다.
               </p>

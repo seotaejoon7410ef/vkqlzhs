@@ -1,5 +1,5 @@
 // 안전체험(유치원) 메뉴/페이지를 한 곳에서 켜고 끕니다.
-export const SHOW_KINDERGARTEN = true;
+export const SHOW_KINDERGARTEN = false;
 
 type NavLeaf = { href: string; label: string };
 export type NavGroup =

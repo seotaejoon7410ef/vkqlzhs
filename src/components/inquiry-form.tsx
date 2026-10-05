@@ -1,13 +1,15 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { SHOW_KINDERGARTEN } from "@/config";
 import { KINDERGARTEN_TOPICS } from "@/content/kindergarten-topics";
 
 const AREAS = ["서울", "경기", "인천", "충남", "충북", "기타 지역(협의)"];
 
 const KINDERGARTEN = "안전체험 (유치원)";
 const SCHOOL = "장애인식개선체험 (초·중학교)";
-const PROGRAM_TYPES = [KINDERGARTEN, SCHOOL];
+// 유치원 프로그램은 보류 상태라 선택지에서만 숨김 (데이터·로직은 그대로 유지)
+const PROGRAM_TYPES = SHOW_KINDERGARTEN ? [KINDERGARTEN, SCHOOL] : [SCHOOL];
 
 const ELEMENTARY_GRADES = [
   "초등학교 1학년",
@@ -148,14 +150,14 @@ export function InquiryForm() {
 
       <div>
         <label htmlFor="school" className={labelClass}>
-          학교 · 유치원 이름
+          {SHOW_KINDERGARTEN ? "학교 · 유치원 이름" : "학교 이름"}
         </label>
         <input
           id="school"
           name="school"
           type="text"
           required
-          placeholder="예: OO유치원 / OO초등학교"
+          placeholder={SHOW_KINDERGARTEN ? "예: OO유치원 / OO초등학교" : "예: OO초등학교"}
           className={inputClass}
         />
       </div>
