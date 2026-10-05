@@ -93,13 +93,17 @@ export default function AboutPage() {
 
       {/* 인트로 */}
       <section className="bg-[var(--color-surface)] py-16 sm:py-20">
-        <Container className="max-w-[820px]">
+        <Container className="max-w-[700px] text-center">
           <Reveal>
-            <p className="text-lg leading-[1.8] text-[var(--color-text)]">
-              장애를 이해한다는 건 지식을 외우는 일이 아니라 마음이 움직이는
-              일이라고 믿습니다.
+            <p
+              className="text-2xl leading-[1.7] font-bold text-[var(--color-text)] sm:text-3xl"
+              style={{ fontFamily: '"Gowun Batang", serif' }}
+            >
+              장애를 이해한다는 건 지식을 외우는 일이 아니라
+              <br className="hidden sm:block" /> 마음이 움직이는 일이라고
+              믿습니다.
             </p>
-            <p className="mt-6 text-lg leading-[1.8] text-[var(--color-text)]">
+            <p className="mx-auto mt-8 max-w-[560px] text-lg leading-[1.8] text-[var(--color-text-muted)]">
               행복한길잡이는 학교를 직접 찾아가는 장애인식개선 체험교육
               기관입니다. 화면 속 영상이 아니라, 아이들이 직접 걷고, 멈추고,
               부딪혀 보며 다른 사람의 하루를 몸으로 느끼는 교육을 만듭니다.
