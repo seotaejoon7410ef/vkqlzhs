@@ -156,9 +156,21 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* 대표 인사 — 사진 없이 글만 */}
-      <section className="on-dark bg-[var(--color-secondary)] py-20 sm:py-28">
-        <Container className="max-w-[820px] text-center">
+      {/* 대표 인사 */}
+      <section className="on-dark relative isolate overflow-hidden bg-[var(--color-secondary)] py-20 sm:py-28">
+        <Image
+          src="/about-ceo-bg.jpg"
+          alt=""
+          aria-hidden="true"
+          fill
+          sizes="100vw"
+          className="object-cover"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-[var(--color-secondary)]/85"
+        />
+        <Container className="relative max-w-[820px] text-center">
           <Reveal>
             <h2 className="text-2xl font-black leading-tight sm:text-3xl">
               대표 인사
