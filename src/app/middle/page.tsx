@@ -62,7 +62,7 @@ const MIDDLE_PROGRAMS = [
   },
   {
     icon: HeartHandshake,
-    title: "감각협력 체험",
+    title: "지적장애 공감 체험",
     tags: ["협력 과제", "감각 체험"],
     desc: "친구와 역할을 나누고 서로의 정보와 감각을 활용해 과제를 해결하는 협력형 체험입니다.",
     question: "혼자 할 때와 함께할 때 무엇이 달라질까?",
@@ -75,6 +75,15 @@ const MIDDLE_PROGRAMS = [
     question: "내가 가지고 있던 생각은 체험 전과 어떻게 달라졌을까?",
   },
 ];
+
+// MIDDLE_PROGRAMS 배열 순서(지체/시각/지적/퀴즈)에 맞춰 존별 실제 현장 사진을 매핑.
+// 사진이 없는 존은 아직 placeholder 유지.
+const PROGRAM_PHOTOS: Record<number, { src: string; alt: string }> = {
+  2: {
+    src: "/intellectual-zone.jpg",
+    alt: "지적장애 공감 체험 존에서 학생들이 컵블록 쌓기 체험을 하는 모습",
+  },
+};
 
 // 7. BEFORE / AFTER — 효과 수치가 아니라 관점 변화의 예시입니다.
 const BEFORE_AFTER = [
@@ -329,12 +338,24 @@ export default function MiddlePage() {
                   <p className="mt-4 border-l-2 border-[var(--color-accent-strong)] pl-4 text-sm font-bold leading-relaxed text-[var(--color-primary-hover)]">
                     “{program.question}”
                   </p>
-                  <div
-                    aria-hidden="true"
-                    className="mt-5 flex aspect-[4/3] w-full flex-col items-center justify-center gap-2 rounded-sm border border-dashed border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-text-muted)]"
-                  >
-                    <Camera size={28} />
-                    <p className="text-sm">{program.title} 사진 추가 필요</p>
+                  <div className="relative mt-5 aspect-[4/3] w-full overflow-hidden rounded-sm bg-[var(--color-surface)]">
+                    {PROGRAM_PHOTOS[index] ? (
+                      <Image
+                        src={PROGRAM_PHOTOS[index].src}
+                        alt={PROGRAM_PHOTOS[index].alt}
+                        fill
+                        sizes="(min-width: 1024px) 40rem, 90vw"
+                        className="object-cover"
+                      />
+                    ) : (
+                      <div
+                        aria-hidden="true"
+                        className="flex h-full w-full flex-col items-center justify-center gap-2 border border-dashed border-[var(--color-border)] text-[var(--color-text-muted)]"
+                      >
+                        <Camera size={28} />
+                        <p className="text-sm">{program.title} 사진 추가 필요</p>
+                      </div>
+                    )}
                   </div>
                 </div>
               </Reveal>

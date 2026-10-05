@@ -41,8 +41,8 @@ const ZONE_PHOTOS: Record<number, { src: string; alt: string }> = {
     alt: "지체장애 공감 체험존에서 학생들이 줄지어 놓인 휠체어를 살펴보는 모습",
   },
   2: {
-    src: "/elementary-zone-sensory.jpg",
-    alt: "감각협력 체험존 배너 앞에서 강사가 학생들에게 체험 방법을 설명하는 모습",
+    src: "/intellectual-zone.jpg",
+    alt: "지적장애공감체험 존에서 학생들이 컵블록 쌓기 체험을 하는 모습",
   },
 };
 
