@@ -1,208 +1,155 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
-import { ArrowRight, ClipboardCheck, Hand, MapPin, Phone, type LucideIcon } from "lucide-react";
+import { Camera } from "lucide-react";
 import { Container } from "@/components/container";
-import { CountUp } from "@/components/count-up";
-import { Kicker } from "@/components/kicker";
 import { Reveal } from "@/components/reveal";
 
 export const metadata: Metadata = {
-  title: "회사 소개",
+  title: "회사소개",
 };
 
-const PROMISES: { icon: LucideIcon; title: string; desc: string }[] = [
-  {
-    icon: MapPin,
-    title: "찾아갑니다",
-    desc: "현장학습 준비 없이, 우리 학교 교실에서",
-  },
-  {
-    icon: Hand,
-    title: "직접 해봅니다",
-    desc: "보고 듣는 수업이 아니라 몸으로 느끼는 체험",
-  },
-  {
-    icon: ClipboardCheck,
-    title: "꼼꼼하게 준비합니다",
-    desc: "체험 장비와 진행 순서를 미리 맞춰, 선생님은 아이들만 챙기시면 됩니다",
-  },
-];
-
-const STATS = [
-  { value: 4, suffix: "개", label: "한 교시 안에 체험하는 체험존" },
-  { value: 4, suffix: "학급", label: "동시에 진행 가능한 최대 학급 수" },
-  { value: 5, suffix: "개 지역", label: "서울 · 경기 · 인천 · 충남 · 충북" },
-];
+// 사진이 아직 없는 자리를 표시하는 자리표시자.
+// role="img" + aria-label로 화면낭독기에는 실제 사진이 있을 때와
+// 동일하게 대체 설명이 읽히게 하고, 보이는 텍스트는 중복 안내를
+// 막기 위해 aria-hidden으로 숨깁니다.
+function PhotoPlaceholder({
+  alt,
+  className = "",
+}: {
+  alt: string;
+  className?: string;
+}) {
+  return (
+    <div
+      role="img"
+      aria-label={alt}
+      className={`flex flex-col items-center justify-center gap-2 rounded-sm border border-dashed border-[var(--color-border)] bg-[var(--color-surface-alt)] text-[var(--color-text-muted)] ${className}`}
+    >
+      <Camera aria-hidden="true" size={32} />
+      <p aria-hidden="true" className="text-sm">
+        사진 준비 중
+      </p>
+    </div>
+  );
+}
 
 export default function AboutPage() {
   return (
     <>
-      <section
-        id="top"
-        className="relative flex min-h-[70vh] items-center overflow-hidden bg-gradient-to-br from-[#fff3df] via-[#fbf8ff] to-[#e9e1fa] pt-32 pb-20 sm:min-h-[80vh]"
-      >
-        <Image
-          src="/about-hero-3.jpg"
-          alt=""
-          aria-hidden="true"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-center"
-        />
-        <div
-          aria-hidden="true"
-          className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(ellipse 55% 60% at 50% 50%, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.35) 55%, rgba(255,255,255,0) 100%)",
-          }}
-        />
-        <Container className="relative text-center">
-          <p
-            className="hero-anim text-base font-bold tracking-[0.2em] text-[#2E3138] sm:text-lg"
-            style={{ animationDelay: "50ms" }}
-          >
-            체험교육센터 행복한길잡이
-          </p>
-          <h1
-            className="text-balance mt-6 break-keep text-3xl font-extrabold leading-[1.3] tracking-[-0.03em] text-[#2E3138] sm:text-5xl lg:text-6xl"
-          >
-            <span className="hero-anim inline-block" style={{ animationDelay: "150ms" }}>
-              나를 <span className="text-[#E07800]">지킬</span> 줄 아는 아이가
-            </span>
-            <br />
-            <span className="hero-anim inline-block" style={{ animationDelay: "250ms" }}>
-              <span className="text-[var(--color-primary)]">친구</span>도 지킬 수 있습니다
-            </span>
-          </h1>
+      {/* 맨 위 큰 사진 */}
+      <section className="bg-[var(--color-surface-alt)] pt-14 pb-10 sm:pt-20 sm:pb-14">
+        <Container>
+          <PhotoPlaceholder
+            alt="학생들이 체험존에서 장애 공감 체험을 하고 있는 모습"
+            className="aspect-[16/9] w-full sm:aspect-[21/9]"
+          />
         </Container>
       </section>
 
-      <section className="bg-[var(--color-surface)] py-20 sm:py-28">
-        <Container>
-          <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+      {/* 페이지 제목 + 인트로 */}
+      <section className="bg-[var(--color-surface)] py-16 sm:py-20">
+        <Container className="max-w-[820px]">
           <Reveal>
-            <Kicker large>우리의 생각</Kicker>
-            <p className="mt-6 break-keep text-2xl font-black leading-relaxed text-[var(--color-text)] sm:text-3xl">
-              나를 지킬 줄 아는 아이가 친구도 지킬 수 있고,
-              <br />
-              친구를 이해하는 아이가 더 안전한 교실을 만듭니다.
+            <h1 className="text-balance text-3xl font-black leading-tight text-[var(--color-text)] sm:text-4xl lg:text-5xl">
+              안전과 공감, 아이들의 마음에 길을 냅니다
+            </h1>
+            <p className="mt-8 text-lg leading-[1.8] text-[var(--color-text)]">
+              장애를 이해한다는 건 지식을 외우는 일이 아니라 마음이 움직이는
+              일이라고 믿습니다.
             </p>
-            <p className="mt-8 break-keep leading-[1.9] text-[var(--color-text-muted)]">
-              그래서 행복한길잡이는 설명으로 끝내지 않습니다.
-              <br />
-              학교에서는 친구와 함께하는 법을
-              <br />
-              직접 몸으로 체험하며 배웁니다.
+            <p className="mt-6 text-lg leading-[1.8] text-[var(--color-text)]">
+              행복한길잡이는 학교를 직접 찾아가는 장애인식개선 체험교육
+              기관입니다. 화면 속 영상이 아니라, 아이들이 직접 걷고, 멈추고,
+              부딪혀 보며 다른 사람의 하루를 몸으로 느끼는 교육을 만듭니다.
             </p>
           </Reveal>
-          <Reveal delay={100}>
-            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl">
-              <Image
-                src="/about-why.jpg"
-                alt="휠체어 체험과 흰지팡이 체험 부스에서 학생들이 체험하는 모습"
-                fill
-                sizes="(min-width: 1024px) 40rem, 90vw"
-                className="object-cover"
-              />
-            </div>
-          </Reveal>
-          </div>
         </Container>
       </section>
 
-      <section className="bg-[var(--color-surface-alt)] py-20 sm:py-28">
+      {/* 직접 만들고, 현장에서 다듬은 프로그램 */}
+      <section className="bg-[var(--color-surface-alt)] py-16 sm:py-20">
         <Container>
-          <Reveal>
-            <Kicker large>우리가 하는 일</Kicker>
-          </Reveal>
-          <div className="mt-12">
+          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
             <Reveal>
-              <div className="mx-auto flex h-full max-w-xl flex-col rounded-2xl border-t-4 border-[var(--color-primary)] bg-[var(--color-surface)] p-8 shadow-sm sm:p-10">
-                <h3 className="text-2xl font-black text-[var(--color-text)]">초·중등 장애인식개선 체험</h3>
-                <p className="mt-4 font-bold text-[var(--color-primary-hover)]">한 교시 안에 4개 체험존을 모두 체험</p>
-                <p className="mt-4 break-keep leading-relaxed text-[var(--color-text-muted)]">
-                  불편함을 직접 느껴보고, 함께하는 방법을 스스로 찾습니다
-                </p>
-                <Link
-                  href="/elementary"
-                  className="mt-auto inline-flex items-center gap-2 pt-8 font-bold text-[var(--color-primary-hover)] hover:underline"
-                >
-                  장애인식개선 체험 자세히 보기
-                  <ArrowRight aria-hidden="true" size={18} />
-                </Link>
-              </div>
+              <h2 className="text-balance text-2xl font-black leading-tight text-[var(--color-text)] sm:text-3xl">
+                직접 만들고, 현장에서 다듬은 프로그램
+              </h2>
+              <p className="mt-6 text-lg leading-[1.8] text-[var(--color-text)]">
+                모든 체험존은 저희가 직접 기획하고 설계한 자체 개발
+                프로그램입니다. 휠체어가 실제로 돌 수 있는 통로 폭, 아이
+                눈높이에 맞는 설명, 체험 뒤에 남는 작은 약속 하나까지.
+                수업마다 아이들이 어디서 멈추고 어디서 깨닫는지 지켜보며
+                계속 고쳐 왔습니다.
+              </p>
+            </Reveal>
+            <Reveal delay={100}>
+              <PhotoPlaceholder
+                alt="휠체어를 탄 학생이 경사로를 오르는 모습"
+                className="aspect-[4/3] w-full"
+              />
             </Reveal>
           </div>
         </Container>
       </section>
 
-      <section className="bg-[var(--color-surface)] py-20 sm:py-28">
+      {/* 학교의 수고는 덜고, 교육의 의미는 더하고 */}
+      <section className="bg-[var(--color-surface)] py-16 sm:py-20">
         <Container>
-          <Reveal className="text-center">
-            <Kicker large>세 가지 약속</Kicker>
-          </Reveal>
-          <div className="mt-12 grid gap-10 md:grid-cols-3">
-            {PROMISES.map((item, index) => {
-              const Icon = item.icon;
-              return (
-                <Reveal key={item.title} delay={index * 100} className="text-center">
-                  <span className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[var(--color-primary-tint)] text-[var(--color-primary)]">
-                    <Icon aria-hidden="true" size={28} />
-                  </span>
-                  <h3 className="mt-6 text-xl font-black text-[var(--color-text)]">{item.title}</h3>
-                  <p className="mt-3 break-keep leading-relaxed text-[var(--color-text-muted)]">{item.desc}</p>
-                </Reveal>
-              );
-            })}
+          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+            <Reveal className="lg:order-2">
+              <h2 className="text-balance text-2xl font-black leading-tight text-[var(--color-text)] sm:text-3xl">
+                학교의 수고는 덜고, 교육의 의미는 더하고
+              </h2>
+              <p className="mt-6 text-lg leading-[1.8] text-[var(--color-text)]">
+                장비와 전기선은 모두 직접 준비해 가며, 강당이 없어도
+                필로티나 실내외 공간에서 진행할 수 있습니다. 한 교시 안에
+                한 학급이 모든 체험존을 경험하고, 최대 네 학급이 동시에
+                참여할 수 있습니다. 학교급에 맞춰 설명과 난이도를
+                달리합니다.
+              </p>
+            </Reveal>
+            <Reveal delay={100} className="lg:order-1">
+              <PhotoPlaceholder
+                alt="필로티 공간에 체험존이 설치된 모습"
+                className="aspect-[4/3] w-full"
+              />
+            </Reveal>
           </div>
         </Container>
       </section>
 
-      <section className="bg-[var(--color-surface-alt)] py-20 sm:py-28">
-        <Container>
-          <Reveal className="text-center">
-            <Kicker large>숫자로 보는 진행 방식</Kicker>
-          </Reveal>
-          <div className="mt-12 grid gap-10 text-center md:grid-cols-3">
-            {STATS.map((item, index) => (
-              <Reveal key={item.label} delay={index * 100}>
-                <p className="text-5xl font-black text-[var(--color-primary)] sm:text-6xl">
-                  <CountUp to={item.value} suffix={item.suffix} />
-                </p>
-                <p className="mt-3 break-keep text-[var(--color-text-muted)]">{item.label}</p>
-              </Reveal>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      <section className="relative overflow-hidden bg-gradient-to-r from-[#F2A126] to-[var(--color-primary)] py-24 text-white">
-        <Container className="text-center">
+      {/* 법정 의무교육, 의미 있게 채웁니다 */}
+      <section className="bg-[var(--color-surface-alt)] py-16 sm:py-20">
+        <Container className="max-w-[820px]">
           <Reveal>
-            <h2 className="text-balance break-keep text-3xl font-black leading-tight [text-shadow:0_2px_12px_rgb(0_0_0_/_25%)] sm:text-4xl">
-              우리 학교에도 찾아갈게요
+            <h2 className="text-balance text-2xl font-black leading-tight text-[var(--color-text)] sm:text-3xl">
+              법정 의무교육, 의미 있게 채웁니다
             </h2>
-            <p className="mt-5 break-keep text-lg text-white [text-shadow:0_1px_10px_rgb(0_0_0_/_25%)]">
-              문의 한 번으로 일정과 진행 방식까지 안내해 드립니다
+            <p className="mt-6 text-lg leading-[1.8] text-[var(--color-text)]">
+              유치원과 초·중·고등학교는 「장애인복지법」에 따라 매년
+              장애인식개선교육을 실시해야 하며, 강사를 통한 대면교육이
+              포함되어야 합니다. 행복한길잡이는 이 의무교육을 &apos;해야
+              하는 교육&apos;에서 &apos;기억에 남는 교육&apos;으로
+              바꾸고자 합니다.
             </p>
           </Reveal>
-          <Reveal delay={100} className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link
-              href="/contact"
-              className="inline-flex min-h-12 items-center rounded-full bg-white px-8 text-base font-bold text-[var(--color-primary)] transition-colors hover:brightness-95"
-            >
-              문의 양식 작성하기
-            </Link>
-            <a
-              href="tel:0312368410"
-              className="inline-flex min-h-12 items-center gap-2 rounded-full border-2 border-white px-8 text-base font-bold text-white transition-colors hover:bg-white/10"
-            >
-              <Phone aria-hidden="true" size={18} />
-              031-236-8410
-            </a>
+        </Container>
+      </section>
+
+      {/* 대표 인사 — 사진 없이 글만 */}
+      <section className="on-dark bg-[var(--color-secondary)] py-20 sm:py-28">
+        <Container className="max-w-[820px] text-center">
+          <Reveal>
+            <h2 className="text-2xl font-black leading-tight sm:text-3xl">
+              대표 인사
+            </h2>
+            <blockquote className="mt-8 text-balance text-xl leading-[1.8] text-white sm:text-2xl">
+              &quot;아이들이 체험을 마치고 나올 때 표정이 달라집니다. 그
+              짧은 순간의 변화가 언젠가 누군가에게 열린 길이 되리라
+              믿습니다.&quot;
+            </blockquote>
+            <p className="mt-6 text-lg font-bold text-white">
+              — 체험교육센터 행복한길잡이 대표 서태준
+            </p>
           </Reveal>
         </Container>
       </section>
