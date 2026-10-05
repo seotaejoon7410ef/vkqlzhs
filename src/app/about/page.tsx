@@ -125,10 +125,15 @@ export default function AboutPage() {
               </p>
             </Reveal>
             <Reveal delay={100}>
-              <PhotoPlaceholder
-                alt="휠체어를 탄 학생이 경사로를 오르는 모습"
-                className="aspect-[4/3] w-full"
-              />
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-sm">
+                <Image
+                  src="/about-program-zones.jpg"
+                  alt="체육관에 설치된 지체장애·시각장애 공감 체험존과 휠체어들이 놓인 모습"
+                  fill
+                  sizes="(min-width: 1024px) 40rem, 90vw"
+                  className="object-cover"
+                />
+              </div>
             </Reveal>
           </div>
         </Container>
