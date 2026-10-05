@@ -29,8 +29,8 @@ const APPLY_FLOW = [
   { title: "만족도 조사", desc: "교육 후 의견을 들어 다음 교육을 더 좋게 만듭니다." },
 ];
 
-// 4. EXPERIENCE 존 사진 — ELEMENTARY_ZONES 배열 순서(시각/지체/감각협력/퀴즈)에
-// 맞춰 존별 실제 현장 사진을 매핑. 퀴즈형존은 아직 사진이 없어 placeholder 유지.
+// 4. EXPERIENCE 존 사진 — ELEMENTARY_ZONES 배열 순서(시각/지체/지적/퀴즈)에
+// 맞춰 존별 실제 현장 사진을 매핑. 장애인식개선퀴즈 존은 아직 사진이 없어 placeholder 유지.
 const ZONE_PHOTOS: Record<number, { src: string; alt: string }> = {
   0: {
     src: "/elementary-zone-visual.jpg",

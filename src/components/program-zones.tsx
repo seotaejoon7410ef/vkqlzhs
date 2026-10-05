@@ -25,13 +25,13 @@ export const ELEMENTARY_ZONES = [
   },
   {
     icon: HeartHandshake,
-    title: "감각협력존",
+    title: "지적장애공감체험 존",
     tags: ["협력 과제", "감각 체험"],
     desc: "사용할 수 있는 감각이 제한된 상황에서 친구와 협력해 과제를 해결해요.",
   },
   {
     icon: CircleQuestionMark,
-    title: "퀴즈형존",
+    title: "장애인식개선퀴즈 존",
     tags: ["OX 퀴즈", "객관식"],
     desc: "OX 퀴즈와 객관식 문제 10문항으로, 장애에 대한 흔한 오해와 올바른 에티켓을 배웁니다. 일상 속 상황으로 쉽게 풀어봐요.",
   },
