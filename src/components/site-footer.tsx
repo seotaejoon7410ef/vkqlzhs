@@ -46,12 +46,12 @@ export function SiteFooter() {
             )}
           </nav>
 
-          <nav aria-label="바로가기" className="grid grid-cols-2 gap-x-6 gap-y-8 lg:hidden">
+          <nav aria-label="바로가기" className="flex flex-col gap-6 lg:hidden">
             {NAV_GROUPS.map((item) =>
               isNavChildren(item) ? (
                 <div key={item.label} className="flex flex-col gap-3">
                   <p className="text-lg font-bold text-white">{item.label}</p>
-                  <ul className="flex flex-col gap-2.5 text-base font-bold">
+                  <ul className="flex flex-wrap gap-x-6 gap-y-2.5 text-base font-bold">
                     {item.children.map((child) => (
                       <li key={child.href}>
                         <Link className="hover:underline" href={child.href}>
@@ -63,7 +63,7 @@ export function SiteFooter() {
                 </div>
               ) : null,
             )}
-            <div className="col-span-2 flex flex-wrap gap-x-8 gap-y-3 border-t border-white/15 pt-6 text-base font-bold">
+            <div className="flex flex-wrap gap-x-8 gap-y-3 border-t border-white/15 pt-6 text-base font-bold">
               {NAV_GROUPS.map((item) =>
                 isNavChildren(item) ? null : (
                   <Link key={item.href} className="hover:underline" href={item.href}>
