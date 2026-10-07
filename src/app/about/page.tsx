@@ -23,7 +23,7 @@ export default function AboutPage() {
             sizes="100vw"
             className="object-cover object-[40%_center] sm:object-[70%_center]"
           />
-          <div className="absolute inset-0 mx-auto flex max-w-[1360px] flex-col items-center justify-start px-6 pt-[14%] text-center sm:justify-center sm:pt-0 lg:px-10">
+          <div className="absolute inset-0 mx-auto flex max-w-[1360px] flex-col items-center justify-start px-6 pt-[14%] text-center sm:justify-end sm:pt-0 sm:pb-16 lg:px-10 lg:pb-20">
             <Reveal className="w-full max-w-[720px]">
               <p className="text-lg font-bold tracking-wide text-[#F5C518] sm:text-xl">
                 체험교육센터 행복한길잡이
@@ -36,7 +36,7 @@ export default function AboutPage() {
                 <br className="hidden sm:block" /> 마음이 움직이는 일이라고
                 믿습니다.&quot;
               </h1>
-              <p className="mx-auto mt-10 max-w-[560px] text-base leading-[1.8] text-[#C7CDDA] sm:mt-12 sm:text-lg">
+              <p className="mx-auto mt-6 max-w-[560px] text-base leading-[1.8] text-[#C7CDDA] sm:text-lg">
                 행복한길잡이는 학교를 직접 찾아가는 장애인식개선 체험교육
                 기관입니다. 화면 속 영상이 아니라, 아이들이 직접 걷고, 멈추고,
                 부딪혀 보며 다른 사람의 하루를 몸으로 느끼는 교육을 만듭니다.
