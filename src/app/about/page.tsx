@@ -23,7 +23,7 @@ export default function AboutPage() {
             sizes="100vw"
             className="object-cover object-[40%_center] sm:object-[70%_center]"
           />
-          <div className="absolute inset-0 mx-auto flex max-w-[1360px] flex-col items-center justify-center px-6 text-center lg:px-10">
+          <div className="absolute inset-0 mx-auto flex max-w-[1360px] flex-col items-start justify-center px-6 text-left lg:px-10">
             <Reveal className="max-w-[560px]">
               <p className="text-lg font-bold tracking-wide text-[#F5C518] sm:text-xl">
                 체험교육센터 행복한길잡이
