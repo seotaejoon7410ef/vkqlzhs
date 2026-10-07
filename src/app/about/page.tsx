@@ -23,48 +23,27 @@ export default function AboutPage() {
             sizes="100vw"
             className="object-cover object-[40%_center] sm:object-[70%_center]"
           />
-          <div className="absolute inset-0 mx-auto flex max-w-[1360px] flex-col justify-start px-6 pt-[14%] sm:justify-center sm:pt-0 lg:px-10">
-            <Reveal className="max-w-[520px]">
+          <div className="absolute inset-0 mx-auto flex max-w-[1360px] flex-col items-center justify-start px-6 pt-[14%] text-center sm:justify-center sm:pt-0 lg:px-10">
+            <Reveal className="w-full max-w-[720px]">
               <p className="text-lg font-bold tracking-wide text-[#F5C518] sm:text-xl">
                 체험교육센터 행복한길잡이
               </p>
-              <h1 className="mt-4 text-4xl leading-[1.15] font-black text-white sm:text-5xl lg:text-6xl">
-                공감으로,
-                <br />
-                아이들의 마음에
-                <br />
-                길을 냅니다
+              <h1
+                className="mt-4 text-balance text-2xl leading-[1.5] font-black text-white [text-shadow:0_2px_16px_rgb(0_0_0_/_60%)] sm:text-4xl lg:text-5xl"
+                style={{ fontFamily: '"Gowun Batang", serif' }}
+              >
+                &quot;장애를 이해한다는 건 지식을 외우는 일이 아니라
+                <br className="hidden sm:block" /> 마음이 움직이는 일이라고
+                믿습니다.&quot;
               </h1>
-              <p className="mt-6 text-xl text-[#C7CDDA] sm:text-2xl">
-                학교로 찾아가는
-                <br className="sm:hidden" />
-                <span className="hidden sm:inline"> </span>
-                장애인식개선 체험교육
+              <p className="mx-auto mt-6 max-w-[560px] text-base leading-[1.8] text-[#C7CDDA] sm:text-lg">
+                행복한길잡이는 학교를 직접 찾아가는 장애인식개선 체험교육
+                기관입니다. 화면 속 영상이 아니라, 아이들이 직접 걷고, 멈추고,
+                부딪혀 보며 다른 사람의 하루를 몸으로 느끼는 교육을 만듭니다.
               </p>
             </Reveal>
           </div>
         </div>
-      </section>
-
-      {/* 인트로 */}
-      <section className="bg-[var(--color-surface)] py-16 sm:py-20">
-        <Container className="max-w-[700px] text-center">
-          <Reveal>
-            <p
-              className="text-2xl leading-[1.7] font-bold text-[var(--color-text)] sm:text-3xl"
-              style={{ fontFamily: '"Gowun Batang", serif' }}
-            >
-              장애를 이해한다는 건 지식을 외우는 일이 아니라
-              <br className="hidden sm:block" /> 마음이 움직이는 일이라고
-              믿습니다.
-            </p>
-            <p className="mx-auto mt-8 max-w-[560px] text-lg leading-[1.8] text-[var(--color-text-muted)]">
-              행복한길잡이는 학교를 직접 찾아가는 장애인식개선 체험교육
-              기관입니다. 화면 속 영상이 아니라, 아이들이 직접 걷고, 멈추고,
-              부딪혀 보며 다른 사람의 하루를 몸으로 느끼는 교육을 만듭니다.
-            </p>
-          </Reveal>
-        </Container>
       </section>
 
       {/* 직접 만들고, 현장에서 다듬은 프로그램 */}
