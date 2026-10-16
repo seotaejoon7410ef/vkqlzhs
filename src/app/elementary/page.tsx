@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowDown, ArrowRight, Camera, RotateCw } from "lucide-react";
+import { ArrowDown, ArrowRight, RotateCw } from "lucide-react";
 import { Container } from "@/components/container";
 import { Kicker } from "@/components/kicker";
 import { Reveal } from "@/components/reveal";
@@ -147,7 +147,8 @@ export default function ElementaryPage() {
         </Container>
       </section>
 
-      {/* 4. EXPERIENCE — 직접 경험하는 프로그램 */}
+      {/* 4. EXPERIENCE — 4개 존을 단으로 나열하지 않고, 원형 순환 다이어그램 하나로
+          "한 교시 안에 네 존을 차례로 도는 로테이션 수업"임을 한눈에 보여줍니다. */}
       <section className="bg-[var(--color-surface-alt)] py-20 sm:py-28">
         <Container>
           <div className="mx-auto max-w-2xl text-center">
@@ -162,62 +163,103 @@ export default function ElementaryPage() {
               </p>
               <p className="mx-auto mt-5 inline-flex items-center gap-2 rounded-full bg-[var(--color-primary-tint)] px-5 py-2 text-sm font-bold text-[var(--color-primary-hover)]">
                 <RotateCw aria-hidden="true" size={16} />
-                한 교시 안에 네 존을 차례로 순환 체험
+                한 교시 안에 네 존을 순서대로 도는 로테이션 수업
               </p>
             </Reveal>
           </div>
 
-          <div className="mt-16 grid gap-x-12 gap-y-16 sm:grid-cols-2">
-            {ELEMENTARY_ZONES.map((zone, index) => (
-              <Reveal key={zone.title} delay={(index % 2) * 100} className="h-full">
-                <div className="flex h-full flex-col border-t-2 border-[var(--color-text)] pt-6">
-                  <div className="flex-1">
-                    <div className="flex items-center gap-3">
-                      <span aria-hidden="true" className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[var(--color-primary)] text-2xl font-black text-white sm:h-16 sm:w-16 sm:text-3xl">
-                        {index + 1}
-                      </span>
-                      <zone.icon aria-hidden="true" size={22} className="text-[var(--color-primary-hover)]" />
-                    </div>
-                    <h3 className="mt-3 text-2xl font-black text-[var(--color-text)]">
-                      {zone.title}
-                    </h3>
-                    <div className="mt-4 flex flex-wrap gap-2">
-                      {zone.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="rounded-full bg-[var(--color-surface)] px-3 py-1 text-xs font-bold text-[var(--color-text-muted)]"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                    <p className="mt-3 max-w-[32em] leading-relaxed text-[var(--color-text-muted)]">
-                      {zone.desc}
-                    </p>
-                  </div>
-                  <div className="relative mt-5 aspect-[4/3] w-full overflow-hidden rounded-sm bg-[var(--color-surface)]">
-                    {ZONE_PHOTOS[index] ? (
-                      <Image
-                        src={ZONE_PHOTOS[index].src}
-                        alt={ZONE_PHOTOS[index].alt}
-                        fill
-                        sizes="(min-width: 640px) 28rem, 90vw"
-                        className="object-cover"
-                      />
-                    ) : (
-                      <div
-                        aria-hidden="true"
-                        className="flex h-full w-full flex-col items-center justify-center gap-2 border border-dashed border-[var(--color-border)] text-[var(--color-text-muted)]"
-                      >
-                        <Camera size={28} />
-                        <p className="text-sm">{zone.title} 사진 추가 필요</p>
-                      </div>
-                    )}
-                  </div>
+          <Reveal delay={100}>
+            <div
+              role="img"
+              aria-label="4가지 체험존이 원형으로 배치되어 있고, 01 시각장애공감체험, 02 지체장애공감체험, 03 지적장애공감체험, 04 장애인식개선퀴즈 순서로 원을 그리며 순환 체험합니다"
+              className="relative mx-auto mt-16 max-w-[220px] px-8 py-8 sm:max-w-[360px] sm:px-12 sm:py-12 lg:max-w-[440px] lg:px-16 lg:py-16"
+            >
+              <div className="relative aspect-square w-full">
+                <svg aria-hidden="true" viewBox="0 0 100 100" className="absolute inset-0 h-full w-full">
+                  <defs>
+                    <marker id="zone-arrow" markerWidth="6" markerHeight="6" refX="4.5" refY="3" orient="auto-start-reverse">
+                      <path d="M0,0 L6,3 L0,6 Z" fill="var(--color-primary)" />
+                    </marker>
+                  </defs>
+                  <circle cx="50" cy="50" r="38" fill="none" stroke="var(--color-border)" strokeWidth="1.5" strokeDasharray="3 4" />
+                  <path d="M 50 12 A 38 38 0 0 1 88 50" fill="none" stroke="var(--color-primary)" strokeWidth="1.5" markerEnd="url(#zone-arrow)" />
+                  <path d="M 88 50 A 38 38 0 0 1 50 88" fill="none" stroke="var(--color-primary)" strokeWidth="1.5" markerEnd="url(#zone-arrow)" />
+                  <path d="M 50 88 A 38 38 0 0 1 12 50" fill="none" stroke="var(--color-primary)" strokeWidth="1.5" markerEnd="url(#zone-arrow)" />
+                  <path d="M 12 50 A 38 38 0 0 1 50 12" fill="none" stroke="var(--color-primary)" strokeWidth="1.5" markerEnd="url(#zone-arrow)" />
+                </svg>
+
+                {/* 중앙 허브 */}
+                <div className="absolute left-1/2 top-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full bg-[var(--color-primary)] text-center text-white shadow-lg sm:h-20 sm:w-20 lg:h-24 lg:w-24">
+                  <RotateCw aria-hidden="true" size={18} />
+                  <p className="mt-1 text-[10px] font-black leading-tight sm:text-xs">
+                    1교시
+                    <br />
+                    순환 체험
+                  </p>
                 </div>
-              </Reveal>
+
+                {ELEMENTARY_ZONES.map((zone, index) => {
+                  const positionClass = [
+                    "left-1/2 top-0 -translate-x-1/2 -translate-y-1/2",
+                    "left-full top-1/2 -translate-x-1/2 -translate-y-1/2",
+                    "left-1/2 top-full -translate-x-1/2 -translate-y-1/2",
+                    "left-0 top-1/2 -translate-x-1/2 -translate-y-1/2",
+                  ][index];
+                  // 원형 노드는 아래로 갈수록 폭이 좁아져 긴 제목은 둥근 테두리에 잘립니다.
+                  // 노드 안에는 짧은 키워드만 표시하고, 전체 명칭은 sr-only와 아래 범례 목록에서 제공합니다.
+                  const shortLabel = ["시각", "지체", "지적", "퀴즈"][index];
+                  const photo = ZONE_PHOTOS[index];
+
+                  return (
+                    <div
+                      key={zone.title}
+                      className={`absolute h-16 w-16 ${positionClass} sm:h-24 sm:w-24 lg:h-28 lg:w-28`}
+                    >
+                      <div className="relative h-full w-full overflow-hidden rounded-full shadow-md ring-4 ring-[var(--color-surface-alt)]">
+                        {photo ? (
+                          <>
+                            <Image src={photo.src} alt="" fill sizes="112px" className="object-cover" />
+                            <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/85 to-transparent" />
+                          </>
+                        ) : (
+                          <div className="flex h-full w-full items-start justify-center bg-[var(--color-primary-tint)] pt-3 sm:pt-4">
+                            <zone.icon aria-hidden="true" size={20} className="text-[var(--color-primary-hover)]" />
+                          </div>
+                        )}
+                        <p
+                          className={`absolute inset-x-0 bottom-1 text-center text-[10px] font-black leading-tight sm:bottom-2 sm:text-xs lg:text-sm ${
+                            photo ? "text-white" : "text-[var(--color-text)]"
+                          }`}
+                        >
+                          <span className="sr-only">{index + 1}번째 체험존: {zone.title}</span>
+                          <span aria-hidden="true">{shortLabel}</span>
+                        </p>
+                      </div>
+                      <span
+                        aria-hidden="true"
+                        className="absolute -left-1 -top-1 z-10 flex h-6 w-6 items-center justify-center rounded-full bg-[var(--color-text)] text-[11px] font-black text-white shadow sm:h-7 sm:w-7 sm:text-xs lg:h-8 lg:w-8 lg:text-sm"
+                      >
+                        0{index + 1}
+                      </span>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </Reveal>
+
+          <ul className="mx-auto mt-10 max-w-[44em] space-y-3 text-sm leading-relaxed text-[var(--color-text-muted)] sm:text-base">
+            {ELEMENTARY_ZONES.map((zone, index) => (
+              <li key={zone.title} className="flex gap-3">
+                <span aria-hidden="true" className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[var(--color-text)] text-[11px] font-black text-white">
+                  0{index + 1}
+                </span>
+                <span>
+                  <strong className="font-bold text-[var(--color-text)]">{zone.title}</strong> — {zone.desc}
+                </span>
+              </li>
             ))}
-          </div>
+          </ul>
         </Container>
       </section>
 
