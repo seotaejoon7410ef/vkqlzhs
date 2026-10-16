@@ -168,98 +168,135 @@ export default function ElementaryPage() {
             </Reveal>
           </div>
 
-          <Reveal delay={100}>
-            <div
-              role="img"
-              aria-label="4가지 체험존이 원형으로 배치되어 있고, 01 시각장애공감체험, 02 지체장애공감체험, 03 지적장애공감체험, 04 장애인식개선퀴즈 순서로 원을 그리며 순환 체험합니다"
-              className="relative mx-auto mt-16 max-w-[240px] px-10 py-10 sm:max-w-[440px] sm:px-16 sm:py-16 lg:max-w-[680px] lg:px-24 lg:py-24"
-            >
-              <div className="relative aspect-square w-full">
-                <svg aria-hidden="true" viewBox="0 0 100 100" className="absolute inset-0 h-full w-full">
-                  <defs>
-                    <marker id="zone-arrow" markerWidth="6" markerHeight="6" refX="4.5" refY="3" orient="auto-start-reverse">
-                      <path d="M0,0 L6,3 L0,6 Z" fill="var(--color-primary)" />
-                    </marker>
-                  </defs>
-                  <circle cx="50" cy="50" r="38" fill="none" stroke="var(--color-border)" strokeWidth="1.5" strokeDasharray="3 4" />
-                  <path d="M 50 12 A 38 38 0 0 1 88 50" fill="none" stroke="var(--color-primary)" strokeWidth="1.5" markerEnd="url(#zone-arrow)" />
-                  <path d="M 88 50 A 38 38 0 0 1 50 88" fill="none" stroke="var(--color-primary)" strokeWidth="1.5" markerEnd="url(#zone-arrow)" />
-                  <path d="M 50 88 A 38 38 0 0 1 12 50" fill="none" stroke="var(--color-primary)" strokeWidth="1.5" markerEnd="url(#zone-arrow)" />
-                  <path d="M 12 50 A 38 38 0 0 1 50 12" fill="none" stroke="var(--color-primary)" strokeWidth="1.5" markerEnd="url(#zone-arrow)" />
-                </svg>
+          {/* lg 미만(모바일·태블릿) — 큰 원형 사진을 세로로 순서대로 배치하고
+              화살표로 잇다가, 마지막에 다시 01번으로 돌아가는 순환 표시로 마무리합니다.
+              원형 다이어그램에 사진+설명을 모두 담을 만큼 폭이 넓지 않아 세로 흐름으로 전환합니다. */}
+          <ol className="mx-auto mt-14 flex max-w-[22rem] flex-col items-center sm:max-w-[26rem] lg:hidden">
+            {ELEMENTARY_ZONES.map((zone, index) => {
+              const photo = ZONE_PHOTOS[index];
+              const isLast = index === ELEMENTARY_ZONES.length - 1;
 
-                {/* 중앙 허브 */}
-                <div className="absolute left-1/2 top-1/2 flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full bg-[var(--color-primary)] text-center text-white shadow-lg sm:h-28 sm:w-28 lg:h-40 lg:w-40">
-                  <RotateCw aria-hidden="true" size={24} />
-                  <p className="mt-1 text-xs font-black leading-tight sm:text-sm lg:text-lg">
-                    1교시
-                    <br />
-                    순환 체험
-                  </p>
-                </div>
-
-                {ELEMENTARY_ZONES.map((zone, index) => {
-                  const positionClass = [
-                    "left-1/2 top-0 -translate-x-1/2 -translate-y-1/2",
-                    "left-full top-1/2 -translate-x-1/2 -translate-y-1/2",
-                    "left-1/2 top-full -translate-x-1/2 -translate-y-1/2",
-                    "left-0 top-1/2 -translate-x-1/2 -translate-y-1/2",
-                  ][index];
-                  // 원형 노드는 아래로 갈수록 폭이 좁아져 긴 제목은 둥근 테두리에 잘립니다.
-                  // 노드 안에는 짧은 키워드만 표시하고, 전체 명칭은 sr-only와 아래 범례 목록에서 제공합니다.
-                  const shortLabel = ["시각", "지체", "지적", "퀴즈"][index];
-                  const photo = ZONE_PHOTOS[index];
-
-                  return (
-                    <div
-                      key={zone.title}
-                      className={`absolute h-20 w-20 ${positionClass} sm:h-32 sm:w-32 lg:h-44 lg:w-44`}
-                    >
-                      <div className="relative h-full w-full overflow-hidden rounded-full shadow-md ring-4 ring-[var(--color-surface-alt)]">
+              return (
+                <li key={zone.title} className="flex w-full flex-col items-center">
+                  <Reveal delay={index * 100} className="flex w-full flex-col items-center">
+                    <div className="relative">
+                      <div className="relative h-60 w-60 overflow-hidden rounded-full shadow-lg ring-4 ring-white sm:h-80 sm:w-80">
                         {photo ? (
-                          <>
-                            <Image src={photo.src} alt="" fill sizes="(min-width: 1024px) 176px, (min-width: 640px) 128px, 80px" className="object-cover" />
-                            <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/85 to-transparent" />
-                          </>
+                          <Image
+                            src={photo.src}
+                            alt={photo.alt}
+                            fill
+                            sizes="(min-width: 640px) 320px, 240px"
+                            className="object-cover"
+                          />
                         ) : (
-                          <div className="flex h-full w-full items-start justify-center bg-[var(--color-primary-tint)] pt-4 sm:pt-6 lg:pt-8">
-                            <zone.icon aria-hidden="true" size={28} className="text-[var(--color-primary-hover)]" />
+                          <div className="flex h-full w-full items-center justify-center bg-[var(--color-primary-tint)]">
+                            <zone.icon aria-hidden="true" size={56} className="text-[var(--color-primary-hover)]" />
                           </div>
                         )}
-                        <p
-                          className={`absolute inset-x-0 bottom-1.5 text-center text-xs font-black leading-tight sm:bottom-3 sm:text-base lg:bottom-4 lg:text-xl ${
-                            photo ? "text-white" : "text-[var(--color-text)]"
-                          }`}
-                        >
-                          <span className="sr-only">{index + 1}번째 체험존: {zone.title}</span>
-                          <span aria-hidden="true">{shortLabel}</span>
-                        </p>
                       </div>
                       <span
                         aria-hidden="true"
-                        className="absolute -left-1.5 -top-1.5 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-[var(--color-text)] text-sm font-black text-white shadow sm:h-10 sm:w-10 sm:text-base lg:h-12 lg:w-12 lg:text-lg"
+                        className="absolute -left-2 -top-2 flex h-11 w-11 items-center justify-center rounded-full bg-[var(--color-text)] text-lg font-black text-white shadow sm:h-14 sm:w-14 sm:text-2xl"
                       >
                         0{index + 1}
                       </span>
                     </div>
-                  );
-                })}
-              </div>
-            </div>
-          </Reveal>
+                    <h3 className="mt-5 text-xl font-black text-[var(--color-text)] sm:text-2xl">
+                      {zone.title}
+                    </h3>
+                    <p className="mt-2 max-w-[28em] text-center leading-relaxed text-[var(--color-text-muted)]">
+                      {zone.desc}
+                    </p>
+                  </Reveal>
 
-          <ul className="mx-auto mt-10 max-w-[44em] space-y-3 text-sm leading-relaxed text-[var(--color-text-muted)] sm:text-base">
-            {ELEMENTARY_ZONES.map((zone, index) => (
-              <li key={zone.title} className="flex gap-3">
-                <span aria-hidden="true" className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[var(--color-text)] text-[11px] font-black text-white">
-                  0{index + 1}
-                </span>
-                <span>
-                  <strong className="font-bold text-[var(--color-text)]">{zone.title}</strong> — {zone.desc}
-                </span>
-              </li>
-            ))}
-          </ul>
+                  {isLast ? (
+                    <p className="mt-8 inline-flex items-center gap-2 rounded-full bg-[var(--color-primary-tint)] px-5 py-2 text-center text-sm font-bold text-[var(--color-primary-hover)]">
+                      <RotateCw aria-hidden="true" size={16} />
+                      다시 01번 존으로 — 한 교시 안에 네 존을 순환 체험
+                    </p>
+                  ) : (
+                    <ArrowDown aria-hidden="true" size={28} className="my-6 shrink-0 text-[var(--color-primary)]" />
+                  )}
+                </li>
+              );
+            })}
+          </ol>
+
+          {/* lg 이상(데스크톱) — 넓은 화면에서는 큰 원형 사진 4개를 중앙 허브 둘레에
+              배치하고, 호(arc)와 화살표로 01→02→03→04→01 순환 흐름을 보여줍니다.
+              사진 아래에는 각 존의 제목과 체험 설명을 그대로 담습니다. */}
+          {/* 바깥 래퍼는 920px 고정 — 안쪽 680px 원형 배치 박스 + 노드가 밖으로 튀어나오는
+              여유 공간을 명시적으로 확보합니다. max-w에 px 패딩을 같이 쓰면 패딩이
+              max-w 안쪽 폭을 깎아먹어 노드끼리 겹치므로, 폭/높이를 고정값으로 분리합니다. */}
+          <div className="relative mx-auto mt-20 hidden h-[920px] w-[920px] lg:block">
+            <div className="absolute left-1/2 top-1/2 h-[680px] w-[680px] -translate-x-1/2 -translate-y-1/2">
+              <svg aria-hidden="true" viewBox="0 0 100 100" className="absolute inset-0 h-full w-full overflow-visible">
+                <defs>
+                  <marker id="zone-arrow" markerWidth="6" markerHeight="6" refX="4.5" refY="3" orient="auto-start-reverse">
+                    <path d="M0,0 L6,3 L0,6 Z" fill="var(--color-primary)" />
+                  </marker>
+                </defs>
+                <circle cx="50" cy="50" r="20" fill="none" stroke="var(--color-border)" strokeWidth="1.5" strokeDasharray="3 4" />
+                <path d="M 50 30 A 20 20 0 0 1 70 50" fill="none" stroke="var(--color-primary)" strokeWidth="1.5" markerEnd="url(#zone-arrow)" />
+                <path d="M 70 50 A 20 20 0 0 1 50 70" fill="none" stroke="var(--color-primary)" strokeWidth="1.5" markerEnd="url(#zone-arrow)" />
+                <path d="M 50 70 A 20 20 0 0 1 30 50" fill="none" stroke="var(--color-primary)" strokeWidth="1.5" markerEnd="url(#zone-arrow)" />
+                <path d="M 30 50 A 20 20 0 0 1 50 30" fill="none" stroke="var(--color-primary)" strokeWidth="1.5" markerEnd="url(#zone-arrow)" />
+              </svg>
+
+              {/* 중앙 허브 */}
+              <div className="absolute left-1/2 top-1/2 flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full bg-[var(--color-primary)] text-center text-white shadow-lg">
+                <RotateCw aria-hidden="true" size={22} />
+                <p className="mt-1 text-sm font-black leading-tight">
+                  1교시
+                  <br />
+                  순환 체험
+                </p>
+              </div>
+
+              {ELEMENTARY_ZONES.map((zone, index) => {
+                const positionClass = [
+                  "left-1/2 top-0 -translate-x-1/2 -translate-y-1/2",
+                  "left-full top-1/2 -translate-x-1/2 -translate-y-1/2",
+                  "left-1/2 top-full -translate-x-1/2 -translate-y-1/2",
+                  "left-0 top-1/2 -translate-x-1/2 -translate-y-1/2",
+                ][index];
+                const photo = ZONE_PHOTOS[index];
+
+                return (
+                  <Reveal key={zone.title} delay={index * 100} className={`absolute flex w-60 flex-col items-center ${positionClass}`}>
+                    <div className="relative h-60 w-60 shrink-0 overflow-hidden rounded-full shadow-lg ring-4 ring-[var(--color-surface-alt)]">
+                      {photo ? (
+                        <Image
+                          src={photo.src}
+                          alt={photo.alt}
+                          fill
+                          sizes="240px"
+                          className="object-cover"
+                        />
+                      ) : (
+                        <div className="flex h-full w-full items-center justify-center bg-[var(--color-primary-tint)]">
+                          <zone.icon aria-hidden="true" size={44} className="text-[var(--color-primary-hover)]" />
+                        </div>
+                      )}
+                      <span
+                        aria-hidden="true"
+                        className="absolute left-3 top-3 flex h-9 w-9 items-center justify-center rounded-full bg-[var(--color-text)] text-sm font-black text-white shadow"
+                      >
+                        0{index + 1}
+                      </span>
+                    </div>
+                    <h3 className="mt-4 text-center text-lg font-black text-[var(--color-text)]">
+                      {zone.title}
+                    </h3>
+                    <p className="mt-2 max-w-[16rem] text-center text-sm leading-relaxed text-[var(--color-text-muted)]">
+                      {zone.desc}
+                    </p>
+                  </Reveal>
+                );
+              })}
+            </div>
+          </div>
         </Container>
       </section>
 
