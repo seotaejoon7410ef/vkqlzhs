@@ -45,20 +45,12 @@ export default function AboutPage() {
       <section className="bg-[var(--color-surface)] py-16 sm:py-20">
         <Container className="max-w-[700px] text-center">
           <Reveal>
-            <ul className="mx-auto max-w-[460px] space-y-4 text-left text-lg leading-[1.6] text-[var(--color-text-muted)] sm:text-xl">
-              <li className="flex gap-3">
-                <span aria-hidden="true" className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-primary)]" />
-                학교로 직접 찾아가는 장애인식개선 체험교육 기관입니다
-              </li>
-              <li className="flex gap-3">
-                <span aria-hidden="true" className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-primary)]" />
-                화면 속 영상이 아닌, 몸으로 걷고 멈추고 부딪히는 체험입니다
-              </li>
-              <li className="flex gap-3">
-                <span aria-hidden="true" className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-primary)]" />
-                다른 사람의 하루를 몸으로 느끼는 교육을 만듭니다
-              </li>
-            </ul>
+            <p className="text-lg font-bold leading-[1.8] text-[var(--color-text-muted)] sm:text-xl">
+              &quot;시선을 잇다는 학교를 직접 찾아가는 장애인식개선 체험교육
+              기관입니다. 화면 속 영상이 아니라, 아이들이 직접 걷고, 멈추고,
+              부딪혀 보며 다른 사람의 하루를 몸으로 느끼는 교육을
+              만듭니다.&quot;
+            </p>
           </Reveal>
         </Container>
       </section>
