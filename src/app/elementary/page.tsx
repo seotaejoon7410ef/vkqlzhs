@@ -180,24 +180,24 @@ export default function ElementaryPage() {
                 <li key={zone.title} className="flex w-full flex-col items-center">
                   <Reveal delay={index * 100} className="flex w-full flex-col items-center">
                     <div className="relative">
-                      <div className="relative h-60 w-60 overflow-hidden rounded-full shadow-lg ring-4 ring-white sm:h-80 sm:w-80">
+                      <div className="relative h-72 w-72 overflow-hidden rounded-full shadow-lg ring-4 ring-white sm:h-96 sm:w-96">
                         {photo ? (
                           <Image
                             src={photo.src}
                             alt={photo.alt}
                             fill
-                            sizes="(min-width: 640px) 320px, 240px"
+                            sizes="(min-width: 640px) 384px, 288px"
                             className="object-cover"
                           />
                         ) : (
                           <div className="flex h-full w-full items-center justify-center bg-[var(--color-primary-tint)]">
-                            <zone.icon aria-hidden="true" size={56} className="text-[var(--color-primary-hover)]" />
+                            <zone.icon aria-hidden="true" size={64} className="text-[var(--color-primary-hover)]" />
                           </div>
                         )}
                       </div>
                       <span
                         aria-hidden="true"
-                        className="absolute -left-2 -top-2 flex h-11 w-11 items-center justify-center rounded-full bg-[var(--color-text)] text-lg font-black text-white shadow sm:h-14 sm:w-14 sm:text-2xl"
+                        className="absolute -left-2 -top-2 flex h-12 w-12 items-center justify-center rounded-full bg-[var(--color-text)] text-xl font-black text-white shadow sm:h-16 sm:w-16 sm:text-3xl"
                       >
                         0{index + 1}
                       </span>
@@ -226,28 +226,30 @@ export default function ElementaryPage() {
           {/* lg 이상(데스크톱) — 넓은 화면에서는 큰 원형 사진 4개를 중앙 허브 둘레에
               배치하고, 호(arc)와 화살표로 01→02→03→04→01 순환 흐름을 보여줍니다.
               사진 아래에는 각 존의 제목과 체험 설명을 그대로 담습니다. */}
-          {/* 바깥 래퍼는 920px 고정 — 안쪽 680px 원형 배치 박스 + 노드가 밖으로 튀어나오는
-              여유 공간을 명시적으로 확보합니다. max-w에 px 패딩을 같이 쓰면 패딩이
-              max-w 안쪽 폭을 깎아먹어 노드끼리 겹치므로, 폭/높이를 고정값으로 분리합니다. */}
-          <div className="relative mx-auto mt-20 hidden h-[920px] w-[920px] lg:block">
-            <div className="absolute left-1/2 top-1/2 h-[680px] w-[680px] -translate-x-1/2 -translate-y-1/2">
+          {/* 바깥 래퍼 크기를 lg/xl 두 단계로 고정 — 안쪽 원형 배치 박스 + 노드가 밖으로
+              튀어나오는 여유 공간을 명시적으로 확보합니다. max-w에 px 패딩을 같이 쓰면
+              패딩이 max-w 안쪽 폭을 깎아먹어 노드끼리 겹치므로, 폭/높이를 고정값으로 분리합니다.
+              화살표 호(arc)는 중앙 허브가 아니라 사진 바로 안쪽 가장자리를 따라 돌도록
+              반지름을 사진 쪽으로 바짝 붙였습니다. */}
+          <div className="relative mx-auto mt-20 hidden h-[824px] w-[824px] lg:block xl:h-[968px] xl:w-[968px]">
+            <div className="absolute left-1/2 top-1/2 h-[568px] w-[568px] -translate-x-1/2 -translate-y-1/2 xl:h-[648px] xl:w-[648px]">
               <svg aria-hidden="true" viewBox="0 0 100 100" className="absolute inset-0 h-full w-full overflow-visible">
                 <defs>
-                  <marker id="zone-arrow" markerWidth="6" markerHeight="6" refX="4.5" refY="3" orient="auto-start-reverse">
-                    <path d="M0,0 L6,3 L0,6 Z" fill="var(--color-primary)" />
+                  <marker id="zone-arrow" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto-start-reverse">
+                    <path d="M0,0 L7,3.5 L0,7 Z" fill="var(--color-primary)" />
                   </marker>
                 </defs>
-                <circle cx="50" cy="50" r="20" fill="none" stroke="var(--color-border)" strokeWidth="1.5" strokeDasharray="3 4" />
-                <path d="M 50 30 A 20 20 0 0 1 70 50" fill="none" stroke="var(--color-primary)" strokeWidth="1.5" markerEnd="url(#zone-arrow)" />
-                <path d="M 70 50 A 20 20 0 0 1 50 70" fill="none" stroke="var(--color-primary)" strokeWidth="1.5" markerEnd="url(#zone-arrow)" />
-                <path d="M 50 70 A 20 20 0 0 1 30 50" fill="none" stroke="var(--color-primary)" strokeWidth="1.5" markerEnd="url(#zone-arrow)" />
-                <path d="M 30 50 A 20 20 0 0 1 50 30" fill="none" stroke="var(--color-primary)" strokeWidth="1.5" markerEnd="url(#zone-arrow)" />
+                <circle cx="50" cy="50" r="34" fill="none" stroke="var(--color-border)" strokeWidth="2" strokeDasharray="3 4" />
+                <path d="M 50 16 A 34 34 0 0 1 84 50" fill="none" stroke="var(--color-primary)" strokeWidth="2" markerEnd="url(#zone-arrow)" />
+                <path d="M 84 50 A 34 34 0 0 1 50 84" fill="none" stroke="var(--color-primary)" strokeWidth="2" markerEnd="url(#zone-arrow)" />
+                <path d="M 50 84 A 34 34 0 0 1 16 50" fill="none" stroke="var(--color-primary)" strokeWidth="2" markerEnd="url(#zone-arrow)" />
+                <path d="M 16 50 A 34 34 0 0 1 50 16" fill="none" stroke="var(--color-primary)" strokeWidth="2" markerEnd="url(#zone-arrow)" />
               </svg>
 
               {/* 중앙 허브 */}
-              <div className="absolute left-1/2 top-1/2 flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full bg-[var(--color-primary)] text-center text-white shadow-lg">
-                <RotateCw aria-hidden="true" size={22} />
-                <p className="mt-1 text-sm font-black leading-tight">
+              <div className="absolute left-1/2 top-1/2 flex h-[72px] w-[72px] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full bg-[var(--color-primary)] text-center text-white shadow-lg xl:h-[88px] xl:w-[88px]">
+                <RotateCw aria-hidden="true" size={20} />
+                <p className="mt-1 text-xs font-black leading-tight xl:text-sm">
                   1교시
                   <br />
                   순환 체험
@@ -264,32 +266,32 @@ export default function ElementaryPage() {
                 const photo = ZONE_PHOTOS[index];
 
                 return (
-                  <Reveal key={zone.title} delay={index * 100} className={`absolute flex w-60 flex-col items-center ${positionClass}`}>
-                    <div className="relative h-60 w-60 shrink-0 overflow-hidden rounded-full shadow-lg ring-4 ring-[var(--color-surface-alt)]">
+                  <Reveal key={zone.title} delay={index * 100} className={`absolute flex w-64 flex-col items-center ${positionClass} xl:w-80`}>
+                    <div className="relative h-64 w-64 shrink-0 overflow-hidden rounded-full shadow-lg ring-4 ring-[var(--color-surface-alt)] xl:h-80 xl:w-80">
                       {photo ? (
                         <Image
                           src={photo.src}
                           alt={photo.alt}
                           fill
-                          sizes="240px"
+                          sizes="(min-width: 1280px) 320px, 256px"
                           className="object-cover"
                         />
                       ) : (
                         <div className="flex h-full w-full items-center justify-center bg-[var(--color-primary-tint)]">
-                          <zone.icon aria-hidden="true" size={44} className="text-[var(--color-primary-hover)]" />
+                          <zone.icon aria-hidden="true" size={48} className="text-[var(--color-primary-hover)] xl:size-14" />
                         </div>
                       )}
                       <span
                         aria-hidden="true"
-                        className="absolute left-3 top-3 flex h-9 w-9 items-center justify-center rounded-full bg-[var(--color-text)] text-sm font-black text-white shadow"
+                        className="absolute left-3 top-3 flex h-10 w-10 items-center justify-center rounded-full bg-[var(--color-text)] text-base font-black text-white shadow xl:h-12 xl:w-12 xl:text-lg"
                       >
                         0{index + 1}
                       </span>
                     </div>
-                    <h3 className="mt-4 text-center text-lg font-black text-[var(--color-text)]">
+                    <h3 className="mt-4 text-center text-lg font-black text-[var(--color-text)] xl:text-xl">
                       {zone.title}
                     </h3>
-                    <p className="mt-2 max-w-[16rem] text-center text-sm leading-relaxed text-[var(--color-text-muted)]">
+                    <p className="mt-2 max-w-[17rem] text-center text-sm leading-relaxed text-[var(--color-text-muted)] xl:max-w-[19rem] xl:text-base">
                       {zone.desc}
                     </p>
                   </Reveal>
