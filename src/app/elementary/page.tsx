@@ -104,7 +104,7 @@ export default function ElementaryPage() {
                     태도가 형성되는 중요한 시기입니다.
                   </p>
                   <p className="max-w-[36em] leading-[1.9]">
-                    행복한길잡이는 이 시기의 아이들에게 장애를 단순히
+                    시선을 잇다는 이 시기의 아이들에게 장애를 단순히
                     지식으로 설명하기보다, 직접 보고, 움직이고, 느끼는
                     경험을 통해 자연스럽게 이해할 수 있도록 교육합니다.
                   </p>
@@ -316,7 +316,7 @@ export default function ElementaryPage() {
                 <p className="mt-5 leading-relaxed text-white [text-shadow:0_1px_10px_rgb(0_0_0_/_60%)]">
                   서로의 다름을 이해하고 자연스럽게 함께하는 교실,
                   <br className="hidden sm:block" />
-                  행복한길잡이가 함께하겠습니다.
+                  시선을 잇다가 함께하겠습니다.
                 </p>
               </Reveal>
               <Reveal delay={200}>

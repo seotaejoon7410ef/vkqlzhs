@@ -26,7 +26,7 @@ export default function AboutPage() {
           <div className="absolute inset-0 mx-auto flex max-w-[1360px] flex-col items-start justify-center px-6 text-left lg:px-10">
             <Reveal className="max-w-[560px]">
               <p className="text-lg font-bold tracking-wide text-[#F5C518] sm:text-xl">
-                체험교육센터 행복한길잡이
+                체험교육센터 시선을 잇다
               </p>
               <h1
                 className="mt-4 text-balance text-2xl leading-[1.5] font-black text-white [text-shadow:0_2px_16px_rgb(0_0_0_/_60%)] sm:text-4xl lg:text-5xl"
@@ -46,7 +46,7 @@ export default function AboutPage() {
         <Container className="max-w-[700px] text-center">
           <Reveal>
             <p className="text-lg leading-[1.8] text-[var(--color-text-muted)] sm:text-xl">
-              행복한길잡이는 학교를 직접 찾아가는 장애인식개선 체험교육
+              시선을 잇다는 학교를 직접 찾아가는 장애인식개선 체험교육
               기관입니다. 화면 속 영상이 아니라, 아이들이 직접 걷고, 멈추고,
               부딪혀 보며 다른 사람의 하루를 몸으로 느끼는 교육을 만듭니다.
             </p>
@@ -126,7 +126,7 @@ export default function AboutPage() {
             <p className="mt-6 text-lg leading-[1.8] text-[var(--color-text)]">
               유치원과 초·중·고등학교는 「장애인복지법」에 따라 매년
               장애인식개선교육을 실시해야 하며, 강사를 통한 대면교육이
-              포함되어야 합니다. 행복한길잡이는 이 의무교육을 &apos;해야
+              포함되어야 합니다. 시선을 잇다는 이 의무교육을 &apos;해야
               하는 교육&apos;에서 &apos;기억에 남는 교육&apos;으로
               바꾸고자 합니다.
             </p>
@@ -159,7 +159,7 @@ export default function AboutPage() {
               믿습니다.&quot;
             </blockquote>
             <p className="mt-6 text-lg font-bold text-white">
-              — 체험교육센터 행복한길잡이 대표 서태준
+              — 체험교육센터 시선을 잇다 대표 서태준
             </p>
           </Reveal>
         </Container>
