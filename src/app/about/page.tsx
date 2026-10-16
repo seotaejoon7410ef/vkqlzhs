@@ -45,11 +45,20 @@ export default function AboutPage() {
       <section className="bg-[var(--color-surface)] py-16 sm:py-20">
         <Container className="max-w-[700px] text-center">
           <Reveal>
-            <p className="text-lg leading-[1.8] text-[var(--color-text-muted)] sm:text-xl">
-              시선을 잇다는 학교를 직접 찾아가는 장애인식개선 체험교육
-              기관입니다. 화면 속 영상이 아니라, 아이들이 직접 걷고, 멈추고,
-              부딪혀 보며 다른 사람의 하루를 몸으로 느끼는 교육을 만듭니다.
-            </p>
+            <ul className="mx-auto max-w-[460px] space-y-4 text-left text-lg leading-[1.6] text-[var(--color-text-muted)] sm:text-xl">
+              <li className="flex gap-3">
+                <span aria-hidden="true" className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-primary)]" />
+                학교로 직접 찾아가는 장애인식개선 체험교육 기관입니다
+              </li>
+              <li className="flex gap-3">
+                <span aria-hidden="true" className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-primary)]" />
+                화면 속 영상이 아닌, 몸으로 걷고 멈추고 부딪히는 체험입니다
+              </li>
+              <li className="flex gap-3">
+                <span aria-hidden="true" className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-primary)]" />
+                다른 사람의 하루를 몸으로 느끼는 교육을 만듭니다
+              </li>
+            </ul>
           </Reveal>
         </Container>
       </section>
@@ -62,13 +71,20 @@ export default function AboutPage() {
               <h2 className="text-balance text-2xl font-black leading-tight text-[var(--color-text)] sm:text-3xl">
                 직접 만들고, 현장에서 다듬은 프로그램
               </h2>
-              <p className="mt-6 text-lg leading-[1.8] text-[var(--color-text)]">
-                모든 체험존은 저희가 직접 기획하고 설계한 자체 개발
-                프로그램입니다. 휠체어가 실제로 돌 수 있는 통로 폭, 아이
-                눈높이에 맞는 설명, 체험 뒤에 남는 작은 약속 하나까지.
-                수업마다 아이들이 어디서 멈추고 어디서 깨닫는지 지켜보며
-                계속 고쳐 왔습니다.
-              </p>
+              <ul className="mt-6 space-y-4 text-lg leading-[1.6] text-[var(--color-text)]">
+                <li className="flex gap-3">
+                  <span aria-hidden="true" className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-primary)]" />
+                  모든 체험존을 저희가 직접 기획하고 설계했습니다
+                </li>
+                <li className="flex gap-3">
+                  <span aria-hidden="true" className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-primary)]" />
+                  휠체어 통로 폭부터 아이 눈높이 설명까지 세심하게 구성했습니다
+                </li>
+                <li className="flex gap-3">
+                  <span aria-hidden="true" className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-primary)]" />
+                  현장에서 아이들을 지켜보며 계속 고쳐 온 프로그램입니다
+                </li>
+              </ul>
             </Reveal>
             <Reveal delay={100}>
               <div className="relative aspect-[4/3] w-full overflow-hidden rounded-sm">
@@ -93,13 +109,20 @@ export default function AboutPage() {
               <h2 className="text-balance text-2xl font-black leading-tight text-[var(--color-text)] sm:text-3xl">
                 학교의 수고는 덜고, 교육의 의미는 더하고
               </h2>
-              <p className="mt-6 text-lg leading-[1.8] text-[var(--color-text)]">
-                장비와 전기선은 모두 직접 준비해 가며, 강당이 없어도
-                필로티나 실내외 공간에서 진행할 수 있습니다. 한 교시 안에
-                한 학급이 모든 체험존을 경험하고, 최대 네 학급이 동시에
-                참여할 수 있습니다. 학교급에 맞춰 설명과 난이도를
-                달리합니다.
-              </p>
+              <ul className="mt-6 space-y-4 text-lg leading-[1.6] text-[var(--color-text)]">
+                <li className="flex gap-3">
+                  <span aria-hidden="true" className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-primary)]" />
+                  장비·전기선까지 모두 준비해 방문하니, 강당이 없어도 진행할 수 있습니다
+                </li>
+                <li className="flex gap-3">
+                  <span aria-hidden="true" className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-primary)]" />
+                  한 교시 안에 한 학급이 모든 체험존을 경험합니다
+                </li>
+                <li className="flex gap-3">
+                  <span aria-hidden="true" className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-primary)]" />
+                  최대 네 학급까지 동시 참여, 학교급에 맞춰 난이도를 조절합니다
+                </li>
+              </ul>
             </Reveal>
             <Reveal delay={100} className="lg:order-1">
               <div className="relative aspect-[1200/1060] w-full overflow-hidden rounded-sm">
@@ -123,13 +146,20 @@ export default function AboutPage() {
             <h2 className="text-balance text-2xl font-black leading-tight text-[var(--color-text)] sm:text-3xl">
               법정 의무교육, 의미 있게 채웁니다
             </h2>
-            <p className="mt-6 text-lg leading-[1.8] text-[var(--color-text)]">
-              유치원과 초·중·고등학교는 「장애인복지법」에 따라 매년
-              장애인식개선교육을 실시해야 하며, 강사를 통한 대면교육이
-              포함되어야 합니다. 시선을 잇다는 이 의무교육을 &apos;해야
-              하는 교육&apos;에서 &apos;기억에 남는 교육&apos;으로
-              바꾸고자 합니다.
-            </p>
+            <ul className="mt-6 space-y-4 text-lg leading-[1.6] text-[var(--color-text)]">
+              <li className="flex gap-3">
+                <span aria-hidden="true" className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-primary)]" />
+                유치원과 초·중·고등학교는 「장애인복지법」에 따라 매년 장애인식개선교육을 실시해야 합니다
+              </li>
+              <li className="flex gap-3">
+                <span aria-hidden="true" className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-primary)]" />
+                강사를 통한 대면교육이 반드시 포함되어야 합니다
+              </li>
+              <li className="flex gap-3">
+                <span aria-hidden="true" className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-primary)]" />
+                시선을 잇다는 이 의무교육을 &apos;해야 하는 교육&apos;에서 &apos;기억에 남는 교육&apos;으로 바꾸고자 합니다
+              </li>
+            </ul>
           </Reveal>
         </Container>
       </section>
