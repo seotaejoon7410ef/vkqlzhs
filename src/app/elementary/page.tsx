@@ -172,7 +172,7 @@ export default function ElementaryPage() {
             <div
               role="img"
               aria-label="4가지 체험존이 원형으로 배치되어 있고, 01 시각장애공감체험, 02 지체장애공감체험, 03 지적장애공감체험, 04 장애인식개선퀴즈 순서로 원을 그리며 순환 체험합니다"
-              className="relative mx-auto mt-16 max-w-[220px] px-8 py-8 sm:max-w-[360px] sm:px-12 sm:py-12 lg:max-w-[440px] lg:px-16 lg:py-16"
+              className="relative mx-auto mt-16 max-w-[240px] px-10 py-10 sm:max-w-[440px] sm:px-16 sm:py-16 lg:max-w-[680px] lg:px-24 lg:py-24"
             >
               <div className="relative aspect-square w-full">
                 <svg aria-hidden="true" viewBox="0 0 100 100" className="absolute inset-0 h-full w-full">
@@ -189,9 +189,9 @@ export default function ElementaryPage() {
                 </svg>
 
                 {/* 중앙 허브 */}
-                <div className="absolute left-1/2 top-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full bg-[var(--color-primary)] text-center text-white shadow-lg sm:h-20 sm:w-20 lg:h-24 lg:w-24">
-                  <RotateCw aria-hidden="true" size={18} />
-                  <p className="mt-1 text-[10px] font-black leading-tight sm:text-xs">
+                <div className="absolute left-1/2 top-1/2 flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full bg-[var(--color-primary)] text-center text-white shadow-lg sm:h-28 sm:w-28 lg:h-40 lg:w-40">
+                  <RotateCw aria-hidden="true" size={24} />
+                  <p className="mt-1 text-xs font-black leading-tight sm:text-sm lg:text-lg">
                     1교시
                     <br />
                     순환 체험
@@ -213,21 +213,21 @@ export default function ElementaryPage() {
                   return (
                     <div
                       key={zone.title}
-                      className={`absolute h-16 w-16 ${positionClass} sm:h-24 sm:w-24 lg:h-28 lg:w-28`}
+                      className={`absolute h-20 w-20 ${positionClass} sm:h-32 sm:w-32 lg:h-44 lg:w-44`}
                     >
                       <div className="relative h-full w-full overflow-hidden rounded-full shadow-md ring-4 ring-[var(--color-surface-alt)]">
                         {photo ? (
                           <>
-                            <Image src={photo.src} alt="" fill sizes="112px" className="object-cover" />
+                            <Image src={photo.src} alt="" fill sizes="(min-width: 1024px) 176px, (min-width: 640px) 128px, 80px" className="object-cover" />
                             <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/85 to-transparent" />
                           </>
                         ) : (
-                          <div className="flex h-full w-full items-start justify-center bg-[var(--color-primary-tint)] pt-3 sm:pt-4">
-                            <zone.icon aria-hidden="true" size={20} className="text-[var(--color-primary-hover)]" />
+                          <div className="flex h-full w-full items-start justify-center bg-[var(--color-primary-tint)] pt-4 sm:pt-6 lg:pt-8">
+                            <zone.icon aria-hidden="true" size={28} className="text-[var(--color-primary-hover)]" />
                           </div>
                         )}
                         <p
-                          className={`absolute inset-x-0 bottom-1 text-center text-[10px] font-black leading-tight sm:bottom-2 sm:text-xs lg:text-sm ${
+                          className={`absolute inset-x-0 bottom-1.5 text-center text-xs font-black leading-tight sm:bottom-3 sm:text-base lg:bottom-4 lg:text-xl ${
                             photo ? "text-white" : "text-[var(--color-text)]"
                           }`}
                         >
@@ -237,7 +237,7 @@ export default function ElementaryPage() {
                       </div>
                       <span
                         aria-hidden="true"
-                        className="absolute -left-1 -top-1 z-10 flex h-6 w-6 items-center justify-center rounded-full bg-[var(--color-text)] text-[11px] font-black text-white shadow sm:h-7 sm:w-7 sm:text-xs lg:h-8 lg:w-8 lg:text-sm"
+                        className="absolute -left-1.5 -top-1.5 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-[var(--color-text)] text-sm font-black text-white shadow sm:h-10 sm:w-10 sm:text-base lg:h-12 lg:w-12 lg:text-lg"
                       >
                         0{index + 1}
                       </span>
