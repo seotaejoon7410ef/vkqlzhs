@@ -55,7 +55,7 @@ export default function ElementaryPage() {
           {/* 실제 초등학교 장애인식개선의 날 행사 현장 사진 */}
           <Image
             src="/elementary-hero.jpg"
-            alt="보라색 공감 체험 터널 안에서 흰지팡이를 든 학생이 안대를 쓰고 친구의 도움을 받아 걷고 있다"
+            alt="체육관에 지적장애·지체장애 공감 체험존이 설치되고 학생들이 컵블록 쌓기와 휠체어 체험에 참여하는 모습"
             fill
             priority
             sizes="100vw"
