@@ -97,18 +97,20 @@ export default function ElementaryPage() {
                 </h2>
               </Reveal>
               <Reveal delay={100}>
-                <div className="mt-8 space-y-6 text-[var(--color-text-muted)]">
-                  <p className="max-w-[36em] leading-[1.9]">
-                    초등학생 시기는 신체적인 성장뿐 아니라 친구와
-                    관계를 맺고, 서로의 다름을 이해하며 사회를 바라보는
-                    태도가 형성되는 중요한 시기입니다.
-                  </p>
-                  <p className="max-w-[36em] leading-[1.9]">
-                    시선을 잇다는 이 시기의 아이들에게 장애를 단순히
-                    지식으로 설명하기보다, 직접 보고, 움직이고, 느끼는
-                    경험을 통해 자연스럽게 이해할 수 있도록 교육합니다.
-                  </p>
-                </div>
+                <ul className="mt-8 max-w-[36em] space-y-4 leading-[1.6] text-[var(--color-text-muted)]">
+                  <li className="flex gap-3">
+                    <span aria-hidden="true" className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-primary)]" />
+                    신체적 성장과 함께 친구 관계와 사회적 태도가 형성되는 시기입니다
+                  </li>
+                  <li className="flex gap-3">
+                    <span aria-hidden="true" className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-primary)]" />
+                    장애를 지식이 아닌, 직접 보고 움직이고 느끼는 경험으로 알려줍니다
+                  </li>
+                  <li className="flex gap-3">
+                    <span aria-hidden="true" className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-primary)]" />
+                    시선을 잇다는 이런 체험을 통해 자연스러운 이해를 돕습니다
+                  </li>
+                </ul>
               </Reveal>
             </div>
 
