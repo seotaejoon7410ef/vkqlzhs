@@ -267,7 +267,7 @@ export default function ElementaryPage() {
           <dl className="mt-10 grid gap-x-8 gap-y-6 border-t border-[var(--color-border)] pt-8 sm:grid-cols-2">
             {INFO_ITEMS.map((item) => (
               <div key={item.label} className="border-b border-[var(--color-border)] pb-4">
-                <dt className="text-base font-bold text-[var(--color-primary-hover)]">{item.label}</dt>
+                <dt className="text-xl font-bold text-[var(--color-primary-hover)]">{item.label}</dt>
                 <dd className="mt-1 leading-relaxed text-[var(--color-text)]">{item.value}</dd>
               </div>
             ))}
