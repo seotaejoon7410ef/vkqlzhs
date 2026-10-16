@@ -73,9 +73,9 @@ export function SiteHeader() {
         <a href="/" className="flex shrink-0 items-center rounded-md">
           <Image
             src="/logo-lockup.png"
-            alt="행복한길잡이 체험교육센터 로고"
-            width={329}
-            height={114}
+            alt="시선을 잇다 장애인식개선교육 체험센터 로고"
+            width={1356}
+            height={938}
             priority
             className="h-16 w-auto sm:h-20"
           />
