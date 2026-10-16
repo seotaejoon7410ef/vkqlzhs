@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowDown, ArrowRight, Camera } from "lucide-react";
+import { ArrowDown, ArrowRight, Camera, RotateCw } from "lucide-react";
 import { Container } from "@/components/container";
 import { Kicker } from "@/components/kicker";
 import { Reveal } from "@/components/reveal";
@@ -45,6 +45,9 @@ const ZONE_PHOTOS: Record<number, { src: string; alt: string }> = {
     alt: "지적장애공감체험 존에서 학생들이 컵블록 쌓기 체험을 하는 모습",
   },
 };
+
+// 순환 다이어그램용 짧은 존 이름 — ELEMENTARY_ZONES 순서(시각/지체/지적/퀴즈)와 맞춤
+const ZONE_SHORT_LABELS = ["시각장애", "지체장애", "지적장애", "퀴즈"];
 
 export default function ElementaryPage() {
   return (
@@ -162,6 +165,47 @@ export default function ElementaryPage() {
               </p>
             </Reveal>
           </div>
+
+          {/* 순환 다이어그램 — 한 교시 안에 학급이 4개 존을 순서대로 도는 구조를 원형으로 표현 */}
+          <Reveal delay={50}>
+            <div
+              role="img"
+              aria-label="4개 체험존이 원형으로 배치되어 있고, 한 교시 안에 순서대로 순환하며 체험하는 구조"
+              className="relative mx-auto mt-14 aspect-square w-full max-w-[300px] sm:max-w-[420px]"
+            >
+              <div
+                aria-hidden="true"
+                className="absolute inset-[15%] rounded-full border-2 border-dashed border-[var(--color-border)]"
+              />
+              <div className="absolute left-1/2 top-1/2 flex h-24 w-24 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-1 rounded-full bg-[var(--color-primary)] text-center text-white shadow-lg sm:h-28 sm:w-28">
+                <RotateCw aria-hidden="true" size={20} />
+                <span className="text-xs font-bold leading-tight sm:text-sm">
+                  1교시
+                  <br />4존 순환
+                </span>
+              </div>
+              {ELEMENTARY_ZONES.map((zone, index) => {
+                const position = [
+                  "left-1/2 top-0 -translate-x-1/2 -translate-y-1/2",
+                  "left-full top-1/2 -translate-x-1/2 -translate-y-1/2",
+                  "left-1/2 top-full -translate-x-1/2 -translate-y-1/2",
+                  "left-0 top-1/2 -translate-x-1/2 -translate-y-1/2",
+                ][index];
+                return (
+                  <div
+                    key={zone.title}
+                    aria-hidden="true"
+                    className={`absolute ${position} flex h-16 w-16 flex-col items-center justify-center gap-1 rounded-full border-2 border-[var(--color-border)] bg-[var(--color-surface)] p-2 text-center shadow-sm sm:h-24 sm:w-24`}
+                  >
+                    <zone.icon aria-hidden="true" size={18} className="text-[var(--color-primary-hover)]" />
+                    <span className="text-[11px] font-bold leading-tight text-[var(--color-text)] sm:text-xs">
+                      {ZONE_SHORT_LABELS[index]}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
+          </Reveal>
 
           <div className="mt-16 grid gap-x-12 gap-y-16 sm:grid-cols-2">
             {ELEMENTARY_ZONES.map((zone, index) => (
