@@ -9,15 +9,13 @@ export function SiteFooter() {
       <Container className="py-10">
         {/* 1행: 로고와 메뉴를 같은 높이로 정렬 */}
         <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
-          {/* 안전교육/장애인식개선 체험교육 업종에 어울리는 차분하고
-              신뢰감 있는 차콜 네이비 배경. 어두운 배경에서 잘 보이도록
-              흰색/노란색 버전 로고(logo-lockup-light.png)를 사용. */}
+          {/* 보라색 배경이 있는 로고 뱃지를 그대로 사용 */}
           <Image
-            src="/logo-lockup-light.png"
+            src="/logo-footer-purple.png"
             alt="시선을 잇다 장애인식개선교육 체험센터 로고"
-            width={455}
-            height={294}
-            className="h-16 w-auto self-start sm:h-20 lg:mt-6 lg:self-auto"
+            width={479}
+            height={318}
+            className="h-16 w-auto self-start rounded-md sm:h-20 lg:mt-6 lg:self-auto"
           />
 
           <nav aria-label="바로가기" className="hidden flex-wrap items-start gap-x-12 gap-y-6 lg:flex lg:justify-end lg:pt-5">
