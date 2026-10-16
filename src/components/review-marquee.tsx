@@ -36,6 +36,19 @@ const REVIEWS: Review[] = [
     ],
     postUrl: "https://blog.naver.com/happyguide95/224428336191",
   },
+  {
+    id: "siheung-oo",
+    school: "경기도 시흥 OO초",
+    photos: [
+      "/reviews/siheung-oo-1.jpg",
+      "/reviews/siheung-oo-2.jpg",
+      "/reviews/siheung-oo-3.jpg",
+      "/reviews/siheung-oo-4.jpg",
+      "/reviews/siheung-oo-5.jpg",
+      "/reviews/siheung-oo-6.jpg",
+    ],
+    postUrl: "https://blog.naver.com/happyguide95/224444094046",
+  },
 ];
 
 function gridColsClass(count: number) {
