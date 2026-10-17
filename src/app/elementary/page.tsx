@@ -229,25 +229,29 @@ export default function ElementaryPage() {
           {/* 바깥 래퍼 크기를 lg/xl 두 단계로 고정 — 안쪽 원형 배치 박스 + 노드가 밖으로
               튀어나오는 여유 공간을 명시적으로 확보합니다. max-w에 px 패딩을 같이 쓰면
               패딩이 max-w 안쪽 폭을 깎아먹어 노드끼리 겹치므로, 폭/높이를 고정값으로 분리합니다.
-              화살표 호(arc)는 중앙 허브가 아니라 사진 바로 안쪽 가장자리를 따라 돌도록
-              반지름을 사진 쪽으로 바짝 붙였습니다. */}
-          <div className="relative mx-auto mt-20 hidden h-[824px] w-[824px] lg:block xl:h-[968px] xl:w-[968px]">
-            <div className="absolute left-1/2 top-1/2 h-[568px] w-[568px] -translate-x-1/2 -translate-y-1/2 xl:h-[648px] xl:w-[648px]">
-              <svg aria-hidden="true" viewBox="0 0 100 100" className="absolute inset-0 h-full w-full overflow-visible">
-                <defs>
-                  <marker id="zone-arrow" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto-start-reverse">
-                    <path d="M0,0 L7,3.5 L0,7 Z" fill="var(--color-primary)" />
-                  </marker>
-                </defs>
-                <circle cx="50" cy="50" r="34" fill="none" stroke="var(--color-border)" strokeWidth="2" strokeDasharray="3 4" />
-                <path d="M 50 16 A 34 34 0 0 1 84 50" fill="none" stroke="var(--color-primary)" strokeWidth="2" markerEnd="url(#zone-arrow)" />
-                <path d="M 84 50 A 34 34 0 0 1 50 84" fill="none" stroke="var(--color-primary)" strokeWidth="2" markerEnd="url(#zone-arrow)" />
-                <path d="M 50 84 A 34 34 0 0 1 16 50" fill="none" stroke="var(--color-primary)" strokeWidth="2" markerEnd="url(#zone-arrow)" />
-                <path d="M 16 50 A 34 34 0 0 1 50 16" fill="none" stroke="var(--color-primary)" strokeWidth="2" markerEnd="url(#zone-arrow)" />
-              </svg>
+              화살표 호(arc)는 사진·설명 전체를 피해서 지나가도록 반지름을 다시
+              계산했습니다. 사진 바로 옆(지름 쪽) 호는 각 존 설명 텍스트 영역과
+              실제로 겹쳐서(둥근 사진은 중앙에서 먼 변쪽일수록 비어 보이지만, 설명
+              텍스트 박스는 사진 아래로 사각형째 내려오기 때문에) 화살표가 글자를
+              가로지르는 문제가 있어, 호가 사진·설명 바깥 모서리에 닿지 않는
+              안전한 반지름으로 조정했습니다. */}
+          <div className="relative mx-auto mt-20 hidden h-[860px] w-[860px] lg:block xl:h-[1000px] xl:w-[1000px]">
+            <svg aria-hidden="true" viewBox="0 0 100 100" className="absolute inset-0 z-0 h-full w-full">
+              <defs>
+                <marker id="zone-arrow" markerWidth="8" markerHeight="8" refX="5.5" refY="4" orient="auto-start-reverse">
+                  <path d="M0,0 L8,4 L0,8 Z" fill="var(--color-primary)" />
+                </marker>
+              </defs>
+              <circle cx="50" cy="50" r="23" fill="none" stroke="var(--color-border)" strokeWidth="1.5" strokeDasharray="2 3" />
+              <path d="M 50 27 A 23 23 0 0 1 73 50" fill="none" stroke="var(--color-primary)" strokeWidth="1.5" markerEnd="url(#zone-arrow)" />
+              <path d="M 73 50 A 23 23 0 0 1 50 73" fill="none" stroke="var(--color-primary)" strokeWidth="1.5" markerEnd="url(#zone-arrow)" />
+              <path d="M 50 73 A 23 23 0 0 1 27 50" fill="none" stroke="var(--color-primary)" strokeWidth="1.5" markerEnd="url(#zone-arrow)" />
+              <path d="M 27 50 A 23 23 0 0 1 50 27" fill="none" stroke="var(--color-primary)" strokeWidth="1.5" markerEnd="url(#zone-arrow)" />
+            </svg>
 
+            <div className="absolute left-1/2 top-1/2 isolate h-[568px] w-[568px] -translate-x-1/2 -translate-y-1/2 xl:h-[648px] xl:w-[648px]">
               {/* 중앙 허브 */}
-              <div className="absolute left-1/2 top-1/2 flex h-[72px] w-[72px] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full bg-[var(--color-primary)] text-center text-white shadow-lg xl:h-[88px] xl:w-[88px]">
+              <div className="absolute left-1/2 top-1/2 z-10 flex h-[72px] w-[72px] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full bg-[var(--color-primary)] text-center text-white shadow-lg xl:h-[88px] xl:w-[88px]">
                 <RotateCw aria-hidden="true" size={20} />
                 <p className="mt-1 text-xs font-black leading-tight xl:text-sm">
                   1교시
@@ -266,7 +270,7 @@ export default function ElementaryPage() {
                 const photo = ZONE_PHOTOS[index];
 
                 return (
-                  <Reveal key={zone.title} delay={index * 100} className={`absolute flex w-64 flex-col items-center ${positionClass} xl:w-80`}>
+                  <Reveal key={zone.title} delay={index * 100} className={`absolute z-10 flex w-64 flex-col items-center ${positionClass} xl:w-80`}>
                     <div className="relative h-64 w-64 shrink-0 overflow-hidden rounded-full shadow-lg ring-4 ring-[var(--color-surface-alt)] xl:h-80 xl:w-80">
                       {photo ? (
                         <Image
@@ -291,7 +295,7 @@ export default function ElementaryPage() {
                     <h3 className="mt-4 text-center text-lg font-black text-[var(--color-text)] xl:text-xl">
                       {zone.title}
                     </h3>
-                    <p className="mt-2 max-w-[17rem] text-center text-sm leading-relaxed text-[var(--color-text-muted)] xl:max-w-[19rem] xl:text-base">
+                    <p className="mt-2 max-w-[15rem] text-center text-sm leading-relaxed text-[var(--color-text-muted)] xl:max-w-[18rem] xl:text-base">
                       {zone.desc}
                     </p>
                   </Reveal>
