@@ -229,24 +229,23 @@ export default function ElementaryPage() {
           {/* 바깥 래퍼 크기를 lg/xl 두 단계로 고정 — 안쪽 원형 배치 박스 + 노드가 밖으로
               튀어나오는 여유 공간을 명시적으로 확보합니다. max-w에 px 패딩을 같이 쓰면
               패딩이 max-w 안쪽 폭을 깎아먹어 노드끼리 겹치므로, 폭/높이를 고정값으로 분리합니다.
-              화살표 호(arc)는 사진·설명 전체를 피해서 지나가도록 반지름을 다시
-              계산했습니다. 사진 바로 옆(지름 쪽) 호는 각 존 설명 텍스트 영역과
-              실제로 겹쳐서(둥근 사진은 중앙에서 먼 변쪽일수록 비어 보이지만, 설명
-              텍스트 박스는 사진 아래로 사각형째 내려오기 때문에) 화살표가 글자를
-              가로지르는 문제가 있어, 호가 사진·설명 바깥 모서리에 닿지 않는
-              안전한 반지름으로 조정했습니다. */}
+              화살표를 사진 바로 옆까지 빼보려고 여러 반지름 각도를 테스트했지만,
+              사진 아래로 내려오는 설명 텍스트 박스(특히 좌/우/하단 존)와 어느
+              지점에서든 겹쳐 글자를 가로지르는 문제가 재현되어, 텍스트와 절대
+              겹치지 않는 게 확인된 반지름으로 유지하고 선 굵기·화살표 크기를
+              키워 존재감을 더했습니다. */}
           <div className="relative mx-auto mt-20 hidden h-[860px] w-[860px] lg:block xl:h-[1000px] xl:w-[1000px]">
             <svg aria-hidden="true" viewBox="0 0 100 100" className="absolute inset-0 z-0 h-full w-full">
               <defs>
-                <marker id="zone-arrow" markerWidth="8" markerHeight="8" refX="5.5" refY="4" orient="auto-start-reverse">
-                  <path d="M0,0 L8,4 L0,8 Z" fill="var(--color-primary)" />
+                <marker id="zone-arrow" markerWidth="6" markerHeight="6" refX="4.2" refY="3" orient="auto-start-reverse">
+                  <path d="M0,0 L6,3 L0,6 Z" fill="var(--color-primary)" />
                 </marker>
               </defs>
-              <circle cx="50" cy="50" r="23" fill="none" stroke="var(--color-border)" strokeWidth="1.5" strokeDasharray="2 3" />
-              <path d="M 50 27 A 23 23 0 0 1 73 50" fill="none" stroke="var(--color-primary)" strokeWidth="1.5" markerEnd="url(#zone-arrow)" />
-              <path d="M 73 50 A 23 23 0 0 1 50 73" fill="none" stroke="var(--color-primary)" strokeWidth="1.5" markerEnd="url(#zone-arrow)" />
-              <path d="M 50 73 A 23 23 0 0 1 27 50" fill="none" stroke="var(--color-primary)" strokeWidth="1.5" markerEnd="url(#zone-arrow)" />
-              <path d="M 27 50 A 23 23 0 0 1 50 27" fill="none" stroke="var(--color-primary)" strokeWidth="1.5" markerEnd="url(#zone-arrow)" />
+              <circle cx="50" cy="50" r="23" fill="none" stroke="var(--color-border)" strokeWidth="2" strokeDasharray="2.5 4" />
+              <path d="M 50 27 A 23 23 0 0 1 73 50" fill="none" stroke="var(--color-primary)" strokeWidth="3" markerEnd="url(#zone-arrow)" />
+              <path d="M 73 50 A 23 23 0 0 1 50 73" fill="none" stroke="var(--color-primary)" strokeWidth="3" markerEnd="url(#zone-arrow)" />
+              <path d="M 50 73 A 23 23 0 0 1 27 50" fill="none" stroke="var(--color-primary)" strokeWidth="3" markerEnd="url(#zone-arrow)" />
+              <path d="M 27 50 A 23 23 0 0 1 50 27" fill="none" stroke="var(--color-primary)" strokeWidth="3" markerEnd="url(#zone-arrow)" />
             </svg>
 
             <div className="absolute left-1/2 top-1/2 isolate h-[568px] w-[568px] -translate-x-1/2 -translate-y-1/2 xl:h-[648px] xl:w-[648px]">
