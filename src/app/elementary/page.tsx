@@ -237,13 +237,13 @@ export default function ElementaryPage() {
 
           {/* xl(1280px) 미만에서는 중앙 카드 자리가 없으니, 세로 흐름 아래에 같은
               운영 팁을 보여줍니다. */}
-          <div className="mx-auto mt-10 max-w-[26rem] rounded-2xl bg-[var(--color-surface)] p-6 text-left shadow-sm ring-1 ring-[var(--color-border)] xl:hidden">
-            <p className="text-xs font-black tracking-[0.2em] text-[var(--color-primary)]">운영 TIP</p>
-            <ul className="mt-3 space-y-3">
+          <div className="mx-auto mt-10 max-w-[32rem] rounded-2xl bg-[var(--color-surface)] p-8 text-left shadow-sm ring-1 ring-[var(--color-border)] xl:hidden">
+            <p className="text-sm font-black tracking-[0.2em] text-[var(--color-primary)]">운영 TIP</p>
+            <ul className="mt-4 space-y-4">
               {OPERATING_TIPS.map((tip) => (
                 <li key={tip.title} className="flex gap-3">
-                  <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-primary)]" />
-                  <p className="leading-snug text-[var(--color-text)]">
+                  <span aria-hidden="true" className="mt-2.5 h-2 w-2 shrink-0 rounded-full bg-[var(--color-primary)]" />
+                  <p className="text-lg leading-snug text-[var(--color-text)]">
                     <strong className="font-black text-[var(--color-primary-hover)]">{tip.title}</strong> — {tip.point}
                   </p>
                 </li>
@@ -272,13 +272,13 @@ export default function ElementaryPage() {
               {/* 중앙 운영 팁 카드 — 화살표 호(반지름 약 237px) 안쪽에 들어가도록
                   대각선 길이를 여유 있게 맞춘 크기입니다. 한 줄 3POINT 요약으로
                   압축해 더 크고 읽기 쉬운 카드로 바꿨습니다. */}
-              <div className="absolute left-1/2 top-1/2 z-10 w-[380px] -translate-x-1/2 -translate-y-1/2 rounded-2xl bg-[var(--color-surface)] p-7 text-left shadow-xl ring-1 ring-[var(--color-border)]">
-                <p className="text-xs font-black tracking-[0.2em] text-[var(--color-primary)]">운영 TIP</p>
-                <ul className="mt-4 space-y-4">
+              <div className="absolute left-1/2 top-1/2 z-10 w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-2xl bg-[var(--color-surface)] p-7 text-left shadow-xl ring-1 ring-[var(--color-border)]">
+                <p className="text-sm font-black tracking-[0.2em] text-[var(--color-primary)]">운영 TIP</p>
+                <ul className="mt-3 space-y-3">
                   {OPERATING_TIPS.map((tip) => (
                     <li key={tip.title} className="flex gap-3">
                       <span aria-hidden="true" className="mt-2.5 h-2 w-2 shrink-0 rounded-full bg-[var(--color-primary)]" />
-                      <p className="text-base leading-snug text-[var(--color-text)]">
+                      <p className="text-lg leading-snug text-[var(--color-text)]">
                         <strong className="font-black text-[var(--color-primary-hover)]">{tip.title}</strong> — {tip.point}
                       </p>
                     </li>
