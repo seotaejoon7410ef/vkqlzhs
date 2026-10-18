@@ -11,7 +11,7 @@ export function SiteFooter() {
         <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
           <Image
             src="/logo-lockup-whitesub.png"
-            alt="시선을 잇다 장애인식개선교육 체험센터 로고"
+            alt="시선을잇다 장애인식개선교육 체험센터 로고"
             width={1356}
             height={938}
             className="h-24 w-auto self-start sm:h-28 lg:mt-6 lg:self-auto"
@@ -112,7 +112,7 @@ export function SiteFooter() {
         </div>
 
         <p className="mt-6 text-left text-sm text-white/70 lg:text-right lg:text-base">
-          Copyright © 2026 시선을 잇다. All rights reserved.
+          Copyright © 2026 시선을잇다. All rights reserved.
         </p>
       </Container>
     </footer>

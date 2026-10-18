@@ -198,7 +198,7 @@ export default function MiddlePage() {
                     사람의 입장에서 상황을 바라보는 경험이 중요합니다.
                   </p>
                   <p className="max-w-[36em] leading-[1.9]">
-                    시선을 잇다는 체험을 통해 질문을 만들고, 그 질문을
+                    시선을잇다는 체험을 통해 질문을 만들고, 그 질문을
                     통해 학생들이 스스로 생각할 수 있도록 수업을
                     구성합니다.
                   </p>
@@ -244,7 +244,7 @@ export default function MiddlePage() {
           <Reveal delay={200}>
             <div className="mx-auto mt-10 max-w-2xl space-y-4 text-center leading-[1.9] text-[var(--color-text-muted)]">
               <p>
-                시선을 잇다의 체험은 단순히 「불편함을 느껴보는 것」에서
+                시선을잇다의 체험은 단순히 「불편함을 느껴보는 것」에서
                 끝나지 않습니다.
               </p>
               <p>

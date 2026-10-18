@@ -37,7 +37,7 @@ export async function POST(request: Request) {
   }
 
   const text = [
-    "시선을 잇다 홈페이지로 문의가 도착했습니다.",
+    "시선을잇다 홈페이지로 문의가 도착했습니다.",
     "",
     `체험 종류: ${programType}`,
     `지역: ${area}`,
@@ -61,7 +61,7 @@ export async function POST(request: Request) {
   try {
     const resend = new Resend(apiKey);
     const { error } = await resend.emails.send({
-      from: "시선을 잇다 홈페이지 <onboarding@resend.dev>",
+      from: "시선을잇다 홈페이지 <onboarding@resend.dev>",
       to: TO_EMAIL,
       replyTo: email,
       subject: `[홈페이지 문의] ${school} - ${name}`,
