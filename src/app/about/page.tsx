@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { Container } from "@/components/container";
-import { Kicker } from "@/components/kicker";
 import { Reveal } from "@/components/reveal";
-import { ReviewMarquee } from "@/components/review-marquee";
 
 export const metadata: Metadata = {
   title: "회사소개",
@@ -155,31 +153,6 @@ export default function AboutPage() {
               </li>
             </ul>
           </Reveal>
-        </Container>
-      </section>
-
-      {/* 실제 학교 후기 — 숫자(운영 학교 수) 대신 실제 사진으로 신뢰를 보여줍니다 */}
-      <section className="bg-[var(--color-surface)] py-16 sm:py-20">
-        <Container>
-          <div className="text-center">
-            <Kicker>SCHOOL REVIEW</Kicker>
-            <h2 className="mt-3 text-balance text-2xl font-black leading-tight text-[var(--color-text)] sm:text-3xl">
-              직접 겪은 학교들의 이야기
-            </h2>
-          </div>
-        </Container>
-        <div className="mt-8">
-          <ReviewMarquee />
-        </div>
-        <Container>
-          <a
-            href="https://blog.naver.com/happyguide95"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-8 block text-center text-sm font-bold text-[var(--color-primary-hover)] hover:underline"
-          >
-            블로그에서 더 많은 후기 보기 →
-          </a>
         </Container>
       </section>
 
