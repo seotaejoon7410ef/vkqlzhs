@@ -16,7 +16,7 @@ const notoSansKr = Noto_Sans_KR({
 
 export const metadata: Metadata = {
   title: {
-    default: "시선을잇다 | 찾아가는 체험교육센터 (장애인식개선)",
+    default: "시선을잇다 | 찾아가는 장애인식개선교육 체험센터",
     template: "%s | 시선을잇다",
   },
   description:
