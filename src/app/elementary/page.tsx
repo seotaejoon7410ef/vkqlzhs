@@ -24,10 +24,11 @@ const INFO_ITEMS = [
 
 // 4. EXPERIENCE 다이어그램 중앙에 들어가는 운영 팁 — 큰 화면(xl)에서는 원형
 // 순환 다이어그램 가운데에, 그보다 좁은 화면에서는 세로 흐름 아래에 보여줍니다.
+// 제목+설명 문단 대신 한 줄 3POINT 요약으로 압축해 작은 공간에서도 가독성을 유지합니다.
 const OPERATING_TIPS = [
-  { title: "01. 10분, 하나의 시선", desc: "존마다 10분씩 머물며 차례로 이동합니다. 한 교시 동안 네 가지 시선을 모두 만납니다." },
-  { title: "02. 열고, 겪고, 남기다", desc: "2분 동안 존을 소개하며 마음을 열고, 7분 동안 직접 겪어 보고, 1분 동안 느낀 점을 정리해 마음에 남깁니다." },
-  { title: "03. 기다림 없는 동시 체험", desc: "최대 4학급이 각자 다른 존에서 동시에 시작합니다. 대기 시간 없이 모든 학생이 온전히 체험에 집중합니다." },
+  { title: "10분, 하나의 시선", point: "존마다 10분씩 머물며 네 가지 시선을 모두 만납니다" },
+  { title: "열고, 겪고, 남기다", point: "소개 2분, 체험 7분, 정리 1분으로 진행합니다" },
+  { title: "기다림 없는 동시 체험", point: "최대 4학급이 동시에 체험해 대기 시간이 없습니다" },
 ];
 
 const APPLY_FLOW = [
@@ -237,12 +238,17 @@ export default function ElementaryPage() {
           {/* xl(1280px) 미만에서는 중앙 카드 자리가 없으니, 세로 흐름 아래에 같은
               운영 팁을 보여줍니다. */}
           <div className="mx-auto mt-10 max-w-[26rem] rounded-2xl bg-[var(--color-surface)] p-6 text-left shadow-sm ring-1 ring-[var(--color-border)] xl:hidden">
-            {OPERATING_TIPS.map((tip, index) => (
-              <div key={tip.title} className={index > 0 ? "mt-4" : ""}>
-                <p className="font-black text-[var(--color-primary-hover)]">{tip.title}</p>
-                <p className="mt-1 text-sm leading-relaxed text-[var(--color-text-muted)]">{tip.desc}</p>
-              </div>
-            ))}
+            <p className="text-xs font-black tracking-[0.2em] text-[var(--color-primary)]">운영 TIP</p>
+            <ul className="mt-3 space-y-3">
+              {OPERATING_TIPS.map((tip) => (
+                <li key={tip.title} className="flex gap-3">
+                  <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-primary)]" />
+                  <p className="leading-snug text-[var(--color-text)]">
+                    <strong className="font-black text-[var(--color-primary-hover)]">{tip.title}</strong> — {tip.point}
+                  </p>
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* xl(1280px) 이상 — 사진 사이 간격 자체를 크게 벌려서, 화살표가 사진
@@ -264,14 +270,20 @@ export default function ElementaryPage() {
 
             <div className="absolute left-1/2 top-1/2 isolate h-[896px] w-[896px] -translate-x-1/2 -translate-y-1/2">
               {/* 중앙 운영 팁 카드 — 화살표 호(반지름 약 237px) 안쪽에 들어가도록
-                  대각선 길이를 여유 있게 맞춘 크기입니다. */}
-              <div className="absolute left-1/2 top-1/2 z-10 w-[340px] -translate-x-1/2 -translate-y-1/2 rounded-2xl bg-[var(--color-surface)] p-6 text-left shadow-xl ring-1 ring-[var(--color-border)]">
-                {OPERATING_TIPS.map((tip, index) => (
-                  <div key={tip.title} className={index > 0 ? "mt-4" : ""}>
-                    <p className="text-base font-black text-[var(--color-primary-hover)]">{tip.title}</p>
-                    <p className="mt-1 text-sm leading-snug text-[var(--color-text-muted)]">{tip.desc}</p>
-                  </div>
-                ))}
+                  대각선 길이를 여유 있게 맞춘 크기입니다. 한 줄 3POINT 요약으로
+                  압축해 더 크고 읽기 쉬운 카드로 바꿨습니다. */}
+              <div className="absolute left-1/2 top-1/2 z-10 w-[380px] -translate-x-1/2 -translate-y-1/2 rounded-2xl bg-[var(--color-surface)] p-7 text-left shadow-xl ring-1 ring-[var(--color-border)]">
+                <p className="text-xs font-black tracking-[0.2em] text-[var(--color-primary)]">운영 TIP</p>
+                <ul className="mt-4 space-y-4">
+                  {OPERATING_TIPS.map((tip) => (
+                    <li key={tip.title} className="flex gap-3">
+                      <span aria-hidden="true" className="mt-2.5 h-2 w-2 shrink-0 rounded-full bg-[var(--color-primary)]" />
+                      <p className="text-base leading-snug text-[var(--color-text)]">
+                        <strong className="font-black text-[var(--color-primary-hover)]">{tip.title}</strong> — {tip.point}
+                      </p>
+                    </li>
+                  ))}
+                </ul>
               </div>
 
               {ELEMENTARY_ZONES.map((zone, index) => {
