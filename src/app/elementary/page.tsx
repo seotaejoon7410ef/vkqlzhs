@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowDown, ArrowRight, RotateCw } from "lucide-react";
+import { ArrowDown, ArrowRight, RotateCw, Users } from "lucide-react";
 import { Container } from "@/components/container";
 import { Kicker } from "@/components/kicker";
 import { Reveal } from "@/components/reveal";
@@ -379,6 +379,13 @@ export default function ElementaryPage() {
               </div>
             ))}
           </dl>
+
+          <div className="mt-8 flex items-start gap-3 rounded-2xl bg-[var(--color-primary-tint)] p-5">
+            <Users aria-hidden="true" size={22} className="mt-0.5 shrink-0 text-[var(--color-primary-hover)]" />
+            <p className="leading-relaxed text-[var(--color-text)]">
+              <strong className="font-bold">학급당 최대 25명</strong>일 때 가장 알차게 운영됩니다. 그보다 인원이 많으면 체험 시간이나 존별 설명이 다소 짧아질 수 있어요.
+            </p>
+          </div>
 
           <div className="mt-14">
             <h3 className="text-lg font-black text-[var(--color-text)]">
