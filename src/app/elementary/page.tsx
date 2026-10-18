@@ -214,7 +214,7 @@ export default function ElementaryPage() {
                         0{index + 1}
                       </span>
                     </div>
-                    <h3 className="mt-5 text-2xl font-black text-[var(--color-text)] sm:text-3xl">
+                    <h3 className="mt-5 text-3xl font-black text-[var(--color-text)] sm:text-4xl">
                       {zone.title}
                     </h3>
                     <p className="mt-2 max-w-[28em] text-center leading-relaxed text-[var(--color-text-muted)]">
@@ -312,7 +312,7 @@ export default function ElementaryPage() {
                         </div>
                       )}
                     </div>
-                    <h3 className="mt-3 max-w-[17rem] text-center text-xl font-black text-[var(--color-text)]">
+                    <h3 className="mt-3 max-w-[18rem] text-center text-2xl font-black text-[var(--color-text)]">
                       {zone.title}
                     </h3>
                     <p className="sr-only">{zone.desc}</p>
@@ -325,35 +325,35 @@ export default function ElementaryPage() {
       </section>
 
       {/* 5. EDUCATIONAL FLOW — 경험이 태도로 이어지는 과정 (요약) */}
-      <section className="bg-[var(--color-surface)] py-16 sm:py-20">
+      <section className="bg-[var(--color-surface)] py-20 sm:py-28">
         <Container>
-          <div className="flex flex-col items-center gap-6 text-center sm:flex-row sm:justify-center sm:gap-5">
+          <div className="flex flex-col items-center gap-10 text-center sm:flex-row sm:justify-between sm:gap-6">
             <Reveal>
               <div>
-                <p className="text-sm font-black tracking-[0.15em] text-[var(--color-primary)]">
+                <p className="text-lg font-black tracking-[0.15em] text-[var(--color-primary)] sm:text-xl">
                   EXPERIENCE
                 </p>
-                <p className="mt-1 text-lg font-bold text-[var(--color-text)]">직접 경험하고</p>
+                <p className="mt-2 text-2xl font-black text-[var(--color-text)] sm:text-3xl">직접 경험하고</p>
               </div>
             </Reveal>
-            <ArrowDown aria-hidden="true" size={20} className="text-[var(--color-border)] sm:hidden" />
-            <ArrowRight aria-hidden="true" size={20} className="hidden text-[var(--color-border)] sm:block" />
+            <ArrowDown aria-hidden="true" size={32} className="shrink-0 text-[var(--color-border)] sm:hidden" />
+            <ArrowRight aria-hidden="true" size={36} className="hidden shrink-0 text-[var(--color-border)] sm:block" />
             <Reveal delay={100}>
               <div>
-                <p className="text-sm font-black tracking-[0.15em] text-[var(--color-primary)]">
+                <p className="text-lg font-black tracking-[0.15em] text-[var(--color-primary)] sm:text-xl">
                   UNDERSTANDING
                 </p>
-                <p className="mt-1 text-lg font-bold text-[var(--color-text)]">다름을 이해하고</p>
+                <p className="mt-2 text-2xl font-black text-[var(--color-text)] sm:text-3xl">다름을 이해하고</p>
               </div>
             </Reveal>
-            <ArrowDown aria-hidden="true" size={20} className="text-[var(--color-border)] sm:hidden" />
-            <ArrowRight aria-hidden="true" size={20} className="hidden text-[var(--color-border)] sm:block" />
+            <ArrowDown aria-hidden="true" size={32} className="shrink-0 text-[var(--color-border)] sm:hidden" />
+            <ArrowRight aria-hidden="true" size={36} className="hidden shrink-0 text-[var(--color-border)] sm:block" />
             <Reveal delay={200}>
               <div>
-                <p className="text-sm font-black tracking-[0.15em] text-[var(--color-primary)]">
+                <p className="text-lg font-black tracking-[0.15em] text-[var(--color-primary)] sm:text-xl">
                   TOGETHER
                 </p>
-                <p className="mt-1 text-lg font-bold text-[var(--color-text)]">자연스럽게 함께합니다</p>
+                <p className="mt-2 text-2xl font-black text-[var(--color-text)] sm:text-3xl">자연스럽게 함께합니다</p>
               </div>
             </Reveal>
           </div>
