@@ -15,17 +15,24 @@ export default function AboutPage() {
       <section className="on-dark relative isolate overflow-hidden lg:pt-24">
         <div className="relative aspect-[1080/1350] w-full sm:aspect-[1920/720]">
           <Image
-            src="/about-hero-bg.jpg"
+            src="/about-hero-3.jpg"
             alt=""
             aria-hidden="true"
             fill
             priority
             sizes="100vw"
-            className="object-cover object-[40%_center] sm:object-[70%_center]"
+            className="object-cover object-[73%_center] sm:object-[center_28%]"
+          />
+          {/* 실제 체험 사진이 글자 아래 깔리면서 대비가 약해지는 구간이
+              생겨, 글자가 놓이는 쪽(모바일은 아래, 데스크톱은 왼쪽)을
+              은은하게 어둡게 처리해 가독성을 보강합니다. */}
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(0,0,0,0)_0%,rgba(0,0,0,0.78)_38%,rgba(0,0,0,0.78)_72%,rgba(0,0,0,0)_100%)] sm:bg-gradient-to-r sm:from-black/65 sm:via-black/10 sm:to-transparent"
           />
           <div className="absolute inset-0 mx-auto flex max-w-[1360px] flex-col items-start justify-center px-6 text-left lg:px-10">
             <Reveal className="max-w-[560px]">
-              <p className="text-lg font-bold tracking-wide text-[#F5C518] sm:text-xl">
+              <p className="text-lg font-bold tracking-wide text-[#F5C518] [text-shadow:0_1px_10px_rgb(0_0_0_/_70%)] sm:text-xl">
                 장애인식개선교육 체험센터 시선을잇다
               </p>
               <h1
