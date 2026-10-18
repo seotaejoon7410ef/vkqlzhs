@@ -55,28 +55,50 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* 직접 만들고, 현장에서 다듬은 프로그램 */}
+      {/* 차별화된 설계, 세심한 디테일, 완성도 높은 교육 */}
       <section className="bg-[var(--color-surface-alt)] py-16 sm:py-20">
         <Container>
-          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+          <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-16">
             <Reveal>
               <h2 className="text-balance text-2xl font-black leading-tight text-[var(--color-text)] sm:text-3xl">
-                직접 만들고, 현장에서 다듬은 프로그램
+                차별화된 설계, 세심한 디테일, 완성도 높은 교육
               </h2>
-              <ul className="mt-6 space-y-4 text-lg leading-[1.6] text-[var(--color-text)]">
-                <li className="flex gap-3">
-                  <span aria-hidden="true" className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-primary)]" />
-                  모든 체험존을 저희가 직접 기획하고 설계했습니다
-                </li>
-                <li className="flex gap-3">
-                  <span aria-hidden="true" className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-primary)]" />
-                  휠체어 통로 폭부터 아이 눈높이 설명까지 세심하게 구성했습니다
-                </li>
-                <li className="flex gap-3">
-                  <span aria-hidden="true" className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-primary)]" />
-                  현장에서 아이들을 지켜보며 계속 고쳐 온 프로그램입니다
-                </li>
-              </ul>
+              <p className="mt-3 text-lg font-bold text-[var(--color-text-muted)]">
+                &quot;좋은 체험을 넘어, 오래도록 기억되는 교육의 차이를
+                만듭니다.&quot;
+              </p>
+              <div className="mt-8 space-y-6">
+                <div>
+                  <p className="text-lg font-black text-[var(--color-primary-hover)]">
+                    01. 독자적인 기획과 설계
+                  </p>
+                  <p className="mt-2 leading-relaxed text-[var(--color-text)]">
+                    체험 콘텐츠부터 교육 운영 방식까지, 모든 과정을 자체
+                    기획·설계하여 시선을잇다만의 차별화된 교육 프로그램을
+                    선보입니다.
+                  </p>
+                </div>
+                <div>
+                  <p className="text-lg font-black text-[var(--color-primary-hover)]">
+                    02. 디테일에서 완성되는 교육의 품격
+                  </p>
+                  <p className="mt-2 leading-relaxed text-[var(--color-text)]">
+                    체험 공간의 구성과 이동 동선, 학생의 눈높이에 맞춘
+                    설명까지. 작은 요소 하나에도 교육적 의미와 세심한
+                    배려를 담았습니다.
+                  </p>
+                </div>
+                <div>
+                  <p className="text-lg font-black text-[var(--color-primary-hover)]">
+                    03. 현장의 경험으로 높여가는 완성도
+                  </p>
+                  <p className="mt-2 leading-relaxed text-[var(--color-text)]">
+                    실제 교육 현장에서 축적한 경험과 학생들의 반응을
+                    바탕으로 프로그램을 지속적으로 정교화하며, 수준 높은
+                    체험교육을 제공합니다.
+                  </p>
+                </div>
+              </div>
             </Reveal>
             <Reveal delay={100}>
               <div className="relative aspect-[4/3] w-full overflow-hidden rounded-sm">
