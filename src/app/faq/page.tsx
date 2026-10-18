@@ -58,10 +58,10 @@ export default function FaqPage() {
           통일된 흰색/밝은 배경으로 처리 (site-header.tsx의 NO_DARK_HERO_PATHS에도
           포함되어 헤더가 항상 불투명이라 lg 이상에서 위쪽 여백을 더 줍니다) */}
       <section className="bg-[var(--color-surface-alt)] pt-16 pb-16 sm:pt-20 sm:pb-20 lg:pt-32">
-        <Container className="max-w-[900px] text-center">
+        <Container className="max-w-[1100px] text-center">
           <Reveal>
-            <Kicker>FAQ</Kicker>
-            <h1 className="text-balance mt-4 text-3xl font-black leading-tight text-[var(--color-text)] sm:text-4xl">
+            <Kicker large>FAQ</Kicker>
+            <h1 className="text-balance mt-5 text-4xl font-black leading-tight text-[var(--color-text)] sm:text-5xl">
               선생님들이 많이 물어보세요
             </h1>
           </Reveal>
@@ -71,39 +71,39 @@ export default function FaqPage() {
       {/* 운영 안내 — 다른 페이지의 GUIDE 섹션과 동일한 스타일
           (카드+원형 배지 대신 상단 테두리+숫자 리스트) */}
       <section className="bg-[var(--color-surface)] py-16 sm:py-20">
-        <Container className="max-w-[900px]">
+        <Container className="max-w-[1100px]">
           <Reveal>
-            <Kicker>GUIDE</Kicker>
-            <h2 className="text-balance mt-3 text-2xl font-black leading-tight text-[var(--color-text)] sm:text-3xl">
+            <Kicker large>GUIDE</Kicker>
+            <h2 className="text-balance mt-4 text-3xl font-black leading-tight text-[var(--color-text)] sm:text-4xl">
               학교로 직접 찾아갑니다
             </h2>
-            <p className="mt-3 max-w-[36em] leading-relaxed text-[var(--color-text-muted)]">
+            <p className="mt-4 max-w-[44em] text-lg leading-relaxed text-[var(--color-text-muted)] sm:text-xl">
               강사와 체험 도구가 모두 학교로 이동하며, 최대 4학급이
               동시에 4개 존을 돌며 체험할 수 있습니다.
             </p>
           </Reveal>
 
-          <div className="mt-12 border-t border-[var(--color-border)] pt-8">
+          <div className="mt-14 border-t border-[var(--color-border)] pt-10">
             <Reveal>
-              <h3 className="text-xl font-black text-[var(--color-text)] sm:text-2xl">
+              <h3 className="text-2xl font-black text-[var(--color-text)] sm:text-3xl">
                 수업은 이렇게 진행돼요
               </h3>
             </Reveal>
-            <ol className="mt-6 grid gap-x-6 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
+            <ol className="mt-8 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
               {CLASS_FLOW_STEPS.map((step, index) => (
-                <li key={step.title} className="border-t-2 border-[var(--color-text)] pt-4">
-                  <span className="text-sm font-black text-[var(--color-primary-hover)]">
+                <li key={step.title} className="border-t-2 border-[var(--color-text)] pt-5">
+                  <span className="text-base font-black text-[var(--color-primary-hover)]">
                     0{index + 1}
                   </span>
-                  <p className="mt-1 font-bold text-[var(--color-text)]">{step.title}</p>
-                  <p className="mt-2 text-sm leading-relaxed text-[var(--color-text-muted)]">
+                  <p className="mt-2 text-lg font-bold text-[var(--color-text)]">{step.title}</p>
+                  <p className="mt-2 leading-relaxed text-[var(--color-text-muted)]">
                     {step.desc}
                   </p>
                 </li>
               ))}
             </ol>
             <Reveal delay={100}>
-              <p className="mt-8 max-w-[36em] leading-relaxed text-[var(--color-text-muted)]">
+              <p className="mt-10 max-w-[44em] text-lg leading-relaxed text-[var(--color-text-muted)]">
                 공간(강당 또는 교실)과 참여할 학급 수만 알려주시면 돼요.
                 체험 장비와 강사는 저희가 모두 준비해서 찾아가고, 수업이
                 끝나면 간단한 만족도 조사로 의견을 들어 다음 교육에
@@ -112,20 +112,20 @@ export default function FaqPage() {
             </Reveal>
           </div>
 
-          <div className="mt-14 border-t border-[var(--color-border)] pt-8">
+          <div className="mt-16 border-t border-[var(--color-border)] pt-10">
             <Reveal>
-              <h3 className="text-xl font-black text-[var(--color-text)] sm:text-2xl">
+              <h3 className="text-2xl font-black text-[var(--color-text)] sm:text-3xl">
                 신청부터 수업까지 4단계
               </h3>
             </Reveal>
-            <ol className="mt-6 grid gap-x-6 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
+            <ol className="mt-8 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
               {APPLY_STEPS.map((item, index) => (
-                <li key={item.title} className="border-t-2 border-[var(--color-text)] pt-4">
-                  <span className="text-sm font-black text-[var(--color-primary-hover)]">
+                <li key={item.title} className="border-t-2 border-[var(--color-text)] pt-5">
+                  <span className="text-base font-black text-[var(--color-primary-hover)]">
                     0{index + 1}
                   </span>
-                  <p className="mt-1 font-bold text-[var(--color-text)]">{item.title}</p>
-                  <p className="mt-2 text-sm leading-relaxed text-[var(--color-text-muted)]">
+                  <p className="mt-2 text-lg font-bold text-[var(--color-text)]">{item.title}</p>
+                  <p className="mt-2 leading-relaxed text-[var(--color-text-muted)]">
                     {item.desc}
                   </p>
                 </li>
@@ -137,25 +137,25 @@ export default function FaqPage() {
 
       {/* 출강 지역 */}
       <section className="bg-[var(--color-surface-alt)] py-16 sm:py-20">
-        <Container className="max-w-[900px] text-center">
+        <Container className="max-w-[1100px] text-center">
           <Reveal>
-            <Kicker>AREA</Kicker>
-            <h2 className="text-balance mt-3 text-2xl font-black leading-tight text-[var(--color-text)] sm:text-3xl">
+            <Kicker large>AREA</Kicker>
+            <h2 className="text-balance mt-4 text-3xl font-black leading-tight text-[var(--color-text)] sm:text-4xl">
               이 지역으로 자주 찾아가요
             </h2>
           </Reveal>
           <Reveal delay={100}>
-            <div className="mt-6 flex flex-wrap justify-center gap-3">
+            <div className="mt-8 flex flex-wrap justify-center gap-3">
               {MAIN_AREAS.map((area) => (
                 <span
                   key={area}
-                  className="rounded-full border-2 border-[var(--color-primary)] px-4 py-1.5 text-sm font-bold text-[var(--color-primary-hover)]"
+                  className="rounded-full border-2 border-[var(--color-primary)] px-5 py-2 text-base font-bold text-[var(--color-primary-hover)]"
                 >
                   {area}
                 </span>
               ))}
             </div>
-            <p className="mx-auto mt-4 max-w-[36em] leading-relaxed text-[var(--color-text-muted)]">
+            <p className="mx-auto mt-6 max-w-[44em] text-lg leading-relaxed text-[var(--color-text-muted)]">
               위 지역이 아니어도 괜찮아요. 그 외 지역도 협의 후 얼마든지
               찾아갈 수 있으니, 부담 갖지 마시고 편하게 문의해 주세요!
             </p>
@@ -165,27 +165,27 @@ export default function FaqPage() {
 
       {/* 자주 묻는 질문 */}
       <section className="bg-[var(--color-surface)] py-16 sm:py-20">
-        <Container className="max-w-[900px]">
+        <Container className="max-w-[1100px]">
           <Reveal>
-            <Kicker>FAQ</Kicker>
-            <h2 className="mt-3 text-2xl font-black text-[var(--color-text)] sm:text-3xl">
+            <Kicker large>FAQ</Kicker>
+            <h2 className="mt-4 text-3xl font-black text-[var(--color-text)] sm:text-4xl">
               자주 묻는 질문
             </h2>
           </Reveal>
 
-          <div className="mt-8 space-y-3">
+          <div className="mt-10 space-y-4">
             {FAQS.map((item, index) => (
               <Reveal key={item.q} delay={(index % 3) * 80}>
-                <details className="group rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-alt)] px-6 py-2 open:pb-5">
-                  <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-3 text-lg font-bold text-[var(--color-text)]">
+                <details className="group rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-alt)] px-7 py-2 open:pb-6">
+                  <summary className="flex min-h-16 cursor-pointer list-none items-center justify-between gap-4 py-4 text-xl font-bold text-[var(--color-text)]">
                     {item.q}
                     <ChevronDown
                       aria-hidden="true"
-                      size={22}
+                      size={24}
                       className="shrink-0 text-[var(--color-primary)] transition-transform group-open:rotate-180"
                     />
                   </summary>
-                  <p className="leading-relaxed text-[var(--color-text-muted)]">{item.a}</p>
+                  <p className="text-lg leading-relaxed text-[var(--color-text-muted)]">{item.a}</p>
                 </details>
               </Reveal>
             ))}
