@@ -72,10 +72,10 @@ export function SiteHeader() {
         {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
         <a href="/" className="flex shrink-0 items-center rounded-md">
           <Image
-            src="/logo-lockup.png"
+            src="/logo-lockup-v2.png"
             alt="시선을잇다 장애인식개선교육 체험센터 로고"
-            width={1356}
-            height={938}
+            width={1448}
+            height={1086}
             priority
             className="h-20 w-auto sm:h-[92px]"
           />
