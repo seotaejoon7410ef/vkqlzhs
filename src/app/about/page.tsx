@@ -203,7 +203,7 @@ export default function AboutPage() {
               믿습니다.&quot;
             </blockquote>
             <p className="mt-6 text-lg font-bold text-white">
-              — 체험교육센터 시선을잇다 대표 서태준
+              — 장애인식개선교육 체험센터 시선을잇다 대표 서태준
             </p>
             <p className="mt-1 text-sm text-white/70">
               장애인식개선교육 프로그램 지도사
