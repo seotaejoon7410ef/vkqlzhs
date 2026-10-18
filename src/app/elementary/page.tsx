@@ -22,6 +22,14 @@ const INFO_ITEMS = [
   { label: "도착·셋팅", value: "강사는 수업 1시간 30분 전에 도착해 셋팅합니다" },
 ];
 
+// 4. EXPERIENCE 다이어그램 중앙에 들어가는 운영 팁 — 큰 화면(xl)에서는 원형
+// 순환 다이어그램 가운데에, 그보다 좁은 화면에서는 세로 흐름 아래에 보여줍니다.
+const OPERATING_TIPS = [
+  { title: "01. 10분, 하나의 시선", desc: "존마다 10분씩 머물며 차례로 이동합니다. 한 교시 동안 네 가지 시선을 모두 만납니다." },
+  { title: "02. 열고, 겪고, 남기다", desc: "2분 동안 존을 소개하며 마음을 열고, 7분 동안 직접 겪어 보고, 1분 동안 느낀 점을 정리해 마음에 남깁니다." },
+  { title: "03. 기다림 없는 동시 체험", desc: "최대 4학급이 각자 다른 존에서 동시에 시작합니다. 대기 시간 없이 모든 학생이 온전히 체험에 집중합니다." },
+];
+
 const APPLY_FLOW = [
   { title: "문의", desc: "전화, 문자, 이메일로 학교와 희망 날짜를 남겨주세요." },
   { title: "일정·견적 안내", desc: "담당자가 연락드려 일정을 잡고 견적을 안내합니다." },
@@ -226,6 +234,17 @@ export default function ElementaryPage() {
             })}
           </ol>
 
+          {/* xl(1280px) 미만에서는 중앙 카드 자리가 없으니, 세로 흐름 아래에 같은
+              운영 팁을 보여줍니다. */}
+          <div className="mx-auto mt-10 max-w-[26rem] rounded-2xl bg-[var(--color-surface)] p-6 text-left shadow-sm ring-1 ring-[var(--color-border)] xl:hidden">
+            {OPERATING_TIPS.map((tip, index) => (
+              <div key={tip.title} className={index > 0 ? "mt-4" : ""}>
+                <p className="font-black text-[var(--color-primary-hover)]">{tip.title}</p>
+                <p className="mt-1 text-sm leading-relaxed text-[var(--color-text-muted)]">{tip.desc}</p>
+              </div>
+            ))}
+          </div>
+
           {/* xl(1280px) 이상 — 사진 사이 간격 자체를 크게 벌려서, 화살표가 사진
               바로 안쪽 가장자리에 닿을 만큼 바깥으로 나가도 설명 텍스트 박스와
               겹치지 않도록 다시 설계했습니다. Container가 1360px로 꽉 차는
@@ -244,14 +263,15 @@ export default function ElementaryPage() {
             </svg>
 
             <div className="absolute left-1/2 top-1/2 isolate h-[896px] w-[896px] -translate-x-1/2 -translate-y-1/2">
-              {/* 중앙 허브 */}
-              <div className="absolute left-1/2 top-1/2 z-10 flex h-[88px] w-[88px] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full bg-[var(--color-primary)] text-center text-white shadow-lg">
-                <RotateCw aria-hidden="true" size={20} />
-                <p className="mt-1 text-sm font-black leading-tight">
-                  1교시
-                  <br />
-                  순환 체험
-                </p>
+              {/* 중앙 운영 팁 카드 — 화살표 호(반지름 약 237px) 안쪽에 들어가도록
+                  대각선 길이를 여유 있게 맞춘 크기입니다. */}
+              <div className="absolute left-1/2 top-1/2 z-10 w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-2xl bg-[var(--color-surface)] p-5 text-left shadow-xl ring-1 ring-[var(--color-border)]">
+                {OPERATING_TIPS.map((tip, index) => (
+                  <div key={tip.title} className={index > 0 ? "mt-3" : ""}>
+                    <p className="text-sm font-black text-[var(--color-primary-hover)]">{tip.title}</p>
+                    <p className="mt-0.5 text-xs leading-snug text-[var(--color-text-muted)]">{tip.desc}</p>
+                  </div>
+                ))}
               </div>
 
               {ELEMENTARY_ZONES.map((zone, index) => {
