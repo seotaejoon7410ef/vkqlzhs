@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { ChevronDown } from "lucide-react";
 import { Container } from "@/components/container";
 import { Kicker } from "@/components/kicker";
-import { PageTitle } from "@/components/page-title";
 import { Reveal } from "@/components/reveal";
 
 export const metadata: Metadata = {
@@ -55,7 +54,19 @@ const FAQS = [
 export default function FaqPage() {
   return (
     <>
-      <PageTitle label="FAQ" title="선생님들이 많이 물어보세요" />
+      {/* 헤더 — 사진이 없는 페이지라 보라색 그래디언트 대신 다른 페이지들과
+          통일된 흰색/밝은 배경으로 처리 (site-header.tsx의 NO_DARK_HERO_PATHS에도
+          포함되어 헤더가 항상 불투명이라 lg 이상에서 위쪽 여백을 더 줍니다) */}
+      <section className="bg-[var(--color-surface-alt)] pt-16 pb-16 sm:pt-20 sm:pb-20 lg:pt-32">
+        <Container className="max-w-[900px] text-center">
+          <Reveal>
+            <Kicker>FAQ</Kicker>
+            <h1 className="text-balance mt-4 text-3xl font-black leading-tight text-[var(--color-text)] sm:text-4xl">
+              선생님들이 많이 물어보세요
+            </h1>
+          </Reveal>
+        </Container>
+      </section>
 
       {/* 운영 안내 — 다른 페이지의 GUIDE 섹션과 동일한 스타일
           (카드+원형 배지 대신 상단 테두리+숫자 리스트) */}
