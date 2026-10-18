@@ -237,10 +237,10 @@ export default function ElementaryPage() {
                   <path d="M0,0 L4.5,2.25 L0,4.5 Z" fill="var(--color-primary)" />
                 </marker>
               </defs>
-              <path d="M 60.76 24.86 Q 74.23 25.77 75.14 39.24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" markerEnd="url(#zone-arrow)" />
-              <path d="M 75.14 60.76 Q 74.23 74.23 60.76 75.14" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" markerEnd="url(#zone-arrow)" />
-              <path d="M 39.24 75.14 Q 25.77 74.23 24.86 60.76" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" markerEnd="url(#zone-arrow)" />
-              <path d="M 24.86 39.24 Q 25.77 25.77 39.24 24.86" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" markerEnd="url(#zone-arrow)" />
+              <path d="M 59.91 24.01 Q 73.33 26.67 75.99 40.09" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" markerEnd="url(#zone-arrow)" />
+              <path d="M 75.99 59.91 Q 73.33 73.33 59.91 75.99" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" markerEnd="url(#zone-arrow)" />
+              <path d="M 40.09 75.99 Q 26.67 73.33 24.01 59.91" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" markerEnd="url(#zone-arrow)" />
+              <path d="M 24.01 40.09 Q 26.67 26.67 40.09 24.01" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" markerEnd="url(#zone-arrow)" />
             </svg>
 
             <div className="absolute left-1/2 top-1/2 isolate h-[896px] w-[896px] -translate-x-1/2 -translate-y-1/2">
