@@ -265,11 +265,11 @@ export default function ElementaryPage() {
             <div className="absolute left-1/2 top-1/2 isolate h-[896px] w-[896px] -translate-x-1/2 -translate-y-1/2">
               {/* 중앙 운영 팁 카드 — 화살표 호(반지름 약 237px) 안쪽에 들어가도록
                   대각선 길이를 여유 있게 맞춘 크기입니다. */}
-              <div className="absolute left-1/2 top-1/2 z-10 w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-2xl bg-[var(--color-surface)] p-5 text-left shadow-xl ring-1 ring-[var(--color-border)]">
+              <div className="absolute left-1/2 top-1/2 z-10 w-[340px] -translate-x-1/2 -translate-y-1/2 rounded-2xl bg-[var(--color-surface)] p-6 text-left shadow-xl ring-1 ring-[var(--color-border)]">
                 {OPERATING_TIPS.map((tip, index) => (
-                  <div key={tip.title} className={index > 0 ? "mt-3" : ""}>
-                    <p className="text-sm font-black text-[var(--color-primary-hover)]">{tip.title}</p>
-                    <p className="mt-0.5 text-xs leading-snug text-[var(--color-text-muted)]">{tip.desc}</p>
+                  <div key={tip.title} className={index > 0 ? "mt-4" : ""}>
+                    <p className="text-base font-black text-[var(--color-primary-hover)]">{tip.title}</p>
+                    <p className="mt-1 text-sm leading-snug text-[var(--color-text-muted)]">{tip.desc}</p>
                   </div>
                 ))}
               </div>
