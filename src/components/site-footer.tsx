@@ -13,7 +13,7 @@ export function SiteFooter() {
             src="/logo-lockup-whitesub.png"
             alt="시선을잇다 장애인식개선교육 체험센터 로고"
             width={1356}
-            height={938}
+            height={1017}
             className="h-24 w-auto self-start sm:h-28 lg:mt-6 lg:self-auto"
           />
 
