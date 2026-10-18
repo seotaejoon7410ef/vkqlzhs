@@ -237,10 +237,11 @@ export default function ElementaryPage() {
                   <path d="M0,0 L4,2 L0,4 Z" fill="var(--color-primary)" />
                 </marker>
               </defs>
-              <path d="M 62.8 14.1 Q 94.1 5.9 85.9 37.2" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" markerEnd="url(#zone-arrow)" />
+              <circle cx="50" cy="50" r="19" fill="none" stroke="var(--color-border)" strokeWidth="1.5" strokeDasharray="2.5 4" />
+              <path d="M 50 31 A 19 19 0 0 1 69 50" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" markerEnd="url(#zone-arrow)" />
               <path d="M 69 50 A 19 19 0 0 1 50 69" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" markerEnd="url(#zone-arrow)" />
               <path d="M 50 69 A 19 19 0 0 1 31 50" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" markerEnd="url(#zone-arrow)" />
-              <path d="M 14.1 37.2 Q 5.9 5.9 37.2 14.1" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" markerEnd="url(#zone-arrow)" />
+              <path d="M 31 50 A 19 19 0 0 1 50 31" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" markerEnd="url(#zone-arrow)" />
             </svg>
 
             <div className="absolute left-1/2 top-1/2 isolate h-[896px] w-[896px] -translate-x-1/2 -translate-y-1/2">
