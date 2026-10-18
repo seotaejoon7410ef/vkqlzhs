@@ -388,17 +388,17 @@ export default function ElementaryPage() {
           </div>
 
           <div className="mt-14">
-            <h3 className="text-lg font-black text-[var(--color-text)]">
+            <h3 className="text-2xl font-black text-[var(--color-text)]">
               신청부터 수업까지 4단계
             </h3>
             <ol className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {APPLY_FLOW.map((step, index) => (
-                <li key={step.title} className="rounded-xl bg-[var(--color-surface)] p-5">
-                  <span className="text-sm font-black text-[var(--color-primary-hover)]">
+                <li key={step.title} className="rounded-xl bg-[var(--color-surface)] p-6">
+                  <span className="text-lg font-black text-[var(--color-primary-hover)]">
                     0{index + 1}
                   </span>
-                  <p className="mt-1 font-bold text-[var(--color-text)]">{step.title}</p>
-                  <p className="mt-2 text-sm leading-relaxed text-[var(--color-text-muted)]">
+                  <p className="mt-2 text-xl font-bold text-[var(--color-text)]">{step.title}</p>
+                  <p className="mt-2 leading-relaxed text-[var(--color-text-muted)]">
                     {step.desc}
                   </p>
                 </li>
