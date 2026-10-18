@@ -104,7 +104,7 @@ export default function AboutPage() {
               <ul className="mt-6 space-y-4 text-lg leading-[1.6] text-[var(--color-text)]">
                 <li className="flex gap-3">
                   <span aria-hidden="true" className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-primary)]" />
-                  장비·전기선까지 모두 준비해 방문하니, 강당이 없어도 진행할 수 있습니다
+                  장비·전기선까지 모두 준비해 방문해, 학교에서 따로 준비할 게 거의 없습니다
                 </li>
                 <li className="flex gap-3">
                   <span aria-hidden="true" className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-primary)]" />
