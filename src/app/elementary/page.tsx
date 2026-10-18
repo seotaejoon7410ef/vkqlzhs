@@ -214,7 +214,7 @@ export default function ElementaryPage() {
                         0{index + 1}
                       </span>
                     </div>
-                    <h3 className="mt-5 text-xl font-black text-[var(--color-text)] sm:text-2xl">
+                    <h3 className="mt-5 text-2xl font-black text-[var(--color-text)] sm:text-3xl">
                       {zone.title}
                     </h3>
                     <p className="mt-2 max-w-[28em] text-center leading-relaxed text-[var(--color-text-muted)]">
@@ -312,7 +312,7 @@ export default function ElementaryPage() {
                         </div>
                       )}
                     </div>
-                    <h3 className="mt-3 max-w-[17rem] text-center text-lg font-black text-[var(--color-text)]">
+                    <h3 className="mt-3 max-w-[17rem] text-center text-xl font-black text-[var(--color-text)]">
                       {zone.title}
                     </h3>
                     <p className="sr-only">{zone.desc}</p>
