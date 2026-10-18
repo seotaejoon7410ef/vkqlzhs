@@ -233,14 +233,14 @@ export default function ElementaryPage() {
           <div className="relative mx-auto mt-20 hidden h-[1248px] w-[1248px] xl:block">
             <svg aria-hidden="true" viewBox="0 0 100 100" className="absolute inset-0 z-0 h-full w-full">
               <defs>
-                <marker id="zone-arrow" markerUnits="userSpaceOnUse" markerWidth="4.5" markerHeight="4.5" refX="3.1" refY="2.25" orient="auto-start-reverse">
-                  <path d="M0,0 L4.5,2.25 L0,4.5 Z" fill="var(--color-primary)" />
+                <marker id="zone-arrow" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="6.3" refY="4.5" orient="auto-start-reverse">
+                  <path d="M0,0 L9,4.5 L0,9 Z" fill="var(--color-primary)" />
                 </marker>
               </defs>
-              <path d="M 61.05 25.15 Q 73.33 26.67 74.84 38.95" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" markerEnd="url(#zone-arrow)" />
-              <path d="M 74.84 61.05 Q 73.33 73.33 61.05 74.84" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" markerEnd="url(#zone-arrow)" />
-              <path d="M 38.95 74.84 Q 26.67 73.33 25.15 61.05" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" markerEnd="url(#zone-arrow)" />
-              <path d="M 25.15 38.95 Q 26.67 26.67 38.95 25.15" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" markerEnd="url(#zone-arrow)" />
+              <path d="M 61.05 25.15 Q 73.33 26.67 74.84 38.95" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" markerEnd="url(#zone-arrow)" />
+              <path d="M 74.84 61.05 Q 73.33 73.33 61.05 74.84" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" markerEnd="url(#zone-arrow)" />
+              <path d="M 38.95 74.84 Q 26.67 73.33 25.15 61.05" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" markerEnd="url(#zone-arrow)" />
+              <path d="M 25.15 38.95 Q 26.67 26.67 38.95 25.15" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" markerEnd="url(#zone-arrow)" />
             </svg>
 
             <div className="absolute left-1/2 top-1/2 isolate h-[896px] w-[896px] -translate-x-1/2 -translate-y-1/2">
