@@ -262,39 +262,23 @@ export default function ElementaryPage() {
                   "left-0 top-1/2 -translate-x-1/2 -translate-y-1/2",
                 ][index];
                 const photo = ZONE_PHOTOS[index];
-                // 번호 배지는 항상 허브 쪽(화살표가 드나드는 방향)이 아니라 각 존의
-                // 바깥쪽에 두어 들어오고 나가는 화살표와 절대 겹치지 않게 합니다.
-                const badgePositionClass = [
-                  "left-1/2 -top-2 -translate-x-1/2",
-                  "-right-2 top-1/2 -translate-y-1/2",
-                  "left-1/2 -bottom-2 -translate-x-1/2",
-                  "-left-2 top-1/2 -translate-y-1/2",
-                ][index];
 
                 return (
                   <Reveal key={zone.title} delay={index * 100} className={`absolute z-10 flex w-80 flex-col items-center ${positionClass}`}>
-                    <div className="relative h-80 w-80 shrink-0">
-                      <div className="relative h-full w-full overflow-hidden rounded-full shadow-lg ring-4 ring-[var(--color-surface-alt)]">
-                        {photo ? (
-                          <Image
-                            src={photo.src}
-                            alt={photo.alt}
-                            fill
-                            sizes="320px"
-                            className="object-cover"
-                          />
-                        ) : (
-                          <div className="flex h-full w-full items-center justify-center bg-[var(--color-primary-tint)]">
-                            <zone.icon aria-hidden="true" size={56} className="text-[var(--color-primary-hover)]" />
-                          </div>
-                        )}
-                      </div>
-                      <span
-                        aria-hidden="true"
-                        className={`absolute z-20 flex h-12 w-12 items-center justify-center rounded-full bg-[var(--color-text)] text-lg font-black text-white shadow ${badgePositionClass}`}
-                      >
-                        0{index + 1}
-                      </span>
+                    <div className="relative h-80 w-80 shrink-0 overflow-hidden rounded-full shadow-lg ring-4 ring-[var(--color-surface-alt)]">
+                      {photo ? (
+                        <Image
+                          src={photo.src}
+                          alt={photo.alt}
+                          fill
+                          sizes="320px"
+                          className="object-cover"
+                        />
+                      ) : (
+                        <div className="flex h-full w-full items-center justify-center bg-[var(--color-primary-tint)]">
+                          <zone.icon aria-hidden="true" size={56} className="text-[var(--color-primary-hover)]" />
+                        </div>
+                      )}
                     </div>
                     <h3 className="mt-3 max-w-[17rem] text-center text-lg font-black text-[var(--color-text)]">
                       {zone.title}
