@@ -170,8 +170,8 @@ export default function ElementaryPage() {
                 다른 방식으로 보고, 움직이고, 소통하고, 협력하는 경험을
                 합니다.
               </p>
-              <p className="mx-auto mt-5 inline-flex items-center gap-2 rounded-full bg-[var(--color-primary-tint)] px-5 py-2 text-sm font-bold text-[var(--color-primary-hover)]">
-                <RotateCw aria-hidden="true" size={16} />
+              <p className="mx-auto mt-5 inline-flex items-center gap-2 rounded-full bg-[var(--color-primary-tint)] px-6 py-2.5 text-base font-bold text-[var(--color-primary-hover)]">
+                <RotateCw aria-hidden="true" size={20} />
                 한 교시 안에 네 존을 순서대로 도는 로테이션 수업
               </p>
             </Reveal>
