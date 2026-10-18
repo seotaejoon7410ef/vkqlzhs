@@ -106,7 +106,7 @@ export default function Home() {
           <div className="text-center">
             <Kicker color="accent-strong">SCHOOL REVIEW</Kicker>
             <h2 className="mt-3 text-2xl font-black text-[var(--color-text)] sm:text-3xl">
-              학교 현장 후기
+              직접 겪은 학교들의 이야기
             </h2>
           </div>
         </Container>
