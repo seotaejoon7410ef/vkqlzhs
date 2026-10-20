@@ -109,8 +109,11 @@ export default function Home() {
           <div className="text-center">
             <Kicker color="accent-strong">SCHOOL REVIEW</Kicker>
             <h2 className="mt-3 text-2xl font-black text-[var(--color-text)] sm:text-3xl">
-              직접 겪은 학교들의 이야기
+              함께한 학교 이야기
             </h2>
+            <p className="mt-2 text-sm text-[var(--color-text-muted)] sm:text-base">
+              사진을 누르면 후기를 볼 수 있어요
+            </p>
           </div>
         </Container>
         <div className="mt-6">
