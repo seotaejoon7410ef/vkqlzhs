@@ -416,7 +416,7 @@ export default function ElementaryPage() {
       <section className="on-dark relative isolate overflow-hidden">
         <div className="relative h-[55vh] min-h-[420px] w-full sm:h-[65vh] sm:min-h-[480px]">
           <Image
-            src="/reviews/yongin-seongji-2.jpg"
+            src="/elementary-closing.jpg"
             alt=""
             aria-hidden="true"
             fill
