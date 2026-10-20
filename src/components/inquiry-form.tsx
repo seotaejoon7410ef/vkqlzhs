@@ -4,7 +4,7 @@ import { useState, type FormEvent } from "react";
 import { SHOW_KINDERGARTEN } from "@/config";
 import { KINDERGARTEN_TOPICS } from "@/content/kindergarten-topics";
 
-const AREAS = ["서울", "경기", "인천", "충남", "충북", "기타 지역(협의)"];
+const AREAS = ["서울", "경기", "인천", "강원", "충남", "충북", "기타 지역(협의)"];
 
 const KINDERGARTEN = "안전체험 (유치원)";
 const SCHOOL = "장애인식개선체험 (초·중학교)";

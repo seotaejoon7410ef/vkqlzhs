@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "FAQ",
 };
 
-const MAIN_AREAS = ["서울", "경기", "인천", "충남", "충북"];
+const MAIN_AREAS = ["서울", "경기", "인천", "강원", "충남", "충북"];
 
 const CLASS_FLOW_STEPS = [
   { title: "도착·설치", desc: "강사가 학교에 도착해 체험 도구를 설치합니다." },
@@ -43,7 +43,7 @@ const FAQS = [
   },
   {
     q: "출강 가능한 지역은 어디인가요?",
-    a: "서울·경기·인천·충남·충북을 중심으로 방문하고, 그 외 지역도 협의 후 진행할 수 있어요. 편하게 문의해 주세요.",
+    a: "서울·경기·인천·강원·충남·충북을 중심으로 방문하고, 그 외 지역도 상담 가능합니다 (출장비 별도).",
   },
   {
     q: "비용은 얼마인가요?",
@@ -156,8 +156,7 @@ export default function FaqPage() {
               ))}
             </div>
             <p className="mx-auto mt-6 max-w-[44em] text-lg leading-relaxed text-[var(--color-text-muted)]">
-              위 지역이 아니어도 괜찮아요. 그 외 지역도 협의 후 얼마든지
-              찾아갈 수 있으니, 부담 갖지 마시고 편하게 문의해 주세요!
+              그 외 지역도 상담 가능합니다 (출장비 별도)
             </p>
           </Reveal>
         </Container>
