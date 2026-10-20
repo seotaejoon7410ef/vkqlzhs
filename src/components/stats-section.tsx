@@ -11,7 +11,7 @@ export const SITE_STATS = [
 ] as const;
 
 // 화면에 들어온 뒤(active=true) 0부터 목표값까지 한 번만 올라가는 카운트업
-function useCountUp(target: number, active: boolean, duration = 1400) {
+function useCountUp(target: number, active: boolean, duration = 2800) {
   const [value, setValue] = useState(0);
 
   useEffect(() => {
