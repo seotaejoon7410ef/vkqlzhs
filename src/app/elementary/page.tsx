@@ -130,8 +130,8 @@ export default function ElementaryPage() {
             <Reveal>
               <div className="relative aspect-[1672/941] w-full overflow-hidden rounded-sm">
                 <Image
-                  src="/elementary-why.png"
-                  alt="강사가 장애가 있는 위인들을 소개하는 '다름 속의 위대함' 보드 앞에서 초등학생들에게 설명하는 모습"
+                  src="/elementary-why.jpg"
+                  alt="시각장애 공감 체험존 앞에서 강사가 체험 진행 방법을 설명하고 학생들이 둘러앉아 듣는 모습"
                   fill
                   sizes="(min-width: 1024px) 40rem, 90vw"
                   className="object-cover"
