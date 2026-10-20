@@ -10,8 +10,6 @@ export const SITE_STATS = [
   { value: 6, unit: "개 시·도", label: "서울·경기·인천·강원·충남·충북" },
 ] as const;
 
-const STATS_AS_OF = "2026년 10월 기준";
-
 // 화면에 들어온 뒤(active=true) 0부터 목표값까지 한 번만 올라가는 카운트업
 function useCountUp(target: number, active: boolean, duration = 1400) {
   const [value, setValue] = useState(0);
@@ -81,9 +79,6 @@ export function StatsSection() {
             <StatItem key={stat.label} stat={stat} active={active} />
           ))}
         </div>
-        <p className="mt-8 text-right text-xs text-[var(--color-text-muted)]">
-          {STATS_AS_OF}
-        </p>
       </Container>
     </section>
   );
