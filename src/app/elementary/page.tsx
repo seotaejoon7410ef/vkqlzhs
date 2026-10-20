@@ -39,7 +39,7 @@ const APPLY_FLOW = [
 ];
 
 // 4. EXPERIENCE 존 사진 — ELEMENTARY_ZONES 배열 순서(시각/지체/지적/퀴즈)에
-// 맞춰 존별 실제 현장 사진을 매핑. 장애인식개선퀴즈 존은 아직 사진이 없어 placeholder 유지.
+// 맞춰 존별 실제 현장 사진을 매핑.
 const ZONE_PHOTOS: Record<number, { src: string; alt: string }> = {
   0: {
     src: "/elementary-zone-visual.jpg",
@@ -52,6 +52,10 @@ const ZONE_PHOTOS: Record<number, { src: string; alt: string }> = {
   2: {
     src: "/intellectual-zone.jpg",
     alt: "지적장애공감체험 존에서 학생들이 컵블록 쌓기 체험을 하는 모습",
+  },
+  3: {
+    src: "/elementary-zone-quiz.jpg",
+    alt: "장애인식개선퀴즈 존에서 강사가 큰 화면으로 퀴즈 결과를 보여주며 학생들과 함께 진행하는 모습",
   },
 };
 
