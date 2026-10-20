@@ -49,6 +49,19 @@ const REVIEWS: Review[] = [
     ],
     postUrl: "https://blog.naver.com/happyguide95/224444094046",
   },
+  {
+    id: "incheon-yeonsu-oo",
+    school: "인천 연수구 OO초",
+    photos: [
+      "/reviews/incheon-yeonsu-oo-1.jpg",
+      "/reviews/incheon-yeonsu-oo-2.jpg",
+      "/reviews/incheon-yeonsu-oo-3.jpg",
+      "/reviews/incheon-yeonsu-oo-4.jpg",
+      "/reviews/incheon-yeonsu-oo-5.jpg",
+      "/reviews/incheon-yeonsu-oo-6.jpg",
+    ],
+    postUrl: "https://blog.naver.com/happyguide95/224447992831",
+  },
 ];
 
 function gridColsClass(count: number) {
