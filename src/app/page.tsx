@@ -76,7 +76,7 @@ export default function Home() {
               style={{ animationDelay: "300ms" }}
             >
               <p>
-                초·중학교로 찾아가는 장애인식개선 체험교육
+                찾아가는 장애인식개선 체험교육
                 <br />
                 아이들의 눈높이에 맞춘 자체 개발 프로그램을 제공합니다.
               </p>
