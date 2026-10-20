@@ -21,13 +21,20 @@ const ALL_NAV_GROUPS: NavGroup[] = [
         ]
       : [],
   },
-  {
-    label: "장애인식개선 체험교육",
-    children: [
-      { href: "/elementary", label: "초등학교" },
-      ...(SHOW_MIDDLE ? [{ href: "/middle", label: "중학교" }] : []),
-    ],
-  },
+  // 중학교가 다시 열릴 때까지는 "장애인식개선 체험교육"을 드롭다운 없이
+  // 초등학교 페이지로 바로 연결되는 단일 메뉴로 둡니다. SHOW_MIDDLE을 다시
+  // true로 켜면 초등학교/중학교 하위 메뉴로 자동 분리됩니다.
+  ...(SHOW_MIDDLE
+    ? [
+        {
+          label: "장애인식개선 체험교육",
+          children: [
+            { href: "/elementary", label: "초등학교" },
+            { href: "/middle", label: "중학교" },
+          ],
+        },
+      ]
+    : [{ href: "/elementary", label: "장애인식개선 체험교육" }]),
   { href: "/faq", label: "FAQ" },
   { href: "/contact", label: "체험문의" },
 ];
