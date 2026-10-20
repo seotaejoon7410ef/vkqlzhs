@@ -1,5 +1,7 @@
 // 안전체험(유치원) 메뉴/페이지를 한 곳에서 켜고 끕니다.
 export const SHOW_KINDERGARTEN = false;
+// 중학교 메뉴를 한 곳에서 켜고 끕니다. 페이지 자체는 남겨두고 메뉴에서만 숨깁니다.
+export const SHOW_MIDDLE = false;
 
 type NavLeaf = { href: string; label: string };
 export type NavGroup =
@@ -23,7 +25,7 @@ const ALL_NAV_GROUPS: NavGroup[] = [
     label: "장애인식개선 체험교육",
     children: [
       { href: "/elementary", label: "초등학교" },
-      { href: "/middle", label: "중학교" },
+      ...(SHOW_MIDDLE ? [{ href: "/middle", label: "중학교" }] : []),
     ],
   },
   { href: "/faq", label: "FAQ" },

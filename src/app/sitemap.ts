@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { SHOW_MIDDLE } from "@/config";
 
 const BASE_URL = "https://siseonitda.co.kr";
 
@@ -6,7 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const pages = [
     "",
     "/elementary",
-    "/middle",
+    ...(SHOW_MIDDLE ? ["/middle"] : []),
     "/faq",
     "/contact",
     "/about",
