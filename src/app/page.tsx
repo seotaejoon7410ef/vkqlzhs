@@ -4,6 +4,7 @@ import { Mouse } from "lucide-react";
 import { Container } from "@/components/container";
 import { Kicker } from "@/components/kicker";
 import { ReviewMarquee } from "@/components/review-marquee";
+import { StatsSection } from "@/components/stats-section";
 
 export default function Home() {
   return (
@@ -100,6 +101,8 @@ export default function Home() {
           SCROLL
         </div>
       </section>
+
+      <StatsSection />
 
       <div className="bg-[var(--color-surface-alt)] py-14 sm:py-16">
         <Container>
