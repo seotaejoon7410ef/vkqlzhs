@@ -33,7 +33,7 @@ const OPERATING_TIPS = [
 
 const APPLY_FLOW = [
   { title: "문의", desc: "전화, 문자, 이메일로 학교와 희망 날짜를 남겨주세요." },
-  { title: "일정·견적 안내", desc: "담당자가 연락드려 일정을 잡고 견적을 안내합니다." },
+  { title: "일정·견적 안내", desc: "담당자가 연락드려 일정을 잡고 견적을 안내합니다. 나라장터·학교장터로도 계약하실 수 있습니다." },
   { title: "수업 진행", desc: "정해진 날짜에 학교로 찾아가 체험교육을 진행합니다." },
   { title: "만족도 조사", desc: "교육 후 의견을 들어 다음 교육을 더 좋게 만듭니다." },
 ];
@@ -408,6 +408,9 @@ export default function ElementaryPage() {
                 </li>
               ))}
             </ol>
+            <p className="mt-6 max-w-[40em] leading-relaxed text-[var(--color-text-muted)]">
+              나라장터·학교장터 등록 업체로, 두 곳을 통한 계약과 세금계산서 발행이 모두 가능합니다.
+            </p>
           </div>
         </Container>
       </section>

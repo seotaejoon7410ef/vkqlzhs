@@ -79,6 +79,7 @@ export function SiteFooter() {
             <p>대표번호 | 031-236-8410</p>
             <p>이메일 | happyguide95@naver.com</p>
             <p>주소 | 경기도 화성시 동탄중심상가1길 36, 8층 801호</p>
+            <p>나라장터·학교장터 등록 업체</p>
           </div>
 
           <div className="flex items-center gap-4">
