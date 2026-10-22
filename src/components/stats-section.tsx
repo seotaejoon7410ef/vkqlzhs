@@ -3,19 +3,20 @@
 import { useEffect, useRef, useState } from "react";
 import { Container } from "./container";
 
-// 숫자가 바뀌면 이 배열만 수정하면 됩니다.
-export const SITE_STATS = [
-  { value: 10, unit: "개교", label: "함께한 학교" },
-  { value: 2300, unit: "명+", label: "누적 참여 학생" },
-  { value: 6, unit: "개 시·도", label: "서울·경기·인천·강원·충남·충북" },
-] as const;
+// 숫자가 바뀌면 이 값만 수정하면 됩니다.
+const PARTICIPANT_COUNT = 2300;
 
-// 화면에 들어온 뒤(active=true) 0부터 목표값까지 한 번만 올라가는 카운트업
-function useCountUp(target: number, active: boolean, duration = 2800) {
+// 화면에 들어온 뒤(active=true) 0부터 목표값까지 한 번만 올라가는 카운트업.
+// prefers-reduced-motion이면 애니메이션 없이 바로 최종값을 보여줍니다.
+function useCountUp(target: number, active: boolean, duration = 1800) {
+  const [reducedMotion] = useState(
+    () => typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+  );
   const [value, setValue] = useState(0);
 
   useEffect(() => {
-    if (!active) return;
+    if (!active || reducedMotion) return;
+
     let frame = 0;
     const start = performance.now();
 
@@ -29,30 +30,16 @@ function useCountUp(target: number, active: boolean, duration = 2800) {
     };
     frame = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(frame);
-  }, [active, target, duration]);
+  }, [active, reducedMotion, target, duration]);
 
+  if (active && reducedMotion) return target;
   return value;
-}
-
-function StatItem({ stat, active }: { stat: (typeof SITE_STATS)[number]; active: boolean }) {
-  const count = useCountUp(stat.value, active);
-
-  return (
-    <div className="text-center">
-      <p className="text-balance text-3xl font-black text-[var(--color-primary)] sm:text-5xl">
-        {count.toLocaleString("ko-KR")}
-        <span className="ml-0.5 text-xl font-black sm:text-3xl">{stat.unit}</span>
-      </p>
-      <p className="mt-2 text-xs font-bold leading-snug text-[var(--color-text-muted)] sm:text-base">
-        {stat.label}
-      </p>
-    </div>
-  );
 }
 
 export function StatsSection() {
   const ref = useRef<HTMLElement>(null);
   const [active, setActive] = useState(false);
+  const count = useCountUp(PARTICIPANT_COUNT, active);
 
   useEffect(() => {
     const el = ref.current;
@@ -72,12 +59,22 @@ export function StatsSection() {
   }, []);
 
   return (
-    <section ref={ref} className="bg-[var(--color-surface)] py-14 sm:py-16">
+    <section ref={ref} className="bg-[var(--color-surface)] py-[60px] sm:py-24">
       <Container>
-        <div className="grid grid-cols-3 gap-x-3 gap-y-8 sm:gap-6">
-          {SITE_STATS.map((stat) => (
-            <StatItem key={stat.label} stat={stat} active={active} />
-          ))}
+        <div className="mx-auto max-w-xl text-center">
+          <p className="text-base font-bold text-[var(--color-text-muted)] sm:text-lg">
+            시선을잇다와 함께한 장애 공감의 시간
+          </p>
+          <p className="mt-4 whitespace-nowrap text-[clamp(52px,14vw,60px)] font-black leading-none text-[#5B2C83] sm:mt-6 sm:text-[clamp(72px,8vw,88px)]">
+            {count.toLocaleString("ko-KR")}명+
+          </p>
+          <div aria-hidden="true" className="mx-auto mt-5 h-[2px] w-10 bg-[#5B2C83] sm:mt-7" />
+          <p className="mt-5 text-base font-bold text-[var(--color-text)] sm:mt-6 sm:text-lg">
+            누적 교육 참여 학생
+          </p>
+          <p className="mt-2 text-sm text-[var(--color-text-muted)] sm:text-base">
+            체험을 통해 이해하고, 공감으로 이어갑니다.
+          </p>
         </div>
       </Container>
     </section>
