@@ -7,15 +7,13 @@ import { Container } from "./container";
 const PARTICIPANT_COUNT = 2300;
 
 // 화면에 들어온 뒤(active=true) 0부터 목표값까지 한 번만 올라가는 카운트업.
-// prefers-reduced-motion이면 애니메이션 없이 바로 최종값을 보여줍니다.
+// 이 사이트는 다른 애니메이션들과 마찬가지로 prefers-reduced-motion과
+// 상관없이 항상 재생합니다(globals.css 참고).
 function useCountUp(target: number, active: boolean, duration = 1800) {
-  const [reducedMotion] = useState(
-    () => typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches,
-  );
   const [value, setValue] = useState(0);
 
   useEffect(() => {
-    if (!active || reducedMotion) return;
+    if (!active) return;
 
     let frame = 0;
     const start = performance.now();
@@ -30,9 +28,8 @@ function useCountUp(target: number, active: boolean, duration = 1800) {
     };
     frame = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(frame);
-  }, [active, reducedMotion, target, duration]);
+  }, [active, target, duration]);
 
-  if (active && reducedMotion) return target;
   return value;
 }
 
@@ -65,7 +62,7 @@ export function StatsSection() {
           <p className="text-base font-bold text-[var(--color-text-muted)] sm:text-lg">
             시선을잇다와 함께한 장애 공감의 시간
           </p>
-          <p className="mt-4 whitespace-nowrap text-[clamp(52px,14vw,60px)] font-black leading-none text-[#5B2C83] sm:mt-6 sm:text-[clamp(72px,8vw,88px)]">
+          <p className="mt-4 whitespace-nowrap text-[clamp(44px,12vw,52px)] font-black leading-none text-[#5B2C83] sm:mt-6 sm:text-[clamp(60px,7vw,76px)]">
             {count.toLocaleString("ko-KR")}명+
           </p>
           <div aria-hidden="true" className="mx-auto mt-5 h-[2px] w-10 bg-[#5B2C83] sm:mt-7" />
