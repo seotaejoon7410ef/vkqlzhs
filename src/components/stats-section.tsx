@@ -60,7 +60,7 @@ export function StatsSection() {
       <Container>
         <div className="mx-auto max-w-xl text-center">
           <p className="text-base font-bold text-[var(--color-text-muted)] sm:text-lg">
-            시선을잇다와 함께한 장애 공감의 시간
+            시선을잇다와 함께한 학생들
           </p>
           <p className="mt-4 whitespace-nowrap text-[clamp(44px,12vw,52px)] font-black leading-none text-[#5B2C83] sm:mt-6 sm:text-[clamp(60px,7vw,76px)]">
             {count.toLocaleString("ko-KR")}명+
