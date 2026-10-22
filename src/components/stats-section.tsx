@@ -59,18 +59,11 @@ export function StatsSection() {
     <section ref={ref} className="bg-[var(--color-surface)] py-[60px] sm:py-24">
       <Container>
         <div className="mx-auto max-w-xl text-center">
-          <p className="text-base font-bold text-[var(--color-text-muted)] sm:text-lg">
-            시선을잇다와 함께한 학생들
-          </p>
-          <p className="mt-4 whitespace-nowrap text-[clamp(44px,12vw,52px)] font-black leading-none text-[#5B2C83] sm:mt-6 sm:text-[clamp(60px,7vw,76px)]">
+          <p className="whitespace-nowrap text-[clamp(52px,14vw,60px)] font-black leading-none text-[#5B2C83] sm:text-[clamp(72px,8vw,88px)]">
             {count.toLocaleString("ko-KR")}명+
           </p>
-          <div aria-hidden="true" className="mx-auto mt-5 h-[2px] w-10 bg-[#5B2C83] sm:mt-7" />
-          <p className="mt-5 text-base font-bold text-[var(--color-text)] sm:mt-6 sm:text-lg">
-            누적 교육 참여 학생
-          </p>
-          <p className="mt-2 text-sm text-[var(--color-text-muted)] sm:text-base">
-            체험을 통해 이해하고, 공감으로 이어갑니다.
+          <p className="mt-4 text-base font-bold text-[var(--color-text-muted)] sm:mt-5 sm:text-lg">
+            시선을잇다와 함께한 학생들
           </p>
         </div>
       </Container>
