@@ -62,6 +62,19 @@ const REVIEWS: Review[] = [
     ],
     postUrl: "https://blog.naver.com/happyguide95/224447992831",
   },
+  {
+    id: "suwon-oo",
+    school: "경기도 수원 OO초",
+    photos: [
+      "/reviews/suwon-oo-1.jpg",
+      "/reviews/suwon-oo-2.jpg",
+      "/reviews/suwon-oo-3.jpg",
+      "/reviews/suwon-oo-4.jpg",
+      "/reviews/suwon-oo-5.jpg",
+      "/reviews/suwon-oo-6.jpg",
+    ],
+    postUrl: "https://blog.naver.com/happyguide95/224453896182",
+  },
 ];
 
 function gridColsClass(count: number) {
