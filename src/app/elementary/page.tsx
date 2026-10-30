@@ -444,7 +444,7 @@ export default function ElementaryPage() {
                   href="/contact"
                   className="mt-8 inline-flex min-h-12 items-center gap-2 rounded-full bg-[var(--color-accent)] px-7 text-base font-bold text-[var(--color-secondary)] transition-colors hover:brightness-95"
                 >
-                  초등학교 체험교육 문의하기
+                  체험교육 문의하기
                   <ArrowRight aria-hidden="true" size={18} />
                 </Link>
               </Reveal>
