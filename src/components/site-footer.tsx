@@ -80,6 +80,7 @@ export function SiteFooter() {
             <p>이메일 | happyguide95@naver.com</p>
             <p>주소 | 경기도 화성시 동탄중심상가1길 36, 8층 801호</p>
             <p>나라장터·학교장터 등록 업체</p>
+            <p>시선을잇다는 웹 콘텐츠 접근성 지침을 준수하기 위해 노력합니다</p>
           </div>
 
           <div className="flex items-center gap-4">

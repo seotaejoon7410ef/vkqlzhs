@@ -22,6 +22,9 @@ export default function ContactPage() {
           <h1 className="text-balance text-center text-3xl font-black text-[var(--color-text)] sm:text-4xl">
             프로그램 견적 문의
           </h1>
+          <p className="mt-3 text-center text-[var(--color-text-muted)]">
+            문의 남겨주시면 1영업일 내로 담당자가 연락드립니다.
+          </p>
           <div className="mt-10 rounded-3xl border border-[var(--color-border)] bg-white p-6 shadow-sm sm:p-10">
             <InquiryForm />
           </div>
