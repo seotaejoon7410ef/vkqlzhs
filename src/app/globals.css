@@ -60,10 +60,6 @@
   --font-sans: var(--font-sans);
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   background: var(--color-bg);
   color: var(--color-text);
