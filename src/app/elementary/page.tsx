@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 // 6. 교육 안내 — 기존 FAQ 페이지에 있던 운영 정보를 이 페이지용으로 재정리
 const INFO_ITEMS = [
   { label: "교육 시간", value: "1교시(40분) 기준, 4개 존 체험" },
-  { label: "대상", value: "초등학교 (학급 단위 신청)" },
+  { label: "대상", value: "초등학교, 중학교 (학급 단위 신청)" },
   { label: "동시 진행", value: "최대 4학급까지 동시 체험 가능" },
   { label: "진행 방식", value: "학급별로 순서를 정해 4개 존을 순환하며 체험" },
   { label: "강사·장비", value: "강사와 체험 도구를 모두 준비해 학교로 방문, 별도 구매 없음" },
