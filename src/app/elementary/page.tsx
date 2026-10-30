@@ -81,9 +81,6 @@ export default function ElementaryPage() {
                 <h1 className="text-balance text-xl font-black leading-tight text-white [text-shadow:0_2px_16px_rgb(0_0_0_/_60%)] sm:text-5xl">
                   찾아가는 장애인식개선교육 체험
                 </h1>
-                <p className="mt-2 text-sm font-bold text-[var(--color-accent)] [text-shadow:0_1px_10px_rgb(0_0_0_/_60%)] sm:mt-3 sm:text-base">
-                  초등학교 대상 프로그램입니다
-                </p>
               </Reveal>
               <Reveal delay={100}>
                 <p className="mt-2 max-w-[32em] text-sm leading-snug text-white [text-shadow:0_1px_10px_rgb(0_0_0_/_60%)] sm:mt-5 sm:text-base sm:leading-relaxed">
