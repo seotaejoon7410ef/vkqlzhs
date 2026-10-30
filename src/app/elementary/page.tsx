@@ -78,12 +78,15 @@ export default function ElementaryPage() {
           <Container className="absolute inset-x-0 bottom-0 pb-3 sm:pb-8 lg:pb-10">
             <div className="max-w-2xl">
               <Reveal>
-                <h1 className="text-balance text-xl font-black leading-tight text-white [text-shadow:0_2px_16px_rgb(0_0_0_/_60%)] sm:text-5xl">
+                <p className="text-sm font-bold text-[var(--color-accent)] [text-shadow:0_1px_10px_rgb(0_0_0_/_60%)] sm:text-base">
+                  학급 단위 방문 체험교육
+                </p>
+                <h1 className="mt-2 text-balance text-xl font-black leading-tight text-white [text-shadow:0_2px_16px_rgb(0_0_0_/_60%)] sm:mt-3 sm:text-5xl">
                   찾아가는 장애인식개선교육 체험
                 </h1>
               </Reveal>
               <Reveal delay={100}>
-                <p className="mt-2 max-w-[32em] text-sm leading-snug text-white [text-shadow:0_1px_10px_rgb(0_0_0_/_60%)] sm:mt-5 sm:text-base sm:leading-relaxed">
+                <p className="mt-3 max-w-[32em] text-sm leading-snug text-white [text-shadow:0_1px_10px_rgb(0_0_0_/_60%)] sm:mt-4 sm:text-base sm:leading-relaxed">
                   학급 단위로 학교를 직접 찾아가, 몸으로 겪고 느끼는
                   체험으로 진행합니다.
                 </p>
