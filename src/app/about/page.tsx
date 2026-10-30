@@ -111,7 +111,7 @@ export default function AboutPage() {
               <div className="relative aspect-[4/3] w-full overflow-hidden rounded-sm">
                 <Image
                   src="/about-program-zones.jpg"
-                  alt="체육관에 설치된 지체장애·시각장애 공감 체험존과 휠체어들이 놓인 모습"
+                  alt="체육관 전체에 시각장애·지체장애 공감 체험존이 설치되고 장애인식개선의 날 조형물이 놓인 전경"
                   fill
                   sizes="(min-width: 1024px) 40rem, 90vw"
                   className="object-cover"
