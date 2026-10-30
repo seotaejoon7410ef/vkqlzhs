@@ -75,6 +75,19 @@ const REVIEWS: Review[] = [
     ],
     postUrl: "https://blog.naver.com/happyguide95/224453896182",
   },
+  {
+    id: "incheon-michuhol-oo",
+    school: "인천 미추홀구 OO초",
+    photos: [
+      "/reviews/incheon-michuhol-oo-1.jpg",
+      "/reviews/incheon-michuhol-oo-2.jpg",
+      "/reviews/incheon-michuhol-oo-3.jpg",
+      "/reviews/incheon-michuhol-oo-4.jpg",
+      "/reviews/incheon-michuhol-oo-5.jpg",
+      "/reviews/incheon-michuhol-oo-6.jpg",
+    ],
+    postUrl: "https://blog.naver.com/happyguide95/224459329005",
+  },
 ];
 
 function gridColsClass(count: number) {
