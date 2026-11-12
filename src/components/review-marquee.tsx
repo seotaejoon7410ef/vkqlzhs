@@ -88,6 +88,19 @@ const REVIEWS: Review[] = [
     ],
     postUrl: "https://blog.naver.com/happyguide95/224459329005",
   },
+  {
+    id: "gangwon-hongcheon-oo",
+    school: "강원도 홍천 OO초",
+    photos: [
+      "/reviews/gangwon-hongcheon-oo-1.jpg",
+      "/reviews/gangwon-hongcheon-oo-2.jpg",
+      "/reviews/gangwon-hongcheon-oo-3.jpg",
+      "/reviews/gangwon-hongcheon-oo-4.jpg",
+      "/reviews/gangwon-hongcheon-oo-5.jpg",
+      "/reviews/gangwon-hongcheon-oo-6.jpg",
+    ],
+    postUrl: "https://blog.naver.com/happyguide95/224474688360",
+  },
 ];
 
 function gridColsClass(count: number) {
