@@ -101,6 +101,19 @@ const REVIEWS: Review[] = [
     ],
     postUrl: "https://blog.naver.com/happyguide95/224474688360",
   },
+  {
+    id: "cheongju-oo",
+    school: "충북 청주 OO초",
+    photos: [
+      "/reviews/cheongju-oo-1.jpg",
+      "/reviews/cheongju-oo-2.jpg",
+      "/reviews/cheongju-oo-3.jpg",
+      "/reviews/cheongju-oo-4.jpg",
+      "/reviews/cheongju-oo-5.jpg",
+      "/reviews/cheongju-oo-6.jpg",
+    ],
+    postUrl: "https://blog.naver.com/happyguide95/224484604320",
+  },
 ];
 
 function gridColsClass(count: number) {
