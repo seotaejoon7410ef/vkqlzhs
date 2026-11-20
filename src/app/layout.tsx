@@ -21,6 +21,11 @@ export const metadata: Metadata = {
   },
   description:
     "시선을잇다는 초·중학교로 찾아가는 장애인식개선 체험교육을 진행합니다.",
+  verification: {
+    other: {
+      "naver-site-verification": "e82552e57b5213a6b559a2852513582a2c842fa0",
+    },
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
